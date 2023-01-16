@@ -1,7 +1,9 @@
 import Blog from "./modules/Blog/Blog";
 import Home from "./modules/Homepage/Home";
-import Contact from "./Shared/Static/Contact";
-import TermsConditions from "./Shared/Static/TermsConditions";
+import Contact from "./shared/Static/Contact";
+import TermsConditions from "./shared/Static/TermsConditions";
+import Navbar from "./Shared/Components/Navbar";
+import Footer from "./Shared/Components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -18,7 +20,13 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  return (
+    <>
+      <Navbar />
+      <RouterProvider router={router} />
+      <Footer />
+    </>
+  );
 };
 
 export default App;
