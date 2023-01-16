@@ -1,0 +1,20 @@
+@font-face {
+  font-family: PolySans;
+  src: url("./assets/fonts/PolySans-Neutral.woff2");
+}
+@font-face {
+  font-family: PolySans;
+  src: url("./assets/fonts/PolySans-Median.woff2");
+}
+@font-face {
+  font-family: PolySans;
+  src: url("./assets/fonts/PolySans-Bulky.woff2");
+}
+@font-face {
+  font-family: PolySans;
+  src: url("./assets/fonts/PolySans-Neutral.woff2");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
