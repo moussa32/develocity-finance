@@ -9,7 +9,7 @@ const Navbar = ({background}) => {
   return (
     <div className="bg-slate-800">
       <div
-        className={`${background} text-white container mx-auto p-5 rounded-xl
+        className={`${background} text-white container mx-auto p-5 md:px-0 rounded-xl
       flex flex-col md:flex-row justify-between`}
       >
         <img className="my-5 md:my-0" src={navLogo} alt="navbar logo" />
