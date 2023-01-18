@@ -1,9 +1,10 @@
-import Navbar from "../../Shared/Components/Navbar"
+import Partnerships from "./Partnerships"
+
 
 const Home = () => {
   return (
     <div>
-      <Navbar/>
+      <Partnerships/>   
     </div>
   )
 }
