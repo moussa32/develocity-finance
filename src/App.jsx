@@ -4,11 +4,16 @@ import Contact from "./Shared/Static/Contact";
 import TermsConditions from "./Shared/Static/TermsConditions";
 import Footer from "./Shared/Components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Navbar from "./Shared/Components/Navbar";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <>
+        <Navbar /> <Home /> <Footer />
+      </>
+    ),
   },
   {
     path: "/blog",
@@ -22,7 +27,6 @@ const App = () => {
   return (
     <>
       <RouterProvider router={router} />
-      <Footer />
     </>
   );
 };
