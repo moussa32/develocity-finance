@@ -1,5 +1,9 @@
+import Blog from "./components/Blog";
+
 const Home = () => {
-  return <div>Home</div>;
+  return <div>
+    <Blog/>
+  </div>;
 };
 
 export default Home;
