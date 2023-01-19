@@ -1,8 +1,10 @@
 import Blog from "./components/Blog";
+import Leadership from "./components/Leadership";
 
 const Home = () => {
   return <div>
-    <Blog/>
+    {/* <Blog/> */}
+    <Leadership/>
   </div>;
 };
 
