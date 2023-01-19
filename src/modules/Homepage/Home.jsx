@@ -1,5 +1,14 @@
-const Home = () => {
-  return <div>Home</div>;
-};
+import Partnerships from "./Partnerships"
+import RoadMap from "./RoadMap"
 
-export default Home;
+
+const Home = () => {
+  return (
+    <div>
+      <RoadMap/>
+      <Partnerships/>   
+    </div>
+  )
+}
+
+export default Home
