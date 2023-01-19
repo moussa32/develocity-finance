@@ -5,11 +5,18 @@ import TermsConditions from "./shared/Static/TermsConditions";
 import Navbar from "./shared/Components/Navbar";
 import Footer from "./shared/Components/Footer";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Header from "./modules/Homepage/components/Header";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <Home />,
+    element: (
+      <>
+        <Header /> 
+        <Home /> 
+        <Footer />
+      </>
+    ),
   },
   {
     path: "/blog",
@@ -22,9 +29,7 @@ const router = createBrowserRouter([
 const App = () => {
   return (
     <>
-      <Navbar />
       <RouterProvider router={router} />
-      <Footer />
     </>
   );
 };

@@ -1,5 +1,11 @@
-const TermsConditions = () => {
-  return <div>TermsConditions</div>;
-};
+import Navbar from "../Components/Navbar"
 
-export default TermsConditions;
+const TermsConditions = () => {
+  return (
+    <div>
+      <Navbar background={"bg-white bg-opacity-10"}/>   
+    </div>
+  )
+}
+
+export default TermsConditions
