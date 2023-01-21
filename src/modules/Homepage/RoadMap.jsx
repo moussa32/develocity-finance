@@ -4,10 +4,11 @@ import phaseTwo from "../../assets/images/phase2.svg"
 import phaseThree from "../../assets/images/phase3.svg"
 import phaseFour from "../../assets/images/phase4.svg"
 import phaseLine from "../../assets/images/phases-line.svg"
+import quote from "../../assets/images/roadmap-quote.svg";
 
 const RoadMap = () => {
   return (
-    <div className=" my-48 bg-slate-900 text-white p-6">
+    <div className=" my-48 bg-[#0A0D14] text-white p-6">
       <h2 className="text-center text-6xl">Roadmap</h2>
       <p className="text-center text-lg lg:px-60 mt-2">
         Develocity aspires to present its final project in four primary stages.
@@ -90,7 +91,22 @@ const RoadMap = () => {
             <li>• Looking For Opportunities</li>
           </ul>
         </div>
+      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 mt-24 lg:mt-48 gap-8">
+        <div className="w-72 h-[242px] lg:w-[488px] my-auto lg:h-[442px] mx-auto bg-[#E1E1E1]">
 
+        </div>
+        <div className="text-center">
+          <p className="text-2xl md:text-3xl relative z-20 font-medium mt-16 md:mt-24">
+            <img className="absolute opacity-20 -z-10 right-32 -top-10 md:right-[38%] lg:right-[45%] lg:bottom-[170px]" src={`${quote}`} alt="quote icon"/>
+            “We entrepreneurs are loners, vagabonds, troublemakers. Success is
+            simply a matter of finding and surrounding ourselves with those
+            open-minded and clever souls who can take our insanity and put it to
+            good use.”
+          </p>
+          <h6 className="text-lg font-semibold mt-5 md:mt-7">Marwan bin Mohammed bin Rashid Al Maktoum</h6>
+          <h6 className="text-[#B8B8B8] text-base">sheikhmarwanmaktoum.com</h6>
+        </div>
       </div>
     </div>
   );
