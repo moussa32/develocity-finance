@@ -5,21 +5,49 @@ import WiredIcon from "../../../../src/assets/images/WIRED.svg";
 import CoindeskIcons from "../../../../src/assets/images/Coindesk.svg";
 import YahooFinanceIcons from "../../../../src/assets/images/YahooFinance.svg";
 import Loudspeaker from "../../../../src/assets/images/loudspeaker.svg";
+import { useEffect, useState } from "react";
 
 export default function Header() {
+  const calculateTimeLeft = () => {
+    let year = new Date().getFullYear();
+    let difference = +new Date(`2/10/${year}`) - +new Date();
+  
+    let timeLeft = {};
+  
+    if (difference > 0) {
+      timeLeft = {
+        days: Math.floor(difference / (1000 * 60 * 60 * 24)),
+        hours: Math.floor((difference / (1000 * 60 * 60)) % 24),
+        minutes: Math.floor((difference / 1000 / 60) % 60),
+        seconds: Math.floor((difference / 1000) % 60)
+      };
+    }
+  
+    return timeLeft;
+  }
+  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setTimeLeft(calculateTimeLeft());
+    }, 1000);
+  
+    return () => clearTimeout(timer);
+  });
+
   return (
     <div className="relative main-bg bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left md:h-[810px]">
       <img src={LadingHeaderBG} className="absolute h-full w-full z-0" />
       <div className="fixed w-full z-40">
-        <Navbar background={'bg-opacity-5 bg-white'} />
+        <Navbar background={"bg-opacity-5 bg-white"} />
       </div>
       <div className="container mx-auto text-white mt-36 z-20 flex flex-col">
-        <div className="ml-20 w-[300%] md:w-[615px] z-20">
+        <div className="ml-20 w-50 md:w-[615px] z-20">
           <h2 className="md:text-6xl text-4xl text-center  font-bold mb-6">
             Pre-Sale Countdown
           </h2>
           <h2 className="md:text-6xl text-4xl text-center font-bold my-6">
-            49:35:12
+            {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}:${timeLeft.seconds}`}
           </h2>
           <div className="mt-28 h-16 bg-white rounded-lg w-5/6 flex items-center">
             <div className="ml-3 p-2 rounded-lg shadow-lg shadow-gray-700">
