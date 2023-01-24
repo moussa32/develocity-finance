@@ -3,10 +3,10 @@ import coinbase from "../../assets/images/coinbase.svg";
 import bitmex from "../../assets/images/bitmex.svg";
 import xtCom from "../../assets/images/xt.svg";
 import binance from "../../assets/images/binance.svg";
-import coinbaseColored from "../../assets/images/coinbase-colored.png";
-import bitmexColored from "../../assets/images/bitmex-colored.png";
-import xtComColored from "../../assets/images/xt-colored.png";
-import binanceColored from "../../assets/images/binance-colored.png";
+import coinbaseColored from "../../assets/images/coinbase-colored.svg";
+import bitmexColored from "../../assets/images/bitmex-colored.svg";
+import xtComColored from "../../assets/images/xt-colored.svg";
+import binanceColored from "../../assets/images/binance-colored.svg";
 import quote from "../../assets/images/quote-icon.svg";
 
 const Partnerships = () => {
