@@ -18,7 +18,7 @@ const ProjectsDropdown = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex w-full justify-center rounded-md py-2 text-sm font-medium shadow-sm ">
+        <Menu.Button className="inline-flex w-full justify-center rounded-md text-base font-medium shadow-sm ">
           Projects
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
