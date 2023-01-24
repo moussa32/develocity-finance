@@ -22,7 +22,7 @@ const Navbar = ({containerClassName}) => {
           <NavLink className="mb-3 md:mb-0" to="/blog">Documentation</NavLink>
           <NavLink className="mb-3 md:mb-0" to="/contact-us">Contact</NavLink>
           <div className="bg-white bg-opacity-20 rounded-[30px]">
-            <img className="inline-block mr-2 ml-4" src={langIcon} alt="language icon"/>
+            <img className="inline-block ml-4" src={langIcon} alt="language icon"/>
             <LangDropdown/>
           </div>
         </div>
