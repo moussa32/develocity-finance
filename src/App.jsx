@@ -2,6 +2,7 @@ import Blog from "./modules/Blog/Blog";
 import Home from "./modules/Homepage/Home";
 import TermsConditions from "./shared/Static/TermsConditions";
 import Footer from "./shared/Components/Footer";
+import Header from "./modules/Homepage/components/Header";
 import Contact from "./shared/Static/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
