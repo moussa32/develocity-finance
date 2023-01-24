@@ -13,13 +13,16 @@ const Footer = () => {
         <div>
           <img className="mx-auto md:mx-0" src={logo} alt="footer logo" />
           <div className="mt-6">
-            <NavLink className="block md:inline-block mt-6 md:mt-0 ">
+            <NavLink className="block md:inline-block md:mr-6 mt-6 md:mt-0 ">
               Returns & FAQ
             </NavLink>
             <NavLink className="block md:inline-block md:mr-6 mt-6 md:mt-0 ">
               Privacy Policy
             </NavLink>
-            <NavLink to="/contact-us" className="block md:inline-block md:mr-6 mt-6 md:mt-0 ">
+            <NavLink
+              to="/contact-us"
+              className="block md:inline-block md:mr-6 mt-6 md:mt-0 "
+            >
               Contact
             </NavLink>
             <NavLink className="block md:inline-block md:mr-6 my-6 md:my-0 ">
@@ -28,10 +31,8 @@ const Footer = () => {
           </div>
         </div>
         <div>
-          <p className="md:pr-20">
-            Get the latest updates about Develocity's new projects, roadmap
-            updates and company news.
-          </p>
+          <p>Get the latest updates about Develocity's new projects,</p>
+          <p>roadmap updates and company news.</p>
           <div className="mt-6 md:mt-4">
             <input
               className="placeholder:text-[#667085] placeholder:text-base h-11 w-72 md:w-80 border-1 border py-5 pl-3 border-[#D0D5DD]"
@@ -43,7 +44,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <hr className="mt-16 mb-8"></hr>
+      <hr className="mt-16 text-neutral-200 mb-8"></hr>
       <div className="grid grid-cols-1 md:grid-cols-2">
         <div>
           <a href="#">
