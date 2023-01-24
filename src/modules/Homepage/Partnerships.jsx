@@ -25,28 +25,28 @@ const Partnerships = () => {
       <div className="flex justify-evenly mt-8 px-32 mx-auto gap-1 lg:gap-14">
         <img
         //#0052ff
-          className="w-[65px] md:w-[180px] lg:w-[100%] hover:cursor-pointer"
+          className="w-[65px] md:w-[180px] hover:cursor-pointer"
           src={`${coinbaseSrc}`}
           alt="coinbase icon"
           onMouseOver = {() => setCoinbaseSrc(coinbaseColored)}
           onMouseOut = {() => setCoinbaseSrc(coinbase)}
         />
         <img
-          className="w-[65px] md:w-[180px] lg:w-[100%] hover:cursor-pointer"
+          className="w-[65px] md:w-[180px] hover:cursor-pointer"
           src={`${bitmexSrc}`}
           alt="bitmex icon"
           onMouseOver = {() => setBitmexSrc(bitmexColored)}
           onMouseOut = {() => setBitmexSrc(bitmex)}
         />
         <img
-          className="w-[65px] md:w-[180px] lg:w-[100%] hover:cursor-pointer"
+          className="w-[65px] md:w-[180px] hover:cursor-pointer"
           src={`${xtComSrc}`}
           alt="xt.com icon"
           onMouseOver = {() => setxtComSrc(xtComColored)}
           onMouseOut = {() => setxtComSrc(xtCom)}
         />
         <img
-          className="w-[65px] md:w-[180px] lg:w-[100%] hover:cursor-pointer"
+          className="w-[65px] md:w-[180px] hover:cursor-pointer"
           src={`${binanceSrc}`}
           alt="binance icon"
           onMouseOver = {() => setBinanceSrc(binanceColored)}
