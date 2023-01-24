@@ -5,11 +5,11 @@ import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 
 
-const Navbar = ({background}) => {
+const Navbar = ({containerClassName}) => {
   return (
     <div>
       <div
-        className={`${background} text-white container mx-auto py-6 px-8 rounded-xl
+        className={`${containerClassName} text-white container mx-auto py-6 px-8 rounded-xl
       flex flex-col md:flex-row justify-between`}
       >
         <img className="my-5 md:my-0" src={navLogo} alt="navbar logo" />
