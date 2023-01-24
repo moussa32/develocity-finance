@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import StaticPageHeader from "../../shared/Static/StaticPageHeader";
 import Footer from "../../shared/Components/Footer";
 import Location from "../../assets/images/location.png";
@@ -54,6 +55,10 @@ const Contact = () => {
       <Footer />
     </>
   );
+=======
+const Contact = () => {
+  return <div>Contact</div>;
+>>>>>>> momen
 };
 
 export default Contact;

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import StaticPageHeader from "../../shared/Static/StaticPageHeader";
 import Footer from "../../shared/Components/Footer";
 
@@ -17,3 +18,16 @@ const TermsConditions = () => {
 };
 
 export default TermsConditions;
+=======
+import Navbar from "../Components/Navbar"
+
+const TermsConditions = () => {
+  return (
+    <div>
+      <Navbar background={"bg-white bg-opacity-10"}/>   
+    </div>
+  )
+}
+
+export default TermsConditions
+>>>>>>> momen

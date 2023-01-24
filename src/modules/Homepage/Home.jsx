@@ -1,14 +1,16 @@
-import Partnerships from "./Partnerships"
-import RoadMap from "./RoadMap"
-
-
+import Blog from "./components/Blog";
+import Leadership from "./components/Leadership";
+import Partnerships from "./Partnerships";
+import RoadMap from "./RoadMap";
 const Home = () => {
   return (
     <div>
-      <RoadMap/>
-      <Partnerships/>   
+      <RoadMap />
+      <Partnerships />
+      <Blog />
+      <Leadership />
     </div>
-  )
-}
+  );
+};
 
-export default Home
+export default Home;

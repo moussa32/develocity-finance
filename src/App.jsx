@@ -2,7 +2,6 @@ import Blog from "./modules/Blog/Blog";
 import Home from "./modules/Homepage/Home";
 import TermsConditions from "./shared/Static/TermsConditions";
 import Footer from "./shared/Components/Footer";
-import Navbar from "./shared/Components/Navbar";
 import Contact from "./shared/Static/Contact";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
@@ -11,7 +10,9 @@ const router = createBrowserRouter([
     path: "/",
     element: (
       <>
-        <Navbar /> <Home /> <Footer />
+        <Header />
+        <Home />
+        <Footer />
       </>
     ),
   },
