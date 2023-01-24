@@ -1,19 +1,18 @@
 import Blog from "./modules/Blog/Blog";
 import Home from "./modules/Homepage/Home";
-import Contact from "./shared/Static/Contact";
 import TermsConditions from "./shared/Static/TermsConditions";
-import Navbar from "./shared/Components/Navbar";
 import Footer from "./shared/Components/Footer";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Header from "./modules/Homepage/components/Header";
+import Contact from "./shared/Static/Contact";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: (
       <>
-        <Header /> 
-        <Home /> 
+        <Header />
+        <Home />
         <Footer />
       </>
     ),
