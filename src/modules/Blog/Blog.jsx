@@ -1,7 +1,7 @@
 import BlogCard from "./BlogCard";
 import ThumbnailPlaceholder from "../../assets/images/thumbnail-placeholder.png";
-import StaticPageHeader from "../../Shared/Static/StaticPageHeader";
-import Footer from "../../Shared/Components/Footer";
+import StaticPageHeader from "../../shared/Static/StaticPageHeader";
+import Footer from "../../shared/Components/Footer";
 
 const Blog = () => {
   return (
