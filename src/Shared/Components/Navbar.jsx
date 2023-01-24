@@ -5,11 +5,11 @@ import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 
 
-const Navbar = ({background}) => {
+const Navbar = ({containerClassName}) => {
   return (
-    <div className="bg-slate-800">
+    <div>
       <div
-        className={`${background} text-white container mx-auto p-5 md:px-0 rounded-xl
+        className={`${containerClassName} text-white container mx-auto py-6 px-8 rounded-xl
       flex flex-col md:flex-row justify-between`}
       >
         <img className="my-5 md:my-0" src={navLogo} alt="navbar logo" />
@@ -21,8 +21,8 @@ const Navbar = ({background}) => {
           <NavLink className="mb-3 md:mb-0" to="/blog">Blog</NavLink>
           <NavLink className="mb-3 md:mb-0" to="/blog">Documentation</NavLink>
           <NavLink className="mb-3 md:mb-0" to="/contact-us">Contact</NavLink>
-          <div className="bg-white bg-opacity-20 rounded-[30px] px-4 py-2">
-            <img className="inline-block mr-2" src={langIcon} alt="language icon"/>
+          <div className="bg-white bg-opacity-20 rounded-[30px]">
+            <img className="inline-block ml-4" src={langIcon} alt="language icon"/>
             <LangDropdown/>
           </div>
         </div>
