@@ -8,6 +8,11 @@ module.exports = {
       sans: ['"Inter"', ...fontFamily.sans],
     },
     extend: {
+      container: {
+        screens: {
+          xl: "1216px",
+        },
+      },
       fontFamily: {
         PolySans: ["PolySans", "sans-serif"],
       },
