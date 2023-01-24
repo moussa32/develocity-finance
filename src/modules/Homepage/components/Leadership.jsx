@@ -6,14 +6,14 @@ function Leadership() {
   return (
     <div className="text-center my-16">
       <div className="container mx-auto">
-        <p className="text-6xl text-indigo-900" style={{ color: "#29233B" }}>
+        <p className="PolySans text-6xl text-indigo-900" style={{ color: "#29233B" }}>
           Develocity Leadership
         </p>
         <p className="text-sm mt-2" style={{ color: "#525C7A" }}>
           With the mindset to create secure future in the digital money.
         </p>
         <div className="grid mt-6 gap-6 grid-cols-1 lg:grid-cols-3">
-          <div className="relative mx-5 rounded-t-lg bg-gradient-to-r from-[#DC88F9] to-[#280D46] h-96">
+          <div className="relative mx-5 rounded-lg bg-gradient-to-t from-[#280D46] to-[#DC88F9] h-96">
             <div className="absolute bottom-0 right-0 left-0 bg-slate-400 opacity-25 z-0  h-24"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-3 pt-4 pb-2 text-left text-white z-50">
@@ -29,7 +29,7 @@ function Leadership() {
               </div>
             </div>
           </div>
-          <div className="relative mx-5 rounded-t-lg bg-gradient-to-r from-[#859AFF] to-[#030A13] h-96">
+          <div className="relative mx-5 rounded-lg bg-gradient-to-t from-[#030A13] to-[#859AFF] h-96">
             <div className="absolute bottom-0 right-0 left-0 bg-slate-400 opacity-25 z-0  h-24"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-3 pt-4 pb-2 text-left text-white z-50">
@@ -45,7 +45,7 @@ function Leadership() {
               </div>
             </div>
           </div>
-          <div className="relative mx-5 rounded-t-lg bg-gradient-to-r from-[#8DA4C9] to-[#101828] h-96">
+          <div className="relative mx-5 rounded-lg bg-gradient-to-t from-[#101828] to-[#8DA4C9] h-96">
             <div className="absolute bottom-0 right-0 left-0 bg-slate-400 opacity-25 z-0  h-24"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-3 pt-4 pb-2 text-left text-white z-50">

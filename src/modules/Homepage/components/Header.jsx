@@ -51,11 +51,12 @@ export default function Header() {
           </h2>
           <div className="mt-20 h-16 bg-gray-500 bg-opacity-25 rounded-lg w-11/12 flex items-center">
             <div className="ml-3 p-2 rounded-lg  bg-gray-300 bg-opacity-20">
-              <img className="w-[16px]" src={`${Loudspeaker}`} />
+              <img className="rotate-180 w-[25px]" src={`${Loudspeaker}`} />
             </div>
             <p className="ml-2 text-sm" style={{ color: "#E9E9E9" }}>
-              <span style={{ color: "#00B9FF" }}>
-                Sheikh Marwan Bin Mohammed
+              Sheikh{" "}
+              <span className="underline underline-offset-2" style={{ color: "#00B9FF" }}>
+                Marwan Bin Mohammed
               </span>
               {" "} taking develocity in his incubator.
             </p>
