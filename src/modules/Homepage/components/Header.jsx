@@ -39,30 +39,30 @@ export default function Header() {
     <div className="relative main-bg bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left md:h-[810px]">
       <img src={LadingHeaderBG} className="absolute h-full w-full z-0" />
       <div className="fixed w-full z-40">
-        <Navbar background={"bg-opacity-5 bg-white"} />
+        <Navbar background={"bg-opacity-0"} />
       </div>
-      <div className="container mx-auto text-white mt-36 z-20 flex flex-col">
-        <div className="ml-20 w-50 md:w-[615px] z-20">
-          <h2 className="md:text-6xl text-4xl text-center  font-bold mb-6">
+      <div className="container mx-auto text-white mt-64 z-20 flex flex-col">
+        <div className="w-50 md:w-[615px] md:h-[400px] z-20">
+          <h2 className="md:text-6xl text-4xl mb-6">
             Pre-Sale Countdown
           </h2>
-          <h2 className="md:text-6xl text-4xl text-center font-bold my-6">
+          <h2 className="md:text-6xl text-4xl text-center my-6">
             {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}:${timeLeft.seconds}`}
           </h2>
-          <div className="mt-28 h-16 bg-white rounded-lg w-5/6 flex items-center">
-            <div className="ml-3 p-2 rounded-lg shadow-lg shadow-gray-700">
+          <div className="mt-20 h-16 bg-gray-500 bg-opacity-25 rounded-lg w-11/12 flex items-center">
+            <div className="ml-3 p-2 rounded-lg  bg-gray-300 bg-opacity-20">
               <img className="w-[16px]" src={`${Loudspeaker}`} />
             </div>
             <p className="ml-2 text-sm" style={{ color: "#E9E9E9" }}>
               <span style={{ color: "#00B9FF" }}>
                 Sheikh Marwan Bin Mohammed
-              </span>{" "}
-              taking develocity in his incubator.
+              </span>
+              {" "} taking develocity in his incubator.
             </p>
           </div>
         </div>
 
-        <div className="flex justify-evenly my-14 md:my-16 md:mt-[152px] mx-auto gap-1 md:gap-20">
+        <div className="flex justify-evenly my-14 md:mt-12 mx-auto gap-1 md:gap-10">
           <img
             className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80"
             src={`${BloombergIcon}`}
