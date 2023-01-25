@@ -3,13 +3,15 @@ import navLogo from "../../assets/images/nav-logo.svg";
 import langIcon from "../../assets/images/lang-icon.svg";
 import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
+import SideMenu from "./SideMenu";
 
 const Navbar = ({ containerClassName }) => {
   return (
     <div>
+      <SideMenu />
       <div
         className={`${containerClassName} text-white container mx-auto py-6 px-8 rounded-xl
-      flex flex-col md:flex-row justify-between`}
+      md:flex flex-col md:flex-row justify-between hidden`}
       >
         <img className="my-5 md:my-0" src={navLogo} alt="navbar logo" />
         <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 lg:gap-8 text-base font-medium">
@@ -29,7 +31,11 @@ const Navbar = ({ containerClassName }) => {
             Contact
           </NavLink>
           <div className="bg-white bg-opacity-20 rounded-[30px]">
-            <img className="inline-block ml-4" src={langIcon} alt="language icon" />
+            <img
+              className="inline-block ml-4"
+              src={langIcon}
+              alt="language icon"
+            />
             <LangDropdown />
           </div>
         </div>
