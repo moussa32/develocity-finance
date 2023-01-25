@@ -62,7 +62,7 @@ const Partnerships = () => {
               src={`${quote}`}
               alt="quote icon"
             />
-          <p className="text-2xl relative z-20 md:text-4xl font-medium text-neutral-900 mt-16 md:mt-24 lg:px-52">
+          <p className="text-2xl relative z-20 md:text-4xl md:leading-[44px] font-medium text-neutral-900 mt-16 md:mt-24 lg:px-52">
             “We entrepreneurs are loners, vagabonds, troublemakers. Success is
             simply a matter of finding and surrounding ourselves with those
             open-minded and clever souls who can take our insanity and put it to
