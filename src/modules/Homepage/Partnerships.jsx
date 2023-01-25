@@ -21,8 +21,7 @@ const Partnerships = () => {
         Partnerships that Last
       </h2>
       <h6 className="text-[#525C7A] text-lg mt-3">
-        We have connected with amazing people, businesses, and organizations for
-        the past 2 years.
+        We have connected with amazing people, businesses, and organizations for the past 2 years.
       </h6>
       <div className="flex justify-evenly mt-8 px-32 mx-auto gap-1 lg:gap-14">
         <img
@@ -61,10 +60,8 @@ const Partnerships = () => {
           src={`${quote}`}
           alt="quote icon"
         />
-        “We entrepreneurs are loners, vagabonds, troublemakers. Success is
-        simply a matter of finding and surrounding ourselves with those
-        open-minded and clever souls who can take our insanity and put it to
-        good use.”
+        “We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and surrounding
+        ourselves with those open-minded and clever souls who can take our insanity and put it to good use.”
       </p>
       <h6 className="text-lg font-semibold mt-5 md:mt-8">Brian Armstrong</h6>
       <h6 className="text-[#525C7A] text-base">CEO of Coinbase</h6>
