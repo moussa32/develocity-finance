@@ -30,7 +30,7 @@ const SideMenu = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="md:hidden bg-slate-900">
+          <Disclosure.Panel className="md:hidden  bg-gradient-to-b from-[#0A0C14] to-[#292156]">
             <div className="space-y-1 px-2 pt-2 pb-3">
               <Disclosure.Button
                 as="div"
