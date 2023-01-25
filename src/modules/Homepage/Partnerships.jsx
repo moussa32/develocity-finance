@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import coinbase from "../../assets/images/coinbase.svg";
 import bitmex from "../../assets/images/bitmex.svg";
 import xtCom from "../../assets/images/xt.svg";
@@ -10,11 +10,6 @@ import binanceColored from "../../assets/images/binance-colored.svg";
 import quote from "../../assets/images/quote-icon.svg";
 
 const Partnerships = () => {
-  const [coinbaseSrc, setCoinbaseSrc] = useState(coinbase);
-  const [bitmexSrc, setBitmexSrc] = useState(bitmex);
-  const [xtComSrc, setxtComSrc] = useState(xtCom);
-  const [binanceSrc, setBinanceSrc] = useState(binance);
-
   return (
     <div className="bg-[#F9FAFB]">
       <div className="container mx-auto text-center py-24">
@@ -25,50 +20,72 @@ const Partnerships = () => {
           We have connected with amazing people, businesses, and organizations
           for the past 2 years.
         </h6>
-        <div className="flex justify-evenly mt-8 px-32 mx-auto gap-1 lg:gap-14">
-          <img
-            //#0052ff
-            className="w-[65px] md:w-[180px] hover:cursor-pointer"
-            src={`${coinbaseSrc}`}
-            alt="coinbase icon"
-            onMouseOver={() => setCoinbaseSrc(coinbaseColored)}
-            onMouseOut={() => setCoinbaseSrc(coinbase)}
-          />
-          <img
-            className="w-[65px] md:w-[180px] hover:cursor-pointer"
-            src={`${bitmexSrc}`}
-            alt="bitmex icon"
-            onMouseOver={() => setBitmexSrc(bitmexColored)}
-            onMouseOut={() => setBitmexSrc(bitmex)}
-          />
-          <img
-            className="w-[65px] md:w-[180px] hover:cursor-pointer"
-            src={`${xtComSrc}`}
-            alt="xt.com icon"
-            onMouseOver={() => setxtComSrc(xtComColored)}
-            onMouseOut={() => setxtComSrc(xtCom)}
-          />
-          <img
-            className="w-[65px] md:w-[180px] hover:cursor-pointer"
-            src={`${binanceSrc}`}
-            alt="binance icon"
-            onMouseOver={() => setBinanceSrc(binanceColored)}
-            onMouseOut={() => setBinanceSrc(binance)}
-          />
+        <div className="grid grid-cols-4 h-[44px] mt-8 px-4 lg:px-32 mx-auto gap-1 lg:gap-14">
+          <div className="group relative w-[65px] md:w-[180px]">
+            <img
+              className="absolute group-hover:opacity-0  hover:cursor-pointer"
+              src={`${coinbase}`}
+              alt="coinbase icon"
+            />
+            <img
+              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
+              src={`${coinbaseColored}`}
+              alt="coinbase icon"
+            />
+          </div>
+
+          <div className="group relative w-[65px] md:w-[180px]">
+            <img
+              className="absolute group-hover:opacity-0  hover:cursor-pointer"
+              src={`${bitmex}`}
+              alt="bitmex icon"
+            />
+            <img
+              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
+              src={`${bitmexColored}`}
+              alt="bitmex icon"
+            />
+          </div>
+
+          <div className="group relative w-[65px] md:w-[180px]">
+            <img
+              className="absolute group-hover:opacity-0  hover:cursor-pointer"
+              src={`${xtCom}`}
+              alt="xtCom icon"
+            />
+            <img
+              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
+              src={`${xtComColored}`}
+              alt="xtCom icon"
+            />
+          </div>
+
+          <div className="group relative">
+            <img
+              className="absolute group-hover:opacity-0  hover:cursor-pointer"
+              src={`${binance}`}
+              alt="binance icon"
+            />
+            <img
+              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
+              src={`${binanceColored}`}
+              alt="binance icon"
+            />
+          </div>
         </div>
         <div className="relative">
           <img
-              className="absolute z-10 right-28 -top-10 md:right-[47%] lg:bottom-[170px]"
-              src={`${quote}`}
-              alt="quote icon"
-            />
+            className="absolute z-10 right-28 -top-10 md:right-[47%] lg:bottom-[170px]"
+            src={`${quote}`}
+            alt="quote icon"
+          />
           <p className="text-2xl relative z-20 md:text-4xl md:leading-[44px] font-medium text-neutral-900 mt-16 md:mt-24 lg:px-52">
             “We entrepreneurs are loners, vagabonds, troublemakers. Success is
             simply a matter of finding and surrounding ourselves with those
             open-minded and clever souls who can take our insanity and put it to
             good use.”
           </p>
-        </div>   
+        </div>
         <h6 className="text-lg font-semibold mt-5 md:mt-8">Brian Armstrong</h6>
         <h6 className="text-[#525C7A] text-base">CEO of Coinbase</h6>
       </div>
