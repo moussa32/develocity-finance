@@ -1,8 +1,10 @@
 import Navbar from "../Components/Navbar";
+import SideMenu from "../Components/SideMenu";
 
 const StaticPageHeader = ({ summary, title, description }) => {
   return (
     <>
+      <SideMenu />
       <Navbar containerClassName="fixed bg-white/[0.1] mx-auto inset-x-0 top-[40px]" />
       <section className="bg-gradient-to-b from-[#0A0C14] to-[#292156] h-[400px] lg:h-[464px] text-white">
         <header className="container mx-auto text-center flex justify-center items-center flex-col h-full">

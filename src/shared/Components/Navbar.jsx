@@ -3,12 +3,11 @@ import navLogo from "../../assets/images/nav-logo.svg";
 import langIcon from "../../assets/images/lang-icon.svg";
 import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
-import SideMenu from "./SideMenu";
 
 const Navbar = ({ containerClassName }) => {
   return (
     <div>
-      <SideMenu />
+      
       <div
         className={`${containerClassName} text-white container mx-auto py-6 px-8 rounded-xl
       md:flex flex-col md:flex-row justify-between hidden`}
