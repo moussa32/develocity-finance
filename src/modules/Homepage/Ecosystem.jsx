@@ -9,7 +9,7 @@ import { ReactComponent as WalletIcon } from "../../assets/images/wallet.svg";
 
 const Ecosystem = () => {
   return (
-    <section className="container px-10 py-32 lg:py-48 lg:px-0 mx-auto">
+    <section className="container px-8 py-32 lg:py-48 lg:px-0 mx-auto">
       <img src={EcosystemTitle} alt="ecosystem" className="block ml-auto" />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div className="flex flex-col">
