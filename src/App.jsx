@@ -4,6 +4,7 @@ import TermsConditions from "./shared/Static/TermsConditions";
 import Footer from "./shared/Components/Footer";
 import Header from "./modules/Homepage/components/Header";
 import Contact from "./shared/Static/Contact";
+import BlogDetails from "./modules/Blog/BlogDetails";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <Blog />,
+  },
+  {
+    path: "/blog/:id",
+    element: <BlogDetails />,
   },
   { path: "/terms-and-conditions", element: <TermsConditions /> },
   { path: "/contact-us", element: <Contact /> },
