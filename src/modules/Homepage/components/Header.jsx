@@ -46,10 +46,10 @@ export default function Header() {
           <h2 className="md:text-6xl text-4xl mb-6">
             Pre-Sale Countdown
           </h2>
-          <h2 className="md:text-6xl text-4xl text-center my-6">
+          <h2 className="md:text-6xl text-4xl text-center mt-[30px]">
             {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}:${timeLeft.seconds}`}
           </h2>
-          <div className="mt-20 h-16 bg-gray-500 bg-opacity-25 rounded-lg w-11/12 flex items-center">
+          <div className="mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg w-11/12 flex items-center">
             <div className="ml-3 p-2 rounded-lg  bg-gray-300 bg-opacity-20">
               <img className="rotate-180 w-[25px]" src={`${Loudspeaker}`} />
             </div>
