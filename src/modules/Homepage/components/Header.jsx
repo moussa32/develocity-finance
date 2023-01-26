@@ -6,6 +6,7 @@ import CoindeskIcons from "../../../../src/assets/images/Coindesk.svg";
 import YahooFinanceIcons from "../../../../src/assets/images/YahooFinance.svg";
 import Loudspeaker from "../../../../src/assets/images/loudspeaker.svg";
 import { useEffect, useState } from "react";
+import SideMenu from "../../../shared/Components/SideMenu";
 
 export default function Header() {
   const calculateTimeLeft = () => {
@@ -56,10 +57,7 @@ export default function Header() {
               </div>
               <p className="ml-2 text-sm" style={{ color: "#E9E9E9" }}>
                 Sheikh{" "}
-                <span
-                  className="underline underline-offset-2"
-                  style={{ color: "#00B9FF" }}
-                >
+                <span className="underline underline-offset-2" style={{ color: "#00B9FF" }}>
                   Marwan Bin Mohammed
                 </span>{" "}
                 taking develocity in his incubator.
@@ -69,22 +67,10 @@ export default function Header() {
         </div>
 
         <div className="flex justify-evenly my-14 md:mt-12 mx-auto gap-1 md:gap-10">
-          <img
-            className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80"
-            src={`${BloombergIcon}`}
-          />
-          <img
-            className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80"
-            src={`${WiredIcon}`}
-          />
-          <img
-            className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80"
-            src={`${CoindeskIcons}`}
-          />
-          <img
-            className="w-[55px] md:w-[100%] opacity-30 hover:opacity-80"
-            src={`${YahooFinanceIcons}`}
-          />
+          <img className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80" src={`${BloombergIcon}`} />
+          <img className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80" src={`${WiredIcon}`} />
+          <img className="w-[65px] md:w-[100%] opacity-30 hover:opacity-80" src={`${CoindeskIcons}`} />
+          <img className="w-[55px] md:w-[100%] opacity-30 hover:opacity-80" src={`${YahooFinanceIcons}`} />
         </div>
       </div>
     </div>
