@@ -2,6 +2,7 @@ import icon from "../../../assets/images/Icon.svg";
 import coins from "../../../assets/images/coins.svg";
 import crosshair from "../../../assets/images/crosshair.svg";
 import playIcon from "../../../assets/images/playVideoIcon.svg";
+import CountUp from "react-countup";
 
 export default function StatsSection() {
   return (
@@ -32,21 +33,42 @@ export default function StatsSection() {
           <div className="rounded-full bg-slate-800  p-2">
             <img className="w-4" src={crosshair} />
           </div>
-          <h1 className="font-sans text-6xl text-white my-2">99.8%</h1>
+          <CountUp start={0} end={99.8} duration={3} decimals={1} decimal="," suffix="%">
+            {({ countUpRef }) => (
+              <h1
+                className="font-sans text-6xl text-white my-2"
+                ref={countUpRef}
+              ></h1>
+            )}
+          </CountUp>
           <label className="text-gray-500">Accuracy</label>
         </div>
         <div className="flex flex-col justify-center items-center my-14">
           <div className="rounded-full bg-slate-800  p-2">
             <img className="w-4" src={coins} />
           </div>
-          <h1 className="font-sans text-6xl text-white my-2">7,000</h1>
+          <CountUp start={0} end={7} duration={3} decimals={4} decimal=",">
+            {({ countUpRef }) => (
+              <h1
+                className="font-sans text-6xl text-white my-2"
+                ref={countUpRef}
+              ></h1>
+            )}
+          </CountUp>
           <label className="text-gray-500">Tokens in database</label>
         </div>
         <div className="flex flex-col justify-center items-center my-14">
           <div className="rounded-full bg-slate-800  p-2">
             <img className="w-4" src={icon} />
           </div>
-          <h1 className="font-sans text-6xl text-white my-2">25K</h1>
+          <CountUp start={0} end={25} duration={3} decimal="," suffix="K">
+            {({ countUpRef }) => (
+              <h1
+                className="font-sans text-6xl text-white my-2"
+                ref={countUpRef}
+              ></h1>
+            )}
+          </CountUp>
           <label className="text-gray-500">Daily visitors</label>
         </div>
       </div>
