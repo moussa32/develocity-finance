@@ -17,7 +17,7 @@ const Slider = () => {
       <SwiperSlide>
         <div className="relative px-10 lg:px-0">
           <img
-            className="absolute z-10 right-28 -top-10 md:right-[47%] lg:bottom-[170px]"
+            className="absolute z-10 right-32 -top-10 md:right-[47%] lg:bottom-[170px]"
             src={`${quote}`}
             alt="quote icon"
           />
@@ -34,7 +34,7 @@ const Slider = () => {
       <SwiperSlide>
         <div className="relative px-10 lg:px-0">
           <img
-            className="absolute z-10 right-28 -top-10 md:right-[47%] lg:bottom-[170px]"
+            className="absolute z-10 right-32 -top-10 md:right-[47%] lg:bottom-[170px]"
             src={`${quote}`}
             alt="quote icon"
           />

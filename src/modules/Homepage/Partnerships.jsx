@@ -13,7 +13,7 @@ import Slider from "./Slider";
 const Partnerships = () => {
   return (
     <div className="bg-[#F9FAFB]">
-      <div className="container mx-auto text-center py-24">
+      <div className="container mx-auto text-center py-24 px-4 md:px-8 lg:px-0">
         <h2 className="text-[#29233B] font-PolySans text-4xl md:text-6xl font-medium md:font-normal">
           Partnerships that Last
         </h2>
@@ -21,8 +21,8 @@ const Partnerships = () => {
           We have connected with amazing people, businesses, and organizations
           for the past 2 years.
         </h6>
-        <div className="grid grid-cols-4 h-[44px] mt-8 px-4 lg:px-32 mx-auto gap-1 lg:gap-14">
-          <div className="group relative w-[65px] md:w-[180px]">
+        <div className="grid grid-cols-4 h-[44px] mt-8 px-4 md:px-0 lg:px-32 mx-auto gap-1 lg:gap-14">
+          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
             <img
               className="absolute group-hover:opacity-0  hover:cursor-pointer"
               src={`${coinbase}`}
@@ -35,7 +35,7 @@ const Partnerships = () => {
             />
           </div>
 
-          <div className="group relative w-[65px] md:w-[180px]">
+          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
             <img
               className="absolute group-hover:opacity-0  hover:cursor-pointer"
               src={`${bitmex}`}
@@ -48,7 +48,7 @@ const Partnerships = () => {
             />
           </div>
 
-          <div className="group relative w-[65px] md:w-[180px]">
+          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
             <img
               className="absolute group-hover:opacity-0  hover:cursor-pointer"
               src={`${xtCom}`}
@@ -61,7 +61,7 @@ const Partnerships = () => {
             />
           </div>
 
-          <div className="group relative">
+          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
             <img
               className="absolute group-hover:opacity-0  hover:cursor-pointer"
               src={`${binance}`}
