@@ -4,7 +4,7 @@ import { ReactComponent as GooglePlayIcon } from "../../assets/images/GooglePlay
 
 const Scanner = () => {
   return (
-    <section className="container px-10 py-32 lg:py-48 lg:px-0 mx-auto">
+    <section className="pb-60 container px-10 py-32 lg:py-48 lg:px-0 mx-auto">
       <img src={ScanTitle} alt="scanner" className="block mx-auto mb-2" />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:mt-24">
         <div className="flex flex-col ml-auto">
