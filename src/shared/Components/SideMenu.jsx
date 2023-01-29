@@ -24,9 +24,7 @@ const SideMenu = () => {
                   )}
                 </Disclosure.Button>
               </div>
-              <h3 className="block md:hidden mx-auto text-3xl font-semibold">
-                Develocity
-              </h3>
+              <h3 className="block md:hidden mx-auto text-3xl font-semibold">Develocity</h3>
             </div>
           </div>
 
@@ -62,11 +60,7 @@ const SideMenu = () => {
 
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <div className="bg-white mx-auto w-[150px] bg-opacity-20 rounded-[30px]">
-                  <img
-                    className="inline-block ml-4"
-                    src={langIcon}
-                    alt="language icon"
-                  />
+                  <img className="inline-block ml-4" src={langIcon} alt="language icon" />
                   <LangDropdown />
                 </div>
               </div>
