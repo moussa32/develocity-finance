@@ -10,7 +10,7 @@ const Navbar = ({ containerClassName }) => {
       
       <div
         className={`${containerClassName} text-white container mx-auto py-6 px-8 rounded-xl
-      md:flex flex-col md:flex-row justify-between hidden`}
+      lg:flex flex-col md:flex-row justify-between hidden`}
       >
         <img className="my-5 md:my-0" src={navLogo} alt="navbar logo" />
         <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 lg:gap-8 text-base font-medium">
