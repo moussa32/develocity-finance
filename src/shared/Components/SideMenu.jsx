@@ -31,7 +31,7 @@ const SideMenu = () => {
           </div>
 
           <Disclosure.Panel className="md:hidden  bg-gradient-to-b from-[#0A0C14] to-[#292156]">
-            <div className="space-y-1 px-2 pt-2 pb-3">
+            <div className="space-y-1 text-center px-2 pt-2 pb-3">
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <NavLink className="mb-3 md:mb-0" to="/">
                   Home
