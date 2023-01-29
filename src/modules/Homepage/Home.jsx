@@ -15,9 +15,9 @@ const Home = () => {
       <Scanner />
       <StatsSection />
       <RoadMap />
+      <Leadership />
       <Partnerships />
       <Blog />
-      <Leadership />
     </div>
   );
 };
