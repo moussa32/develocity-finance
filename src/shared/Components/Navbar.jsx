@@ -7,7 +7,6 @@ import ProjectsDropdown from "./ProjectsDropdown";
 const Navbar = ({ containerClassName }) => {
   return (
     <div>
-      
       <div
         className={`${containerClassName} text-white container mx-auto py-6 px-8 rounded-xl
       lg:flex flex-col md:flex-row justify-between hidden`}

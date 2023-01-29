@@ -8,7 +8,7 @@ import ProjectsDropdown from "./ProjectsDropdown";
 
 const SideMenu = () => {
   return (
-    <Disclosure as="nav" className="relative lg:hidden z-30 text-white">
+    <Disclosure as="nav" className="fixed w-full lg:hidden z-30 text-white">
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
@@ -30,7 +30,7 @@ const SideMenu = () => {
             </div>
           </div>
 
-          <Disclosure.Panel className="lg:hidden  bg-gradient-to-b from-[#0A0C14] to-[#292156]">
+          <Disclosure.Panel className="lg:hidden bg-gradient-to-b from-[#0A0C14] to-[#292156]">
             <div className="space-y-1 text-center px-2 pt-2 pb-3">
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <NavLink className="mb-3 md:mb-0" to="/">
