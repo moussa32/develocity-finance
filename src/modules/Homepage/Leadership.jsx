@@ -1,12 +1,15 @@
-import twitter from "../../../assets/images/LD_twitter.svg";
-import facebook from "../../../assets/images/LD_facebook.svg";
-import instagram from "../../../assets/images/LD_instagram.svg";
+import twitter from "../../assets/images/LD_twitter.svg";
+import facebook from "../../assets/images/LD_facebook.svg";
+import instagram from "../../assets/images/LD_instagram.svg";
 
 function Leadership() {
   return (
     <div className="text-center my-24">
       <div className="container mx-auto">
-        <p className="PolySans text-6xl text-indigo-900" style={{ color: "#29233B" }}>
+        <p
+          className="PolySans text-6xl text-indigo-900"
+          style={{ color: "#29233B" }}
+        >
           Develocity Leadership
         </p>
         <p className="text-lg mt-2" style={{ color: "#525C7A" }}>
@@ -61,7 +64,6 @@ function Leadership() {
               </div>
             </div>
           </div>
-          
         </div>
       </div>
     </div>

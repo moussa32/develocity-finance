@@ -1,15 +1,17 @@
 import Academy from "./Academy";
-import Blog from "./components/Blog";
-import Leadership from "./components/Leadership";
-import StatsSection from "./components/StatsSection";
+import Blog from "./Blog";
+import Leadership from "./Leadership";
+import StatsSection from "./StatsSection";
 import Ecosystem from "./Ecosystem";
 import Partnerships from "./Partnerships";
 import RoadMap from "./RoadMap";
 import Scanner from "./Scanner";
+import Header from "./Header";
 
 const Home = () => {
   return (
-    <div>
+    <>
+      <Header />
       <Ecosystem />
       <Academy />
       <Scanner />
@@ -18,7 +20,7 @@ const Home = () => {
       <Leadership />
       <Partnerships />
       <Blog />
-    </div>
+    </>
   );
 };
 

@@ -1,8 +1,7 @@
-import blogBackGround from "../../../../src/assets/images/blogBG.svg";
-import phoneImage from "../../../../src/assets/images/blogPhone.svg";
-import rightBG from "../../../../src/assets/images/plogBG.png";
-import manImage from "../../../../src/assets/images/loogoso.svg";
+import phoneImage from "../../../src/assets/images/blogPhone.svg";
+import manImage from "../../../src/assets/images/loogoso.svg";
 import { Link } from "react-router-dom";
+
 function Blog() {
   return (
     <div className="text-center my-32">
@@ -63,7 +62,9 @@ function Blog() {
           </div>
         </div>
         <p className="mt-16 relative z-10 text-indigo-500 font-semibold">
-          <Link to={"terms-and-conditions"}>Check more news and updates &#10140;</Link>
+          <Link to={"terms-and-conditions"}>
+            Check more news and updates &#10140;
+          </Link>
         </p>
       </div>
     </div>

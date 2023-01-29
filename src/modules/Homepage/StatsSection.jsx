@@ -1,5 +1,4 @@
-
-import playIcon from "../../../assets/images/playVideoIcon.svg";
+import playIcon from "../../assets/images/playVideoIcon.svg";
 
 export default function StatsSection() {
   return (

@@ -1,12 +1,11 @@
-import Navbar from "../../../shared/Components/Navbar";
-import LadingHeaderBG from "../../../../src/assets/images/ladingHeaderBG.png";
-import BloombergIcon from "../../../../src/assets/images/Bloomberg.svg";
-import WiredIcon from "../../../../src/assets/images/WIRED.svg";
-import CoindeskIcons from "../../../../src/assets/images/Coindesk.svg";
-import YahooFinanceIcons from "../../../../src/assets/images/YahooFinance.svg";
-import Loudspeaker from "../../../../src/assets/images/loudspeaker.svg";
 import { useEffect, useState } from "react";
-import SideMenu from "../../../shared/Components/SideMenu";
+import LadingHeaderBG from "../../../src/assets/images/ladingHeaderBG.png";
+import BloombergIcon from "../../../src/assets/images/Bloomberg.svg";
+import WiredIcon from "../../../src/assets/images/WIRED.svg";
+import CoindeskIcons from "../../../src/assets/images/Coindesk.svg";
+import YahooFinanceIcons from "../../../src/assets/images/YahooFinance.svg";
+import Loudspeaker from "../../../src/assets/images/loudspeaker.svg";
+import SideMenu from "../../shared/Components/SideMenu";
 
 export default function Header() {
   const calculateTimeLeft = () => {
@@ -39,10 +38,10 @@ export default function Header() {
   return (
     <div className="relative main-bg bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left md:h-[810px]">
       <img src={LadingHeaderBG} className="absolute h-full w-full z-0" />
-      <div className="fixed w-full z-40">
+      {/* <div className="fixed w-full z-40">
         <Navbar containerClassName={"bg-opacity-0"} />
-      </div>
-      <SideMenu/>
+      </div> */}
+      <SideMenu />
       <div className="container mx-auto text-white mt-64 z-20 flex flex-col">
         <div className="w-50 md:w-[615px] md:h-[400px] flex flex-col justify-center z-20">
           <div className="flex flex-col justify-center">
