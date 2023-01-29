@@ -1,4 +1,4 @@
-import React from "react";
+import React, { memo } from "react";
 import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
@@ -62,7 +62,11 @@ const SideMenu = () => {
 
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <div className="bg-white mx-auto w-[150px] bg-opacity-20 rounded-[30px]">
-                  <img className="inline-block ml-4" src={langIcon} alt="language icon" />
+                  <img
+                    className="inline-block ml-4"
+                    src={langIcon}
+                    alt="language icon"
+                  />
                   <LangDropdown />
                 </div>
               </div>
@@ -74,4 +78,4 @@ const SideMenu = () => {
   );
 };
 
-export default SideMenu;
+export default memo(SideMenu);
