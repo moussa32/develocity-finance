@@ -13,7 +13,7 @@ import crosshair from "../../assets/images/crosshair.svg";
 const RoadMap = () => {
   return (
     <>
-      <div className=" my-48 bg-[#0A0D14] text-white py-24 px-6">
+      <div className="roadmap-bg bg-center bg-no-repeat md:bg-cover my-48 bg-[#0A0D14] text-white py-24 px-6">
         <div className="pt-[400px] pb-[100px] flex flex-col lg:flex-row justify-between items-center w-6/12 mx-auto z-50">
           <div className="flex flex-col justify-center items-center my-14">
             <div className="rounded-full bg-slate-800  p-2">
@@ -73,7 +73,7 @@ const RoadMap = () => {
           distinctively in terms of technology and development based on Web 3.0.
         </p>
         {/*<div className="flex flex-row md:flex-col justify-around md:justify-between"> */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-20 gap-8 lg:gap-2 mt-16">
           <div className="mx-auto text-center">
             <img className="mb-3" src={phaseOne} alt="phase 1 icon" />
             <h3 className="text-2xl font-semibold">Phase 1</h3>
@@ -95,7 +95,7 @@ const RoadMap = () => {
             <span className="text-base text-[#B8B8B8] mt-2">Upcoming</span>
           </div>
         </div>
-        <div className="hidden relative md:grid grid-cols-4 gap-8 mt-9">
+        <div className="hidden relative md:grid grid-cols-4 gap-8 lg:gap-2 lg:px-20 mt-9">
           <hr className="absolute block w-full top-2/4"></hr>
           {/*<div className="absolute left-1/2 -ml-0.5 w-0.5 h-full bg-white md:hidden block"></div> */}
           <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
@@ -104,7 +104,7 @@ const RoadMap = () => {
           <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mt-9">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-2 lg:px-20 mt-9">
           <div className="w-[280px] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
             <h4 className="text-center text-2xl font-semibold">Startup</h4>
             <ul className="text-base mt-4">
