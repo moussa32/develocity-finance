@@ -4,7 +4,6 @@ import TermsConditions from "./shared/Static/TermsConditions";
 import Contact from "./shared/Static/Contact";
 import BlogDetails from "./modules/Blog/BlogDetails";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Navbar from "./shared/Components/Navbar";
 import Layout from "./shared/Components/Layout";
 
 const router = createBrowserRouter([
