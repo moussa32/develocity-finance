@@ -53,7 +53,7 @@ const ProjectsDropdown = () => {
                 </h2>
               )}
             </Menu.Item>
-            <div className="grid text-center pb-2 md:pb-0 md:text-left grid-cols-2">
+            <div className="grid text-center  md:pb-0 md:text-left grid-cols-2">
               {/*right menu items */}
               <div>
                 <span className="text-[rgb(181,71,8)] bg-[rgb(255,250,235)] px-2 ml-0 text-[10px] font-medium float-right rounded">
@@ -73,7 +73,7 @@ const ProjectsDropdown = () => {
                         src={multiFunctional}
                         alt="multi functional icon"
                       />
-                      <div className="mt-3">
+                      <div className="md:mt-3">
                         <h3 className="md:text-base font-semibold mb-1">
                           Multi-functional tool
                         </h3>
@@ -99,7 +99,7 @@ const ProjectsDropdown = () => {
                         src={swapTool}
                         alt="swap tool icon"
                       />
-                      <div className="mt-3">
+                      <div className="md:mt-3">
                         <h3 className="md:text-base font-semibold mb-1">
                           Swap tool
                         </h3>
@@ -125,7 +125,7 @@ const ProjectsDropdown = () => {
                         src={wallet}
                         alt="wallet icon"
                       />
-                      <div className="mt-3">
+                      <div className="md:mt-3">
                         <h3 className="md:text-base font-semibold mb-1">Wallet</h3>
                         <p className="text-xs md:text-sm font-normal">
                           A new way to discover tokens that are safe and
@@ -138,7 +138,7 @@ const ProjectsDropdown = () => {
               </div>
               <div>
                 {/*left menu items */}
-                <span className="text-[rgb(2,122,72)] bg-[rgb(236,253,243)] px-2 ml-0 text-[10px] font-medium float-right rounded">
+                <span className="text-[rgb(2,122,72)] bg-[rgb(236,253,243)] px-2 ml-0 mr-1 md:mr-0 text-[10px] font-medium float-right rounded">
                   <span className="w-[6px] h-[6px] bg-[rgb(18,183,106)] inline-block rounded-full mr-1"></span>
                   Launched
                 </span>
@@ -156,7 +156,7 @@ const ProjectsDropdown = () => {
                         src={cryptoAcademy}
                         alt="crypto academy icon"
                       />
-                      <div className="mt-3">
+                      <div className="md:mt-3">
                         <h3 className="md:text-base font-semibold mb-1">
                           Crypto academy
                         </h3>
@@ -182,7 +182,7 @@ const ProjectsDropdown = () => {
                         src={bridge}
                         alt="bridge icon"
                       />
-                      <div className="mt-3">
+                      <div className="md:mt-3">
                         <h3 className="md:text-base font-semibold mb-1">Bridge</h3>
                         <p className="text-xs md:text-sm font-normal">
                           A new way to discover tokens that are safe and
@@ -206,7 +206,7 @@ const ProjectsDropdown = () => {
                         src={dexIcon}
                         alt="dex icon"
                       />
-                      <div className="mt-3">
+                      <div className="md:mt-3">
                         <h3 className="md:text-base font-semibold mb-1">Dex</h3>
                         <p className="text-xs md:text-sm font-normal">
                           A new way to discover tokens that are safe and
