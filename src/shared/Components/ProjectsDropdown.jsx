@@ -33,7 +33,7 @@ const ProjectsDropdown = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute md:px-9 -right-28 md:-right-96 lg:-right-72 z-10 md:pb-8 mt-5 w-[310px] md:w-[680px] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute px-2 md:px-9 -right-[120px] md:-right-96 lg:-right-72 z-10 md:pb-8 mt-5 w-[325px] md:w-[680px] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <img
             className="absolute right-36 md:right-[425px] lg:right-80 -top-[7px] origin-top-right"
             src={dropdownArrow}
