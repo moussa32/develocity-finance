@@ -10,10 +10,6 @@ import cryptoAcademy from "../../assets/images/crypto-academy.svg";
 import bridge from "../../assets/images/bridge-icon.svg";
 import dexIcon from "../../assets/images/dex-icon.svg";
 
-function classNames(...classes) {
-  return classes.filter(Boolean).join(" ");
-}
-
 const ProjectsDropdown = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
@@ -41,17 +37,9 @@ const ProjectsDropdown = () => {
           />
           <div className="py-1">
             <Menu.Item>
-              {({ active }) => (
-                <h2
-                  href="#"
-                  className={classNames(
-                    active ? "text-gray-700" : "text-indigo-500",
-                    "block w-full mt-4 md:mt-11 px-4 pb-2 text-sm font-semibold text-indigo-500"
-                  )}
-                >
-                  Projects
-                </h2>
-              )}
+              <h2 className="block w-full mt-4 md:mt-11 px-4 pb-2 text-sm font-semibold text-indigo-500">
+                Projects
+              </h2>
             </Menu.Item>
             <div className="grid text-center  md:pb-0 md:text-left grid-cols-2">
               {/*right menu items */}
@@ -60,80 +48,58 @@ const ProjectsDropdown = () => {
                   Beta
                 </span>
                 <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "md:flex gap-4 px-2 md:px-4 py-2 text-sm clear-both"
-                      )}
-                    >
-                      <img
-                        className="inline-block w-12 mx-auto md:mx-0"
-                        src={multiFunctional}
-                        alt="multi functional icon"
-                      />
-                      <div className="md:mt-3">
-                        <h3 className="md:text-base font-semibold mb-1">
-                          Multi-functional tool
-                        </h3>
-                        <p className="text-xs md:text-sm font-normal">
-                          A new way to discover tokens that are safe and
-                          trustworthy.
-                        </p>
-                      </div>
+                  <div className="md:flex gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                    <img
+                      className="inline-block w-12 mx-auto md:mx-0"
+                      src={multiFunctional}
+                      alt="multi functional icon"
+                    />
+                    <div className="md:mt-3">
+                      <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        Multi-functional tool
+                      </h3>
+                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        A new way to discover tokens that are safe and
+                        trustworthy.
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Menu.Item>
                 <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "md:flex gap-4 px-2 md:px-4 py-2 text-sm"
-                      )}
-                    >
-                      <img
-                        className="inline-block w-12 mx-auto md:mx-0"
-                        src={swapTool}
-                        alt="swap tool icon"
-                      />
-                      <div className="md:mt-3">
-                        <h3 className="md:text-base font-semibold mb-1">
-                          Swap tool
-                        </h3>
-                        <p className="text-xs md:text-sm font-normal">
-                          A new way to discover tokens that are safe and
-                          trustworthy.
-                        </p>
-                      </div>
+                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                    <img
+                      className="inline-block w-12 mx-auto md:mx-0"
+                      src={swapTool}
+                      alt="swap tool icon"
+                    />
+                    <div className="md:mt-3">
+                      <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        Swap tool
+                      </h3>
+                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        A new way to discover tokens that are safe and
+                        trustworthy.
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Menu.Item>
                 <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "md:flex gap-4 px-2 md:px-4 py-2 text-sm"
-                      )}
-                    >
-                      <img
-                        className="inline-block w-12 mx-auto md:mx-0"
-                        src={wallet}
-                        alt="wallet icon"
-                      />
-                      <div className="md:mt-3">
-                        <h3 className="md:text-base font-semibold mb-1">Wallet</h3>
-                        <p className="text-xs md:text-sm font-normal">
-                          A new way to discover tokens that are safe and
-                          trustworthy.
-                        </p>
-                      </div>
+                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                    <img
+                      className="inline-block w-12 mx-auto md:mx-0"
+                      src={wallet}
+                      alt="wallet icon"
+                    />
+                    <div className="md:mt-3">
+                      <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        Wallet
+                      </h3>
+                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        A new way to discover tokens that are safe and
+                        trustworthy.
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Menu.Item>
               </div>
               <div>
@@ -143,78 +109,58 @@ const ProjectsDropdown = () => {
                   Launched
                 </span>
                 <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "md:flex gap-4 px-2 md:px-4 py-2 text-sm clear-both"
-                      )}
-                    >
-                      <img
-                        className="inline-block w-12 mx-auto md:mx-0"
-                        src={cryptoAcademy}
-                        alt="crypto academy icon"
-                      />
-                      <div className="md:mt-3">
-                        <h3 className="md:text-base font-semibold mb-1">
-                          Crypto academy
-                        </h3>
-                        <p className="text-xs md:text-sm font-normal">
-                          A new way to discover tokens that are safe and
-                          trustworthy.
-                        </p>
-                      </div>
+                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                    <img
+                      className="inline-block w-12 mx-auto md:mx-0"
+                      src={cryptoAcademy}
+                      alt="crypto academy icon"
+                    />
+                    <div className="md:mt-3">
+                      <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        Crypto academy
+                      </h3>
+                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        A new way to discover tokens that are safe and
+                        trustworthy.
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Menu.Item>
                 <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "md:flex gap-4 px-2 md:px-4 py-2 text-sm"
-                      )}
-                    >
-                      <img
-                        className="inline-block w-12 mx-auto md:mx-0"
-                        src={bridge}
-                        alt="bridge icon"
-                      />
-                      <div className="md:mt-3">
-                        <h3 className="md:text-base font-semibold mb-1">Bridge</h3>
-                        <p className="text-xs md:text-sm font-normal">
-                          A new way to discover tokens that are safe and
-                          trustworthy.
-                        </p>
-                      </div>
+                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                    <img
+                      className="inline-block w-12 mx-auto md:mx-0"
+                      src={bridge}
+                      alt="bridge icon"
+                    />
+                    <div className="md:mt-3">
+                      <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        Bridge
+                      </h3>
+                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        A new way to discover tokens that are safe and
+                        trustworthy.
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Menu.Item>
                 <Menu.Item>
-                  {({ active }) => (
-                    <div
-                      href="#"
-                      className={classNames(
-                        active ? "bg-gray-100 text-gray-900" : "text-gray-700",
-                        "md:flex gap-4 px-2 md:px-4 py-2 text-sm mb-1"
-                      )}
-                    >
-                      <img
-                        className="inline-block w-12 mx-auto md:mx-0"
-                        src={dexIcon}
-                        alt="dex icon"
-                      />
-                      <div className="md:mt-3">
-                        <h3 className="md:text-base font-semibold mb-1">Dex</h3>
-                        <p className="text-xs md:text-sm font-normal">
-                          A new way to discover tokens that are safe and
-                          trustworthy.
-                        </p>
-                      </div>
+                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                    <img
+                      className="inline-block w-12 mx-auto md:mx-0"
+                      src={dexIcon}
+                      alt="dex icon"
+                    />
+                    <div className="md:mt-3">
+                      <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        Dex
+                      </h3>
+                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        A new way to discover tokens that are safe and
+                        trustworthy.
+                      </p>
                     </div>
-                  )}
+                  </div>
                 </Menu.Item>
               </div>
             </div>
