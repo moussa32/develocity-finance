@@ -5,8 +5,8 @@ import { Link } from "react-router-dom";
 function Blog() {
   return (
     <div className="text-center my-32">
-      <div className="container mx-auto">
-        <h3 className="font-PolySans text-6xl  text-[#29233B]">
+      <div className="font-PolySans container mx-auto">
+        <h3 className="text-6xl  text-[#29233B]">
           Develocity Blog
         </h3>
         <p className="text-lg mt-4 capitalize text-[#525C7A]">
@@ -63,11 +63,11 @@ function Blog() {
             </div>
           </div>
         </div>
-        <p className="mt-16 relative z-10 text-indigo-500 font-semibold">
+        <label className="mt-16 relative z-10 text-indigo-500 font-semibold">
           <Link to={"terms-and-conditions"}>
             Check more news and updates &#10140;
           </Link>
-        </p>
+        </label>
       </div>
     </div>
   );
