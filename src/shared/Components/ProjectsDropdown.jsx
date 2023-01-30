@@ -12,7 +12,7 @@ import dexIcon from "../../assets/images/dex-icon.svg";
 
 const ProjectsDropdown = () => {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left w-full">
       <div>
         <Menu.Button className="inline-flex w-full justify-center rounded-md text-base font-medium shadow-sm ">
           Projects
@@ -29,19 +29,19 @@ const ProjectsDropdown = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute px-2 md:px-9 -right-[120px] md:-right-72 lg:-right-72 z-10 md:pb-8 mt-5 w-[83vw] md:w-[680px] origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute mx-auto w-[90vw] p-4 inset-x-0 mt-5 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10 md:pb-8 md:px-9 lg:left-[-300px] lg:top-[25px] md:w-[680px]">
           <img
-            className="absolute right-40 md:right-[320px] lg:right-80 -top-[7px] origin-top-right"
+            className="absolute inset-x-0 mx-auto -top-[7px] origin-top-right"
             src={dropdownArrow}
             alt="dropdown arrow"
           />
           <div className="py-1">
             <Menu.Item>
-              <h2 className="block w-full mt-4 md:mt-11 px-4 pb-2 text-sm font-semibold text-indigo-500">
+              <h2 className="block w-full mt-0.5 md:mt-11 px-4 pb-2 text-sm font-semibold text-indigo-500">
                 Projects
               </h2>
             </Menu.Item>
-            <div className="grid text-center  md:pb-0 md:text-left grid-cols-2">
+            <div className="grid text-center md:pb-0 md:text-left grid-cols-2">
               {/*right menu items */}
               <div>
                 <span className="text-[rgb(181,71,8)] bg-[rgb(255,250,235)] px-2 ml-0 text-[10px] font-medium float-right rounded">
