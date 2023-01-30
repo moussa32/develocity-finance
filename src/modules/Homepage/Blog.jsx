@@ -6,12 +6,14 @@ function Blog() {
   return (
     <div className="text-center my-32">
       <div className="container mx-auto">
-        <h3 className="font-sans text-6xl  text-[#29233B]">Develocity Blog</h3>
+        <h3 className="font-PolySans text-6xl  text-[#29233B]">
+          Develocity Blog
+        </h3>
         <p className="text-lg mt-4 capitalize text-[#525C7A]">
           News, updates, and useful content from across the Develocity
           Ecosystem.
         </p>
-        <div className=" mt-10 container mx-auto">
+        <div className="mt-10 container mx-auto">
           <div className=" gap-44 lg:gap-9 grid grid-cols-1 lg:grid-cols-2">
             <div className="shadow-xl bg-slate-50	 flex flex-col justify-between rounded-lg overflow-hidden h-[650px]">
               <div className="text-left w-5/6 container mx-auto mt-10 flex flex-col">

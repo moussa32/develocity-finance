@@ -1,7 +1,6 @@
 import StaticPageHeader from "../../shared/Static/StaticPageHeader";
 import Tag from "./Tag";
 import BlogDetailsPlaceholder from "../../assets/images/BlogDetailsPlaceholder.png";
-import Footer from "../../shared/Components/Footer";
 import CopyIcon from "../../assets/images/CopyIcon.png";
 import { ReactComponent as TwitterIcon } from "../../assets/images/TwitterIcon.svg";
 import { ReactComponent as FacebookIcon } from "../../assets/images/FacebookIcon.svg";
