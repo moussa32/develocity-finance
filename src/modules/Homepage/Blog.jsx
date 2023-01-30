@@ -6,9 +6,7 @@ function Blog() {
   return (
     <div className="text-center my-32">
       <div className="font-PolySans container mx-auto">
-        <h3 className="text-6xl  text-[#29233B]">
-          Develocity Blog
-        </h3>
+        <h3 className="text-6xl  text-[#29233B]">Develocity Blog</h3>
         <p className="text-lg mt-4 capitalize text-[#525C7A]">
           News, updates, and useful content from across the Develocity
           Ecosystem.
