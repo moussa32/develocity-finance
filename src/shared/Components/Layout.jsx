@@ -1,33 +1,21 @@
-import { useCallback, useMemo, useState, useEffect } from "react";
+import { useMemo } from "react";
 import { Outlet, useLocation } from "react-router-dom";
+import useNavbarScroll from "../Hooks/useNavbarBackground";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
 
 const Layout = () => {
-  const [isNavbarTransparent, setIsNavbarTransparent] = useState(true);
+  const [isScroll] = useNavbarScroll(150);
   const currentRoute = useLocation();
 
-  const handleNavbarMove = useCallback(() => {
-    if (window.scrollY > 150) {
-      setIsNavbarTransparent(false);
-    } else {
-      setIsNavbarTransparent(true);
-    }
-  }, []);
-
   const handleNavbarBackground = useMemo(() => {
-    if (isNavbarTransparent) {
+    if (!isScroll) {
       if (currentRoute.pathname === "/") return "bg-transparent top-[40px]";
       return "bg-white/[0.1] top-[40px]";
     }
 
     return "bg-indigo-500/75 top-[20px]";
-  }, [currentRoute, isNavbarTransparent]);
-
-  useEffect(() => {
-    window.addEventListener("scroll", handleNavbarMove);
-    return () => window.removeEventListener("scroll", handleNavbarMove);
-  }, []);
+  }, [currentRoute, isScroll]);
 
   return (
     <>

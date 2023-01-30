@@ -15,8 +15,12 @@
   src: url("./assets/fonts/PolySans-Neutral.woff2");
 }
 
-.roadmap-bg{
-  background-image: url('./assets/images/roadmap-background.svg');
+.roadmap-bg {
+  background-image: url("./assets/images/roadmap-background.svg");
+}
+
+.header-bg {
+  background-image: url("./assets/images/ladingHeaderBG.png");
 }
 
 /*

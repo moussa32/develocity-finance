@@ -1,9 +1,12 @@
+import { useState } from "react";
 import playIcon from "../../assets/images/playVideoIcon.svg";
 
 export default function StatsSection() {
+  const [showVideo, setShowVideo] = useState(false);
+
   return (
-    <div className="container mx-auto z-50 absolute top-[3950px] right-0 left-0">
-      <div className="mx-auto flex flex-col w-10/12 h-[700px] mb-10">
+    <div className="container mx-auto absolute top-[3950px] md:top-[3850px] lg:top-[3950px] right-0 left-0">
+      <div className="mx-auto flex flex-col w-10/12 h-[400px] md:h-[700px] mb-10">
         <div className="w-full h-10 bg-white">
           <div className="flex justify-between items-center h-full w-12/12 md:w-8/12 mr-3">
             <div className="flex ml-4">
@@ -18,10 +21,25 @@ export default function StatsSection() {
             </div>
           </div>
         </div>
-        <div className="h-full w-full bg-indigo-500 rounded-b-md flex justify-center items-center">
-          <a href="https://youtu.be/4NyKdBPyz_g" target="_blank">
-            <img className="w-12 h-48" src={playIcon} />
-          </a>
+        <div
+          className={`h-full w-full ${
+            !showVideo && "bg-indigo-500"
+          } rounded-b-md flex justify-center items-center`}
+        >
+          <iframe
+            className={`${showVideo ? "w-full" : "hidden"} h-full`}
+            src="https://www.youtube.com/embed/WjoplqS1u18"
+            title="8K VIDEOS | World 8K Videos HDR UltraHD  (120 FPS) | Sony Demo"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            allowfullscreen
+          />
+
+          {!showVideo && (
+            <button onClick={() => setShowVideo(true)}>
+              <img className="w-12 h-48" src={playIcon} />
+            </button>
+          )}
         </div>
       </div>
     </div>

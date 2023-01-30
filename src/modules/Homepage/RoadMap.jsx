@@ -14,7 +14,7 @@ const RoadMap = () => {
   return (
     <>
       <div className="roadmap-bg bg-center bg-no-repeat md:bg-cover my-48 bg-[#0A0D14] text-white py-24 px-6">
-        <div className="pt-[400px] pb-[100px] flex flex-col lg:flex-row justify-between items-center w-6/12 mx-auto z-50">
+        <div className="pt-[100px] md:pt-[400px] pb-[100px] flex flex-col lg:flex-row justify-between items-center w-6/12 mx-auto z-50">
           <div className="flex flex-col justify-center items-center my-14">
             <div className="rounded-full bg-slate-800  p-2">
               <img className="w-4" src={crosshair} />

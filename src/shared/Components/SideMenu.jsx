@@ -5,10 +5,18 @@ import { NavLink } from "react-router-dom";
 import langIcon from "../../assets/images/lang-icon.svg";
 import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
+import useNavbarScroll from "../Hooks/useNavbarBackground";
 
 const SideMenu = () => {
+  const [isScroll] = useNavbarScroll(250);
+
   return (
-    <Disclosure as="nav" className="fixed w-full lg:hidden z-30 text-white">
+    <Disclosure
+      as="nav"
+      className={`fixed transition ease-in-out duration-700 ${
+        isScroll ? "bg-indigo-500" : ""
+      } w-full lg:hidden z-30 text-white`}
+    >
       {({ open }) => (
         <>
           <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8 ">
