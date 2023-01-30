@@ -36,12 +36,12 @@ const Footer = () => {
               Get the latest updates about Develocity's new projects,
             </p>
             <p className="px-5 md:px-0">roadmap updates and company news.</p>
-            <div className="mt-6 flex items-center md:mt-4">
+            <div className="mt-6 flex flex-col md:flex-row items-center flex-wrap md:mt-4">
               <input
                 className="placeholder:text-[#667085] font-normal placeholder:text-base h-11 w-72 md:w-80 border-1 border py-5 md:mr-2 pl-3 border-[#D0D5DD]"
                 placeholder="Enter your email..."
               />
-              <button className="bg-indigo-500 h-[44px] rounded-sm text-white font-normal py-3 px-6 ml-2 mt-5 md:mx-auto lg:mt-0 hover:bg-indigo-600">
+              <button className="flex items-center justify-center bg-indigo-500 h-[44px] rounded-sm text-white font-normal py-3 px-6 ml-2 mt-5 md:mx-auto lg:mt-0 hover:bg-indigo-600">
                 Subscribe
               </button>
             </div>
