@@ -61,11 +61,13 @@ function Blog() {
             </div>
           </div>
         </div>
-        <label className="mt-16 relative z-10 text-indigo-500 font-semibold">
-          <Link to={"terms-and-conditions"}>
-            Check more news and updates &#10140;
-          </Link>
-        </label>
+        <div className="mt-16 text-indigo-500 font-semibold">
+          <label >
+            <Link to={"terms-and-conditions"}>
+              Check more news and updates &#10140;
+            </Link>
+          </label>
+        </div>
       </div>
     </div>
   );
