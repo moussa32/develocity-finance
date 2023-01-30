@@ -1,11 +1,13 @@
 import React from "react";
+import CountUp from "react-countup";
+import VisibilitySensor from "react-visibility-sensor";
+
 import phaseOne from "../../assets/images/phase1.svg";
 import phaseTwo from "../../assets/images/phase2.svg";
 import phaseThree from "../../assets/images/phase3.svg";
 import phaseFour from "../../assets/images/phase4.svg";
 import phaseLine from "../../assets/images/phases-line.svg";
 import quote from "../../assets/images/roadmap-quote.svg";
-import CountUp from "react-countup";
 import icon from "../../assets/images/Icon.svg";
 import coins from "../../assets/images/coins.svg";
 import crosshair from "../../assets/images/crosshair.svg";
@@ -27,11 +29,13 @@ const RoadMap = () => {
               decimal=","
               suffix="%"
             >
-              {({ countUpRef }) => (
-                <h1
-                  className="font-sans text-6xl text-white my-2"
-                  ref={countUpRef}
-                ></h1>
+              {({ countUpRef, start }) => (
+                <VisibilitySensor onChange={start}>
+                  <h1
+                    className="font-sans text-6xl text-white my-2"
+                    ref={countUpRef}
+                  ></h1>
+                </VisibilitySensor>
               )}
             </CountUp>
             <label className="text-gray-500">Accuracy</label>
@@ -41,11 +45,13 @@ const RoadMap = () => {
               <img className="w-4" src={coins} />
             </div>
             <CountUp start={0} end={7} duration={3} decimals={4} decimal=",">
-              {({ countUpRef }) => (
-                <h1
-                  className="font-sans text-6xl text-white my-2"
-                  ref={countUpRef}
-                ></h1>
+              {({ countUpRef ,start }) => (
+                <VisibilitySensor onChange={start}>
+                  <h1
+                    className="font-sans text-6xl text-white my-2"
+                    ref={countUpRef}
+                  ></h1>
+                </VisibilitySensor>
               )}
             </CountUp>
             <label className="text-gray-500">Tokens in database</label>
@@ -55,11 +61,13 @@ const RoadMap = () => {
               <img className="w-4" src={icon} />
             </div>
             <CountUp start={0} end={25} duration={3} decimal="," suffix="K">
-              {({ countUpRef }) => (
-                <h1
-                  className="font-sans text-6xl text-white my-2"
-                  ref={countUpRef}
-                ></h1>
+              {({ countUpRef ,start }) => (
+                <VisibilitySensor onChange={start}>
+                  <h1
+                    className="font-sans text-6xl text-white my-2"
+                    ref={countUpRef}
+                  ></h1>
+                </VisibilitySensor>
               )}
             </CountUp>
             <label className="text-gray-500">Daily visitors</label>

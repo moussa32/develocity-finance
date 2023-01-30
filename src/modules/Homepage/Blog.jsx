@@ -62,7 +62,7 @@ function Blog() {
           </div>
         </div>
         <div className="mt-16 text-indigo-500 font-semibold">
-          <label >
+          <label>
             <Link to={"terms-and-conditions"}>
               Check more news and updates &#10140;
             </Link>
