@@ -9,29 +9,29 @@ import telegram from "../../assets/images/telegram.svg";
 const Footer = () => {
   return (
     <div className="bg-[#F9FAFB]">
-      <div className="container mx-auto md:px-10 lg:px-0 pt-24 pb-16 text-center md:text-left text-[#525C7A] text-base font-medium">
-        <div className="grid grid-cols-1 md:grid-cols-2">
+      <div className="container mx-auto md:px-10 lg:px-0 md:pt-24 pb-16 text-left text-[#525C7A] text-base font-medium">
+        <div className="grid grid-cols-1 ml-4 md:0 md:grid-cols-2">
           <div>
-            <img className="mx-auto md:mx-0" src={logo} alt="footer logo" />
+            <img className="" src={logo} alt="footer logo" />
             <div className="mt-6">
-              <NavLink className="block lg:inline-block lg:mr-6 mt-6 lg:mt-0 ">
+              <NavLink className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0 ">
                 Returns & FAQ
               </NavLink>
-              <NavLink className="block lg:inline-block lg:mr-6 mt-6 lg:mt-0 ">
+              <NavLink className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0 ">
                 Privacy Policy
               </NavLink>
               <NavLink
                 to="/contact-us"
-                className="block lg:inline-block lg:mr-6 mt-6 lg:mt-0 "
+                className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0 "
               >
                 Contact
               </NavLink>
-              <NavLink className="block lg:inline-block lg:mr-6 my-6 lg:my-0 ">
+              <NavLink className="hidden md:block lg:inline-block lg:mr-6 my-6 lg:my-0 ">
                 Back to Develocity
               </NavLink>
             </div>
           </div>
-          <div className="ml-auto">
+          <div className="hidden md:block ml-auto">
             <p className="px-5 md:px-0">
               Get the latest updates about Develocity's new projects,
             </p>
@@ -47,7 +47,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <hr className="mt-16 text-neutral-200 mb-8"></hr>
+        <hr className="mt-8 md:mt-16 w-[92vw] md:w-auto mx-auto text-neutral-200 mb-8"></hr>
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <a href="#">
@@ -79,7 +79,7 @@ const Footer = () => {
               />
             </a>
           </div>
-          <p className="mt-6 md:mt-0 md:text-right">
+          <p className="mt-6 md:mt-0 ml-4 md:ml-0 md:text-right">
             © 2022 Develocity, LLC. All Rights Reserved
           </p>
         </div>
