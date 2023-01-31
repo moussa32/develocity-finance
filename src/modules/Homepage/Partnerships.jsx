@@ -13,7 +13,7 @@ import PartnershipIconsSlider from "./PartnershipIconsSlider";
 const Partnerships = () => {
   return (
     <div className="bg-[#F9FAFB]">
-      <div className="container mx-auto text-center py-24 px-4 md:px-8 lg:px-0">
+      <div className="container mx-auto text-center md:py-24 px-4 md:px-8 lg:px-0">
         <h2 className="text-[#29233B] font-PolySans text-[28px] md:text-6xl font-medium md:font-normal">
           Partnerships that Last
         </h2>
