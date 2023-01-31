@@ -18,7 +18,7 @@ const PartnershipIconsSlider = () => {
       className="mt-8 md:hidden"
       modules={[Navigation]}
       speed={800}
-      slidesPerView={1.5}
+      slidesPerView={1.60}
       centeredSlides={true}
       centeredSlidesBounds={true}
       loop
