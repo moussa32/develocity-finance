@@ -10,12 +10,13 @@ import quote from "../../assets/images/roadmap-quote.svg";
 import icon from "../../assets/images/Icon.svg";
 import coins from "../../assets/images/coins.svg";
 import crosshair from "../../assets/images/crosshair.svg";
+import RoadMapSlider from "./RoadMapSlider";
 
 const RoadMap = () => {
   return (
     <>
-      <div className="roadmap-bg bg-center bg-no-repeat md:bg-cover my-48 bg-[#0A0D14] text-white pt-8 pb-16 px-4 md:px-6">
-        <div className="pt-[100px] md:pt-[400px] pb-[36px] flex flex-col lg:flex-row justify-between items-center w-6/12 mx-auto z-50">
+      <div className="roadmap-bg bg-center bg-no-repeat md:bg-cover my-48 bg-[#0A0D14] text-white pt-8 pb-16 ">
+        <div className="pt-[100px] md:pt-[400px] pb-[36px] flex flex-col lg:flex-row justify-between items-center w-6/12 mx-auto z-50 px-4 md:px-6">
           <div className="flex flex-col justify-center items-center my-14">
             <div className="rounded-full bg-slate-800  p-2">
               <img className="w-4" src={crosshair} />
@@ -72,17 +73,17 @@ const RoadMap = () => {
             <label className="text-gray-500">Daily visitors</label>
           </div>
         </div>
-        <h2 className="text-center font-PolySans text-[28px] md:text-6xl">
+        <h2 className="text-center font-PolySans text-[28px] md:text-6xl px-4 md:px-6">
           Roadmap
         </h2>
-        <p className="mx-auto text-center text-[#B8B8B8] md:w-[320px] lg:w-[800px] text-base md:text-lg mt-4">
+        <p className="mx-auto text-center text-[#B8B8B8] md:w-[320px] lg:w-[800px] text-base md:text-lg mt-4 px-4 md:px-6">
           Develocity aspires to present its final project in four primary
           stages. Each stage is presented separately and merged in the
           post-final stage to create a decentralised platform, which would be
           distinctively in terms of technology and development based on Web 3.0.
         </p>
         {/*<div className="flex flex-row md:flex-col justify-around md:justify-between"> */}
-        <div className="hidden md:block">
+        <div className="hidden md:block px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-20 gap-8 lg:gap-2 mt-16">
             <div className="mx-auto text-center">
               <img className="mb-3" src={phaseOne} alt="phase 1 icon" />
@@ -161,8 +162,9 @@ const RoadMap = () => {
             </div>
           </div>
         </div>
+        <RoadMapSlider />
         {/*w-361px h-308px */}
-        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 lg:mt-48 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 mt-24 lg:mt-48 gap-8 px-4 md:px-6">
           <div className="w-[92vw] h-[78.5vw] my-auto lg:w-[488px] lg:h-[442px] mx-auto bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] rounded-lg"></div>
           <div className="text-center">
             <p className="text-xl text-[#FAFAFA] md:text-3xl relative z-20 font-medium mt-11 md:mt-24">
