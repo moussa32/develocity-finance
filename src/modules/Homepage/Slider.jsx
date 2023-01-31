@@ -30,7 +30,7 @@ const Slider = () => {
       }}
     >
       <SwiperSlide>
-        <div className="relative">
+        <div className="relative px-4 md:px-8">
           <img
             className="absolute z-10 right-32 -top-9 md:right-[47%] lg:bottom-[170px]"
             src={`${quote}`}
@@ -47,7 +47,7 @@ const Slider = () => {
         <h6 className="text-[#525C7A] text-base">CEO of Coinbase</h6>
       </SwiperSlide>
       <SwiperSlide>
-        <div className="relative">
+        <div className="relative  px-4 md:px-8">
           <img
             className="absolute z-10 right-32 -top-9 md:right-[47%] lg:bottom-[170px]"
             src={`${quote}`}
