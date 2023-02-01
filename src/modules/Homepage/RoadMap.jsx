@@ -165,7 +165,7 @@ const RoadMap = () => {
         <RoadMapSlider />
         {/*w-361px h-308px */}
         <div className="grid grid-cols-1 md:grid-cols-2 mt-24 lg:mt-48 gap-8 px-4 md:px-6">
-          <div className="w-[92vw] h-[78.5vw] my-auto lg:w-[488px] lg:h-[442px] mx-auto bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] rounded-lg"></div>
+          <div className="w-[92vw] h-[78.5vw] md:w-[46vw] md:h-[42vw] my-auto lg:w-[488px] lg:h-[442px] mx-auto bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] rounded-lg"></div>
           <div className="text-center">
             <p className="text-xl text-[#FAFAFA] md:text-3xl relative z-20 font-medium mt-11 md:mt-24">
               <img
