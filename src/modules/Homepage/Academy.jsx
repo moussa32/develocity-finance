@@ -3,7 +3,7 @@ import Phone from "../../assets/images/Phone.png";
 
 const Academy = () => {
   return (
-    <section className="container pb-32 lg:pb-48">
+    <section className="container pb-24 lg:pb-48">
       <img
         src={AcadmyTitle}
         alt="ecosystem"

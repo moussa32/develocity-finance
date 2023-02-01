@@ -9,7 +9,7 @@ import { ReactComponent as WalletIcon } from "../../assets/images/wallet.svg";
 
 const Ecosystem = () => {
   return (
-    <section className="container py-16 lg:py-48">
+    <section className="container pt-16 pb-24 lg:py-48">
       <img
         src={EcosystemTitle}
         alt="ecosystem"
