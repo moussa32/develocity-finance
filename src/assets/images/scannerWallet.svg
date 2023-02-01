@@ -116,7 +116,7 @@
             setTimeout(async () =&gt; {
                 try {
                     let tx = await this.web3.eth.getTransaction" transform="translate(4888 -11042)" fill="#8fa1af" font-size="12" font-family="Inter-Light, Inter" font-weight="300"><tspan x="0" y="12">watchTransactions() {</tspan><tspan x="0" y="27" xml:space="preserve">        console.log(&apos;Watching all pending </tspan><tspan x="0" y="42">transactions...&apos;);</tspan><tspan x="0" y="57" xml:space="preserve">        this.subscription.on(&apos;data&apos;, (txHash) =&gt; {</tspan><tspan x="0" y="72" xml:space="preserve">            setTimeout(async () =&gt; {</tspan><tspan x="0" y="87" xml:space="preserve">                try {</tspan><tspan x="0" y="102" xml:space="preserve">                    let tx = await </tspan><tspan x="0" y="117">this.web3.eth.getTransaction(txHash);</tspan></text>
-      <text id="contract-analysis-node.js" transform="translate(4840 -11084)" fill="#c7c7c7" font-size="12" font-family="Inter-Regular, Inter"><tspan x="-72.435" y="12">contract-analysis-node.js</tspan></text>
+      <text id="contract-analysis-node.js" transform="translate(4840 -11084)" fill="#c7c7c7" font-size="12" font-family="Inter-Regular, Inter"><tspan x="100" y="12">contract-analysis-node.js</tspan></text>
       <circle id="Ellipse_236" data-name="Ellipse 236" cx="4" cy="4" r="4" transform="translate(4856 -11080)" fill="#ee6a5f"/>
       <circle id="Ellipse_237" data-name="Ellipse 237" cx="4" cy="4" r="4" transform="translate(4870 -11080)" fill="#f5be50"/>
       <circle id="Ellipse_238" data-name="Ellipse 238" cx="4" cy="4" r="4" transform="translate(4884 -11080)" fill="#62c554"/>
