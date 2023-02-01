@@ -22,6 +22,9 @@
 .header-bg {
   background-image: url("./assets/images/ladingHeaderBG.png");
 }
+.blog-bg {
+  background-image: url("./assets/images/Blog-bg.svg");
+}
 
 /*
   .swiper-button-next,
