@@ -1,12 +1,13 @@
 import ScanTitle from "../../assets/images/ScanTitle.png";
 import ScannerMobileTitle from "../../assets/images/ScannerMobileTitle.png";
 import ScannerMobileCoins from "../../assets/images/ScannerMobileCoins.png";
+import { ReactComponent as ScannerWallet } from "../../assets/images/scannerWallet.svg";
 import { ReactComponent as AppleStoreIcon } from "../../assets/images/AppleStoreIcon.svg";
 import { ReactComponent as GooglePlayIcon } from "../../assets/images/GooglePlayIcon.svg";
 
 const Scanner = () => {
   return (
-    <section className="pb-60 container lg:py-48 lg:px-0 mx-auto">
+    <section className="container lg:py-48 lg:px-0 mx-auto">
       <picture>
         <source media="(max-width:768px)" srcset={ScannerMobileTitle} />
         <img
@@ -60,6 +61,7 @@ const Scanner = () => {
             </div>
           </div>
         </div>
+        <ScannerWallet className="hidden lg:block" />
       </div>
     </section>
   );

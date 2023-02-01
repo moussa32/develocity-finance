@@ -15,37 +15,27 @@
   src: url("./assets/fonts/PolySans-Neutral.woff2");
 }
 
-.roadmap-bg {
-  background-image: url("./assets/images/roadmap-background.svg");
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 .header-bg {
-  background-image: url("./assets/images/ladingHeaderBG.png");
+  background-image: url("./assets/images/headerMobileBackground.png");
 }
 .blog-bg {
   background-image: url("./assets/images/Blog-bg.svg");
 }
 
-/*
-  .swiper-button-next,
-  .swiper-button-prev {
-    color: #667085 !important;
-    background-repeat: no-repeat;
-    background-size: contain;
-    background-position: center;
-  }
-  .swiper-button-next::after,
-  .swiper-button-prev::after {
-    display: none;
-  }
-  .swiper-button-next {
-    background-image: url("./assets/images/next-arrow.svg");
-  }
-  .swiper-button-prev {
-    background-image: url("./assets/images/prev-arrow.svg");
-  }
-*/
+.stats-bg {
+  background: linear-gradient(120deg, #1d2b64, #f8cdda);
+}
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+.roadmap-bg {
+  background-image: url("./assets/images/roadmap-background.svg");
+}
+
+@media screen(md) {
+  .header-bg {
+    background-image: url("./assets/images/ladingHeaderBG.png");
+  }
+}

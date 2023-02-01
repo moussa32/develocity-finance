@@ -8,7 +8,30 @@ import bitmexColored from "../../assets/images/bitmex-colored.svg";
 import xtComColored from "../../assets/images/xt-colored.svg";
 import binanceColored from "../../assets/images/binance-colored.svg";
 import Slider from "./Slider";
-import PartnershipIconsSlider from "./PartnershipIconsSlider";
+import MobileImageSlider from "../../shared/Components/MobileImageSlider";
+
+const partnerships = [
+  {
+    title: "coinbase",
+    defaultVersion: coinbase,
+    coloredVersion: coinbaseColored,
+  },
+  {
+    title: "bitmex",
+    defaultVersion: bitmex,
+    coloredVersion: bitmexColored,
+  },
+  {
+    title: "xtCom",
+    defaultVersion: xtCom,
+    coloredVersion: xtComColored,
+  },
+  {
+    title: "binance",
+    defaultVersion: binance,
+    coloredVersion: binanceColored,
+  },
+];
 
 const Partnerships = () => {
   return (
@@ -22,59 +45,30 @@ const Partnerships = () => {
           for the past 2 years.
         </h6>
         <div className="hidden md:grid grid-cols-4 h-[44px] mt-8  px-4 md:px-8 lg:px-32 mx-auto gap-1 lg:gap-14">
-          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
-            <img
-              className="absolute group-hover:opacity-0  hover:cursor-pointer"
-              src={`${coinbase}`}
-              alt="coinbase icon"
-            />
-            <img
-              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
-              src={`${coinbaseColored}`}
-              alt="coinbase icon"
-            />
-          </div>
-
-          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
-            <img
-              className="absolute group-hover:opacity-0  hover:cursor-pointer"
-              src={`${bitmex}`}
-              alt="bitmex icon"
-            />
-            <img
-              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
-              src={`${bitmexColored}`}
-              alt="bitmex icon"
-            />
-          </div>
-
-          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
-            <img
-              className="absolute group-hover:opacity-0  hover:cursor-pointer"
-              src={`${xtCom}`}
-              alt="xtCom icon"
-            />
-            <img
-              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
-              src={`${xtComColored}`}
-              alt="xtCom icon"
-            />
-          </div>
-
-          <div className="group relative w-[65px] md:w-[170px] lg:w-[180px]">
-            <img
-              className="absolute group-hover:opacity-0  hover:cursor-pointer"
-              src={`${binance}`}
-              alt="binance icon"
-            />
-            <img
-              className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
-              src={`${binanceColored}`}
-              alt="binance icon"
-            />
-          </div>
+          {partnerships.map(({ title, defaultVersion, coloredVersion }) => (
+            <div
+              key={title}
+              className="group relative w-[65px] md:w-[170px] lg:w-[180px]"
+            >
+              <img
+                className="absolute group-hover:opacity-0  hover:cursor-pointer"
+                src={defaultVersion}
+                alt={title}
+              />
+              <img
+                className="absolute opacity-0 group-hover:opacity-100 hover:cursor-pointer"
+                src={coloredVersion}
+                alt={title}
+              />
+            </div>
+          ))}
         </div>
-        <PartnershipIconsSlider />
+        <MobileImageSlider
+          images={partnerships}
+          slidesPerView={1.6}
+          initialSlide={2}
+          slideImageClassName="h-11 w-[200px]"
+        />
         <Slider />
       </div>
     </div>

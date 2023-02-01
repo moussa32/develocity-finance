@@ -25,7 +25,7 @@ const Ecosystem = () => {
               Safe Eenviroment For Your Assets
             </span>
           </span>
-          <h3 className="text-[#101828] text-center font-PolySans text-[28px] font-bold mt-3 mb-4 md:mb-6 md:font-sans md:text-2xl lg:text-4xl">
+          <h3 className="text-[#101828] text-center font-PolySans text-[28px] font-bold mt-3 mb-4 md:mb-6 md:text-left md:font-sans md:text-2xl lg:text-4xl">
             Safe And Trustworthy Crypto Environment
           </h3>
           <p className="text-neutral-600 text-base">
