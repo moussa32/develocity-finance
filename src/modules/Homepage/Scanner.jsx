@@ -6,7 +6,7 @@ import { ReactComponent as GooglePlayIcon } from "../../assets/images/GooglePlay
 
 const Scanner = () => {
   return (
-    <section className="pb-60 container lg:py-48 lg:px-0 mx-auto">
+    <section className="container lg:py-48 lg:px-0 mx-auto">
       <picture>
         <source media="(max-width:768px)" srcset={ScannerMobileTitle} />
         <img

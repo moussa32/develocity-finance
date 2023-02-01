@@ -23,6 +23,10 @@
   background-image: url("./assets/images/headerMobileBackground.png");
 }
 
+.stats-bg {
+  background: linear-gradient(120deg, #1d2b64, #f8cdda);
+}
+
 .roadmap-bg {
   background-image: url("./assets/images/roadmap-background.svg");
 }
