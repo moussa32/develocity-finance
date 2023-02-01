@@ -9,7 +9,7 @@ import telegram from "../../assets/images/telegram.svg";
 const Footer = () => {
   return (
     <div className="bg-[#F9FAFB]">
-      <div className="container mx-auto md:px-10 lg:px-0 md:pt-24 pb-16 text-left text-[#525C7A] text-base font-medium">
+      <div className="container mx-auto md:px-10 lg:px-0 pt-16 md:pt-24 pb-16 text-left text-[#525C7A] text-base font-medium">
         <div className="grid grid-cols-1 ml-4 md:0 md:grid-cols-2">
           <div>
             <img className="" src={logo} alt="footer logo" />
