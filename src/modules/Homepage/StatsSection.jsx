@@ -11,7 +11,7 @@ export default function StatsSection() {
   const [focus, setFocus] = useState(false);
   return (
     <section className="container max-w-[1008px] relative">
-      <div className="absolute w-[361px] mx-auto top-[-100px] md:w-10/12 right-0 left-0 flex flex-col md:top-[-150px] lg:top-[-400px] h-[204px] md:h-[400px] lg:h-[700px] md:mb-10">
+      <div className="absolute w-[361px] lg:w-full mx-auto top-[-100px] md:w-10/12 right-0 left-0 flex flex-col md:top-[-150px] lg:top-[-400px] h-[204px] md:h-[400px] lg:h-[700px] md:mb-10">
         <div className="w-full h-10 bg-white hidden md:block">
           <div className="flex justify-between items-center h-full w-12/12 md:w-8/12 mr-3">
             <div className="flex ml-4">
