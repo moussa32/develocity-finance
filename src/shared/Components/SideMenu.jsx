@@ -3,6 +3,8 @@ import { Disclosure } from "@headlessui/react";
 import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import langIcon from "../../assets/images/lang-icon.svg";
+import logo from "../../assets/images/logo-mobile.svg";
+import menuIcon from "../../assets/images/menu-icon.svg";
 import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 import useNavbarScroll from "../Hooks/useNavbarBackground";
@@ -13,8 +15,8 @@ const SideMenu = () => {
   return (
     <Disclosure
       as="nav"
-      className={`fixed transition ease-in-out duration-700 ${
-        isScroll ? "bg-indigo-500" : ""
+      className={`fixed transition pt-2 ease-in-out duration-700 ${
+        isScroll ? "bg-indigo-500 pt-0" : ""
       } w-full lg:hidden z-30 text-white`}
     >
       {({ open }) => (
@@ -23,18 +25,16 @@ const SideMenu = () => {
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md p-2 text-neutral-300 hover:bg-opacity-5 hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button className="inline-flex items-center justify-center rounded-md mr-4 p-2 text-neutral-300 hover:bg-opacity-5 hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
+                    <img src={menuIcon} className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
-              <h3 className="block lg:hidden ml-8 text-2xl font-semibold">
-                Develocity
-              </h3>
+              <img className="ml-8" src={logo} alt="logo"/>
             </div>
           </div>
 
