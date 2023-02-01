@@ -43,9 +43,9 @@ function Blog() {
               </div>
             </div>
 
-            <div className="shadow-xl bg-slate-50	 flex flex-col pb-6 md:pb-10 rounded-lg h-[650px] max-w-[488px]">
+            <div className="shadow-xl bg-slate-50	 flex flex-col pb-6 md:pb-10 rounded-lg h-[600px] md:h-[650px] max-w-[488px]">
               <div className="realtive flex justify-center bg-gradient-to-r from-[#120734] to-[#000000] rounded-t-lg h-[382px]">
-                <div className="absolute self-end ">
+                <div className="absolute self-end">
                   <img className="w-10/12" src={manImage} />
                 </div>
               </div>
