@@ -1,20 +1,42 @@
+import React, { useRef } from "react";
+import prevArrow from "../../assets/images/prev-arrow.svg";
+import nextArrow from "../../assets/images/next-arrow.svg";
 import twitter from "../../assets/images/LD_twitter.svg";
 import facebook from "../../assets/images/LD_facebook.svg";
 import instagram from "../../assets/images/LD_instagram.svg";
-import LeadershipSlider from "./LeadershipSlider";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation } from "swiper";
+import "swiper/css";
+import "swiper/css/navigation";
 
-function Leadership() {
+const LeadershipSlider = () => {
+  const swiperNavPrevRef = useRef(null);
+  const swiperNavNextRef = useRef(null);
+
   return (
-    <div className="text-center my-24">
-      <div className="font-PolySans container mx-auto">
-        <p className="text-[28px] md:text-5xl text-[#171717]">
-          Develocity Leadership
-        </p>
-        <p className="text-base md:text-lg mt-3 md:mt-2 text-[#525252] md:text-[#404040]">
-          With the mindset to create secure future in the digital money.
-        </p>
-        <div className="hidden md:grid mt-12 md:mt-14 gap-7 grid-cols-1 lg:grid-cols-3">
-          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:w-[26.6vw] h-[484px]">
+    <Swiper
+      className="pb-24 mt-12 mb-32 md:pb-0 md:hidden"
+      modules={[Navigation]}
+      navigation={{
+        prevEl: swiperNavPrevRef.current,
+        nextEl: swiperNavNextRef.current,
+      }}
+      speed={800}
+      slidesPerView={1.1}
+      loop
+      onInit={(swiper) => {
+        swiper.params.navigation.prevEl = swiperNavPrevRef.current;
+        swiper.params.navigation.nextEl = swiperNavNextRef.current;
+        swiper.navigation.init();
+        swiper.navigation.update();
+      }}
+    >
+      <SwiperSlide>
+        {({ isActive }) => (
+          <div
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+        ${isActive ? "" : "opacity-50"}`}
+          >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
@@ -30,7 +52,14 @@ function Leadership() {
               </div>
             </div>
           </div>
-          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:w-[26.6vw] h-[484px]">
+        )}
+      </SwiperSlide>
+      <SwiperSlide>
+        {({ isActive }) => (
+          <div
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+        ${isActive ? "" : "opacity-50"}`}
+          >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
@@ -46,7 +75,14 @@ function Leadership() {
               </div>
             </div>
           </div>
-          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:w-[26.6vw] h-[484px]">
+        )}
+      </SwiperSlide>
+      <SwiperSlide>
+        {({ isActive }) => (
+          <div
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+      ${isActive ? "" : "opacity-50"}`}
+          >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
@@ -64,10 +100,20 @@ function Leadership() {
               </div>
             </div>
           </div>
-        </div>
-        <LeadershipSlider />
-      </div>
-    </div>
+        )}
+      </SwiperSlide>
+      <img
+        src={prevArrow}
+        className="-bottom-6 md:bottom-0 md:top-1/2 left-[115px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        ref={swiperNavPrevRef}
+      />
+      <img
+        src={nextArrow}
+        className="-bottom-6 md:bottom-0 md:top-1/2 right-[115px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        ref={swiperNavNextRef}
+      />
+    </Swiper>
   );
-}
-export default Leadership;
+};
+
+export default LeadershipSlider;

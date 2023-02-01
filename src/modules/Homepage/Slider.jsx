@@ -65,12 +65,12 @@ const Slider = () => {
       </SwiperSlide>
       <img
         src={prevArrow}
-        className="-bottom-6 md:bottom-0 md:top-1/2 left-[130px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        className="-bottom-6 md:bottom-0 md:top-1/2 left-[115px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavPrevRef}
       />
       <img
         src={nextArrow}
-        className="-bottom-6 md:bottom-0 md:top-1/2 right-[130px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        className="-bottom-6 md:bottom-0 md:top-1/2 right-[115px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavNextRef}
       />
     </Swiper>
