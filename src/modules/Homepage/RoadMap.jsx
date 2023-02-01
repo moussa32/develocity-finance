@@ -1,78 +1,16 @@
-import React from "react";
-import CountUp from "react-countup";
-import VisibilitySensor from "react-visibility-sensor";
 import phaseOne from "../../assets/images/phase1.svg";
 import phaseTwo from "../../assets/images/phase2.svg";
 import phaseThree from "../../assets/images/phase3.svg";
 import phaseFour from "../../assets/images/phase4.svg";
-import phaseLine from "../../assets/images/phases-line.svg";
 import quote from "../../assets/images/roadmap-quote.svg";
-import icon from "../../assets/images/Icon.svg";
-import coins from "../../assets/images/coins.svg";
-import crosshair from "../../assets/images/crosshair.svg";
 import RoadMapSlider from "./RoadMapSlider";
+import StatsSection from "./StatsSection";
 
 const RoadMap = () => {
   return (
     <>
-      <div className="roadmap-bg bg-center bg-no-repeat md:bg-cover my-48 bg-[#0A0D14] text-white pt-8 pb-16 ">
-        <div className="pt-[100px] md:pt-[400px] pb-[36px] flex flex-col lg:flex-row justify-between items-center w-6/12 mx-auto z-50 px-4 md:px-6">
-          <div className="flex flex-col justify-center items-center my-14">
-            <div className="rounded-full bg-slate-800  p-2">
-              <img className="w-4" src={crosshair} />
-            </div>
-            <CountUp
-              start={0}
-              end={99.8}
-              duration={3}
-              decimals={1}
-              decimal=","
-              suffix="%"
-            >
-              {({ countUpRef, start }) => (
-                <VisibilitySensor onChange={start}>
-                  <h1
-                    className="font-sans text-6xl text-white my-2"
-                    ref={countUpRef}
-                  ></h1>
-                </VisibilitySensor>
-              )}
-            </CountUp>
-            <label className="text-gray-500">Accuracy</label>
-          </div>
-          <div className="flex flex-col justify-center items-center my-14">
-            <div className="rounded-full bg-slate-800  p-2">
-              <img className="w-4" src={coins} />
-            </div>
-            <CountUp start={0} end={7} duration={3} decimals={4} decimal=",">
-              {({ countUpRef, start }) => (
-                <VisibilitySensor onChange={start}>
-                  <h1
-                    className="font-sans text-6xl text-white my-2"
-                    ref={countUpRef}
-                  ></h1>
-                </VisibilitySensor>
-              )}
-            </CountUp>
-            <label className="text-gray-500">Tokens in database</label>
-          </div>
-          <div className="flex flex-col justify-center items-center my-14">
-            <div className="rounded-full bg-slate-800  p-2">
-              <img className="w-4" src={icon} />
-            </div>
-            <CountUp start={0} end={25} duration={3} decimal="," suffix="K">
-              {({ countUpRef, start }) => (
-                <VisibilitySensor onChange={start}>
-                  <h1
-                    className="font-sans text-6xl text-white my-2"
-                    ref={countUpRef}
-                  ></h1>
-                </VisibilitySensor>
-              )}
-            </CountUp>
-            <label className="text-gray-500">Daily visitors</label>
-          </div>
-        </div>
+      <div className="relative roadmap-bg bg-center bg-no-repeat md:bg-cover my-48 bg-[#0A0D14] text-white pb-16 lg:mt-[300px]">
+        <StatsSection />
         <h2 className="text-center font-PolySans text-[28px] md:text-6xl px-4 md:px-6">
           Roadmap
         </h2>
@@ -82,7 +20,6 @@ const RoadMap = () => {
           post-final stage to create a decentralised platform, which would be
           distinctively in terms of technology and development based on Web 3.0.
         </p>
-        {/*<div className="flex flex-row md:flex-col justify-around md:justify-between"> */}
         <div className="hidden md:block px-4 md:px-6">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 lg:px-20 gap-8 lg:gap-2 mt-16">
             <div className="mx-auto text-center">
@@ -108,7 +45,6 @@ const RoadMap = () => {
           </div>
           <div className="hidden relative md:grid grid-cols-4 gap-8 lg:gap-2 lg:px-20 mt-9">
             <hr className="absolute block w-full top-2/4"></hr>
-            {/*<div className="absolute left-1/2 -ml-0.5 w-0.5 h-full bg-white md:hidden block"></div> */}
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
