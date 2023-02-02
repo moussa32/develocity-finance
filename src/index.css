@@ -22,6 +22,9 @@
 .header-bg {
   background-image: url("./assets/images/headerMobileBackground.png");
 }
+.blog-bg {
+  background-image: url("./assets/images/Blog-bg.svg");
+}
 
 .stats-bg {
   background: linear-gradient(120deg, #1d2b64, #f8cdda);

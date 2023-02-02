@@ -14,7 +14,7 @@ function Leadership() {
           With the mindset to create secure future in the digital money.
         </p>
         <div className="hidden md:grid mt-12 md:mt-14 gap-7 grid-cols-1 lg:grid-cols-3">
-          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:w-[384px] h-[484px]">
+          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:max-w-[384px] h-[484px]">
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
@@ -30,7 +30,7 @@ function Leadership() {
               </div>
             </div>
           </div>
-          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:w-[384px] h-[484px]">
+          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:max-w-[384px] h-[484px]">
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
@@ -46,7 +46,7 @@ function Leadership() {
               </div>
             </div>
           </div>
-          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:w-[384px] h-[484px]">
+          <div className="relative mx-8 px-6 pt-[27px] pb-[27px] rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] lg:max-w-[384px] h-[484px]">
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">

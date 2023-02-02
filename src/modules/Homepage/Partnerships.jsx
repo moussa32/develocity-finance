@@ -44,7 +44,7 @@ const Partnerships = () => {
           We have connected with amazing people, businesses, and organizations
           for the past 2 years.
         </h6>
-        <div className="hidden md:grid grid-cols-4 h-[44px] mt-8  px-4 md:px-8 lg:px-32 mx-auto gap-1 lg:gap-14">
+        <div className="hidden md:grid grid-cols-4 h-[44px] mt-8 px-4 md:px-2 lg:px-32 mx-auto gap-1 lg:gap-14">
           {partnerships.map(({ title, defaultVersion, coloredVersion }) => (
             <div
               key={title}

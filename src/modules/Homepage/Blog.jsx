@@ -1,5 +1,4 @@
 import phoneImage from "../../../src/assets/images/blogPhone.png";
-import manImage from "../../../src/assets/images/loogoso.svg";
 import { Link } from "react-router-dom";
 
 function Blog() {
@@ -44,10 +43,7 @@ function Blog() {
             </div>
 
             <div className="shadow-xl bg-slate-50	 flex flex-col pb-6 md:pb-10 rounded-lg h-[600px] md:h-[650px] max-w-[488px]">
-              <div className="realtive flex justify-center bg-gradient-to-r from-[#120734] to-[#000000] rounded-t-lg h-[382px]">
-                <div className="absolute self-end">
-                  <img className="w-10/12" src={manImage} />
-                </div>
+              <div className="realtive blog-bg bg-center bg-no-repeat md:bg-cover flex justify-center rounded-t-lg h-[382px]">
               </div>
               <div className="text-left max-w-[424px] ml-4 md:ml-8 mt-3 flex flex-col ">
                 <h3 className="font-sans text-[28px] font-semibold md:text-3xl mt-3 pl-2 md:pl-0 md:font-medium capitalize  text-[#29233B]">
@@ -58,7 +54,7 @@ function Blog() {
                   typesetting industry. Lorem Ipsum has been the industry's
                   standard dummy text ever since the<span className="hidden md:inline-block"> 1500s, when an unknown
                   printer took a galley of type and scrambled it to make a type
-                  specimen book</span>.
+                  specimen book.</span>
                 </p>
                 <Link
                   to={"blog"}
