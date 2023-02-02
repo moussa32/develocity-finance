@@ -8,25 +8,42 @@ import menuIcon from "../../assets/images/menu-icon.svg";
 import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 import useNavbarScroll from "../Hooks/useNavbarBackground";
+import { useState } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
 
 const SideMenu = () => {
-  const [isScroll, setIsScroll] = useNavbarScroll(50);
+  const [isScroll] = useNavbarScroll(50);
+  const [isOpen, setIsOpen] = useState(false);
+  const DisclosureButton = useRef(null);
+
+  useEffect(() => {
+    if (DisclosureButton.current) {
+      const isDisclosureOpen = DisclosureButton.current.dataset.headlessuiState;
+      if (isDisclosureOpen) {
+        setIsOpen(true);
+      }
+    }
+  }, [DisclosureButton]);
 
   return (
     <Disclosure
       as="nav"
       className={`fixed transition pt-2 ease-in-out duration-700 ${
-        isScroll ? "bg-indigo-500 pt-0" : ""
+        isScroll || isOpen ? "bg-indigo-500 pt-0" : ""
       } w-full lg:hidden z-30 text-white`}
     >
       {({ open }) => (
         <>
-          {open ? setIsScroll(true) : setIsScroll(false)}
           <div className="mx-auto pt-2 max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
-                <Disclosure.Button className="inline-flex items-center justify-center rounded-md mr-4 p-2 text-neutral-300 hover:bg-opacity-5 hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white">
+                <Disclosure.Button
+                  ref={DisclosureButton}
+                  onClick={() => setIsOpen(!isOpen)}
+                  className="inline-flex items-center justify-center rounded-md mr-4 p-2 text-neutral-300 hover:bg-opacity-5 hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                >
                   <span className="sr-only">Open main menu</span>
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
