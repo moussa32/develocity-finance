@@ -1,4 +1,5 @@
-import phoneImage from "../../../src/assets/images/blogPhone.png";
+import phoneImage from "../../../src/assets/images/blog-phone.png";
+//import phoneImage2 from "../../../src/assets/images/blogPhone.png";
 import { Link } from "react-router-dom";
 
 function Blog() {
@@ -35,7 +36,7 @@ function Blog() {
               </div>
               <div className="flex justify-center h-[280px] md:h-[700px]">
                 <div className="relative w-5/6 md:w-4/6">
-                  <div className="absolute top-12 md:top-6 w-full">
+                  <div className="absolute top-6 md:top-16 w-full">
                     <img className="w-full" src={phoneImage} />
                   </div>
                 </div>
