@@ -1,7 +1,6 @@
 import BlogCard from "./BlogCard";
 import ThumbnailPlaceholder from "../../assets/images/thumbnail-placeholder.png";
 import StaticPageHeader from "../../shared/Static/StaticPageHeader";
-import Footer from "../../shared/Components/Footer";
 
 const Blog = () => {
   return (
@@ -57,7 +56,6 @@ const Blog = () => {
           />
         </div>
       </section>
-      <Footer />
     </>
   );
 };
