@@ -1,6 +1,6 @@
 import React, { memo } from "react";
 import { Disclosure } from "@headlessui/react";
-import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 import { NavLink } from "react-router-dom";
 import langIcon from "../../assets/images/lang-icon.svg";
 import logo from "../../assets/images/logo-mobile.svg";
@@ -10,7 +10,7 @@ import ProjectsDropdown from "./ProjectsDropdown";
 import useNavbarScroll from "../Hooks/useNavbarBackground";
 
 const SideMenu = () => {
-  const [isScroll] = useNavbarScroll(250);
+  const [isScroll, setIsScroll] = useNavbarScroll(50);
 
   return (
     <Disclosure
@@ -21,7 +21,8 @@ const SideMenu = () => {
     >
       {({ open }) => (
         <>
-          <div className="mx-auto pt-2 max-w-7xl px-2 sm:px-6 lg:px-8 ">
+          {open ? setIsScroll(true) : setIsScroll(false)}
+          <div className="mx-auto pt-2 max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
@@ -30,11 +31,15 @@ const SideMenu = () => {
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <img src={menuIcon} className="block h-6 w-6" aria-hidden="true" />
+                    <img
+                      src={menuIcon}
+                      className="block h-6 w-6"
+                      aria-hidden="true"
+                    />
                   )}
                 </Disclosure.Button>
               </div>
-              <img className="ml-8" src={logo} alt="logo"/>
+              <img className="ml-8" src={logo} alt="logo" />
             </div>
           </div>
 

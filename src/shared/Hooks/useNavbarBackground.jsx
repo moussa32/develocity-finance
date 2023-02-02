@@ -16,7 +16,7 @@ const useNavbarScroll = (scrollOffset) => {
     return () => window.removeEventListener("scroll", handleMove);
   }, []);
 
-  return [isScrolled];
+  return [isScrolled, setIsScroll];
 };
 
 export default useNavbarScroll;
