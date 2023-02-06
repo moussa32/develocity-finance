@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: PolySans;
+  src: url("../public/assets/fonts/PolySans-Neutral.woff2");
+}
+@font-face {
+  font-family: PolySans;
+  src: url("../public/assets/fonts/PolySans-Median.woff2");
+}
+@font-face {
+  font-family: PolySans;
+  src: url("../public/assets/fonts/PolySans-Bulky.woff2");
+}
+@font-face {
+  font-family: PolySans;
+  src: url("../public/assets/fonts/PolySans-Neutral.woff2");
+}
+
+.header-bg {
+  background-image: url("../public/assets/images/headerMobileBackground.png");
+}
+.blog-bg {
+  background-image: url("../public/assets/images/Blog-bg.svg");
+}
+
+.stats-bg {
+  background: linear-gradient(120deg, #1d2b64, #f8cdda);
+}
+
+.roadmap-bg {
+  background-image: url("../public/assets/images/roadmap-background.svg");
+}
+
+@media screen(md) {
+  .header-bg {
+    background-image: url("../public/assets/images/ladingHeaderBG.png");
+  }
+}
