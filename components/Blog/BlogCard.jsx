@@ -10,15 +10,21 @@ const BlogCard = ({
   summary,
   tags,
 }) => {
+  const myLoader = ({ src, width, quality }) => {
+    return `${src}`;
+  };
   return (
     <Link
       href={`/blog/${id}`}
       className="mx-auto w-full xl:w-[384px] transition-all ease-in-out duration-300 hover:shadow-md p-4"
     >
       <Image
+        loader={myLoader}
         src={thumbnail}
         alt={title}
         title={title}
+        width={500}
+        height={240}
         className="object-cover w-full h-[240px] rounded-lg"
       />
       <div className="mt-6">
