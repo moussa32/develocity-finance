@@ -182,11 +182,7 @@ export async function getStaticPaths() {
   const requestArticles = await globalInstance.get("/articles");
   const { articles } = requestArticles.data.data;
 
-  const vaildArticles = articles.filter((article) => {
-    if (article.slug) {
-      return;
-    }
-  });
+  const vaildArticles = articles.filter((article) => article.slug ?? false);
 
   const paths = vaildArticles.map((article) => ({
     params: { slug: article.slug },
