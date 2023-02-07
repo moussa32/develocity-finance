@@ -5,36 +5,67 @@ import TwitterIcon from "../../public/assets/images/TwitterIcon.svg";
 import FacebookIcon from "../../public/assets/images/FacebookIcon.svg";
 import LinkedInIcon from "../../public/assets/images/LinkedInIcon.svg";
 import Image from "next/image";
+import { globalInstance } from "../../api/constant";
+import parse, { attributesToProps } from "html-react-parser";
 
-const BlogDetails = ({
-  published_at = "Published on 24.12.2022",
-  title = "Biggest news from Develocity's Crypto Conference 2022 Dubai",
-  tags = ["Blockchain", "Updates", "Crypto"],
-}) => {
+const stylingBlogDetails = {
+  replace: (domNode) => {
+    if (domNode.attribs && domNode.name === "h2") {
+      const props = attributesToProps(domNode.attribs);
+      return (
+        <h2
+          className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold"
+          {...props}
+        />
+      );
+    }
+    if (domNode.attribs && domNode.name === "p") {
+      const props = attributesToProps(domNode.attribs);
+      return <p className="mt-6 mb-8" {...props} />;
+    }
+    if (domNode.attribs && domNode.name === "blockquote") {
+      return (
+        <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
+          <blockquote className="text-lg md:text-2xl">
+            “{domNode.nodeValue}”
+          </blockquote>
+          <span className="block mt-4">— Steve Jobs, Apple CEO</span>
+        </section>
+      );
+    }
+  },
+};
+
+const BlogDetails = ({ desc, title, image, tags, published_at }) => {
   return (
     <>
       <div className="relative">
         <StaticPageHeader
-          summary={published_at}
+          summary={published_at && published_at}
           titleClassNames="max-w-[728px]"
           headerClassNames="h-[400px] lg:h-[655px]"
           title={title}
           footer={
-            <div className="flex gap-2">
-              {tags.map((tag, index) => (
-                <Tag name={tag} key={`${tag}${index}`} />
-              ))}
-            </div>
+            <>
+              {tags && (
+                <div className="flex gap-2">
+                  {tags.map((tag, index) => (
+                    <Tag name={tag} key={`${tag}${index}`} />
+                  ))}
+                </div>
+              )}
+            </>
           }
         />
         <article className="container px-6 mx-auto relative min-w-full mb-24 pt-16 md:pt-56 lg:px-0 lg:pt-[372px]">
           <img
             className="hidden w-4/5 inset-x-0 absolute top-[-90px] md:block lg:max-w-[1008px] lg:top-[-160px] mx-auto z-10 max-h-[516px] object-contain rounded-xl"
-            src="/assets/images/BlogDetailsPlaceholder.png"
+            src={image}
             alt={title}
             title={title}
           />
           <div className="md:w-4/5 lg:max-w-[800px] mx-auto mt-8 md:mt-16 text-[#667085] font-medium text-base">
+            {parse(desc, stylingBlogDetails)}
             <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold">
               First title in blog post
             </h2>
@@ -59,7 +90,7 @@ const BlogDetails = ({
                 <span className="underline">Adobe Stock</span>
               </figcaption>
             </figure>
-            <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
+            {/* <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
               <blockquote className="text-lg md:text-2xl">
                 “You can’t connect the dots looking forward; you can only
                 connect them looking backwards. So you have to trust that the
@@ -114,7 +145,7 @@ const BlogDetails = ({
               tempus nunc. Vivamus egestas nulla nulla, vitae semper dolor
               dapibus eu. Mauris et lobortis velit. Donec in ipsum sit amet
               neque aliquet convallis quis vitae nulla.
-            </p>
+            </p> */}
             <hr className="mt-12 bg-[#EAECF0]" />
             <div className="flex flex-wrap flex-col xs:flex-row xs:justify-end gap-3 mt-6">
               <button className="flex gap-2 items-center h-[39px] text-sm font-medium rounded-sm border-[#D0D5DD] border-[1px] px-4 py-2.5 text-[#344054]">
@@ -146,5 +177,30 @@ const BlogDetails = ({
     </>
   );
 };
+
+export async function getStaticPaths() {
+  const requestArticles = await globalInstance.get("/articles");
+  const { articles } = requestArticles.data.data;
+
+  const paths = articles.map((article) => ({
+    params: { slug: article.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false,
+  };
+}
+
+export async function getStaticProps(context) {
+  const { slug } = context.params;
+  const requestArticleDetails = await globalInstance.get(`/articles/${slug}`);
+  const { article } = await requestArticleDetails.data.data;
+
+  console.log(article);
+  return {
+    props: { ...article },
+  };
+}
 
 export default BlogDetails;
