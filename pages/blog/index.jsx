@@ -2,15 +2,18 @@ import BlogCard from "../../components/Blog/BlogCard";
 import ThumbnailPlaceholder from "../../public/assets/images/thumbnail-placeholder.png";
 import StaticPageHeader from "../../shared/Components/StaticPageHeader";
 import { useState, useEffect } from "react";
+import { globalInstance } from "../../api/constant";
 
 const Blog = () => {
   const [data, setData] = useState([]);
 
   useEffect(() => {
-    const url = "https://blog.develocity.app/api/articles";
-
-    const fetchData = async (language) => {
-      try {
+    const fetchData = async () => {
+      const requestArticles = await globalInstance.get("/articles");
+      const { articles } = requestArticles.data.data;
+      console.log(articles);
+      setData(articles);
+      /*  try {
         const response = await fetch(url, {
           headers: {
             app_api_key:
@@ -23,10 +26,10 @@ const Blog = () => {
         setData(json.data.articles);
       } catch (error) {
         console.log("error", error);
-      }
+      }*/
     };
 
-    fetchData("en");
+    fetchData();
   }, []);
   return (
     <>
@@ -49,7 +52,7 @@ const Blog = () => {
                   tags={item.tags}
                 />
               );
-            })}  
+            })}
         </div>
       </section>
     </>
