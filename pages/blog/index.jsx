@@ -9,13 +9,13 @@ const Blog = () => {
   useEffect(() => {
     const url = "https://blog.develocity.app/api/articles";
 
-    const fetchData = async () => {
+    const fetchData = async (language) => {
       try {
         const response = await fetch(url, {
           headers: {
             app_api_key:
               "CwIX5kPsfTrlDHQZxK3yW6SlNPqjA8StUhZ0xeEV6dDw0kgOmwxS2pnxLN1FBPZL",
-            lang: "ar",
+            lang: language,
           },
         });
         const json = await response.json();
@@ -26,7 +26,7 @@ const Blog = () => {
       }
     };
 
-    fetchData();
+    fetchData("en");
   }, []);
   return (
     <>
