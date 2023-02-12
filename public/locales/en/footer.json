@@ -1,0 +1,15 @@
+{
+  "links": {
+    "returnsFAQ": "Returns & FAQ",
+    "privacyPolicy": "Privacy Policy",
+    "contact": "Contact",
+    "backToDevelocity": "Back to Develocity"
+  },
+  "input": {
+    "mainText1": "Get the latest updates about Develocity's new projects,",
+    "mainText2": "roadmap updates and company news.",
+    "placeholder": "Enter your email...",
+    "subscribeBtn": "Subscribe"
+  },
+  "copyright": "© 2022 Develocity, LLC. All Rights Reserved"
+}

@@ -1,0 +1,15 @@
+{
+  "blogPage": {
+    "header": "Develocity Blog",
+    "mainText": "Company news and updates",
+    "subText": "Our office is located in UAE, Dubai"
+  },
+  "blogDetails": {
+    "header": "Published on 24.12.2022",
+    "mainText": "Biggest news from Develocity's Crypto Conference 2022 Dubai",
+    "blockchain": "Blockchain",
+    "updates": "Updates",
+    "crypto": "Crypto",
+    "copyBtn": "Copy Link"
+  }
+}

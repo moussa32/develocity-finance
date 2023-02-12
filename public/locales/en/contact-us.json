@@ -1,0 +1,18 @@
+{
+  "contactUs": {
+    "header": "Contact us",
+    "mainText": "We'd love to hear from you",
+    "subText": "Our office is located in UAE, Dubai",
+    "form": {
+      "header": "Contact form",
+      "reachUs": ["Reach us via", "or use contact form"],
+      "firstName": "First name",
+      "lastName": "Last name",
+      "email": "Email",
+      "phoneNumber": "Phone number",
+      "message": "Message",
+      "checkbox": ["You agree to Develocity's", "privacy policy."],
+      "sendBtn": "Send"
+    }
+  }
+}

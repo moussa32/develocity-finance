@@ -1,0 +1,48 @@
+{
+  "headSection": {
+    "navbar": {
+      "home": "Home",
+      "projects": "Projects",
+      "blog": "Blog",
+      "documentation": "Documentation",
+      "contact": "Contact"
+    },
+    "languages": {
+      "title": "Change Language",
+      "english": "English",
+      "arabic": "Arabic",
+      "turkish": "Turkish",
+      "russian": "Russian",
+      "georgian": "Georgian",
+      "chinese": "Chinese"
+    },
+    "projects": {
+      "beta": "Beta",
+      "launched": "Launched",
+      "multiFunctionalTool": {
+        "mainText": "Multi-functional tool",
+        "subText": "A new way to discover tokens that are safe and trustworthy."
+      },
+      "swapTool": {
+        "mainText": "Swap tool",
+        "subText": "A new way to discover tokens that are safe and trustworthy."
+      },
+      "wallet": {
+        "mainText": "Wallet",
+        "subText": "A new way to discover tokens that are safe and trustworthy."
+      },
+      "bridge": {
+        "mainText": "Bridge",
+        "subText": "A new way to discover tokens that are safe and trustworthy."
+      },
+      "cryptoAcademy": {
+        "mainText": "Crypto academy",
+        "subText": "A new way to discover tokens that are safe and trustworthy."
+      },
+      "dex": {
+        "mainText": "Dex",
+        "subText": "A new way to discover tokens that are safe and trustworthy."
+      }
+    }
+  }
+}

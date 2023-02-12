@@ -1,0 +1,140 @@
+{
+  "homeSection": {
+    "preSaleCountdown": "Pre-Sale Countdown",
+    "subText": "Sheikh Marwan Bin Mohammed taking develocity in his incubator.",
+    "ecoSystemSection": {
+      "lable": "Safe Eenviroment For Your Assets",
+      "mainText": "Safe And Trustworthy Crypto Environment",
+      "subText": "Develocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
+      "subTextSecondParagraph": "The main goal of DeVelocity is to provide useful decentralized tools that would be trusted entirely and transparent, where the traders will always be able to trade freely without any risk of being locked out or exposed.",
+      "tools": {
+        "multiFunctionalTool": "Multi-functional tool",
+        "swapTool": "Swap tool",
+        "wallet": "Wallet",
+        "bridge": "Bridge",
+        "cryptoAcademy": "Crypto academy",
+        "dex": "Dex"
+      }
+    },
+    "academySection": {
+      "lableI": "Crypto Academy",
+      "lableII": "We launched Phase 1",
+      "mainText": "Crypto, Camera, Action!",
+      "subText": "We just launched the first vision of crypto academy, which is focused on rising awareness about the cryptocurrency, blockchain technology and it's benefits in general.",
+      "subTextSecondParagraph": "On the second phase crypto academy will focus on bringing well known people from different kinds of companies based on blockchain industry and you'll abeable to learn directly from them.",
+      "visitNowBtn": "Visit now➜"
+    },
+    "scannerSection": {
+      "lableI": "Beta",
+      "lableII": "Multi-Functional Tool",
+      "mainText": "Easy to Become a PRO in Crypto Investments",
+      "subText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk. This is the part where we can benefit the user the most, where all he needs to do is avoid participating in any investment without understanding what kind of risk he is getting into.",
+      "subTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
+      "getStartedBtn": "Get started"
+    },
+    "roadmapSection": {
+      "lables": {
+        "accuracy": "Accuracy",
+        "tokensInDatabase": "Tokens in database",
+        "dailyVisitors": "Daily visitors"
+      },
+      "mainText": "Roadmap",
+      "mainTextSubstring": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0.",
+      "cards": {
+        "startup": {
+          "mainText": "Startup",
+          "lable": "Live",
+          "subText": [
+            "Website Launching",
+            "Project #1 Introduction",
+            "Company Registration",
+            "License & Legal Opinion",
+            "Opening Office In Dubai"
+          ]
+        },
+        "fairlaunch": {
+          "mainText": "Fair Launch",
+          "lable": "We are here",
+          "subText": [
+            "Publishing Develocity Tool",
+            "Start Pre-Sale",
+            "Marketing Campaign",
+            "Project #2 Introduction",
+            "Promoting & Marketing"
+          ]
+        },
+        "expansion": {
+          "mainText": "Expansion",
+          "lable": "Upcoming",
+          "subText": [
+            "Publishing SWAP Tool",
+            "Marketing Campaign",
+            "Project #3 Introduction",
+            "NFT First Edition",
+            "Centralized Exchanges"
+          ]
+        },
+        "opportunities": {
+          "mainText": "Opportunities",
+          "lable": "Upcoming",
+          "subText": [
+            "Publishing Bridge",
+            "Project #4 Introduction",
+            "Marketing Campaign",
+            "Promoting & Marketing",
+            "Looking For Opportunities"
+          ]
+        }
+      },
+      "phases": ["Phase 1", "Phase 2", "Phase 3", "Phase 4"],
+      "quote": {
+        "mainText": "“We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and surrounding ourselves with those open-minded and clever souls who can take our insanity and put it to good use.”",
+        "subText": "Marwan bin Mohammed bin Rashid Al Maktoum"
+      }
+    },
+    "leadershipSection": {
+      "mainText": "Develocity Leadership",
+      "subText": "With the mindset to create secure future in the digital money.",
+      "members": [
+        {
+          "name": "Mahdi Ajaj",
+          "role": "CEO"
+        },
+        {
+          "name": "Abdulaziz Bin Fahad",
+          "role": "CTO"
+        },
+        {
+          "name": "Mamuka Kavtelishvili",
+          "role": "CMO"
+        }
+      ]
+    },
+    "partnershipSection": {
+      "mainText": "Partnerships that Last",
+      "subText": "We have connected with amazing people, businesses, and organizations for the past 2 years.",
+      "quote": {
+        "mainText": "“We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and surrounding ourselves with those open-minded and clever souls who can take our insanity and put it to good use.”",
+        "name": "Brian Armstrong",
+        "title": "CEO of Coinbase"
+      }
+    },
+    "blogSection": {
+      "mainText": "Develocity Blog",
+      "subText": "News, Updates, And Useful Content From Across The Develocity Ecosystem.",
+      "cards": [
+        {
+          "mainText": "We Are Launching App For Multi-Functional Tool",
+          "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        },
+        {
+          "mainText": "Discover The Business Solutions We Have For You",
+          "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.",
+          "span": " 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
+        }
+      ],
+      "learnMoreBtn": "Learn More ➜",
+      "checkMoreNewsBtn": "Check more news and updates ➜"
+    }
+  }
+}
