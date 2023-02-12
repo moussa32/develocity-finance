@@ -1,0 +1,15 @@
+{
+  "links": {
+    "returnsFAQ": "العوائد والأسئلة الشائعة",
+    "privacyPolicy": "سياسة الخصوصية",
+    "contact": "التواصل",
+    "backToDevelocity": "الرجوع الى Develocity"
+  },
+  "input": {
+    "mainText1": "احصل على آخر التحديثات حول مشاريع Develocity الجديدة",
+    "mainText2": "وتحديثات خارطة الطريق وأخبار الشركة.",
+    "placeholder": "ادخل ايميلك...",
+    "subscribeBtn": "اشتراك"
+  },
+  "copyright": "© 2022 Develocity، LLC. كل الحقوق محفوظة"
+}
