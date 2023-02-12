@@ -7,8 +7,12 @@ import RoadMap from "../components/Homepage/RoadMap";
 import Scanner from "../components/Homepage/Scanner";
 import Header from "../components/Homepage/Header";
 import Head from "next/head";
+import { useRouter } from "next/router";
 
 const Home = () => {
+  const router = useRouter();
+
+  console.log(router.locales);
   return (
     <>
       <Head>
