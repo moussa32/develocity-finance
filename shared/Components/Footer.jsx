@@ -5,8 +5,10 @@ import instagram from "../../public/assets/images/instagram.svg";
 import telegram from "../../public/assets/images/telegram.svg";
 import Image from "next/image";
 import NextNavLink from "./NextNavLink";
+import { useTranslation } from "next-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation("footer");
   return (
     <div className="bg-[#F9FAFB]">
       <div className="container mx-auto md:px-10 lg:px-0 pt-16 md:pt-24 pb-16 text-left text-[#525C7A] text-base font-medium">
@@ -18,40 +20,38 @@ const Footer = () => {
                 href="/"
                 className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0"
               >
-                Returns & FAQ
+                {t("links.returnsFAQ")}
               </NextNavLink>
               <NextNavLink
                 href="/"
                 className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0"
               >
-                Privacy Policy
+                {t("links.privacyPolicy")}
               </NextNavLink>
               <NextNavLink
                 href="/contact-us"
                 className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0"
               >
-                Contact
+                {t("links.contact")}
               </NextNavLink>
               <NextNavLink
                 href="/"
                 className="hidden md:block lg:inline-block lg:mr-6 my-6 lg:my-0"
               >
-                Back to Develocity
+                {t("links.backToDevelocity")}
               </NextNavLink>
             </div>
           </div>
           <div className="hidden md:block ml-auto">
-            <p className="px-5 md:px-0">
-              Get the latest updates about Develocity's new projects,
-            </p>
-            <p className="px-5 md:px-0">roadmap updates and company news.</p>
+            <p className="px-5 md:px-0">{t("input.mainText1")}</p>
+            <p className="px-5 md:px-0">{t("input.mainText2")}</p>
             <div className="mt-6 flex flex-col md:flex-row items-center flex-wrap md:mt-4">
               <input
                 className="placeholder:text-[#667085] font-normal placeholder:text-base h-11 w-72 md:w-80 border-1 border py-5 md:mr-2 pl-3 border-[#D0D5DD]"
-                placeholder="Enter your email..."
+                placeholder={t("input.placeholder")}
               />
               <button className="flex items-center justify-center bg-indigo-500 h-[44px] rounded-sm text-white font-normal py-3 px-6 ml-2 mt-5 md:mx-auto lg:mt-0 hover:bg-indigo-600">
-                Subscribe
+                {t("input.subscribeBtn")}
               </button>
             </div>
           </div>
@@ -89,7 +89,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="mt-6 md:mt-0 ml-4 md:ml-0 md:text-right">
-            © 2022 Develocity, LLC. All Rights Reserved
+            {t("copyright")}
           </p>
         </div>
       </div>

@@ -9,11 +9,13 @@ import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 import useNavbarScroll from "../Hooks/useNavbarBackground";
 import Image from "next/image";
+import { useTranslation } from "next-i18next";
 
 const SideMenu = () => {
   const [isScroll] = useNavbarScroll(50);
   const [isOpen, setIsOpen] = useState(false);
   const DisclosureButton = useRef(null);
+  const { t } = useTranslation("navbar");
 
   useEffect(() => {
     if (DisclosureButton.current) {
@@ -63,7 +65,7 @@ const SideMenu = () => {
             <div className="space-y-1 text-center px-2 pt-2 pb-3">
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <NextNavLink className="mb-3 md:mb-0" href="/">
-                  Home
+                  {t("headSection.navbar.home")}
                 </NextNavLink>
               </div>
 
@@ -73,19 +75,19 @@ const SideMenu = () => {
 
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <NextNavLink className="mb-3 md:mb-0" href="/blog">
-                  Blog
+                  {t("headSection.navbar.blog")}
                 </NextNavLink>
               </div>
 
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <NextNavLink className="mb-3 md:mb-0" href="/blog">
-                  Documentation
+                  {t("headSection.navbar.documentation")}
                 </NextNavLink>
               </div>
 
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <NextNavLink className="mb-3 md:mb-0" href="/contact-us">
-                  Contact
+                  {t("headSection.navbar.contact")}
                 </NextNavLink>
               </div>
 

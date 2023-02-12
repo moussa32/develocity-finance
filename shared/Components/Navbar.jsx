@@ -4,8 +4,10 @@ import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 import Image from "next/image";
 import NextNavLink from "./NextNavLink";
+import { useTranslation } from "next-i18next";
 
 const Navbar = ({ containerClassName }) => {
+  const { t } = useTranslation("navbar");
   return (
     <div>
       <div
@@ -15,19 +17,19 @@ const Navbar = ({ containerClassName }) => {
         <Image className="my-5 md:my-0" src={navLogo} alt="navbar logo" />
         <div className="flex flex-col md:flex-row justify-between items-center md:gap-3 lg:gap-8 text-base font-medium">
           <NextNavLink className="mb-3 md:mb-0" href="/">
-            Home
+            {t("headSection.navbar.home")}
           </NextNavLink>
           <div className="mb-3 md:mb-0" href="/">
             <ProjectsDropdown />
           </div>
           <NextNavLink className="mb-3 md:mb-0" href="/blog">
-            Blog
+            {t("headSection.navbar.blog")}
           </NextNavLink>
           <NextNavLink className="mb-3 md:mb-0" href="/blog">
-            Documentation
+            {t("headSection.navbar.documentation")}
           </NextNavLink>
           <NextNavLink className="mb-3 md:mb-0" href="/contact-us">
-            Contact
+            {t("headSection.navbar.contact")}
           </NextNavLink>
           <div className="bg-white bg-opacity-20 rounded-[30px]">
             <Image

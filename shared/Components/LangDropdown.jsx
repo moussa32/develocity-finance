@@ -9,17 +9,24 @@ import turkishIcon from "../../public/assets/images/turkish-icon.svg";
 import russianIcon from "../../public/assets/images/russian-icon.svg";
 import georgianIcon from "../../public/assets/images/georgian-icon.svg";
 import Image from "next/image";
+import Link from "next/link";
+import { useTranslation } from "next-i18next";
+import { useRouter } from "next/router";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
 }
 
 const LangDropdown = () => {
+  const { locale, locales, push } = useRouter();
+  const router = useRouter();
+  //const changeTo = router.locale === 'en' ? 'ar' : 'en'
+  const { t } = useTranslation("navbar");
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium shadow-sm ">
-          English
+          {t("headSection.languages.english")}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
@@ -49,14 +56,15 @@ const LangDropdown = () => {
                     "block w-full px-4 py-2 text-sm font-semibold text-indigo-500"
                   )}
                 >
-                  Change Language
+                  {t("headSection.languages.title")}
                 </h2>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <button
-                  href="#"
+                <Link
+                  href="/"
+                  locale={"en"}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
@@ -68,15 +76,16 @@ const LangDropdown = () => {
                       src={englishIcon}
                       alt="english icon"
                     />
-                    English
+                    {t("headSection.languages.english")}
                   </div>
-                </button>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
               {({ active }) => (
-                <button
-                  href="#"
+                <Link
+                  href="/ar"
+                  locale={"ar"}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
@@ -88,9 +97,9 @@ const LangDropdown = () => {
                       src={arabicIcon}
                       alt="arabic icon"
                     />
-                    Arabic
+                    {t("headSection.languages.arabic")}
                   </div>
-                </button>
+                </Link>
               )}
             </Menu.Item>
             <Menu.Item>
@@ -108,7 +117,7 @@ const LangDropdown = () => {
                       src={turkishIcon}
                       alt="turkish icon"
                     />
-                    Turkish
+                    {t("headSection.languages.turkish")}
                   </div>
                 </button>
               )}
@@ -128,7 +137,7 @@ const LangDropdown = () => {
                       src={russianIcon}
                       alt="russian icon"
                     />
-                    <span>Russian</span>
+                    {t("headSection.languages.russian")}
                   </div>
                 </button>
               )}
@@ -148,7 +157,7 @@ const LangDropdown = () => {
                       src={georgianIcon}
                       alt="georgian icon"
                     />
-                    <span>Georgian</span>
+                    {t("headSection.languages.georgian")}
                   </div>
                 </button>
               )}
