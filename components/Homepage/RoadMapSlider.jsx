@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import Image from "next/image";
 import prevArrow from "../../public/assets/images/roadmap-prev-arrow.svg";
 import nextArrow from "../../public/assets/images/roadmap-next-arow.svg";
 import phaseOne from "../../public/assets/images/phase1.svg";
@@ -34,7 +35,7 @@ const RoadMapSlider = () => {
       <SwiperSlide>
         <div>
           <div className="mx-auto mt-16 text-center">
-            <img className="mb-6 mx-auto" src={phaseOne} alt="phase 1 icon" />
+            <Image className="mb-6 mx-auto" src={phaseOne} alt="phase 1 icon" />
             <h3 className="text-[32px] mb-[6px] font-semibold">Phase 1</h3>
             <span className="text-base text-[#B8B8B8]">Live</span>
           </div>
@@ -57,7 +58,7 @@ const RoadMapSlider = () => {
       <SwiperSlide>
         <div>
           <div className="mx-auto mt-16 text-center">
-            <img className="mb-6 mx-auto" src={phaseTwo} alt="phase 2 icon" />
+            <Image className="mb-6 mx-auto" src={phaseTwo} alt="phase 2 icon" />
             <h3 className="text-[32px] mb-[6px] font-semibold">Phase 2</h3>
             <span className="text-base text-[#B8B8B8]">Live</span>
           </div>
@@ -80,7 +81,7 @@ const RoadMapSlider = () => {
       <SwiperSlide>
         <div>
           <div className="mx-auto mt-16 text-center">
-            <img className="mb-6 mx-auto" src={phaseThree} alt="phase 3 icon" />
+            <Image className="mb-6 mx-auto" src={phaseThree} alt="phase 3 icon" />
             <h3 className="text-[32px] mb-[6px] font-semibold">Phase 3</h3>
             <span className="text-base text-[#B8B8B8]">Live</span>
           </div>
@@ -103,7 +104,7 @@ const RoadMapSlider = () => {
       <SwiperSlide>
         <div>
           <div className="mx-auto mt-16 text-center">
-            <img className="mb-6 mx-auto" src={phaseFour} alt="phase 4 icon" />
+            <Image className="mb-6 mx-auto" src={phaseFour} alt="phase 4 icon" />
             <h3 className="text-[32px] mb-[6px] font-semibold">Phase 4</h3>
             <span className="text-base text-[#B8B8B8]">Live</span>
           </div>
@@ -125,13 +126,15 @@ const RoadMapSlider = () => {
           </div>
         </div>
       </SwiperSlide>
-      <img
+      <Image
         src={prevArrow}
+        alt={"prev arrow"}
         className="-bottom-6 md:bottom-0 md:top-1/2 left-[130px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavPrevRef}
       />
-      <img
+      <Image
         src={nextArrow}
+        alt={"next arrow"}
         className="-bottom-6 md:bottom-0 md:top-1/2 right-[130px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavNextRef}
       />
