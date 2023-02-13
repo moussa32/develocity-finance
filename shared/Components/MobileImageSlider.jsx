@@ -13,7 +13,7 @@ const MobileImageSlider = ({
 }) => {
   return (
     <Swiper
-      className={`mt-8 md:hidden ${containerClassNames}`}
+      className={`mt-8 d-hidden ${containerClassNames}`}
       modules={[Navigation]}
       speed={800}
       centeredSlides={true}

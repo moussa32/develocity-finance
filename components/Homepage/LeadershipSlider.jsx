@@ -16,7 +16,7 @@ const LeadershipSlider = () => {
 
   return (
     <Swiper
-      className="pb-24 mt-12 mb-32 md:pb-0 md:hidden"
+      className="slider-padding mt-12 mb-32  d-hidden"
       modules={[Navigation]}
       navigation={{
         prevEl: swiperNavPrevRef.current,

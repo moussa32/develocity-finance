@@ -14,7 +14,7 @@ const Slider = () => {
 
   return (
     <Swiper
-      className="pb-24 md:pb-0"
+      className="slider-padding"
       modules={[Navigation]}
       navigation={{
         prevEl: swiperNavPrevRef.current,

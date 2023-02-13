@@ -16,7 +16,7 @@ const RoadMapSlider = () => {
   const swiperNavNextRef = useRef(null);
   return (
     <Swiper
-      className="pb-24 md:pb-0 md:hidden"
+      className="slider-padding d-hidden"
       modules={[Navigation]}
       navigation={{
         prevEl: swiperNavPrevRef.current,
