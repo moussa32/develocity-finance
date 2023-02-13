@@ -9,6 +9,7 @@ const useTranslation = translationFile => {
   useEffect(() => {
     if (!locale) {
       setErrors("Couldn't find translation directory");
+      return;
     }
 
     const dynamicImportTranslationFile = async () => {
