@@ -8,6 +8,7 @@ import SideMenu from "../../shared/Components/SideMenu";
 import { calculateTimeLeft } from "../../shared/Util/countdown";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 import Image from "next/image";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const featuredImages = [
   {
@@ -42,6 +43,8 @@ const featuredImages = [
 
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const { t, errors } = useTranslation("common");
+ // console.log(t, errors);
 
   useEffect(() => {
     const timer = setTimeout(() => {
@@ -49,7 +52,7 @@ const Header = () => {
     }, 1000);
 
     return () => clearTimeout(timer);
-  });
+  }, [timeLeft]);
 
   return (
     <div className="relative header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left h-[852px] md:h-[810px]">
@@ -57,9 +60,7 @@ const Header = () => {
       <div className="container text-white mt-32 md:mt-60 z-20 md:flex md:flex-col">
         <div className="w-50 mx-auto flex flex-col justify-center z-20 md:h-[400px] lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
-            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl md:text-6xl">
-              Pre-Sale Countdown
-            </h2>
+            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl md:text-6xl">Pre-Sale Countdown</h2>
             <time className="font-semibold text-7xl text-center md:mt-[29px]">
               {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}`}
             </time>
@@ -67,21 +68,13 @@ const Header = () => {
           <div className="w-full flex justify-center md:justify-start mt-14">
             <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">
               <div className="flex items-center p-[5px] justify-center rounded-lg w-9 h-9 bg-gray-300 bg-opacity-20 basis-9 shrink-0">
-                <Image
-                  className="w-full md:h-auto md:w-auto"
-                  src={Loudspeaker}
-                />
+                <Image className="w-full md:h-auto md:w-auto" src={Loudspeaker} alt="Loud Speaker" />
               </div>
               <div className="flex flex-col md:flex-row md:gap-x-1 md:items-center items-start text-xs xs:text-sm text-[#E9E9E9]">
                 <p>
-                  Sheikh{" "}
-                  <span className="underline underline-offset-2 text-[#00B9FF]">
-                    Marwan Bin Mohammed
-                  </span>
+                  Sheikh <span className="underline underline-offset-2 text-[#00B9FF]">Marwan Bin Mohammed</span>
                 </p>
-                <span className="block md:inline">
-                  taking develocity in his incubator.
-                </span>
+                <span className="block md:inline">taking develocity in his incubator.</span>
               </div>
             </div>
           </div>
@@ -101,11 +94,7 @@ const Header = () => {
             src={BloombergIcon}
             alt="bloomberg"
           />
-          <Image
-            className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={WiredIcon}
-            alt="Wired"
-          />
+          <Image className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80" src={WiredIcon} alt="Wired" />
           <Image
             className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
             src={CoindeskIcons}
