@@ -14,36 +14,22 @@ const Footer = () => {
           <div>
             <Image className="" src={logo} alt="footer logo" />
             <div className="mt-6">
-              <NextNavLink
-                href="/"
-                className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0"
-              >
+              <NextNavLink href="/" className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0">
                 Returns & FAQ
               </NextNavLink>
-              <NextNavLink
-                href="/"
-                className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0"
-              >
+              <NextNavLink href="/" className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0">
                 Privacy Policy
               </NextNavLink>
-              <NextNavLink
-                href="/contact-us"
-                className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0"
-              >
+              <NextNavLink href="/contact-us" className="md:block lg:inline-block mr-6 md:mr-0 lg:mr-6 mt-6 lg:mt-0">
                 Contact
               </NextNavLink>
-              <NextNavLink
-                href="/"
-                className="hidden md:block lg:inline-block lg:mr-6 my-6 lg:my-0"
-              >
+              <NextNavLink href="/" className="hidden md:block lg:inline-block lg:mr-6 my-6 lg:my-0">
                 Back to Develocity
               </NextNavLink>
             </div>
           </div>
           <div className="hidden md:block ml-auto">
-            <p className="px-5 md:px-0">
-              Get the latest updates about Develocity's new projects,
-            </p>
+            <p className="px-5 md:px-0">Get the latest updates about Develocity's new projects,</p>
             <p className="px-5 md:px-0">roadmap updates and company news.</p>
             <div className="mt-6 flex flex-col md:flex-row items-center flex-wrap md:mt-4">
               <input
@@ -60,37 +46,19 @@ const Footer = () => {
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
             <a href="#">
-              <Image
-                className="inline-block ml-4"
-                src={facebook}
-                alt="facebook icon"
-              />
+              <Image className="inline-block ml-4" src={facebook} alt="facebook icon" />
             </a>
             <a href="#">
-              <Image
-                className="inline-block ml-4"
-                src={twitter}
-                alt="twitter icon"
-              />
+              <Image className="inline-block ml-4" src={twitter} alt="twitter icon" />
             </a>
             <a href="#">
-              <Image
-                className="inline-block ml-4"
-                src={instagram}
-                alt="instagram icon"
-              />
+              <Image className="inline-block ml-4" src={instagram} alt="instagram icon" />
             </a>
             <a href="#">
-              <Image
-                className="inline-block ml-4"
-                src={telegram}
-                alt="telegram icon"
-              />
+              <Image className="inline-block ml-4" src={telegram} alt="telegram icon" />
             </a>
           </div>
-          <p className="mt-6 md:mt-0 ml-4 md:ml-0 md:text-right">
-            © 2022 Develocity, LLC. All Rights Reserved
-          </p>
+          <p className="mt-6 md:mt-0 ml-4 md:ml-0 md:text-right">© 2022 Develocity, LLC. All Rights Reserved</p>
         </div>
       </div>
     </div>
