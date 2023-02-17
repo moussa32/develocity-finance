@@ -20,7 +20,7 @@ const LangDropdown = () => {
   const { t, errors } = useTranslation("navbar");
   const router = useRouter();
 
-  const changeLanguage = (event) => {
+  const changeLanguage = event => {
     const { pathname } = router;
     const locale = event.currentTarget.name;
     router.push(pathname, pathname, { locale });
@@ -45,11 +45,7 @@ const LangDropdown = () => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute -right-5 z-10 mt-5 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <Image
-            className="absolute right-20 -top-[7px] origin-top-right"
-            src={dropdownArrow}
-            alt="dropdown arrow"
-          />
+          <Image className="absolute right-20 -top-[7px] origin-top-right" src={dropdownArrow} alt="dropdown arrow" />
           <div className="py-1 text-center">
             <Menu.Item>
               {({ active }) => (
@@ -68,17 +64,15 @@ const LangDropdown = () => {
                 <button
                   name="en"
                   onClick={changeLanguage}
+                  name="en"
+                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image
-                      className="inline-block mr-3"
-                      src={englishIcon}
-                      alt="english icon"
-                    />
+                    <Image className="inline-block mr-3" src={englishIcon} alt="english icon" />
                     {t?.headSection?.languages?.english}
                   </div>
                 </button>
@@ -89,17 +83,15 @@ const LangDropdown = () => {
                 <button
                   name="ar"
                   onClick={changeLanguage}
+                  name="ar"
+                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image
-                      className="inline-block mr-3"
-                      src={arabicIcon}
-                      alt="arabic icon"
-                    />
+                    <Image className="inline-block mr-3" src={arabicIcon} alt="arabic icon" />
                     {t?.headSection?.languages?.arabic}
                   </div>
                 </button>
@@ -110,17 +102,15 @@ const LangDropdown = () => {
                 <button
                   name="tr"
                   onClick={changeLanguage}
+                  name="tr"
+                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image
-                      className="inline-block mr-3"
-                      src={turkishIcon}
-                      alt="turkish icon"
-                    />
+                    <Image className="inline-block mr-3" src={turkishIcon} alt="turkish icon" />
                     {t?.headSection?.languages?.turkish}
                   </div>
                 </button>
@@ -131,17 +121,15 @@ const LangDropdown = () => {
                 <button
                   name="ru"
                   onClick={changeLanguage}
+                  name="ru"
+                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image
-                      className="inline-block  mr-3"
-                      src={russianIcon}
-                      alt="russian icon"
-                    />
+                    <Image className="inline-block  mr-3" src={russianIcon} alt="russian icon" />
                     <span>{t?.headSection?.languages?.russian}</span>
                   </div>
                 </button>
@@ -152,17 +140,15 @@ const LangDropdown = () => {
                 <button
                   name="ka"
                   onClick={changeLanguage}
+                  name="ka"
+                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image
-                      className="inline-block mr-3"
-                      src={georgianIcon}
-                      alt="georgian icon"
-                    />
+                    <Image className="inline-block mr-3" src={georgianIcon} alt="georgian icon" />
                     <span>{t?.headSection?.languages?.georgian}</span>
                   </div>
                 </button>

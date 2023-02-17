@@ -9,6 +9,7 @@ import { calculateTimeLeft } from "../../shared/Util/countdown";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const featuredImages = [
   {
@@ -44,7 +45,7 @@ const featuredImages = [
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const { t, errors } = useTranslation("common");
- // console.log(t, errors);
+  console.log(t, errors);
 
   useEffect(() => {
     const timer = setTimeout(() => {

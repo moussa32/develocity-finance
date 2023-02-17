@@ -1,140 +1,140 @@
 {
   "homeSection": {
-    "preSaleCountdown": "العد التنازلي لبدء البيع الاولي",
-    "subText": "الشيخ مروان بن محمد يحتضن Develocity",
+    "preSaleCountdown": "Pre-Sale Countdown",
+    "subText": "Sheikh Marwan Bin Mohammed taking develocity in his incubator.",
     "ecoSystemSection": {
-      "lable": "بيئة امنة لاصولك",
-      "mainText": "بيئة تشفير امنة وجديرة بالثقة",
-      "subText": "Develocity تسعى جاهدة لانشاء بيئة تشفير آمنة وجديرة بالثقة حيث يمكن للمستثمرين والمطورين التفاعل بشكل آمن مع مراعاة المصداقية الشفافة والتدابير والمعايير التقنية",
-      "subTextSecondParagraph": "الهدف الرئيسي لـ Develocity هو توفير ادوات لا مركزية مفيدة يمكن الوثوق بها تماما وشفافة حيث سيكون المتداولون دائما قادرين على التداول بحرية دون اي خطر",
+      "lable": "Safe Eenviroment For Your Assets",
+      "mainText": "Safe And Trustworthy Crypto Environment",
+      "subText": "Develocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
+      "subTextSecondParagraph": "The main goal of DeVelocity is to provide useful decentralized tools that would be trusted entirely and transparent, where the traders will always be able to trade freely without any risk of being locked out or exposed.",
       "tools": {
-        "multiFunctionalTool": "اداة متعددة الوظائف",
-        "swapTool": "اداة التبديل",
-        "wallet": "محفظة",
-        "bridge": "جسر",
-        "cryptoAcademy": "اكاديمية العملات المشفرة",
-        "dex": "منصة لا مركزية"
+        "multiFunctionalTool": "Multi-functional tool",
+        "swapTool": "Swap tool",
+        "wallet": "Wallet",
+        "bridge": "Bridge",
+        "cryptoAcademy": "Crypto academy",
+        "dex": "Dex"
       }
     },
     "academySection": {
-      "lableI": "اكاديمية العملات المشفرة",
-      "lableII": "المرحلة الاولئ انطلقت",
-      "mainText": "تشفير ، كاميرا ، أكشن!",
-      "subText": "اطلقنا للتو الرؤية الاولى للاكاديمية، والتي تركز على زيادة الوعي حول العملة المشفرة وتكنولوجيا blockchain وفوائدها بشكل عام",
-      "subTextSecondParagraph": "في المرحلة الثانية، ستركز الاكاديمية على جلب الاشخاص المعروفين من انواع مختلفة من الشركات القائمة على صناعة blockchain وستكون على التعلم منهم مباشرة",
-      "visitNowBtn": "زيارة الان➜"
+      "lableI": "Crypto Academy",
+      "lableII": "We launched Phase 1",
+      "mainText": "Crypto, Camera, Action!",
+      "subText": "We just launched the first vision of crypto academy, which is focused on rising awareness about the cryptocurrency, blockchain technology and it's benefits in general.",
+      "subTextSecondParagraph": "On the second phase crypto academy will focus on bringing well known people from different kinds of companies based on blockchain industry and you'll abeable to learn directly from them.",
+      "visitNowBtn": "Visit now➜"
     },
     "scannerSection": {
-      "lableI": "النسخة التجريبية",
-      "lableII": "اداة متعددة الوظائف",
-      "mainText": "من السهل ان تصبح محترف في استثمار العملات",
-      "subText": "يحاول مستخدموا DeFi دائما العثور على الاستثمار المثالي وهم على استعداد لتحمل المخاطر حتى لو حاولوا قدر المستطاع لتقليل المخاطر فلن يتمكنوا من تحديد حجم الخطر. هذا هو الجزء الذي يمكننا فيه افادة المستخدم اكثر من غيره حيث كل مايحتاج اليه هو تجنب المشاركة في اي استثمار دون فهم نوع الخطر الذي يتعرض له.",
-      "subTextSecondParagraph": "تأتي اداة متعددة الوظائف لمساعدة المستخدمين في مواجهة تحدياتهم عن طريق فحص / مسح العقد او البحث بالرمز المميز للحصول على تقرير مفصل سريع وعميق.",
-      "getStartedBtn": "ابدأ"
+      "lableI": "Beta",
+      "lableII": "Multi-Functional Tool",
+      "mainText": "Easy to Become a PRO in Crypto Investments",
+      "subText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk. This is the part where we can benefit the user the most, where all he needs to do is avoid participating in any investment without understanding what kind of risk he is getting into.",
+      "subTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
+      "getStartedBtn": "Get started"
     },
     "roadmapSection": {
       "lables": {
-        "accuracy": "الدقة",
-        "tokensInDatabase": "الرموز/ العملات في قاعدة البيانات",
-        "dailyVisitors": "زائر يوميا"
+        "accuracy": "Accuracy",
+        "tokensInDatabase": "Tokens in database",
+        "dailyVisitors": "Daily visitors"
       },
-      "mainText": "خريطة الطريق",
-      "mainTextSubstring": "تطمح Develocity لتقديم مشروعها النهائي في اربع مراحل اولية. يتم تقديم كل مرحلة على شكل منفرد ودمجها في مرحلة مابعد النهائية لانشاء منصة لامركزية. والتي ستكون مميزة من حيث التكنولوجيا والتطوير على اساس Web 3.0.",
+      "mainText": "Roadmap",
+      "mainTextSubstring": "Develocity aspires to present its final project in four primary stages. Each stage is presented separately and merged in the post-final stage to create a decentralised platform, which would be distinctively in terms of technology and development based on Web 3.0.",
       "cards": {
         "startup": {
-          "mainText": "البداية",
-          "lable": "مباشر",
+          "mainText": "Startup",
+          "lable": "Live",
           "subText": [
-            "اطلاق الموقع",
-            "مقدمة المشروع الاول",
-            "تسجيل الشركة",
-            "الترخيص والرأي القانوني",
-            "افتتاح مكتب دبي"
+            "Website Launching",
+            "Project #1 Introduction",
+            "Company Registration",
+            "License & Legal Opinion",
+            "Opening Office In Dubai"
           ]
         },
         "fairlaunch": {
-          "mainText": "الاطلاق العادل",
-          "lable": "نحن هنا",
+          "mainText": "Fair Launch",
+          "lable": "We are here",
           "subText": [
-            "اطلاق اداة Develocity",
-            "بدء البيع الاولي",
-            "حملة تسويقية",
-            "مقدمة المشروع الثاني",
-            "ترويج وتسويق"
+            "Publishing Develocity Tool",
+            "Start Pre-Sale",
+            "Marketing Campaign",
+            "Project #2 Introduction",
+            "Promoting & Marketing"
           ]
         },
         "expansion": {
-          "mainText": "توسع",
-          "lable": "القادم",
+          "mainText": "Expansion",
+          "lable": "Upcoming",
           "subText": [
-            "اطلاق اداة التبديل",
-            "حملة تسويقية",
-            "مقدمة المشروع الثالث",
-            "النسخة الاولى من NFT",
-            "المنصات المركزية"
+            "Publishing SWAP Tool",
+            "Marketing Campaign",
+            "Project #3 Introduction",
+            "NFT First Edition",
+            "Centralized Exchanges"
           ]
         },
         "opportunities": {
-          "mainText": "الفرص",
-          "lable": "القادم",
+          "mainText": "Opportunities",
+          "lable": "Upcoming",
           "subText": [
-            "اطلاق الجسر",
-            "مقدمة المشروع الرابع",
-            "حملة تسويقية",
-            "ترويج وتسويق",
-            "البحث عن فرص"
+            "Publishing Bridge",
+            "Project #4 Introduction",
+            "Marketing Campaign",
+            "Promoting & Marketing",
+            "Looking For Opportunities"
           ]
         }
       },
-      "phases": ["المرحلة الاولى", "المرحلة الثانية", "المرحلة الثالثة", "المرحلة الرابعة"],
+      "phases": ["Phase 1", "Phase 2", "Phase 3", "Phase 4"],
       "quote": {
-        "mainText": "“نحن رواد الاعمال منعزلون ومثيرون للمشاكل، النجاح ببساطة مسألة ايجاد واحاطة انفسنا بارواح متفتحة وذكية من يستطيع ان يأخذ جنوننا ويستفيد منه”",
-        "subText": "الشيخ مروان بن محمد بن راشد آل مكتوم"
+        "mainText": "“We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and surrounding ourselves with those open-minded and clever souls who can take our insanity and put it to good use.”",
+        "subText": "Marwan bin Mohammed bin Rashid Al Maktoum"
       }
     },
     "leadershipSection": {
-      "mainText": "Develocity قيادة",
-      "subText": "مع عقلية خلق مستقبل آمن في النقود الرقمية.",
+      "mainText": "Develocity Leadership",
+      "subText": "With the mindset to create secure future in the digital money.",
       "members": [
         {
-          "name": "مهدي عجاج",
-          "role": "المدير التنفيذي"
+          "name": "Mahdi Ajaj",
+          "role": "CEO"
         },
         {
-          "name": "عبدالعزيز بن فهد",
-          "role": "رئيس قسم التكنولوجيا"
+          "name": "Abdulaziz Bin Fahad",
+          "role": "CTO"
         },
         {
-          "name": "ماموكا كافتيليشفيلي",
-          "role": "رئيس قسم التسويق "
+          "name": "Mamuka Kavtelishvili",
+          "role": "CMO"
         }
       ]
     },
     "partnershipSection": {
-      "mainText": "شراكات تدوم",
-      "subText": "لقد تواصلنا مع اشخاص رائعين وشركات ومؤسسات من على مدار السنتين الماضيتين",
+      "mainText": "Partnerships that Last",
+      "subText": "We have connected with amazing people, businesses, and organizations for the past 2 years.",
       "quote": {
-        "mainText": "“نحن رواد الاعمال منعزلون ومثيرون للمشاكل، النجاح ببساطة مسألة ايجاد واحاطة انفسنا بارواح متفتحة وذكية من يستطيع ان يأخذ جنوننا ويستفيد منه”",
-        "name": "بريان ارمسترونج",
-        "title": "الرئيس التنفيذي لـ Coinbase"
+        "mainText": "“We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and surrounding ourselves with those open-minded and clever souls who can take our insanity and put it to good use.”",
+        "name": "Brian Armstrong",
+        "title": "CEO of Coinbase"
       }
     },
     "blogSection": {
-      "mainText": "مدونة Develocity",
-      "subText": "الأخبار والتحديثات والمحتوى المفيد من جميع أنحاء النظام البيئي Develocity",
+      "mainText": "Develocity Blog",
+      "subText": "News, Updates, And Useful Content From Across The Develocity Ecosystem.",
       "cards": [
         {
-          "mainText": "نحن نطلق تطبيقًا لأداة متعددة الوظائف",
+          "mainText": "We Are Launching App For Multi-Functional Tool",
           "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         },
         {
-          "mainText": "اكتشف حلول الأعمال التي نوفرها لك",
+          "mainText": "Discover The Business Solutions We Have For You",
           "subText": "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the.",
           "span": " 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book."
         }
       ],
-      "learnMoreBtn": "تعلم اكثر ➜",
-      "checkMoreNewsBtn": "تحقق من المزيد من الأخبار والتحديثات ➜"
+      "learnMoreBtn": "Learn More ➜",
+      "checkMoreNewsBtn": "Check more news and updates ➜"
     }
   }
 }
