@@ -22,23 +22,19 @@ const Academy = () => {
 
         <div className="flex flex-col ml-auto">
           <span className="bg-[#F3F4F8] mx-auto rounded-2xl text-xs font-medium p-1.5 pr-[18px] flex items-center gap-2 w-fit md:text-sm lg:flex-row lg:mx-0">
-            <span className="bg-white py-1 px-2.5 rounded-2xl flex items-center">
-              Crypto Academy
-            </span>
+            <span className="bg-white py-1 px-2.5 rounded-2xl flex items-center">Crypto Academy</span>
             <span className="text-[#344054]">Phase I</span>
           </span>
           <h3 className="text-[#101828] text-center font-bold text-[28px] my-4 md:text-2xl md:text-left md:mt-3 md:mb-6 lg:text-4xl">
             Crypto, Camera, Action!
           </h3>
           <p className="text-neutral-500 text-base font-medium">
-            We just launched the first vision of crypto academy, which is
-            focused on rising awareness about the cryptocurrency, blockchain
-            technology and it's benefits in general.
+            We just launched the first vision of crypto academy, which is focused on rising awareness about the
+            cryptocurrency, blockchain technology and it&lsquo;s benefits in general.
           </p>
           <p className="text-neutral-500 text-base font-medium mt-4">
-            On the second phase crypto academy will focus on bringing well known
-            people from different kinds of companies based on blockchain
-            industry and you'll beable to learn directly from them.
+            On the second phase crypto academy will focus on bringing well known people from different kinds of
+            companies based on blockchain industry and you&lsquo;ll beable to learn directly from them.
           </p>
           <button className="flex justify-between py-3.5 px-[34px] rounded w-full bg-indigo-500 text-white text-md font-medium mt-8 md:w-48 md:rounded-sm md:px-[45px]">
             Visit now <span>&#10140;</span>

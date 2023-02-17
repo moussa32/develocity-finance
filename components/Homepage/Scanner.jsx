@@ -41,15 +41,15 @@ const Scanner = () => {
             </button>
             <div className="flex justify-center sm:justify-start">
               <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded">
-                <Image src={AppleStoreIcon} />
+                <Image src={AppleStoreIcon} alt="Apple Store" />
               </button>
               <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded ml-3">
-                <Image src={GooglePlayIcon} />
+                <Image src={GooglePlayIcon} alt="Google Play" />
               </button>
             </div>
           </div>
         </div>
-        <Image src={ScannerWallet} className="hidden lg:block" />
+        <Image src={ScannerWallet} className="hidden lg:block" alt="Scanner wallet" />
       </div>
     </section>
   );
