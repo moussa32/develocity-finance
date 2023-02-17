@@ -9,7 +9,6 @@ import { calculateTimeLeft } from "../../shared/Util/countdown";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import useTranslation from "@/shared/Hooks/useTranslation";
 
 const featuredImages = [
   {

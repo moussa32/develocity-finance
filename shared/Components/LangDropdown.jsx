@@ -64,8 +64,6 @@ const LangDropdown = () => {
                 <button
                   name="en"
                   onClick={changeLanguage}
-                  name="en"
-                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
@@ -81,8 +79,6 @@ const LangDropdown = () => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  name="ar"
-                  onClick={changeLanguage}
                   name="ar"
                   onClick={changeLanguage}
                   className={classNames(
@@ -102,8 +98,6 @@ const LangDropdown = () => {
                 <button
                   name="tr"
                   onClick={changeLanguage}
-                  name="tr"
-                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
@@ -121,8 +115,6 @@ const LangDropdown = () => {
                 <button
                   name="ru"
                   onClick={changeLanguage}
-                  name="ru"
-                  onClick={changeLanguage}
                   className={classNames(
                     active ? "bg-gray-100 text-black" : "text-gray-900",
                     "block w-full px-4 py-2 text-base font-semibold text-gray-900"
@@ -138,8 +130,6 @@ const LangDropdown = () => {
             <Menu.Item>
               {({ active }) => (
                 <button
-                  name="ka"
-                  onClick={changeLanguage}
                   name="ka"
                   onClick={changeLanguage}
                   className={classNames(
