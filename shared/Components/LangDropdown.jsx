@@ -11,6 +11,7 @@ import georgianIcon from "../../public/assets/images/georgian-icon.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { getLanguageNameByLocale } from "../Util/languagesUtils";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -30,7 +31,7 @@ const LangDropdown = () => {
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium shadow-sm ">
-          {t?.headSection?.languages?.english}
+          {t?.headSection?.languages[getLanguageNameByLocale(router.locale)]}
           <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
