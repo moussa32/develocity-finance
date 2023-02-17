@@ -3,15 +3,20 @@ import ThumbnailPlaceholder from "../../public/assets/images/thumbnail-placehold
 import StaticPageHeader from "../../shared/Components/StaticPageHeader";
 import { useState, useEffect } from "react";
 import { globalInstance } from "../../api/constant";
+import { useRouter } from "next/router";
 
 const Blog = () => {
   const [data, setData] = useState([]);
+  const { locale } = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
-      const requestArticles = await globalInstance.get("/articles");
+      const requestArticles = await globalInstance.get("/articles", {
+        headers: {
+          lang: locale,
+        },
+      });
       const { articles } = requestArticles.data.data;
-      console.log(articles);
       setData(articles);
       /*  try {
         const response = await fetch(url, {
@@ -30,7 +35,8 @@ const Blog = () => {
     };
 
     fetchData();
-  }, []);
+  }, [locale]);
+
   return (
     <>
       <StaticPageHeader
