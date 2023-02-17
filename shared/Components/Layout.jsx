@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 
 const Layout = ({ children }) => {
   const [isScroll] = useNavbarScroll(150);
-  const { pathname } = useRouter();
+  const { pathname, locale } = useRouter();
 
   const handleNavbarBackground = useMemo(() => {
     if (!isScroll) {
@@ -18,13 +18,13 @@ const Layout = ({ children }) => {
   }, [pathname, isScroll]);
 
   return (
-    <>
+    <div dir={locale === "ar" ? "rtl" : "ltr"}>
       <Navbar
         containerClassName={`fixed transition ease-in-out duration-700 ${handleNavbarBackground} mx-auto inset-x-0 z-50`}
       />
       {children}
       <Footer />
-    </>
+    </div>
   );
 };
 

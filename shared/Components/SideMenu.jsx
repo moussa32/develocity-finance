@@ -37,7 +37,7 @@ const SideMenu = () => {
         <>
           <div className="mx-auto pt-2 max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 right-0 flex items-center lg:hidden">
+              <div className="absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center lg:hidden">
                 {/* Mobile menu button*/}
                 <Disclosure.Button
                   ref={DisclosureButton}
@@ -48,12 +48,7 @@ const SideMenu = () => {
                   {open ? (
                     <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
                   ) : (
-                    <Image
-                      src={menuIcon}
-                      alt="open menu"
-                      className="block h-6 w-6"
-                      aria-hidden="true"
-                    />
+                    <Image src={menuIcon} alt="open menu" className="block h-6 w-6" aria-hidden="true" />
                   )}
                 </Disclosure.Button>
               </div>
@@ -93,11 +88,7 @@ const SideMenu = () => {
 
               <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <div className="bg-white mx-auto w-[150px] bg-opacity-20 rounded-[30px]">
-                  <Image
-                    className="inline-block ml-4"
-                    src={langIcon}
-                    alt="language icon"
-                  />
+                  <Image className="inline-block ml-4" src={langIcon} alt="language icon" />
                   <LangDropdown />
                 </div>
               </div>

@@ -32,7 +32,7 @@ const LangDropdown = () => {
       <div>
         <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium shadow-sm ">
           {t?.headSection?.languages[getLanguageNameByLocale(router.locale)]}
-          <ChevronDownIcon className="-mr-1 ml-2 h-5 w-5" aria-hidden="true" />
+          <ChevronDownIcon className="rtl:-ml-1 ltr:-mr-1 ltr:ml-2 rtl:mr-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
 
@@ -45,7 +45,7 @@ const LangDropdown = () => {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute -right-5 z-10 mt-5 w-44 origin-top-right rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute ltr:-right-5 rtl:-left-5 z-10 mt-5 w-44 ltr:origin-top-right rtl:origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <Image className="absolute right-20 -top-[7px] origin-top-right" src={dropdownArrow} alt="dropdown arrow" />
           <div className="py-1 text-center">
             <Menu.Item>
@@ -71,7 +71,7 @@ const LangDropdown = () => {
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image className="inline-block mr-3" src={englishIcon} alt="english icon" />
+                    <Image className="inline-block ltr:mr-3 rtl:ml-3" src={englishIcon} alt="english icon" />
                     {t?.headSection?.languages?.english}
                   </div>
                 </button>
@@ -88,7 +88,7 @@ const LangDropdown = () => {
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image className="inline-block mr-3" src={arabicIcon} alt="arabic icon" />
+                    <Image className="inline-block ltr:mr-3 rtl:ml-3" src={arabicIcon} alt="arabic icon" />
                     {t?.headSection?.languages?.arabic}
                   </div>
                 </button>
@@ -105,7 +105,7 @@ const LangDropdown = () => {
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image className="inline-block mr-3" src={turkishIcon} alt="turkish icon" />
+                    <Image className="inline-block ltr:mr-3 rtl:ml-3" src={turkishIcon} alt="turkish icon" />
                     {t?.headSection?.languages?.turkish}
                   </div>
                 </button>
@@ -122,7 +122,7 @@ const LangDropdown = () => {
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image className="inline-block  mr-3" src={russianIcon} alt="russian icon" />
+                    <Image className="inline-block ltr:mr-3 rtl:ml-3" src={russianIcon} alt="russian icon" />
                     <span>{t?.headSection?.languages?.russian}</span>
                   </div>
                 </button>
@@ -139,7 +139,7 @@ const LangDropdown = () => {
                   )}
                 >
                   <div className="flex pl-3">
-                    <Image className="inline-block mr-3" src={georgianIcon} alt="georgian icon" />
+                    <Image className="inline-block ltr:mr-3 rtl:ml-3" src={georgianIcon} alt="georgian icon" />
                     <span>{t?.headSection?.languages?.georgian}</span>
                   </div>
                 </button>

@@ -32,11 +32,7 @@ const Navbar = ({ containerClassName }) => {
             {t?.headSection?.navbar?.contact}
           </NextNavLink>
           <div className="bg-white bg-opacity-20 rounded-[30px]">
-            <Image
-              className="inline-block ml-4"
-              src={langIcon}
-              alt="language icon"
-            />
+            <Image className="inline-block ltr:ml-4 rtl:mr-4" src={langIcon} alt="language icon" />
             <LangDropdown />
           </div>
         </div>
