@@ -29,13 +29,13 @@ const stylingBlogDetails = {
   },
 };
 
-const BlogDetails = ({ desc, title, image, tags, published_at }) => {
+const BlogDetails = ({ desc, title, image, tags, date }) => {
   return (
     <>
       <div className="relative">
         <StaticPageHeader
-          summary={published_at && published_at}
-          titleClassNames="max-w-[728px]"
+          summary={date && `Published on ${date}`}
+          titleClassNames="max-w-[728px] mb-8"
           headerClassNames="h-[400px] lg:h-[655px]"
           title={title}
           footer={
@@ -54,6 +54,8 @@ const BlogDetails = ({ desc, title, image, tags, published_at }) => {
           <Image
             className="hidden w-4/5 inset-x-0 absolute top-[-90px] md:block lg:max-w-[1008px] lg:top-[-160px] mx-auto z-10 max-h-[516px] object-contain rounded-xl"
             src={image}
+            width={1008}
+            height={516}
             alt={title}
             title={title}
           />
@@ -67,13 +69,13 @@ const BlogDetails = ({ desc, title, image, tags, published_at }) => {
               orci et viverra. Ut consequat lorem eu turpis feugiat semper. Suspendisse semper lorem eros, ac pharetra
               nunc semper ut. Nulla leo orci, mollis euismod tincidunt in, porttitor in leo.
             </p>
-            <figure>
-              <Image src="/assets/images/BlogDetailsPlaceholder.png" alt={title} />
+            {/* <figure className="relative">
+              <Image src="/assets/images/BlogDetailsPlaceholder.png" fill alt={title} />
 
               <figcaption className="text-sm text[#667085] mt-4 font-normal">
                 Image courtesy of Mamuka Kavtelishvili via <span className="underline">Adobe Stock</span>
               </figcaption>
-            </figure>
+            </figure> */}
             {/* <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
               <blockquote className="text-lg md:text-2xl">
                 “You can’t connect the dots looking forward; you can only
@@ -132,8 +134,8 @@ const BlogDetails = ({ desc, title, image, tags, published_at }) => {
             </p> */}
             <hr className="mt-12 bg-[#EAECF0]" />
             <div className="flex flex-wrap flex-col xs:flex-row xs:justify-end gap-3 mt-6">
-              <button className="flex gap-2 items-center h-[39px] text-sm font-medium rounded-sm border-[#D0D5DD] border-[1px] px-4 py-2.5 text-[#344054]">
-                <Image src={CopyIcon.src} alt="copy" title="copy" />
+              <button className="relative flex gap-2 items-center h-[39px] text-sm font-medium rounded-sm border-[#D0D5DD] border-[1px] px-4 py-2.5 text-[#344054]">
+                <Image src={CopyIcon.src} width={20} height={20} alt="copy" title="copy" />
                 Copy link
               </button>
               <a
@@ -183,7 +185,6 @@ export async function getStaticProps(context) {
   const requestArticleDetails = await globalInstance.get(`/articles/${slug}`);
   const { article } = await requestArticleDetails.data.data;
 
-  console.log(article);
   return {
     props: { ...article },
   };

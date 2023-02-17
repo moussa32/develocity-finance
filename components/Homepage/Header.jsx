@@ -44,7 +44,6 @@ const featuredImages = [
 const Header = () => {
   const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const { t, errors } = useTranslation("common");
-  console.log(t, errors);
 
   useEffect(() => {
     const timer = setTimeout(() => {

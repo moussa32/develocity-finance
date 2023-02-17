@@ -5,6 +5,9 @@ const nextConfig = {
     locales: ["en", "ar", "tr", "ru", "ka", "zh"],
     defaultLocale: "en",
   },
+  images: {
+    domains: ["blog.develocity.app"],
+  },
 };
 
 module.exports = nextConfig;
