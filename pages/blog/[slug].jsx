@@ -9,15 +9,10 @@ import { globalInstance } from "../../api/constant";
 import parse, { attributesToProps } from "html-react-parser";
 
 const stylingBlogDetails = {
-  replace: (domNode) => {
+  replace: domNode => {
     if (domNode.attribs && domNode.name === "h2") {
       const props = attributesToProps(domNode.attribs);
-      return (
-        <h2
-          className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold"
-          {...props}
-        />
-      );
+      return <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold" {...props} />;
     }
     if (domNode.attribs && domNode.name === "p") {
       const props = attributesToProps(domNode.attribs);
@@ -26,9 +21,7 @@ const stylingBlogDetails = {
     if (domNode.attribs && domNode.name === "blockquote") {
       return (
         <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
-          <blockquote className="text-lg md:text-2xl">
-            “{domNode.nodeValue}”
-          </blockquote>
+          <blockquote className="text-lg md:text-2xl">“{domNode.nodeValue}”</blockquote>
           <span className="block mt-4">— Steve Jobs, Apple CEO</span>
         </section>
       );
@@ -58,7 +51,7 @@ const BlogDetails = ({ desc, title, image, tags, published_at }) => {
           }
         />
         <article className="container px-6 mx-auto relative min-w-full mb-24 pt-16 md:pt-56 lg:px-0 lg:pt-[372px]">
-          <img
+          <Image
             className="hidden w-4/5 inset-x-0 absolute top-[-90px] md:block lg:max-w-[1008px] lg:top-[-160px] mx-auto z-10 max-h-[516px] object-contain rounded-xl"
             src={image}
             alt={title}
@@ -66,28 +59,19 @@ const BlogDetails = ({ desc, title, image, tags, published_at }) => {
           />
           <div className="md:w-4/5 lg:max-w-[800px] mx-auto mt-8 md:mt-16 text-[#667085] font-medium text-base">
             {parse(desc, stylingBlogDetails)}
-            <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold">
-              First title in blog post
-            </h2>
+            <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold">First title in blog post</h2>
             <p className="mt-6 mb-8">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin
-              venenatis vitae lectus nec ornare. Pellentesque nibh eros,
-              accumsan id imperdiet quis, porta eu ante. Curabitur lobortis nisl
-              et neque consectetur dictum. Donec vulputate purus ac augue
-              bibendum, vitae dapibus urna ornare. In pharetra id orci et
-              viverra. Ut consequat lorem eu turpis feugiat semper. Suspendisse
-              semper lorem eros, ac pharetra nunc semper ut. Nulla leo orci,
-              mollis euismod tincidunt in, porttitor in leo.
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis vitae lectus nec ornare.
+              Pellentesque nibh eros, accumsan id imperdiet quis, porta eu ante. Curabitur lobortis nisl et neque
+              consectetur dictum. Donec vulputate purus ac augue bibendum, vitae dapibus urna ornare. In pharetra id
+              orci et viverra. Ut consequat lorem eu turpis feugiat semper. Suspendisse semper lorem eros, ac pharetra
+              nunc semper ut. Nulla leo orci, mollis euismod tincidunt in, porttitor in leo.
             </p>
             <figure>
-              <img
-                src="/assets/images/BlogDetailsPlaceholder.png"
-                alt={title}
-              />
+              <Image src="/assets/images/BlogDetailsPlaceholder.png" alt={title} />
 
               <figcaption className="text-sm text[#667085] mt-4 font-normal">
-                Image courtesy of Mamuka Kavtelishvili via{" "}
-                <span className="underline">Adobe Stock</span>
+                Image courtesy of Mamuka Kavtelishvili via <span className="underline">Adobe Stock</span>
               </figcaption>
             </figure>
             {/* <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
@@ -149,7 +133,7 @@ const BlogDetails = ({ desc, title, image, tags, published_at }) => {
             <hr className="mt-12 bg-[#EAECF0]" />
             <div className="flex flex-wrap flex-col xs:flex-row xs:justify-end gap-3 mt-6">
               <button className="flex gap-2 items-center h-[39px] text-sm font-medium rounded-sm border-[#D0D5DD] border-[1px] px-4 py-2.5 text-[#344054]">
-                <img src={CopyIcon.src} alt="copy" title="copy" />
+                <Image src={CopyIcon.src} alt="copy" title="copy" />
                 Copy link
               </button>
               <a
@@ -182,9 +166,9 @@ export async function getStaticPaths() {
   const requestArticles = await globalInstance.get("/articles");
   const { articles } = requestArticles.data.data;
 
-  const vaildArticles = articles.filter((article) => article.slug ?? false);
+  const vaildArticles = articles.filter(article => article.slug ?? false);
 
-  const paths = vaildArticles.map((article) => ({
+  const paths = vaildArticles.map(article => ({
     params: { slug: article.slug },
   }));
 
