@@ -7,6 +7,7 @@ const useTranslation = translationFile => {
   const [errors, setErrors] = useState(null);
 
   useEffect(() => {
+    let mounted = true;
     if (!locale) {
       setErrors("Couldn't find translation directory");
       return;
@@ -15,13 +16,14 @@ const useTranslation = translationFile => {
     const dynamicImportTranslationFile = async () => {
       try {
         const translationFilePath = await import(`../../public/locales/${locale}/${translationFile}.json`);
-        setTranslation(translationFilePath.default);
+        if (mounted) setTranslation(translationFilePath.default);
       } catch (error) {
-        setErrors(`Couldn't find translation file with name ${translationFile}`);
+        if (mounted) setErrors(`Couldn't find translation file with name ${translationFile}`);
       }
     };
 
     dynamicImportTranslationFile(translationFile);
+    return () => (mounted = false);
   }, [locale, translationFile]);
 
   return { t: translation, errors };
