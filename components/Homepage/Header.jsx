@@ -59,21 +59,21 @@ const Header = () => {
       <div className="container text-white mt-32 md:mt-60 z-20 md:flex md:flex-col">
         <div className="w-50 mx-auto flex flex-col justify-center z-20 md:h-[400px] lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
-            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl md:text-6xl">Pre-Sale Countdown</h2>
+            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:text-5xl md:text-6xl">{t?.homeSection?.preSaleCountdown}</h2>
             <time className="font-semibold text-7xl text-center md:mt-[29px]">
               {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}`}
             </time>
           </div>
-          <div className="w-full flex justify-center md:justify-start mt-14">
+          <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
             <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">
               <div className="flex items-center p-[5px] justify-center rounded-lg w-9 h-9 bg-gray-300 bg-opacity-20 basis-9 shrink-0">
                 <Image className="w-full md:h-auto md:w-auto" src={Loudspeaker} alt="Loud Speaker" />
               </div>
               <div className="flex flex-col md:flex-row md:gap-x-1 md:items-center items-start text-xs xs:text-sm text-[#E9E9E9]">
                 <p>
-                  Sheikh <span className="underline underline-offset-2 text-[#00B9FF]">Marwan Bin Mohammed</span>
+                  {t?.homeSection?.subText[0]} <span className="underline underline-offset-2 text-[#00B9FF]">{t?.homeSection?.subText[1]}</span>
                 </p>
-                <span className="block md:inline">taking develocity in his incubator.</span>
+                <span className="block md:inline">{t?.homeSection?.subText[2]}</span>
               </div>
             </div>
           </div>

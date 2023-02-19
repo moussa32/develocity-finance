@@ -7,8 +7,10 @@ import { Navigation } from "swiper";
 import Image from "next/image";
 import "swiper/css";
 import "swiper/css/navigation";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const Slider = () => {
+  const { t } = useTranslation("common");
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
 
@@ -38,13 +40,11 @@ const Slider = () => {
             alt="quote icon"
           />
           <p className="text-xl relative z-20 md:text-4xl md:leading-[44px] font-medium text-neutral-900 mt-16 md:mt-24 lg:px-52">
-            “We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and
-            surrounding ourselves with those open-minded and clever souls who can take our insanity and put it to good
-            use.”
+            {t?.homeSection?.partnershipSection?.quote?.mainText}
           </p>
         </div>
-        <h6 className="text-lg font-semibold mt-5 md:mt-8">Brian Armstrong</h6>
-        <h6 className="text-[#525C7A] text-base">CEO of Coinbase</h6>
+        <h6 className="text-lg font-semibold mt-5 md:mt-8">{t?.homeSection?.partnershipSection?.quote?.name}</h6>
+        <h6 className="text-[#525C7A] text-base">{t?.homeSection?.partnershipSection?.quote?.title}</h6>
       </SwiperSlide>
       <SwiperSlide>
         <div className="relative  px-4 md:px-8">
@@ -54,13 +54,11 @@ const Slider = () => {
             alt="quote icon"
           />
           <p className="text-xl relative z-20 md:text-4xl md:leading-[44px] font-medium text-neutral-900 mt-16 md:mt-24 lg:px-52">
-            “We entrepreneurs are loners, vagabonds, troublemakers. Success is simply a matter of finding and
-            surrounding ourselves with those open-minded and clever souls who can take our insanity and put it to good
-            use.”
+          {t?.homeSection?.partnershipSection?.quote?.mainText}
           </p>
         </div>
-        <h6 className="text-lg font-semibold mt-5 md:mt-8">Brian Armstrong</h6>
-        <h6 className="text-[#525C7A] text-base">CEO of Coinbase</h6>
+        <h6 className="text-lg font-semibold mt-5 md:mt-8">{t?.homeSection?.partnershipSection?.quote?.name}</h6>
+        <h6 className="text-[#525C7A] text-base">{t?.homeSection?.partnershipSection?.quote?.title}</h6>
       </SwiperSlide>
       <Image
         src={prevArrow}

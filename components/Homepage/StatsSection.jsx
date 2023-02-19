@@ -6,8 +6,10 @@ import crosshair from "../../public/assets/images/crosshair.svg";
 import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import Image from "next/image";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 export default function StatsSection() {
+  const { t } = useTranslation("common");
   const [showVideo, setShowVideo] = useState(false);
   const [focus, setFocus] = useState(false);
   return (
@@ -60,7 +62,7 @@ export default function StatsSection() {
               </VisibilitySensor>
             )}
           </CountUp>
-          <label className="text-[#B8B8B8]">Accuracy</label>
+          <label className="text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.lables?.accuracy}</label>
         </div>
         <div className="flex flex-col justify-center items-center my-12">
           <div className="rounded-full bg-slate-800 w-12 h-12 flex justify-center items-center p-2">
@@ -80,7 +82,7 @@ export default function StatsSection() {
               </VisibilitySensor>
             )}
           </CountUp>
-          <label className="text-[#B8B8B8]">Tokens in database</label>
+          <label className="text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.lables?.tokensInDatabase}</label>
         </div>
         <div className="flex flex-col justify-center items-center my-12">
           <div className="rounded-full bg-slate-800 w-12 h-12 flex justify-center items-center p-2">
@@ -100,7 +102,7 @@ export default function StatsSection() {
               </VisibilitySensor>
             )}
           </CountUp>
-          <label className="text-[#B8B8B8]">Daily visitors</label>
+          <label className="text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.lables?.dailyVisitors}</label>
         </div>
       </div>
     </section>

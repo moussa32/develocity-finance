@@ -9,8 +9,10 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const LeadershipSlider = () => {
+  const { t } = useTranslation("common");
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
 
@@ -41,9 +43,9 @@ const LeadershipSlider = () => {
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
-                <p className="text-2xl font-medium">Mahdi Ajaj</p>
+                <p className="text-2xl rtl:text-right font-medium">{t?.homeSection?.leadershipSection?.members[0].name}</p>
                 <div className="flex justify-between mt-1">
-                  <label className="text-[22px]">CEO</label>
+                  <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[0].role}</label>
                   <div className="flex gap-2">
                     <Image className="w-5" src={facebook} />
                     <Image className="w-5" src={twitter} />
@@ -64,9 +66,9 @@ const LeadershipSlider = () => {
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
-                <p className="text-2xl font-medium mb-1">Abdulaziz Bin Fahad</p>
+                <p className="text-2xl rtl:text-right font-medium mb-1">{t?.homeSection?.leadershipSection?.members[1].name}</p>
                 <div className="flex justify-between mt-1">
-                  <label className="text-[22px]">CTO</label>
+                  <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[1].role}</label>
                   <div className="flex gap-2">
                     <Image className="w-5" src={facebook} />
                     <Image className="w-5" src={twitter} />
@@ -87,11 +89,11 @@ const LeadershipSlider = () => {
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 text-left text-white z-50">
-                <p className="mb-2 text-2xl font-medium">
-                  Mamuka Kavtelishvili
+                <p className="mb-2 text-2xl rtl:text-right font-medium">
+                {t?.homeSection?.leadershipSection?.members[2].name}
                 </p>
                 <div className="flex justify-between mt-1">
-                  <label className="text-[22px]">CMO</label>
+                  <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[2].role}</label>
                   <div className="flex gap-2">
                     <Image className="w-5" src={facebook} />
                     <Image className="w-5" src={twitter} />

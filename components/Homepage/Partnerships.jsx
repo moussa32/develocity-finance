@@ -9,6 +9,7 @@ import binanceColored from "../../public/assets/images/binance-colored.svg";
 import Slider from "./Slider";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 import Image from "next/image";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const partnerships = [
   {
@@ -34,15 +35,15 @@ const partnerships = [
 ];
 
 const Partnerships = () => {
+  const { t } = useTranslation("common");
   return (
     <div className="bg-[#F9FAFB]">
       <div className="container mx-auto text-center md:py-24 lg:px-0">
         <h2 className="text-[#29233B] font-PolySans text-[28px] px-4 md:px-8 md:text-6xl font-medium md:font-normal">
-          Partnerships that Last
+          {t?.homeSection?.partnershipSection?.mainText}
         </h2>
         <h6 className="text-[#525C7A] text-[15px] px-4 md:px-8 md:text-lg mt-4">
-          We have connected with amazing people, businesses, and organizations
-          for the past 2 years.
+          {t?.homeSection?.partnershipSection?.subText}
         </h6>
         <div className="hidden md:grid grid-cols-4 h-[44px] mt-8 px-4 md:px-2 lg:px-32 mx-auto gap-1 lg:gap-14">
           {partnerships.map(({ title, defaultVersion, coloredVersion }) => (

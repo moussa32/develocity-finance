@@ -10,8 +10,10 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const RoadMapSlider = () => {
+  const { t } = useTranslation("common");
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
   return (
@@ -36,21 +38,21 @@ const RoadMapSlider = () => {
         <div>
           <div className="mx-auto mt-16 text-center">
             <Image className="mb-6 mx-auto" src={phaseOne} alt="phase 1 icon" />
-            <h3 className="text-[32px] mb-[6px] font-semibold">Phase 1</h3>
-            <span className="text-base text-[#B8B8B8]">Live</span>
+            <h3 className="text-[32px] mb-[6px] font-semibold">{t?.homeSection?.roadmapSection?.phases[0]}</h3>
+            <span className="text-base text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.cards?.startup?.lable}</span>
           </div>
           <div className="relative grid grid-cols-1 gap-8 lg:gap-2 lg:px-20 my-7">
             <hr className="absolute block w-full top-2/4"></hr>
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
-            <h4 className="text-center text-2xl font-semibold">Startup</h4>
+            <h4 className="text-center text-2xl font-semibold">{t?.homeSection?.roadmapSection?.cards?.startup?.mainText}</h4>
             <ul className="text-base mt-4">
-              <li>• Website Launching</li>
-              <li>• Project #1 Introduction</li>
-              <li>• Company Registration</li>
-              <li>• License & Legale Opinion</li>
-              <li>• Opening Office In Dubai</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[0]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[1]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[2]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[3]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[4]}</li>
             </ul>
           </div>
         </div>
@@ -59,21 +61,21 @@ const RoadMapSlider = () => {
         <div>
           <div className="mx-auto mt-16 text-center">
             <Image className="mb-6 mx-auto" src={phaseTwo} alt="phase 2 icon" />
-            <h3 className="text-[32px] mb-[6px] font-semibold">Phase 2</h3>
-            <span className="text-base text-[#B8B8B8]">Live</span>
+            <h3 className="text-[32px] mb-[6px] font-semibold">{t?.homeSection?.roadmapSection?.phases[1]}</h3>
+            <span className="text-base text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.cards?.fairlaunch?.lable}</span>
           </div>
           <div className="relative grid grid-cols-1 gap-8 lg:gap-2 lg:px-20 my-7">
             <hr className="absolute block w-full top-2/4"></hr>
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
-            <h4 className="text-center text-2xl font-semibold">Fair Launch</h4>
+            <h4 className="text-center text-2xl font-semibold">{t?.homeSection?.roadmapSection?.cards?.fairlaunch?.mainText}</h4>
             <ul className="text-base mt-4">
-              <li>• Publishing Develocity Tool</li>
-              <li>• Starting Pre-Sale</li>
-              <li>• Marketing Campaign</li>
-              <li>• Project #2 Introduction</li>
-              <li>• Promoting & Marketing</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[0]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[1]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[2]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[3]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[4]}</li>
             </ul>
           </div>
         </div>
@@ -82,21 +84,21 @@ const RoadMapSlider = () => {
         <div>
           <div className="mx-auto mt-16 text-center">
             <Image className="mb-6 mx-auto" src={phaseThree} alt="phase 3 icon" />
-            <h3 className="text-[32px] mb-[6px] font-semibold">Phase 3</h3>
-            <span className="text-base text-[#B8B8B8]">Live</span>
+            <h3 className="text-[32px] mb-[6px] font-semibold">{t?.homeSection?.roadmapSection?.phases[2]}</h3>
+            <span className="text-base text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.cards?.expansion?.lable}</span>
           </div>
           <div className="relative grid grid-cols-1 gap-8 lg:gap-2 lg:px-20 my-7">
             <hr className="absolute block w-full top-2/4"></hr>
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
-            <h4 className="text-center text-2xl font-semibold">Expansion</h4>
+            <h4 className="text-center text-2xl font-semibold">{t?.homeSection?.roadmapSection?.cards?.expansion?.mainText}</h4>
             <ul className="text-base mt-4">
-              <li>• Publishing SWAP Tool</li>
-              <li>• Marketing Campaign</li>
-              <li>• Project #3 Introduction</li>
-              <li>• NFT First Edition</li>
-              <li>• Centralized Exchanges</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[0]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[1]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[2]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[3]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[4]}</li>
             </ul>
           </div>
         </div>
@@ -105,8 +107,8 @@ const RoadMapSlider = () => {
         <div>
           <div className="mx-auto mt-16 text-center">
             <Image className="mb-6 mx-auto" src={phaseFour} alt="phase 4 icon" />
-            <h3 className="text-[32px] mb-[6px] font-semibold">Phase 4</h3>
-            <span className="text-base text-[#B8B8B8]">Live</span>
+            <h3 className="text-[32px] mb-[6px] font-semibold">{t?.homeSection?.roadmapSection?.phases[3]}</h3>
+            <span className="text-base text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.cards?.opportunities?.lable}</span>
           </div>
           <div className="relative grid grid-cols-1 gap-8 lg:gap-2 lg:px-20 my-7">
             <hr className="absolute block w-full top-2/4"></hr>
@@ -114,14 +116,14 @@ const RoadMapSlider = () => {
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
             <h4 className="text-center text-2xl font-semibold">
-              Opportunities
+             {t?.homeSection?.roadmapSection?.cards?.opportunities?.mainText}
             </h4>
             <ul className="text-base mt-4">
-              <li>• Publishing Bridge</li>
-              <li>• Project #4 Introduction</li>
-              <li>• Marketing Campaign</li>
-              <li>• Promoting & Marketing</li>
-              <li>• Looking For Opportunities</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.opportunities?.subText[0]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.opportunities?.subText[1]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.opportunities?.subText[2]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.opportunities?.subText[3]}</li>
+              <li>• {t?.homeSection?.roadmapSection?.cards?.opportunities?.subText[4]}</li>
             </ul>
           </div>
         </div>
