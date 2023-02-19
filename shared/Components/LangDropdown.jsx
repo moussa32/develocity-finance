@@ -43,7 +43,7 @@ const LangDropdown = () => {
   };
 
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block ltr:text-left rtl:text-right">
       <div>
         <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium shadow-sm ">
           {t?.headSection?.languages[getLanguageNameByLocale(locale)]}

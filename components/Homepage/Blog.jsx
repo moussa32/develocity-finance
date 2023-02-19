@@ -15,7 +15,7 @@ function Blog() {
         <div className="flex justify-center items-center">
           <div className=" mt-8 gap-9 grid grid-cols-1 lg:grid-cols-2">
             <div className="shadow-xl bg-slate-50 flex flex-col justify-center rounded-lg overflow-hidden h-[650px] max-w-[488px]">
-              <div className="text-left rtl:text-right rtl:pr-4 ml-4 md:ml-8 mt-8 flex flex-col">
+              <div className="ltr:text-left rtl:text-right rtl:pr-4 ml-4 md:ml-8 mt-8 flex flex-col">
                 <h3 className="font-sans text-[28px] font-semibold px-2 md:px-0 md:text-3xl md:font-medium capitalize text-[#29233B]">
                 {t?.homeSection?.blogSection?.cards[0]?.mainText}
                 </h3>
@@ -37,7 +37,7 @@ function Blog() {
 
             <div className="shadow-xl bg-slate-50	 flex flex-col pb-6 md:pb-10 rounded-lg h-[600px] md:h-[650px] max-w-[488px]">
               <div className="realtive blog-bg bg-center bg-no-repeat md:bg-cover flex justify-center rounded-t-lg h-[382px]"></div>
-              <div className="text-left rtl:text-right rtl:pr-4 max-w-[424px] ml-4 md:ml-8 mt-3 flex flex-col ">
+              <div className="ltr:text-left rtl:text-right rtl:pr-4 max-w-[424px] ml-4 md:ml-8 mt-3 flex flex-col ">
                 <h3 className="font-sans text-[28px] font-semibold md:text-3xl mt-3 pl-2 md:pl-0 md:font-medium capitalize text-[#29233B]">
                  {t?.homeSection?.blogSection?.cards[1]?.mainText}
                 </h3>

@@ -37,7 +37,7 @@ const Scanner = () => {
               {t?.homeSection?.scannerSection?.lableII}
             </span>
           </span>
-          <h3 className="text-[#101828] rtl:text-right text-[28px] text-center leading-9 font-PolySans font-bold text-xl md:mt-3 mb-4 md:text-2xl md:mb-6 lg:text-4xl md:font-sans md:text-left">
+          <h3 className="text-[#101828] rtl:text-right text-[28px] text-center leading-9 font-PolySans font-bold text-xl md:mt-3 mb-4 md:text-2xl md:mb-6 lg:text-4xl md:font-sans ltr:md:text-left rtl:md:text-right">
             {t?.homeSection?.scannerSection?.mainText[0]}
             <span className="block md:inline">
               {t?.homeSection?.scannerSection?.mainText[1]}

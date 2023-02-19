@@ -31,7 +31,7 @@ const Academy = () => {
               {t?.homeSection?.academySection?.lableII}
             </span>
           </span>
-          <h3 className="text-[#101828] text-center rtl:text-right font-bold text-[28px] my-4 md:text-2xl md:text-left md:mt-3 md:mb-6 lg:text-4xl">
+          <h3 className="text-[#101828] text-center rtl:text-right font-bold text-[28px] my-4 md:text-2xl ltr:md:text-left rtl:md:text-right md:mt-3 md:mb-6 lg:text-4xl">
             {t?.homeSection?.academySection?.mainText}
           </h3>
           <p className="text-neutral-500 text-base font-medium">

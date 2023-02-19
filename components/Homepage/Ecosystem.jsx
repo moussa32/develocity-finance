@@ -28,7 +28,7 @@ const Ecosystem = () => {
               {t?.homeSection?.ecoSystemSection?.lableII}
             </span>
           </span>
-          <h3 className="text-[#101828] text-center font-PolySans text-[28px] font-bold mt-3 mb-4 md:mb-6 md:text-left rtl:text-right md:font-sans md:text-2xl lg:text-4xl">
+          <h3 className="text-[#101828] text-center font-PolySans text-[28px] font-bold mt-3 mb-4 md:mb-6 ltr:md:text-left rtl:md:text-right md:font-sans md:text-2xl lg:text-4xl">
             {t?.homeSection?.ecoSystemSection?.mainText}
           </h3>
           <p className="text-neutral-600 text-base">
