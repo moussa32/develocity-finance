@@ -17,5 +17,5 @@ export const getLanguageNameByLocale = locale => {
 
 export const getSlugByLanguage = (slugs, locale) => {
   const findCurrentSlug = slugs.find(slug => slug.locale === locale);
-  return findCurrentSlug.slug;
+  return findCurrentSlug?.slug;
 };
