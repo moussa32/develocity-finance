@@ -5,7 +5,7 @@
     "subText": "Our office is located in UAE, Dubai",
     "form": {
       "header": "Contact form",
-      "reachUs": ["Reach us via", "or use contact form"],
+      "reachUs": ["Reach us via ", " or use contact form"],
       "firstName": "First name",
       "lastName": "Last name",
       "email": "Email",
