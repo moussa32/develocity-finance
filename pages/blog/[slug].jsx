@@ -7,6 +7,8 @@ import LinkedInIcon from "../../public/assets/images/LinkedInIcon.svg";
 import Image from "next/image";
 import { globalInstance } from "../../api/constant";
 import parse, { attributesToProps } from "html-react-parser";
+import usePostURL from "@/store/dynamicBlogPost";
+import { useEffect } from "react";
 
 const stylingBlogDetails = {
   replace: domNode => {
@@ -29,7 +31,13 @@ const stylingBlogDetails = {
   },
 };
 
-const BlogDetails = ({ desc, title, image, tags, date }) => {
+const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
+  const { setPostSlugs } = usePostURL(state => state);
+
+  useEffect(() => {
+    setPostSlugs(slugs);
+  }, [setPostSlugs, slugs]);
+
   return (
     <>
       <div className="relative">
@@ -168,11 +176,15 @@ export async function getStaticPaths() {
   const requestArticles = await globalInstance.get("/articles");
   const { articles } = requestArticles.data.data;
 
-  const vaildArticles = articles.filter(article => article.slug ?? false);
-
-  const paths = vaildArticles.map(article => ({
-    params: { slug: article.slug },
-  }));
+  //Loop through articles slugs which it two dimencation array to return array of article's pathname with locale
+  const paths = articles
+    .map(article =>
+      article.slugs.map(slugObject => ({
+        params: { slug: slugObject.slug },
+        locale: slugObject.locale,
+      }))
+    )
+    .flat();
 
   return {
     paths,

@@ -14,3 +14,8 @@ export const getLanguageNameByLocale = locale => {
       return "chinese";
   }
 };
+
+export const getSlugByLanguage = (slugs, locale) => {
+  const findCurrentSlug = slugs.find(slug => slug.locale === locale);
+  return findCurrentSlug.slug;
+};

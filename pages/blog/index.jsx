@@ -1,15 +1,18 @@
 import BlogCard from "../../components/Blog/BlogCard";
 import ThumbnailPlaceholder from "../../public/assets/images/thumbnail-placeholder.png";
 import StaticPageHeader from "../../shared/Components/StaticPageHeader";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { globalInstance } from "../../api/constant";
 import { useRouter } from "next/router";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { getSlugByLanguage } from "@/shared/Util/languagesUtils";
 
 const Blog = () => {
   const [data, setData] = useState([]);
   const { locale } = useRouter();
   const { t, errors } = useTranslation("blog");
+
+  const getCurrentSlug = useCallback(slugs => getSlugByLanguage(slugs, locale), [locale]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +52,7 @@ const Blog = () => {
               return (
                 <BlogCard
                   key={item.id}
-                  slug={item.slug}
+                  slug={getCurrentSlug(item.slugs)}
                   thumbnail={item.image}
                   publish_date={item.date}
                   title={item.title}

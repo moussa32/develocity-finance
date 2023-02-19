@@ -11,7 +11,8 @@ import georgianIcon from "../../public/assets/images/georgian-icon.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import { getLanguageNameByLocale } from "../Util/languagesUtils";
+import { getLanguageNameByLocale, getSlugByLanguage } from "../Util/languagesUtils";
+import usePostURL from "@/store/dynamicBlogPost";
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(" ");
@@ -19,19 +20,33 @@ function classNames(...classes) {
 
 const LangDropdown = () => {
   const { t, errors } = useTranslation("navbar");
-  const router = useRouter();
+  const { locale, push, replace, pathname } = useRouter();
+  const { postSlugs } = usePostURL(state => state);
 
   const changeLanguage = event => {
-    const { pathname } = router;
-    const locale = event.currentTarget.name;
-    router.push(pathname, pathname, { locale });
+    const selectedLocale = event.currentTarget.name;
+    const newSlug = getSlugByLanguage(postSlugs, selectedLocale);
+
+    if (pathname.includes("/blog/[slug]")) {
+      replace(
+        pathname,
+        {
+          pathname: `/blog/${newSlug}`,
+        },
+        {
+          locale: selectedLocale,
+        }
+      );
+    } else {
+      push(pathname, pathname, { locale: selectedLocale });
+    }
   };
 
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
         <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium shadow-sm ">
-          {t?.headSection?.languages[getLanguageNameByLocale(router.locale)]}
+          {t?.headSection?.languages[getLanguageNameByLocale(locale)]}
           <ChevronDownIcon className="rtl:-ml-1 ltr:-mr-1 ltr:ml-2 rtl:mr-2 h-5 w-5" aria-hidden="true" />
         </Menu.Button>
       </div>
