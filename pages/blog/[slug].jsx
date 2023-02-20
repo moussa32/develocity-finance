@@ -16,7 +16,7 @@ const stylingBlogDetails = {
       const props = attributesToProps(domNode.attribs);
       return (
         <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold" {...props}>
-          {domNode.nodeValue}
+          {domNode?.nodeValue}
         </h2>
       );
     }
@@ -24,7 +24,7 @@ const stylingBlogDetails = {
       const props = attributesToProps(domNode.attribs);
       return (
         <p className="mt-6 mb-8" {...props}>
-          {domNode.children[0].data}
+          {domNode?.children[0].data}
         </p>
       );
     }
