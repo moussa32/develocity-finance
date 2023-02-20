@@ -8,19 +8,21 @@ function Blog() {
   return (
     <div className="text-center mt-28 mb-[59px] md:mt-32 md:mb-32">
       <div className="container mx-auto">
-        <h3 className="font-PolySans text-[28px] text-[#171717] md:text-6xl  md:text-[#29233B]">{t?.homeSection?.blogSection?.mainText}</h3>
+        <h3 className="font-PolySans text-[28px] text-[#171717] md:text-6xl  md:text-[#29233B]">
+          {t?.homeSection?.blogSection?.mainText}
+        </h3>
         <p className="text-base text-[#525252] md:text-lg mt-3 md:mt-4 md:capitalize md:text-[#525C7A]">
-        {t?.homeSection?.blogSection?.subText}
+          {t?.homeSection?.blogSection?.subText}
         </p>
         <div className="flex justify-center items-center">
-          <div className=" mt-8 gap-9 grid grid-cols-1 lg:grid-cols-2">
+          <div className="mt-8 gap-9 grid grid-cols-1 lg:grid-cols-2">
             <div className="shadow-xl bg-slate-50 flex flex-col justify-center rounded-lg overflow-hidden h-[650px] max-w-[488px]">
-              <div className="ltr:text-left rtl:text-right rtl:pr-4 ml-4 md:ml-8 mt-8 flex flex-col">
+              <div className="ltr:text-left rtl:text-right rtl:pr-4 ml-4 ltr:md:ml-8 rtl:md:mr-8 mt-8 flex flex-col">
                 <h3 className="font-sans text-[28px] font-semibold px-2 md:px-0 md:text-3xl md:font-medium capitalize text-[#29233B]">
-                {t?.homeSection?.blogSection?.cards[0]?.mainText}
+                  {t?.homeSection?.blogSection?.cards[0]?.mainText}
                 </h3>
                 <p className="text-base mt-3 pl-2 md:pl-0 text-[#525252] md:text-[#525C7A]">
-                {t?.homeSection?.blogSection?.cards[0]?.subText}
+                  {t?.homeSection?.blogSection?.cards[0]?.subText}
                 </p>
                 <Link href={"blog"} className="mt-10 md:mt-7 pl-2 md:pl-0 font-medium flex gap-2 text-indigo-500">
                   {t?.homeSection?.blogSection?.learnMoreBtn}
@@ -39,10 +41,10 @@ function Blog() {
               <div className="realtive blog-bg bg-center bg-no-repeat md:bg-cover flex justify-center rounded-t-lg h-[382px]"></div>
               <div className="ltr:text-left rtl:text-right rtl:pr-4 max-w-[424px] ml-4 md:ml-8 mt-3 flex flex-col ">
                 <h3 className="font-sans text-[28px] font-semibold md:text-3xl mt-3 pl-2 md:pl-0 md:font-medium capitalize text-[#29233B]">
-                 {t?.homeSection?.blogSection?.cards[1]?.mainText}
+                  {t?.homeSection?.blogSection?.cards[1]?.mainText}
                 </h3>
                 <p className="text-base mt-3 md:mt-4 pl-2 md:pl-0 text-[#525C7A]">
-                 {t?.homeSection?.blogSection?.cards[1]?.subText}
+                  {t?.homeSection?.blogSection?.cards[1]?.subText}
                 </p>
                 <Link href="/blog" className="mt-4 md:mt-7 font-medium pl-2 md:pl-0 flex gap-2 text-indigo-500">
                   {t?.homeSection?.blogSection?.learnMoreBtn}
