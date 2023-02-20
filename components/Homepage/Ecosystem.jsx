@@ -16,11 +16,11 @@ const Ecosystem = () => {
       <Image
         src={EcosystemTitle}
         alt="ecosystem"
-        className="block w-[313.15px] max-w-[975.58px] mx-auto md:w-96 lg:w-full lg:mx-0 lg:ml-auto"
+        className="block w-[313.15px] max-w-[975.58px] mx-auto md:w-96 lg:w-full lg:mx-0 ltr:lg:ml-auto rtl:lg:mr-auto"
       />
       <div className="flex flex-col md:grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div className="flex flex-col order-2 md:order-1">
-          <span className="bg-[#F3F4F8] w-full rounded-2xl text-sm font-medium p-1 md:p-1.5 md:pr-[18px] flex items-center gap-2 md:max-w-[360px] lg:flex-row">
+          <span className="bg-[#F3F4F8] w-full rounded-2xl text-sm font-medium p-1 md:p-1.5 ltr:md:pr-[18px] rtl:md:pl-[18px] flex items-center gap-2 md:max-w-[360px] lg:flex-row">
             <span className="bg-white py-0.5 px-2 md:py-1 md:px-2.5 rounded-2xl">
               {t?.homeSection?.ecoSystemSection?.lableI}
             </span>
@@ -38,14 +38,13 @@ const Ecosystem = () => {
             {t?.homeSection?.ecoSystemSection?.subTextSecondParagraph}
           </p>
           <div className="flex flex-wrap lg:grid lg:grid-cols-2 mt-8 gap-y-4">
-            <div className="flex items-center w-3/5 mr-5 lg:mr-0 lg:w-full">
+            <div className="flex items-center w-3/5 ltr:mr-5 rtl:ml-5 ltr:lg:mr-0 rtl:lg:ml-0 lg:w-full">
               <Image
                 src={MultiFunctionalIcon}
                 className="w-8 h-8"
                 alt="MultiFunctionalIcon"
               />
-              <h4 className="ml-2 text-[#171717] font-medium text-base">
-                {" "}
+              <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.multiFunctionalTool}
               </h4>
             </div>
@@ -55,35 +54,35 @@ const Ecosystem = () => {
                 className="w-8 h-8"
                 alt="SwapToolIcon"
               />
-              <h4 className="ml-2 text-[#171717] font-medium text-base">
+              <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.swapTool}
               </h4>
             </div>
-            <div className="flex items-center w-3/5 mr-5 lg:mr-0 lg:w-full">
+            <div className="flex items-center w-3/5 ltr:mr-5 rtl:ml-5 ltr:lg:mr-0 rtl:lg:ml-0 lg:w-full">
               <Image
                 src={CryptoAcademyIcon}
                 className="w-8 h-8"
                 alt="CryptoAcademyIcon"
               />
-              <h4 className="ml-2 text-[#171717] font-medium text-base">
+              <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.wallet}
               </h4>
             </div>
             <div className="flex items-center">
               <Image src={BridgeIcon} className="w-8 h-8" alt="BridgeIcon" />
-              <h4 className="ml-2 text-[#171717] font-medium text-base">
+              <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.bridge}
               </h4>
             </div>
-            <div className="flex items-center w-3/5 mr-5 lg:mr-0 lg:w-full">
+            <div className="flex items-center w-3/5 ltr:mr-5 rtl:ml-5 ltr:lg:mr-0 rtl:lg:ml-0 lg:w-full">
               <Image src={DexIcon} className="w-8 h-8" alt="DexIcon" />
-              <h4 className="ml-2 text-[#171717] font-medium text-base">
+              <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.cryptoAcademy}
               </h4>
             </div>
             <div className="flex items-center">
               <Image src={WalletIcon} className="w-8 h-8" alt="WalletIcon" />
-              <h4 className="ml-2 text-[#171717] font-medium text-base">
+              <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.dex}
               </h4>
             </div>

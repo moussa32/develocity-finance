@@ -19,10 +19,10 @@ function Blog() {
                 <h3 className="font-sans text-[28px] font-semibold px-2 md:px-0 md:text-3xl md:font-medium capitalize text-[#29233B]">
                 {t?.homeSection?.blogSection?.cards[0]?.mainText}
                 </h3>
-                <p className="text-base mt-3 pl-2 md:pl-0 text-[#525252] md:text-[#525C7A]">
+                <p className="text-base mt-3 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 text-[#525252] md:text-[#525C7A]">
                 {t?.homeSection?.blogSection?.cards[0]?.subText}
                 </p>
-                <Link href={"blog"} className="mt-10 md:mt-7 pl-2 md:pl-0 font-medium flex gap-2 text-indigo-500">
+                <Link href={"blog"} className="mt-10 md:mt-7 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 font-medium flex gap-2 text-indigo-500">
                   {t?.homeSection?.blogSection?.learnMoreBtn}
                 </Link>
               </div>
@@ -38,13 +38,13 @@ function Blog() {
             <div className="shadow-xl bg-slate-50	 flex flex-col pb-6 md:pb-10 rounded-lg h-[600px] md:h-[650px] max-w-[488px]">
               <div className="realtive blog-bg bg-center bg-no-repeat md:bg-cover flex justify-center rounded-t-lg h-[382px]"></div>
               <div className="ltr:text-left rtl:text-right rtl:pr-4 max-w-[424px] ml-4 md:ml-8 mt-3 flex flex-col ">
-                <h3 className="font-sans text-[28px] font-semibold md:text-3xl mt-3 pl-2 md:pl-0 md:font-medium capitalize text-[#29233B]">
+                <h3 className="font-sans text-[28px] font-semibold md:text-3xl mt-3 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 md:font-medium capitalize text-[#29233B]">
                  {t?.homeSection?.blogSection?.cards[1]?.mainText}
                 </h3>
-                <p className="text-base mt-3 md:mt-4 pl-2 md:pl-0 text-[#525C7A]">
+                <p className="text-base mt-3 md:mt-4 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 text-[#525C7A]">
                  {t?.homeSection?.blogSection?.cards[1]?.subText}
                 </p>
-                <Link href="/blog" className="mt-4 md:mt-7 font-medium pl-2 md:pl-0 flex gap-2 text-indigo-500">
+                <Link href="/blog" className="mt-4 md:mt-7 font-medium ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 flex gap-2 text-indigo-500">
                   {t?.homeSection?.blogSection?.learnMoreBtn}
                 </Link>
               </div>
