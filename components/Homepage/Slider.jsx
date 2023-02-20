@@ -49,7 +49,7 @@ const Slider = () => {
       <SwiperSlide>
         <div className="relative  px-4 md:px-8">
           <Image
-            className="absolute z-10 right-32 -top-9 md:right-[47%] lg:bottom-[170px]"
+            className="absolute z-10 ltr:right-32 rtl:left-32 -top-9 ltr:md:right-[47%] rtl:md:left-[47px] lg:bottom-[170px]"
             src={quote}
             alt="quote icon"
           />
@@ -62,13 +62,13 @@ const Slider = () => {
       </SwiperSlide>
       <Image
         src={prevArrow}
-        className="-bottom-6 md:bottom-0 md:top-1/2 left-[115px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        className="-bottom-6 md:bottom-0 md:top-1/2 ltr:left-[115px] rtl:right-[115px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavPrevRef}
         alt="Previes Cursor"
       />
       <Image
         src={nextArrow}
-        className="-bottom-6 md:bottom-0 md:top-1/2 right-[115px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        className="-bottom-6 md:bottom-0 md:top-1/2 ltr:right-[115px] rtl:left-[115px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavNextRef}
         alt="Next Cursor"
       />

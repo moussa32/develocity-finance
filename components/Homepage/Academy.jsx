@@ -10,20 +10,20 @@ const Academy = () => {
       <Image
         src={AcadmyTitle}
         alt="ecosystem"
-        className="mx-auto block max-w-[245.86px] mb-8 lg:mx-0 lg:mr-auto md:mb-2 lg:max-w-[765.95px]"
+        className="mx-auto block max-w-[245.86px] mb-8 lg:mx-0 ltr:lg:mr-auto rtl:ml-auto md:mb-2 lg:max-w-[765.95px]"
       />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div className="w-[310px] mx-auto block relative h-full md:w-full md:mx-0">
           <Image
             src={Phone}
-            className="rotate-[353deg] mb-14 md:rotate-0 lg:absolute md:mb-0 top-[-75px] left-[48px]"
+            className="rotate-[353deg] mb-14 md:rotate-0 lg:absolute md:mb-0 top-[-75px] ltr:left-[48px] rtl:right-[48px]"
             alt="Phone"
             title="Phone"
           />
         </div>
 
         <div className="flex flex-col ml-auto">
-          <span className="bg-[#F3F4F8] mx-auto rounded-2xl text-xs font-medium p-1.5 pr-[18px] flex items-center gap-2 w-fit md:text-sm lg:flex-row lg:mx-0">
+          <span className="bg-[#F3F4F8] mx-auto rounded-2xl text-xs font-medium p-1.5 ltr:pr-[18px] rtl:pl-[18px] flex items-center gap-2 w-fit md:text-sm lg:flex-row lg:mx-0">
             <span className="bg-white py-1 px-2.5 rounded-2xl flex items-center">
               {t?.homeSection?.academySection?.lableI}
             </span>

@@ -59,7 +59,7 @@ const Header = () => {
       <div className="container text-white mt-32 md:mt-60 z-20 md:flex md:flex-col">
         <div className="w-50 mx-auto flex flex-col justify-center z-20 md:h-[400px] lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
-            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:text-5xl md:text-6xl">{t?.homeSection?.preSaleCountdown}</h2>
+            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">{t?.homeSection?.preSaleCountdown}</h2>
             <time className="font-semibold text-7xl text-center md:mt-[29px]">
               {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}`}
             </time>
