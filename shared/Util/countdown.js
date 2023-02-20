@@ -8,7 +8,7 @@ const convertToDoubleNumber = number => {
 
 export const calculateTimeLeft = () => {
   let year = new Date().getFullYear();
-  let difference = +new Date(`2/20/${year}`) - +new Date();
+  let difference = +new Date(`2/25/${year}`) - +new Date();
 
   let timeLeft = {};
 

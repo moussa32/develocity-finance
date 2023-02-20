@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import prevArrow from "../../public/assets/images/prev-arrow.svg";
 import nextArrow from "../../public/assets/images/next-arrow.svg";
 import twitter from "../../public/assets/images/LD_twitter.svg";
@@ -10,11 +10,22 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import useDirection from "@/store/direaction";
 
 const LeadershipSlider = () => {
   const { t } = useTranslation("common");
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+  const { direction } = useDirection(state => state);
+
+  useEffect(() => {
+    if (swiper && !swiper.destroyed) {
+      // swiper.changeDirection("horizontal", true);
+      swiper.changeLanguageDirection(direction);
+      swiper.rtlTranslate = direction === "rtl";
+    }
+  }, [swiper, direction]);
 
   return (
     <Swiper
@@ -24,10 +35,11 @@ const LeadershipSlider = () => {
         prevEl: swiperNavPrevRef.current,
         nextEl: swiperNavNextRef.current,
       }}
+      onSwiper={swiper => setSwiper(swiper)}
       speed={800}
       slidesPerView={1.1}
       loop
-      onInit={(swiper) => {
+      onInit={swiper => {
         swiper.params.navigation.prevEl = swiperNavPrevRef.current;
         swiper.params.navigation.nextEl = swiperNavNextRef.current;
         swiper.navigation.init();
@@ -66,7 +78,9 @@ const LeadershipSlider = () => {
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 ltr:text-left rtl:text-right text-white z-50">
-                <p className="text-2xl rtl:text-right font-medium mb-1">{t?.homeSection?.leadershipSection?.members[1].name}</p>
+                <p className="text-2xl rtl:text-right font-medium mb-1">
+                  {t?.homeSection?.leadershipSection?.members[1].name}
+                </p>
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[1].role}</label>
                   <div className="flex gap-2">
@@ -90,7 +104,7 @@ const LeadershipSlider = () => {
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 ltr:text-left rtl:text-right text-white z-50">
                 <p className="mb-2 text-2xl rtl:text-right font-medium">
-                {t?.homeSection?.leadershipSection?.members[2].name}
+                  {t?.homeSection?.leadershipSection?.members[2].name}
                 </p>
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[2].role}</label>
@@ -106,14 +120,16 @@ const LeadershipSlider = () => {
         )}
       </SwiperSlide>
       <Image
-        src={prevArrow}
+        src={direction === "rtl" ? prevArrow : nextArrow}
         className="-bottom-6 md:bottom-0 md:top-1/2 left-[115px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
-        ref={swiperNavPrevRef}
+        ref={direction === "rtl" ? swiperNavPrevRef : swiperNavNextRef}
+        alt={direction === "rtl" ? "البطاقة السابقة" : "Next Card"}
       />
       <Image
-        src={nextArrow}
+        src={direction === "rtl" ? nextArrow : prevArrow}
         className="-bottom-6 md:bottom-0 md:top-1/2 right-[115px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
-        ref={swiperNavNextRef}
+        ref={direction === "rtl" ? swiperNavNextRef : swiperNavPrevRef}
+        alt={direction === "rtl" ? "البطاقة التالية" : "Prev Card"}
       />
     </Swiper>
   );

@@ -1,5 +1,6 @@
+import useDirection from "@/store/direaction";
 import { useRouter } from "next/router";
-import { useMemo } from "react";
+import { memo, useEffect, useMemo } from "react";
 import useNavbarScroll from "../Hooks/useNavbarBackground";
 import Footer from "./Footer";
 import Navbar from "./Navbar";
@@ -7,6 +8,15 @@ import Navbar from "./Navbar";
 const Layout = ({ children }) => {
   const [isScroll] = useNavbarScroll(150);
   const { pathname, locale } = useRouter();
+  const { direction, setDirection } = useDirection(state => state);
+
+  useEffect(() => {
+    if (locale === "ar") {
+      setDirection("rtl");
+    } else {
+      setDirection("ltr");
+    }
+  }, [locale, setDirection]);
 
   const handleNavbarBackground = useMemo(() => {
     if (!isScroll) {
@@ -18,7 +28,7 @@ const Layout = ({ children }) => {
   }, [pathname, isScroll]);
 
   return (
-    <div dir={locale === "ar" ? "rtl" : "ltr"}>
+    <div dir={direction}>
       <Navbar
         containerClassName={`fixed transition ease-in-out duration-700 ${handleNavbarBackground} mx-auto inset-x-0 z-50`}
       />
@@ -28,4 +38,4 @@ const Layout = ({ children }) => {
   );
 };
 
-export default Layout;
+export default memo(Layout);

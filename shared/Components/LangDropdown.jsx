@@ -22,7 +22,6 @@ const LangDropdown = () => {
   const { t, errors } = useTranslation("navbar");
   const { locale, push, replace, pathname } = useRouter();
   const { postSlugs } = usePostURL(state => state);
-
   const changeLanguage = event => {
     const selectedLocale = event.currentTarget.name;
     const newSlug = getSlugByLanguage(postSlugs, selectedLocale);

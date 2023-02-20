@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import prevArrow from "../../public/assets/images/roadmap-prev-arrow.svg";
 import nextArrow from "../../public/assets/images/roadmap-next-arow.svg";
@@ -11,11 +11,21 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import useDirection from "@/store/direaction";
 
 const RoadMapSlider = () => {
   const { t } = useTranslation("common");
   const swiperNavPrevRef = useRef(null);
   const swiperNavNextRef = useRef(null);
+  const [swiper, setSwiper] = useState(null);
+  const { direction } = useDirection(state => state);
+
+  useEffect(() => {
+    if (swiper) {
+      swiper.rtlTranslate = direction === "rtl";
+    }
+  }, [swiper, direction]);
+
   return (
     <Swiper
       className="slider-padding d-hidden"
@@ -27,7 +37,8 @@ const RoadMapSlider = () => {
       speed={800}
       slidesPerView={1}
       loop
-      onInit={(swiper) => {
+      onSwiper={swiper => setSwiper(swiper)}
+      onInit={swiper => {
         swiper.params.navigation.prevEl = swiperNavPrevRef.current;
         swiper.params.navigation.nextEl = swiperNavNextRef.current;
         swiper.navigation.init();
@@ -46,7 +57,9 @@ const RoadMapSlider = () => {
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
-            <h4 className="text-center text-2xl font-semibold">{t?.homeSection?.roadmapSection?.cards?.startup?.mainText}</h4>
+            <h4 className="text-center text-2xl font-semibold">
+              {t?.homeSection?.roadmapSection?.cards?.startup?.mainText}
+            </h4>
             <ul className="text-base mt-4">
               <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[0]}</li>
               <li>• {t?.homeSection?.roadmapSection?.cards?.startup?.subText[1]}</li>
@@ -69,7 +82,9 @@ const RoadMapSlider = () => {
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
-            <h4 className="text-center text-2xl font-semibold">{t?.homeSection?.roadmapSection?.cards?.fairlaunch?.mainText}</h4>
+            <h4 className="text-center text-2xl font-semibold">
+              {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.mainText}
+            </h4>
             <ul className="text-base mt-4">
               <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[0]}</li>
               <li>• {t?.homeSection?.roadmapSection?.cards?.fairlaunch?.subText[1]}</li>
@@ -92,7 +107,9 @@ const RoadMapSlider = () => {
             <span className="w-[14px] h-[14px] mx-auto my-auto bg-white rounded-full"></span>
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
-            <h4 className="text-center text-2xl font-semibold">{t?.homeSection?.roadmapSection?.cards?.expansion?.mainText}</h4>
+            <h4 className="text-center text-2xl font-semibold">
+              {t?.homeSection?.roadmapSection?.cards?.expansion?.mainText}
+            </h4>
             <ul className="text-base mt-4">
               <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[0]}</li>
               <li>• {t?.homeSection?.roadmapSection?.cards?.expansion?.subText[1]}</li>
@@ -108,7 +125,9 @@ const RoadMapSlider = () => {
           <div className="mx-auto mt-16 text-center">
             <Image className="mb-6 mx-auto" src={phaseFour} alt="phase 4 icon" />
             <h3 className="text-[32px] mb-[6px] font-semibold">{t?.homeSection?.roadmapSection?.phases[3]}</h3>
-            <span className="text-base text-[#B8B8B8]">{t?.homeSection?.roadmapSection?.cards?.opportunities?.lable}</span>
+            <span className="text-base text-[#B8B8B8]">
+              {t?.homeSection?.roadmapSection?.cards?.opportunities?.lable}
+            </span>
           </div>
           <div className="relative grid grid-cols-1 gap-8 lg:gap-2 lg:px-20 my-7">
             <hr className="absolute block w-full top-2/4"></hr>
@@ -116,7 +135,7 @@ const RoadMapSlider = () => {
           </div>
           <div className="w-[92vw] h-[61.5vw] bg-opacity-5 mx-auto bg-white rounded-xl p-6">
             <h4 className="text-center text-2xl font-semibold">
-             {t?.homeSection?.roadmapSection?.cards?.opportunities?.mainText}
+              {t?.homeSection?.roadmapSection?.cards?.opportunities?.mainText}
             </h4>
             <ul className="text-base mt-4">
               <li>• {t?.homeSection?.roadmapSection?.cards?.opportunities?.subText[0]}</li>
@@ -131,13 +150,13 @@ const RoadMapSlider = () => {
       <Image
         src={prevArrow}
         alt={"prev arrow"}
-        className="-bottom-6 md:bottom-0 md:top-1/2 left-[130px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        className="-bottom-6 rtl:rotate-180 md:bottom-0 md:top-1/2 ltr:left-[130px] rtl:right-[130px] mb-4 md:mb-0 ltr:md:left-0 rtl:md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavPrevRef}
       />
       <Image
         src={nextArrow}
         alt={"next arrow"}
-        className="-bottom-6 md:bottom-0 md:top-1/2 right-[130px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
+        className="-bottom-6 rtl:rotate-180 md:bottom-0 md:top-1/2 ltr:right-[130px] rtl:left-[130px] mb-4 md:mb-0 ltr:md:right-0 rtl:md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
         ref={swiperNavNextRef}
       />
     </Swiper>

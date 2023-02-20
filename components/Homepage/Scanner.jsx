@@ -11,37 +11,22 @@ const Scanner = () => {
   return (
     <section className="container lg:py-48 lg:px-0 mx-auto">
       <picture>
-        <source
-          media="(max-width:768px)"
-          srcSet="/assets/images/ScannerMobileTitle.png"
-        />
-        <Image
-          src={ScanTitle}
-          alt="scanner"
-          className="block mx-auto mb-2 w-3/5"
-        />
+        <source media="(max-width:768px)" srcSet="/assets/images/ScannerMobileTitle.png" />
+        <Image src={ScanTitle} alt="scanner" className="block mx-auto mb-2 w-3/5" />
       </picture>
-      <Image
-        src={ScannerMobileCoins}
-        alt="scanner"
-        className="block max-w-[308px] mx-auto mt-12 md:hidden"
-      />
+      <Image src={ScannerMobileCoins} alt="scanner" className="block max-w-[308px] mx-auto mt-12 md:hidden" />
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:mt-24">
         <div className="flex flex-col ml-auto">
-          <span className="bg-[#F3F4F8] mx-auto mb-4 mt-16 md:mt-0 md:mb-0 rounded-2xl text-sm md:mx-0 font-medium p-1 md:p-1.5 pr-[18px] flex items-center lg:flex-row gap-2 max-w-[238px] rtl:max-w-[280px]">
+          <span className="bg-[#F3F4F8] mx-auto mb-4 mt-16 md:mt-0 md:mb-0 rounded-2xl text-sm md:mx-0 font-medium p-1 md:p-1.5 ltr:pr-[18px] rtl:pl-[18px] flex items-center lg:flex-row gap-2 max-w-[238px] rtl:max-w-[280px]">
             <span className="bg-white px-2 py-0.5 md:py-1 md:px-2.5 rounded-2xl flex items-center">
-              <span className="hidden md:block mr-1.5 bg-indigo-500 w-2 h-2 rounded-full"></span>
+              <span className="hidden md:block ltr:mr-1.5 rtl:ml-1.5 bg-indigo-500 w-2 h-2 rounded-full"></span>
               {t?.homeSection?.scannerSection?.lableI}
             </span>
-            <span className="text-[#344054]">
-              {t?.homeSection?.scannerSection?.lableII}
-            </span>
+            <span className="text-[#344054]">{t?.homeSection?.scannerSection?.lableII}</span>
           </span>
           <h3 className="text-[#101828] rtl:text-right text-[28px] text-center leading-9 font-PolySans font-bold text-xl md:mt-3 mb-4 md:text-2xl md:mb-6 lg:text-4xl md:font-sans ltr:md:text-left rtl:md:text-right">
             {t?.homeSection?.scannerSection?.mainText[0]}
-            <span className="block md:inline">
-              {t?.homeSection?.scannerSection?.mainText[1]}
-            </span>
+            <span className="block md:inline">{t?.homeSection?.scannerSection?.mainText[1]}</span>
           </h3>
           <p className="text-neutral-500 text-base font-normal md:font-medium">
             {t?.homeSection?.scannerSection?.subText}
@@ -57,17 +42,13 @@ const Scanner = () => {
               <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded">
                 <Image src={AppleStoreIcon} alt="Apple Store" />
               </button>
-              <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded ml-3">
+              <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded ltr:ml-3 rtl:mr-3">
                 <Image src={GooglePlayIcon} alt="Google Play" />
               </button>
             </div>
           </div>
         </div>
-        <Image
-          src={ScannerWallet}
-          className="hidden lg:block"
-          alt="Scanner wallet"
-        />
+        <Image src={ScannerWallet} className="hidden lg:block" alt="Scanner wallet" />
       </div>
     </section>
   );
