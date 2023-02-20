@@ -76,7 +76,7 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
             title={title}
           />
           <div className="md:w-4/5 lg:max-w-[800px] mx-auto mt-8 md:mt-16 text-[#667085] font-medium text-base">
-            {parse(desc, stylingBlogDetails)}
+            {desc && parse(desc, stylingBlogDetails)}
             {/* <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold">First title in blog post</h2>
             <p className="mt-6 mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis vitae lectus nec ornare.
