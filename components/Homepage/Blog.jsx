@@ -8,16 +8,18 @@ function Blog() {
   return (
     <div className="text-center mt-28 mb-[59px] md:mt-32 md:mb-32">
       <div className="container mx-auto">
-        <h3 className="font-PolySans text-[28px] text-[#171717] md:text-6xl  md:text-[#29233B]">{t?.homeSection?.blogSection?.mainText}</h3>
+        <h3 className="font-PolySans text-[28px] text-[#171717] md:text-6xl  md:text-[#29233B]">
+          {t?.homeSection?.blogSection?.mainText}
+        </h3>
         <p className="text-base text-[#525252] md:text-lg mt-3 md:mt-4 md:capitalize md:text-[#525C7A]">
-        {t?.homeSection?.blogSection?.subText}
+          {t?.homeSection?.blogSection?.subText}
         </p>
         <div className="flex justify-center items-center">
-          <div className=" mt-8 gap-9 grid grid-cols-1 lg:grid-cols-2">
+          <div className="mt-8 gap-9 grid grid-cols-1 lg:grid-cols-2">
             <div className="shadow-xl bg-slate-50 flex flex-col justify-center rounded-lg overflow-hidden h-[650px] max-w-[488px]">
-              <div className="ltr:text-left rtl:text-right rtl:pr-4 ml-4 md:ml-8 mt-8 flex flex-col">
+              <div className="ltr:text-left rtl:text-right rtl:pr-4 ml-4 ltr:md:ml-8 rtl:md:mr-8 mt-8 flex flex-col">
                 <h3 className="font-sans text-[28px] font-semibold px-2 md:px-0 md:text-3xl md:font-medium capitalize text-[#29233B]">
-                {t?.homeSection?.blogSection?.cards[0]?.mainText}
+                  {t?.homeSection?.blogSection?.cards[0]?.mainText}
                 </h3>
                 <p className="text-base mt-3 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 text-[#525252] md:text-[#525C7A]">
                 {t?.homeSection?.blogSection?.cards[0]?.subText}

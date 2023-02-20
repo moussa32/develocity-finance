@@ -27,16 +27,12 @@ const Academy = () => {
             <span className="bg-white py-1 px-2.5 rounded-2xl flex items-center">
               {t?.homeSection?.academySection?.lableI}
             </span>
-            <span className="text-[#344054]">
-              {t?.homeSection?.academySection?.lableII}
-            </span>
+            <span className="text-[#344054]">{t?.homeSection?.academySection?.lableII}</span>
           </span>
           <h3 className="text-[#101828] text-center rtl:text-right font-bold text-[28px] my-4 md:text-2xl ltr:md:text-left rtl:md:text-right md:mt-3 md:mb-6 lg:text-4xl">
             {t?.homeSection?.academySection?.mainText}
           </h3>
-          <p className="text-neutral-500 text-base font-medium">
-            {t?.homeSection?.academySection?.subText}
-          </p>
+          <p className="text-neutral-500 text-base font-medium">{t?.homeSection?.academySection?.subText}</p>
           <p className="text-neutral-500 text-base font-medium mt-4">
             {t?.homeSection?.academySection?.subTextSecondParagraph}
           </p>
