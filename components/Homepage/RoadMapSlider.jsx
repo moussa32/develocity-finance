@@ -21,7 +21,8 @@ const RoadMapSlider = () => {
   const { direction } = useDirection(state => state);
 
   useEffect(() => {
-    if (swiper) {
+    if (swiper && !swiper.destroyed) {
+      swiper.changeLanguageDirection(direction);
       swiper.rtlTranslate = direction === "rtl";
     }
   }, [swiper, direction]);
@@ -148,16 +149,16 @@ const RoadMapSlider = () => {
         </div>
       </SwiperSlide>
       <Image
-        src={prevArrow}
-        alt={"prev arrow"}
+        src={direction === "rtl" ? prevArrow : nextArrow}
         className="-bottom-6 rtl:rotate-180 md:bottom-0 md:top-1/2 ltr:left-[130px] rtl:right-[130px] mb-4 md:mb-0 ltr:md:left-0 rtl:md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
-        ref={swiperNavPrevRef}
+        ref={direction === "rtl" ? swiperNavPrevRef : swiperNavNextRef}
+        alt={direction === "rtl" ? "البطاقة السابقة" : "Next Card"}
       />
       <Image
-        src={nextArrow}
-        alt={"next arrow"}
+        src={direction === "rtl" ? nextArrow : prevArrow}
         className="-bottom-6 rtl:rotate-180 md:bottom-0 md:top-1/2 ltr:right-[130px] rtl:left-[130px] mb-4 md:mb-0 ltr:md:right-0 rtl:md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
-        ref={swiperNavNextRef}
+        ref={direction === "rtl" ? swiperNavNextRef : swiperNavPrevRef}
+        alt={direction === "rtl" ? "البطاقة التالية" : "Prev Card"}
       />
     </Swiper>
   );

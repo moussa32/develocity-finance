@@ -21,7 +21,6 @@ const LeadershipSlider = () => {
 
   useEffect(() => {
     if (swiper && !swiper.destroyed) {
-      // swiper.changeDirection("horizontal", true);
       swiper.changeLanguageDirection(direction);
       swiper.rtlTranslate = direction === "rtl";
     }
