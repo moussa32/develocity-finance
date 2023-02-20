@@ -14,11 +14,19 @@ const stylingBlogDetails = {
   replace: domNode => {
     if (domNode.attribs && domNode.name === "h2") {
       const props = attributesToProps(domNode.attribs);
-      return <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold" {...props} />;
+      return (
+        <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold" {...props}>
+          {domNode.nodeValue}
+        </h2>
+      );
     }
     if (domNode.attribs && domNode.name === "p") {
       const props = attributesToProps(domNode.attribs);
-      return <p className="mt-6 mb-8" {...props} />;
+      return (
+        <p className="mt-6 mb-8" {...props}>
+          {domNode.children[0].data}
+        </p>
+      );
     }
     if (domNode.attribs && domNode.name === "blockquote") {
       return (
@@ -69,14 +77,14 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
           />
           <div className="md:w-4/5 lg:max-w-[800px] mx-auto mt-8 md:mt-16 text-[#667085] font-medium text-base">
             {parse(desc, stylingBlogDetails)}
-            <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold">First title in blog post</h2>
+            {/* <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold">First title in blog post</h2>
             <p className="mt-6 mb-8">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin venenatis vitae lectus nec ornare.
               Pellentesque nibh eros, accumsan id imperdiet quis, porta eu ante. Curabitur lobortis nisl et neque
               consectetur dictum. Donec vulputate purus ac augue bibendum, vitae dapibus urna ornare. In pharetra id
               orci et viverra. Ut consequat lorem eu turpis feugiat semper. Suspendisse semper lorem eros, ac pharetra
               nunc semper ut. Nulla leo orci, mollis euismod tincidunt in, porttitor in leo.
-            </p>
+            </p> */}
             {/* <figure className="relative">
               <Image src="/assets/images/BlogDetailsPlaceholder.png" fill alt={title} />
 
@@ -188,13 +196,18 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: false,
+    fallback: true,
   };
 }
 
 export async function getStaticProps(context) {
-  const { slug } = context.params;
-  const requestArticleDetails = await globalInstance.get(`/articles/${slug}`);
+  const { params, locale } = context;
+  const { slug } = params;
+  const requestArticleDetails = await globalInstance.get(`/articles/${slug}`, {
+    headers: {
+      lang: locale,
+    },
+  });
   const { article } = await requestArticleDetails.data.data;
 
   return {
