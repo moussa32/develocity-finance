@@ -5,6 +5,7 @@ import DexIcon from "../../public/assets/images/dex-icon.svg";
 import MultiFunctionalIcon from "../../public/assets/images/multi-functional.svg";
 import WalletIcon from "../../public/assets/images/wallet.svg";
 import EcosystemTitle from "../../public/assets/images/EcosystemTitle.png";
+import EcosystemVideo from "../../public/assets/video/Eco-system.mp4";
 import Coins from "../../public/assets/images/coins.png";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
@@ -88,13 +89,19 @@ const Ecosystem = () => {
             </div>
           </div>
         </div>
+        <video
+          src={EcosystemVideo}
+          className="block order-1 mx-auto mt-14 mb-[66px] w-[361px] lg:w-full lg:max-w-[592px] md:order-2"
+          autoPlay
+          muted
+        ></video>
 
-        <Image
+        {/*   <Image
           src={Coins}
           alt="coins"
           title="coins"
           className="block order-1 mx-auto mt-14 mb-[66px] w-[361px] lg:w-full lg:max-w-[592px] md:order-2"
-        />
+        />*/}
       </div>
     </section>
   );

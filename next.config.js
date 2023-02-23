@@ -1,4 +1,5 @@
 /** @type {import('next').NextConfig} */
+const withVideos = require('next-videos')
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -10,4 +11,4 @@ const nextConfig = {
   },
 };
 
-module.exports = nextConfig;
+module.exports = withVideos(nextConfig)
