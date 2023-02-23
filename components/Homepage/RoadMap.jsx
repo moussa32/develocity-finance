@@ -7,6 +7,7 @@ import quote from "../../public/assets/images/roadmap-quote.svg";
 import RoadMapSlider from "./RoadMapSlider";
 import StatsSection from "./StatsSection";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import SheikhMarwanBinMohammed from "../../public/assets/images/SheikhMarwanBinMohammed.png";
 
 const RoadMap = () => {
   const { t } = useTranslation("common");
@@ -112,7 +113,9 @@ const RoadMap = () => {
         </div>
         <RoadMapSlider />
         <div className="grid grid-cols-1 md:grid-cols-2 mt-24 lg:mt-48 gap-8 px-4 md:px-6">
-          <div className="w-[92vw] h-[78.5vw] md:w-[46vw] md:h-[42vw] my-auto lg:w-[488px] lg:h-[442px] mx-auto bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] rounded-lg"></div>
+          <div className="w-[92vw] h-[78.5vw] md:w-[46vw] md:h-[42vw] my-auto lg:w-[488px] lg:h-[442px] mx-auto relative">
+            <Image className="rounded-lg" src={SheikhMarwanBinMohammed} fill alt="Sheikh Marwan Bin Mohammed" />
+          </div>
           <div className="text-center">
             <p className="text-xl text-[#FAFAFA] md:text-3xl relative z-20 font-medium mt-11 md:mt-24">
               <Image

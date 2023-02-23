@@ -55,18 +55,21 @@ const Header = () => {
   }, [timeLeft]);
 
   return (
-    <div className="relative header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left h-[852px] md:h-[810px]">
+    <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
       <video
-          src={headerVideo}
-          className="absolute w-full h-full md:object-fill hidden md:block"
-          autoPlay
-          muted
-        ></video>
+        src={headerVideo}
+        className="absolute object-cover w-full h-full hidden md:block"
+        autoPlay
+        loop
+        muted
+      ></video>
       <SideMenu />
-      <div className="container text-white mt-32 md:mt-60 z-20 md:flex md:flex-col">
+      <div className="container h-full text-white pt-32 md:pt-60 z-20 md:flex md:flex-col">
         <div className="w-50 mx-auto flex flex-col justify-center z-20 md:h-[400px] lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
-            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">{t?.homeSection?.preSaleCountdown}</h2>
+            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">
+              {t?.homeSection?.preSaleCountdown}
+            </h2>
             <time className="font-semibold text-7xl text-center md:mt-[29px]">
               {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}`}
             </time>
@@ -78,7 +81,8 @@ const Header = () => {
               </div>
               <div className="flex flex-col md:flex-row md:gap-x-1 md:items-center items-start text-xs xs:text-sm text-[#E9E9E9]">
                 <p>
-                  {t?.homeSection?.subText[0]} <span className="underline underline-offset-2 text-[#00B9FF]">{t?.homeSection?.subText[1]}</span>
+                  {t?.homeSection?.subText[0]}{" "}
+                  <span className="underline underline-offset-2 text-[#00B9FF]">{t?.homeSection?.subText[1]}</span>
                 </p>
                 <span className="block md:inline">{t?.homeSection?.subText[2]}</span>
               </div>
@@ -87,14 +91,14 @@ const Header = () => {
         </div>
 
         <MobileImageSlider
-          containerClassNames="w-full mt-[100%]"
+          containerClassNames="w-full"
           slideContainerClassName="w-auto max-w-[173px] h-8"
           slidesPerView={1.9}
           spaceBetween={42}
           images={featuredImages}
           initialSlide={1}
         />
-        <div className="hidden mt-[409px] md:flex md:mt-24 mb-14 justify-center md:flex-wrap md:justify-evenly mx-auto px-4 gap-x-11 md:gap-x-3 gap-y-6 md:my-14 md:gap-10 lg:gap-y-0">
+        <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
           <Image
             className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
             src={BloombergIcon}
