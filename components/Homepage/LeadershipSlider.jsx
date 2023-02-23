@@ -48,7 +48,7 @@ const LeadershipSlider = () => {
       <SwiperSlide>
         {({ isActive }) => (
           <div
-            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl LD-ceo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
         ${isActive ? "" : "opacity-50"}`}
           >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
@@ -96,7 +96,7 @@ const LeadershipSlider = () => {
       <SwiperSlide>
         {({ isActive }) => (
           <div
-            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl LD-cmo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
       ${isActive ? "" : "opacity-50"}`}
           >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
