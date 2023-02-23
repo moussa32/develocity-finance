@@ -27,20 +27,21 @@ export default function StatsSection() {
             </div>
           </div>
         </div>
-        <div className={`h-full w-full ${!showVideo && "stats-bg"} rounded-md flex justify-center items-center`}>
+        <div className="h-full w-full stats-bg rounded-md flex justify-center items-center">
           <iframe
-            className={`${showVideo ? "w-full" : "hidden"} h-full`}
-            srcSet="https://www.youtube.com/embed/WjoplqS1u18"
-            title="8K VIDEOS | World 8K Videos HDR UltraHD  (120 FPS) | Sony Demo"
+            className="w-full h-full"
+            src="https://www.youtube.com/embed/Qj8dEwvcCCc"
+            title="Multi-functional Tool - Crypto Scanner"
+            frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowFullScreen
-          />
+            allowfullscreen
+          ></iframe>
 
-          {!showVideo && (
+          {/* {!showVideo && (
             <button onClick={() => setShowVideo(true)}>
               <Image className="w-12 h-48" src={playIcon} alt="play" />
             </button>
-          )}
+          )} */}
         </div>
       </div>
       <div className="pt-[166px] pb-[92px] md:pt-[400px] lg:flex lg:flex-row lg:gap-x-36 justify-center mx-auto items-center z-40 px-4 md:px-0">
