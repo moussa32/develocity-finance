@@ -3,6 +3,7 @@ import AppleStoreIcon from "../../public/assets/images/AppleStoreIcon.svg";
 import GooglePlayIcon from "../../public/assets/images/GooglePlayIcon.svg";
 import ScanTitle from "../../public/assets/images/ScanTitle.png";
 import ScannerMobileCoins from "../../public/assets/images/ScannerMobileCoins.png";
+import scannerVideo from "../../public/assets/video/Scanner.mp4";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
@@ -13,8 +14,14 @@ const Scanner = () => {
       <picture>
         <source media="(max-width:768px)" srcSet="/assets/images/ScannerMobileTitle.png" />
         <Image src={ScanTitle} alt="scanner" className="block mx-auto mb-2 w-3/5" />
+     {/*   <video
+          src={scannerVideo}
+          className="block mx-auto mb-2 w-[315px] lg:w-full lg:max-w-[592px]"
+          autoPlay
+          muted
+        ></video>*/}
       </picture>
-      <Image src={ScannerMobileCoins} alt="scanner" className="block max-w-[308px] mx-auto mt-12 md:hidden" />
+      <Image src={ScannerMobileCoins} alt="scanner" className="block max-w-[308px] mx-auto mt-12 md:hidden" /> 
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:mt-24">
         <div className="flex flex-col ml-auto">
           <span className="bg-[#F3F4F8] mx-auto mb-4 mt-16 md:mt-0 md:mb-0 rounded-2xl text-sm md:mx-0 font-medium p-1 md:p-1.5 ltr:pr-[18px] rtl:pl-[18px] flex items-center lg:flex-row gap-2 max-w-[238px] rtl:max-w-[280px]">
