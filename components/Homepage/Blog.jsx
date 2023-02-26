@@ -24,7 +24,7 @@ function Blog() {
                 <p className="text-base mt-3 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 text-[#525252] md:text-[#525C7A]">
                 {t?.homeSection?.blogSection?.cards[0]?.subText}
                 </p>
-                <Link href={"blog"} className="mt-10 md:mt-7 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 font-medium flex gap-2 text-indigo-500">
+                <Link href={"https://develocity.solutions/"} className="mt-10 md:mt-7 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 font-medium flex gap-2 text-indigo-500">
                   {t?.homeSection?.blogSection?.learnMoreBtn}
                 </Link>
               </div>
@@ -46,7 +46,7 @@ function Blog() {
                 <p className="text-base mt-3 md:mt-4 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 text-[#525C7A]">
                  {t?.homeSection?.blogSection?.cards[1]?.subText}
                 </p>
-                <Link href="/blog" className="mt-4 md:mt-7 font-medium ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 flex gap-2 text-indigo-500">
+                <Link href="https://tool.develocity.finance/" className="mt-4 md:mt-7 font-medium ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 flex gap-2 text-indigo-500">
                   {t?.homeSection?.blogSection?.learnMoreBtn}
                 </Link>
               </div>
