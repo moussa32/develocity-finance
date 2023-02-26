@@ -3,6 +3,7 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
+import Link from "next/link";
 
 const MobileImageSlider = ({
   images,
@@ -25,6 +26,7 @@ const MobileImageSlider = ({
           defaultVersion,
           coloredVersion,
           title,
+          link,
           imageClassName,
           imageActiveClassName,
         }) => (
@@ -33,7 +35,8 @@ const MobileImageSlider = ({
             key={title}
           >
             {({ isActive }) => (
-              <div
+              <Link
+                href={`${link}`}
                 className={`${slideImageClassName} flex items-center justify-center`}
               >
                 {isActive ? (
@@ -49,7 +52,7 @@ const MobileImageSlider = ({
                     alt={title}
                   />
                 )}
-              </div>
+              </Link>
             )}
           </SwiperSlide>
         )
