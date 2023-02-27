@@ -69,7 +69,7 @@ export default function StatsSection() {
           <div className="rounded-full bg-slate-800 w-12 h-12 flex justify-center items-center p-2">
             <Image className="md:w-4" src={coins} alt="coins" />
           </div>
-          <CountUp start={focus ? 0 : null} end={7} duration={3} decimals={4} decimal=",">
+          <CountUp start={focus ? 0 : null} end={70.} duration={3} decimals={3} decimal=",">
             {({ countUpRef }) => (
               <VisibilitySensor
                 onChange={isVisible => {
