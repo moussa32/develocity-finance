@@ -60,6 +60,7 @@ const Header = () => {
         src={headerVideo}
         className="absolute object-cover w-full h-full hidden md:block"
         autoPlay
+        playsInline
         loop
         muted
       ></video>
