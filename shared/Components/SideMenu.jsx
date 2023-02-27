@@ -86,12 +86,12 @@ const SideMenu = () => {
                 </NextNavLink>
               </div>
 
-              <div className="block px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
+              <Disclosure.Button className="block mx-auto px-3 py-2 rounded-md text-white text-base font-medium hover:bg-slate-900/75">
                 <div className="bg-white mx-auto w-[150px] bg-opacity-20 rounded-[30px]">
                   <Image className="inline-block ltr:ml-4 rtl:mr-4" src={langIcon} alt="language icon" />
                   <LangDropdown />
                 </div>
-              </div>
+              </Disclosure.Button>
             </div>
           </Disclosure.Panel>
         </>
