@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { memo, useState } from "react";
 import playIcon from "../../public/assets/images/playVideoIcon.svg";
 import icon from "../../public/assets/images/Icon.svg";
 import coins from "../../public/assets/images/coins.svg";
@@ -7,11 +7,20 @@ import CountUp from "react-countup";
 import VisibilitySensor from "react-visibility-sensor";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { useInView } from "react-intersection-observer";
 
-export default function StatsSection() {
+const StatsSection = () => {
   const { t } = useTranslation("common");
-  const [showVideo, setShowVideo] = useState(false);
   const [focus, setFocus] = useState(false);
+  const {
+    ref: videoRef,
+    inView,
+    entry,
+  } = useInView({
+    threshold: 0,
+    triggerOnce: true,
+  });
+
   return (
     <section className="container max-w-[1008px] relative">
       <div className="absolute w-[361px] lg:w-full mx-auto top-[-100px] md:w-10/12 right-0 left-0 flex flex-col md:top-[-150px] lg:top-[-400px] h-[204px] md:h-[400px] lg:h-[700px] md:mb-10">
@@ -27,10 +36,10 @@ export default function StatsSection() {
             </div>
           </div>
         </div>
-        <div className="h-full w-full stats-bg rounded-md flex justify-center items-center">
+        <div ref={videoRef} className="h-full w-full stats-bg rounded-md flex justify-center items-center">
           <iframe
             className="w-full h-full"
-            src="https://www.youtube.com/embed/Qj8dEwvcCCc"
+            src={inView && "https://www.youtube.com/embed/Qj8dEwvcCCc"}
             title="Multi-functional Tool - Crypto Scanner"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -69,7 +78,7 @@ export default function StatsSection() {
           <div className="rounded-full bg-slate-800 w-12 h-12 flex justify-center items-center p-2">
             <Image className="md:w-4" src={coins} alt="coins" />
           </div>
-          <CountUp start={focus ? 0 : null} end={70.} duration={3} decimals={3} decimal=",">
+          <CountUp start={focus ? 0 : null} end={70} duration={3} decimals={3} decimal=",">
             {({ countUpRef }) => (
               <VisibilitySensor
                 onChange={isVisible => {
@@ -108,4 +117,6 @@ export default function StatsSection() {
       </div>
     </section>
   );
-}
+};
+
+export default memo(StatsSection);

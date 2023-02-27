@@ -8,6 +8,7 @@ const nextConfig = {
   },
   images: {
     domains: ["blog.develocity.app"],
+    formats: ["image/avif", "image/webp"],
   },
 };
 
