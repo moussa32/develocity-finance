@@ -68,7 +68,7 @@ const LeadershipSlider = () => {
           </div>
         )}
       </SwiperSlide>
-      <SwiperSlide>
+      {/* <SwiperSlide>
         {({ isActive }) => (
           <div
             className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
@@ -92,7 +92,7 @@ const LeadershipSlider = () => {
             </div>
           </div>
         )}
-      </SwiperSlide>
+      </SwiperSlide> */}
       <SwiperSlide>
         {({ isActive }) => (
           <div
