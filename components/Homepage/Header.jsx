@@ -62,6 +62,7 @@ const Header = () => {
         autoPlay
         loop
         muted
+        playsInline
       ></video>
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 z-20 md:flex md:flex-col">
