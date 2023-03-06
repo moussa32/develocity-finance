@@ -91,10 +91,11 @@ const Header = () => {
         </div>
 
         <MobileImageSlider
-          containerClassNames="w-full"
+          containerClassNames="mt-0 w-full"
           slideContainerClassName="w-auto max-w-[173px] h-8"
           slidesPerView={1.9}
           spaceBetween={42}
+          slideImageClassName="flex-col h-full"
           images={featuredImages}
           initialSlide={1}
         />
