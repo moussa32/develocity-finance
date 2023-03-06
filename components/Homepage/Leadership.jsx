@@ -15,11 +15,11 @@ function Leadership() {
           {t?.homeSection?.leadershipSection?.subText}
         </p>
         <div className="hidden gap-x-8 mt-12 md:mt-14 gap-7 md:flex md:justify-center md:flex-row ">
-          <div className="relative pt-[27px] pb-[27px] w-full max-w-[384px] rounded-xl LD-ceo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] h-[484px]">
+          <div className="relative pt-[27px] pb-[27px] w-full max-w-[384px] rounded-xl LD-cmo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] h-[484px]">
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 ltr:text-left rtl:text-right text-white z-50">
-                <p className="text-2xl font-medium">{t?.homeSection?.leadershipSection?.members[0].name}</p>
+                <p className="text-2xl font-medium">{t?.homeSection?.leadershipSection?.members[2].name}</p>
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[0].role}</label>
                   <div className="flex gap-2">
@@ -47,11 +47,11 @@ function Leadership() {
               </div>
             </div>
           </div> */}
-          <div className="relative pt-[27px] pb-[27px] w-full max-w-[384px] rounded-xl LD-cmo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] h-[484px]">
+          <div className="relative pt-[27px] pb-[27px] w-full max-w-[384px] rounded-xl LD-ceo  bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] h-[484px]">
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 ltr:text-left rtl:text-right text-white z-50">
-                <p className="mb-2 text-2xl font-medium">{t?.homeSection?.leadershipSection?.members[2].name}</p>
+                <p className="mb-2 text-2xl font-medium">{t?.homeSection?.leadershipSection?.members[0].name}</p>
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[2].role}</label>
                   <div className="flex gap-2">

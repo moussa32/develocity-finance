@@ -48,13 +48,13 @@ const LeadershipSlider = () => {
       <SwiperSlide>
         {({ isActive }) => (
           <div
-            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl LD-ceo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl LD-cmo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
         ${isActive ? "" : "opacity-50"}`}
           >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 ltr:text-left rtl:text-right text-white z-50">
-                <p className="text-2xl font-medium">{t?.homeSection?.leadershipSection?.members[0].name}</p>
+                <p className="text-2xl font-medium">{t?.homeSection?.leadershipSection?.members[2].name}</p>
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[0].role}</label>
                   <div className="flex gap-2">
@@ -96,14 +96,14 @@ const LeadershipSlider = () => {
       <SwiperSlide>
         {({ isActive }) => (
           <div
-            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl LD-cmo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
+            className={`relative mx-auto pt-[27px] pb-[27px] transition-all ease-in-out duration-300 rounded-xl LD-ceo bg-cover bg-center bg-no-repeat bg-gradient-to-br from-[#1D2B64] to-[#F8CDDA] w-[80vw] h-[410px]
       ${isActive ? "" : "opacity-50"}`}
           >
             <div className="absolute bottom-0 right-0 left-0 bg-white opacity-10 z-0 h-28"></div>
             <div className="absolute bottom-0 right-0 left-0 z-20">
               <div className="px-6 pt-6 pb-6 ltr:text-left rtl:text-right text-white z-50">
                 <p className="mb-2 text-2xl rtl:text-right font-medium">
-                  {t?.homeSection?.leadershipSection?.members[2].name}
+                  {t?.homeSection?.leadershipSection?.members[0].name}
                 </p>
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[2].role}</label>
