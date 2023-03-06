@@ -21,7 +21,7 @@ const Scanner = () => {
           muted
         ></video>
       </picture>
-     {/*  <Image src={ScannerMobileCoins} alt="scanner" className="block max-w-[308px] mx-auto mt-12 md:hidden" /> */}
+      {/*  <Image src={ScannerMobileCoins} alt="scanner" className="block max-w-[308px] mx-auto mt-12 md:hidden" /> */}
       <div className="grid grid-cols-1 md:grid-cols-2 md:gap-8 lg:mt-24">
         <div className="flex flex-col ml-auto">
           <span className="bg-[#F3F4F8] mx-auto mb-4 mt-16 md:mt-0 md:mb-0 rounded-2xl text-sm md:mx-0 font-medium p-1 md:p-1.5 ltr:pr-[18px] rtl:pl-[18px] flex items-center lg:flex-row gap-2 max-w-[238px] rtl:max-w-[280px]">
@@ -47,10 +47,10 @@ const Scanner = () => {
             </button>
             <div className="flex justify-center sm:justify-start">
               <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded">
-                <Image src={AppleStoreIcon} alt="Apple Store" />
+                <Image src={AppleStoreIcon} className="min-w-[21px] min-h-[24px]" alt="Apple Store" />
               </button>
               <button className="py-3.5 px-4 border-[##D0D5DD] border-[1px] rounded ltr:ml-3 rtl:mr-3">
-                <Image src={GooglePlayIcon} alt="Google Play" />
+                <Image src={GooglePlayIcon} alt="Google Play" className="min-w-[21px] min-h-[24px]" />
               </button>
             </div>
           </div>
