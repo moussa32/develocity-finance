@@ -7,7 +7,7 @@ import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 import SideMenu from "../../shared/Components/SideMenu";
 import { calculateTimeLeft } from "../../shared/Util/countdown";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
-import headerVideo from "../../public/assets/video/header-video-bg.mp4";
+// import headerVideo from "../../public/assets/video/header-video-bg.mp4";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
@@ -56,13 +56,13 @@ const Header = () => {
 
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
-      <video
+      {/* <video
         src={headerVideo}
         className="absolute object-cover w-full h-full hidden md:block"
         autoPlay
         loop
         muted
-      ></video>
+      ></video> */}
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 z-20 md:flex md:flex-col">
         <div className="w-50 mx-auto flex flex-col justify-center z-20 md:h-[400px] lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
