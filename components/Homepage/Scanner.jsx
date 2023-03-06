@@ -19,6 +19,7 @@ const Scanner = () => {
           className="block mx-auto mb-2 w-[315px] lg:w-full lg:max-w-[592px]"
           autoPlay
           muted
+          playsInline
         ></video>
       </picture>
       {/*  <Image src={ScannerMobileCoins} alt="scanner" className="block max-w-[308px] mx-auto mt-12 md:hidden" /> */}
