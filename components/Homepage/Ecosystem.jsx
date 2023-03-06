@@ -92,6 +92,7 @@ const Ecosystem = () => {
         <video
           src={EcosystemVideo}
           className="block order-1 mx-auto mt-14 mb-[66px] w-[361px] lg:w-full lg:max-w-[592px] md:order-2"
+          playsInline
           autoPlay
           muted
           playsInline

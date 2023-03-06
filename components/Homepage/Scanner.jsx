@@ -18,6 +18,7 @@ const Scanner = () => {
           src={scannerVideo}
           className="block mx-auto mb-2 w-[315px] lg:w-full lg:max-w-[592px]"
           autoPlay
+          playsInline
           muted
           playsInline
         ></video>
