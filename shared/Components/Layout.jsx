@@ -24,11 +24,11 @@ const Layout = ({ children }) => {
       return "bg-white/[0.1] top-[40px]";
     }
 
-    return "bg-indigo-500/75 top-[20px]";
+    return "bg-indigo-500/75 top-[20px] backdrop-blur-lg";
   }, [pathname, isScroll]);
 
   return (
-    <div dir={direction}>
+    <div className="overflow-hidden" dir={direction}>
       <Navbar
         containerClassName={`fixed transition ease-in-out duration-700 ${handleNavbarBackground} mx-auto inset-x-0 z-50`}
       />
