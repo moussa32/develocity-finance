@@ -100,10 +100,10 @@ const ProjectsDropdown = () => {
                 {/*left menu items */}
                 <Menu.Item>
                   <div className="relative">
-                    <span className="absolute ltr:right-0 rtl:left-0 -top-2 md:top-0 text-[rgb(2,122,72)] bg-[rgb(236,253,243)] px-2 ltr:ml-0 rtl:mr-0 ltr:mr-1 rtl:ml-1 ltr:md:mr-0 rtl:md:ml-0 text-[10px] font-medium rounded">
+                    {/* <span className="absolute ltr:right-0 rtl:left-0 -top-2 md:top-0 text-[rgb(2,122,72)] bg-[rgb(236,253,243)] px-2 ltr:ml-0 rtl:mr-0 ltr:mr-1 rtl:ml-1 ltr:md:mr-0 rtl:md:ml-0 text-[10px] font-medium rounded">
                       <span className="w-[6px] h-[6px] bg-[rgb(18,183,106)] inline-block rounded-full ltr:mr-1 rtl:ml-1"></span>
                       {t?.headSection?.projects?.launched}
-                    </span>
+                    </span> */}
                     <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm">
                       <Image
                         className="inline-block w-12 mx-auto md:mx-0"
