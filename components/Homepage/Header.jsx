@@ -74,7 +74,7 @@ const Header = () => {
               {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}`}
             </time>
           </div>
-          <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
+          {/* <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
             <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">
               <div className="flex items-center p-[5px] justify-center rounded-lg w-9 h-9 bg-gray-300 bg-opacity-20 basis-9 shrink-0">
                 <Image className="w-full md:h-auto md:w-auto" src={Loudspeaker} alt="Loud Speaker" />
@@ -87,7 +87,7 @@ const Header = () => {
                 <span className="block md:inline">{t?.homeSection?.subText[2]}</span>
               </div>
             </div>
-          </div>
+          </div> */}
         </div>
 
         <MobileImageSlider
