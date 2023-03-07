@@ -52,25 +52,28 @@ const ProjectsDropdown = () => {
                     <span className="absolute ltr:right-0 rtl:left-0 -top-2 md:top-0 text-[rgb(181,71,8)] bg-[rgb(255,250,235)] px-2 ltr:ml-0 rtl:mr-0 text-[10px] font-medium rounded">
                       {t?.headSection?.projects?.beta}
                     </span>
-                    <div className="md:flex gap-4 px-2 md:px-4 py-2 text-sm">
+                    <a
+                      href="https://tool.develocity.finance"
+                      className="group transition-all duration-500 hover:bg-indigo-400/25 hover:rounded cursor-pointer md:flex gap-4 px-2 md:px-4 py-2 text-sm"
+                    >
                       <Image
                         className="inline-block w-12 mx-auto md:mx-0"
                         src={multiFunctional}
                         alt="multi functional icon"
                       />
                       <div className="md:mt-3">
-                        <h3 className="md:text-base text-[#101828] font-semibold mb-1">
+                        <h3 className="group-hover:text-slate-800 md:text-base text-[#101828] font-semibold mb-1">
                           {t?.headSection?.projects?.multiFunctionalTool?.mainText}
                         </h3>
-                        <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        <p className="group-hover:text-zinc-900 text-xs text-[#475467] md:text-sm font-normal">
                           {t?.headSection?.projects?.multiFunctionalTool?.subText}
                         </p>
                       </div>
-                    </div>
+                    </a>
                   </div>
                 </Menu.Item>
                 <Menu.Item>
-                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                  <div className="group transition-all duration-500 hover:bg-indigo-400/25 hover:rounded cursor-pointer md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
                     <Image className="inline-block w-12 mx-auto md:mx-0" src={swapTool} alt="swap tool icon" />
                     <div className="md:mt-3">
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
@@ -83,7 +86,7 @@ const ProjectsDropdown = () => {
                   </div>
                 </Menu.Item>
                 <Menu.Item>
-                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                  <div className="group transition-all duration-500 hover:bg-indigo-400/25 hover:rounded cursor-pointer md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
                     <Image className="inline-block w-12 mx-auto md:mx-0" src={wallet} alt="wallet icon" />
                     <div className="md:mt-3">
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
@@ -104,7 +107,7 @@ const ProjectsDropdown = () => {
                       <span className="w-[6px] h-[6px] bg-[rgb(18,183,106)] inline-block rounded-full ltr:mr-1 rtl:ml-1"></span>
                       {t?.headSection?.projects?.launched}
                     </span> */}
-                    <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm">
+                    <div className="group transition-all duration-500 hover:bg-indigo-400/25 hover:rounded cursor-pointer md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm">
                       <Image
                         className="inline-block w-12 mx-auto md:mx-0"
                         src={cryptoAcademy}
@@ -122,7 +125,7 @@ const ProjectsDropdown = () => {
                   </div>
                 </Menu.Item>
                 <Menu.Item>
-                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                  <div className="group transition-all duration-500 hover:bg-indigo-400/25 hover:rounded cursor-pointer md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
                     <Image className="inline-block w-12 mx-auto md:mx-0" src={bridge} alt="bridge icon" />
                     <div className="md:mt-3">
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
@@ -135,7 +138,7 @@ const ProjectsDropdown = () => {
                   </div>
                 </Menu.Item>
                 <Menu.Item>
-                  <div className="md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
+                  <div className="group transition-all duration-500 hover:bg-indigo-400/25 hover:rounded cursor-pointer md:flex text-gray-700 gap-4 px-2 md:px-4 py-2 text-sm clear-both">
                     <Image className="inline-block w-12 mx-auto md:mx-0" src={dexIcon} alt="dex icon" />
                     <div className="md:mt-3">
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
