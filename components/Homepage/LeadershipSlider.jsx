@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { memo, useEffect, useRef, useState } from "react";
 import prevArrow from "../../public/assets/images/prev-arrow.svg";
 import nextArrow from "../../public/assets/images/next-arrow.svg";
 import twitter from "../../public/assets/images/LD_twitter.svg";
@@ -119,19 +119,19 @@ const LeadershipSlider = () => {
         )}
       </SwiperSlide>
       <Image
-        src={direction === "rtl" ? prevArrow : nextArrow}
+        src={direction === "ltr" ? prevArrow : nextArrow}
         className="-bottom-6 md:bottom-0 md:top-1/2 left-[115px] mb-4 md:mb-0 md:left-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
-        ref={direction === "rtl" ? swiperNavPrevRef : swiperNavNextRef}
-        alt={direction === "rtl" ? "البطاقة السابقة" : "Next Card"}
+        ref={direction === "ltr" ? swiperNavPrevRef : swiperNavNextRef}
+        alt={direction === "ltr" ? "البطاقة السابقة" : "Next Card"}
       />
       <Image
-        src={direction === "rtl" ? nextArrow : prevArrow}
+        src={direction === "ltr" ? nextArrow : prevArrow}
         className="-bottom-6 md:bottom-0 md:top-1/2 right-[115px] mb-4 md:mb-0 md:right-0 absolute z-10 -translate-y-1/2 w-[50px] h-[50px] cursor-pointer bg-no-repeat bg-contain bg-center"
-        ref={direction === "rtl" ? swiperNavNextRef : swiperNavPrevRef}
-        alt={direction === "rtl" ? "البطاقة التالية" : "Prev Card"}
+        ref={direction === "ltr" ? swiperNavNextRef : swiperNavPrevRef}
+        alt={direction === "ltr" ? "البطاقة التالية" : "Prev Card"}
       />
     </Swiper>
   );
 };
 
-export default LeadershipSlider;
+export default memo(LeadershipSlider);

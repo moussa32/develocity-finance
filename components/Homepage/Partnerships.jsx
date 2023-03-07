@@ -1,10 +1,4 @@
-//import coinbase from "../../public/assets/images/coinbase.svg";
-//import bitmex from "../../public/assets/images/bitmex.svg";
-//import xtCom from "../../public/assets/images/xt.svg";
 import binance from "../../public/assets/images/binance.svg";
-//import coinbaseColored from "../../public/assets/images/coinbase-colored.svg";
-//import bitmexColored from "../../public/assets/images/bitmex-colored.svg";
-//import xtComColored from "../../public/assets/images/xt-colored.svg";
 import binanceColored from "../../public/assets/images/binance-colored.svg";
 import Slider from "./Slider";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
@@ -24,7 +18,7 @@ const partnerships = [
     defaultVersion: alchamyPay,
     coloredVersion: alchamyPay,
     imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] object-contain"
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
   {
     title: "bscscan logo",
@@ -32,11 +26,12 @@ const partnerships = [
     defaultVersion: bscscanLogo,
     coloredVersion: bscscanLogo,
     imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] object-contain"
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
   {
     title: "metamask Logo",
     link: "https://metamask.io/",
+    imageActiveClassName: "feature-slider-image",
     defaultVersion: metamaskLogo,
     coloredVersion: metamaskLogo,
   },
@@ -46,7 +41,7 @@ const partnerships = [
     defaultVersion: binance,
     coloredVersion: binanceColored,
     imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] object-contain"
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
   {
     title: "moralis Logo",
@@ -54,7 +49,7 @@ const partnerships = [
     defaultVersion: moralisLogo,
     coloredVersion: moralisLogo,
     imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] object-contain"
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
   {
     title: "trust Wallet",
@@ -62,32 +57,9 @@ const partnerships = [
     defaultVersion: trustWallet,
     coloredVersion: trustWallet,
     imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] object-contain"
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
 ];
-
-/*const partnerships = [
-  {
-    title: "coinbase",
-    defaultVersion: coinbase,
-    coloredVersion: coinbaseColored,
-  },
-  {
-    title: "bitmex",
-    defaultVersion: bitmex,
-    coloredVersion: bitmexColored,
-  },
-  {
-    title: "xtCom",
-    defaultVersion: xtCom,
-    coloredVersion: xtComColored,
-  },
-  {
-    title: "binance",
-    defaultVersion: binance,
-    coloredVersion: binanceColored,
-  },
-];*/
 
 const Partnerships = () => {
   const { t } = useTranslation("common");
@@ -101,31 +73,26 @@ const Partnerships = () => {
           {t?.homeSection?.partnershipSection?.subText}
         </h6>
         <div className="hidden md:grid grid-cols-6 h-[80px] mt-8 px-4 md:px-2 mx-auto gap-1 lg:gap-14">
-          {partnerships.map(
-            ({ title, link, defaultVersion, coloredVersion }) => (
-              <Link
-                key={title}
-                className="group relative w-[65px] md:w-[170px] lg:w-[180px]"
-                href={`${link}`}
-              >
-                <Image
-                  className="absolute group-hover:opacity-0 h-[80px] object-contain hover:cursor-pointer"
-                  src={defaultVersion}
-                  alt={title}
-                />
-                <Image
-                  className="absolute opacity-0 group-hover:opacity-100 h-[80px] object-contain hover:cursor-pointer"
-                  src={coloredVersion}
-                  alt={title}
-                />
-              </Link>
-            )
-          )}
+          {partnerships.map(({ title, link, defaultVersion, coloredVersion }) => (
+            <Link key={title} className="group relative w-[65px] md:w-[170px] lg:w-[180px]" href={`${link}`}>
+              <Image
+                className="absolute group-hover:opacity-0 h-[80px] object-contain hover:cursor-pointer"
+                src={defaultVersion}
+                alt={title}
+              />
+              <Image
+                className="absolute opacity-0 group-hover:opacity-100 h-[80px] object-contain hover:cursor-pointer"
+                src={coloredVersion}
+                alt={title}
+              />
+            </Link>
+          ))}
         </div>
         <MobileImageSlider
           images={partnerships}
           slidesPerView={1.6}
           initialSlide={2}
+          containerClassNames="mt-8"
           slideImageClassName="h-11 w-[200px]"
         />
         <Slider />

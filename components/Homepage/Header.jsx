@@ -17,28 +17,28 @@ const featuredImages = [
     defaultVersion: BloombergIcon,
     coloredVersion: BloombergIcon,
     imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30",
+    imageActiveClassName: "opacity-30 feature-slider-image-active",
   },
   {
     title: "WiredIcon",
     defaultVersion: WiredIcon,
     coloredVersion: WiredIcon,
     imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30",
+    imageActiveClassName: "opacity-30 feature-slider-image-active",
   },
   {
     title: "CoindeskIcons",
     defaultVersion: CoindeskIcons,
     coloredVersion: CoindeskIcons,
     imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30",
+    imageActiveClassName: "opacity-30 feature-slider-image-active",
   },
   {
     title: "YahooFinanceIcons",
     defaultVersion: YahooFinanceIcons,
     coloredVersion: YahooFinanceIcons,
     imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30",
+    imageActiveClassName: "opacity-30 feature-slider-image-active",
   },
 ];
 

@@ -54,7 +54,7 @@ const Slider = () => {
             alt="quote icon"
           />
           <p className="text-xl relative z-20 md:text-4xl md:leading-[44px] font-medium text-neutral-900 mt-16 md:mt-24 lg:px-52">
-          {t?.homeSection?.partnershipSection?.quote?.mainText}
+            {t?.homeSection?.partnershipSection?.quote?.mainText}
           </p>
         </div>
         <h6 className="text-lg font-semibold mt-5 md:mt-8">{t?.homeSection?.partnershipSection?.quote?.name}</h6>

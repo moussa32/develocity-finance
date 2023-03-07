@@ -39,18 +39,23 @@
 .roadmap-bg {
   background-image: url("../public/assets/images/roadmap-background.svg");
 }
-.slider-padding{
+.slider-padding {
   padding-bottom: 6rem !important;
+}
+
+.feature-slider-image-active {
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
 }
 
 @media screen(md) {
   .header-bg {
     background-image: url("../public/assets/images/ladingHeaderBG.png");
   }
-  .d-hidden{
+  .d-hidden {
     display: none !important;
   }
-  .slider-padding{
+  .slider-padding {
     padding-bottom: 0 !important;
   }
 }
