@@ -43,7 +43,7 @@ const featuredImages = [
 
 const Header = () => {
   const { t, errors } = useTranslation("common");
-  const { remaining, isFinished } = useCountdown("2023-04-03T12:45:00");
+  const { remaining, isFinished } = useCountdown("2023-04-31T12:45:00");
 
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
