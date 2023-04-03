@@ -1,15 +1,14 @@
-import { useEffect, useState } from "react";
 import BloombergIcon from "../../public/assets/images/Bloomberg.svg";
 import WiredIcon from "../../public/assets/images/WIRED.svg";
 import CoindeskIcons from "../../public/assets/images/Coindesk.svg";
 import YahooFinanceIcons from "../../public/assets/images/YahooFinance.svg";
-import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 import SideMenu from "../../shared/Components/SideMenu";
-import { calculateTimeLeft } from "../../shared/Util/countdown";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
+// import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 // import headerVideo from "../../public/assets/video/header-video-bg.mp4";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import useCountdown from "@/shared/Hooks/useCountdown";
 
 const featuredImages = [
   {
@@ -43,16 +42,8 @@ const featuredImages = [
 ];
 
 const Header = () => {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
   const { t, errors } = useTranslation("common");
-
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setTimeLeft(calculateTimeLeft());
-    }, 1000);
-
-    return () => clearTimeout(timer);
-  }, [timeLeft]);
+  const { remaining, isFinished } = useCountdown("2023-04-03T12:45:00");
 
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
@@ -71,9 +62,11 @@ const Header = () => {
             <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">
               {t?.homeSection?.preSaleCountdown}
             </h2>
-            <time className="font-semibold text-7xl text-center md:mt-[29px]">
-              {`${timeLeft.days}:${timeLeft.hours}:${timeLeft.minutes}`}
-            </time>
+            {!isFinished && (
+              <time className="font-semibold text-7xl text-center md:mt-[29px]">
+                {`${remaining.days}:${remaining.hours}:${remaining.minutes}`}
+              </time>
+            )}
           </div>
           {/* <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
             <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">
