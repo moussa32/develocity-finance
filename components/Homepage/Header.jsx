@@ -11,8 +11,8 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
 import { RiExchangeFundsLine } from "react-icons/ri";
 import { useWeb3Modal } from "@web3modal/react";
-import { useState } from "react";
-import { useAccount } from "wagmi";
+import { useEffect, useState } from "react";
+import { useAccount, useNetwork } from "wagmi";
 import ModalBuyNow from "./Modal/ModalBuyNow";
 
 const featuredImages = [
@@ -47,23 +47,29 @@ const featuredImages = [
 ];
 
 const Header = () => {
-  const [loading, setLoading] = useState(false);
   const { open } = useWeb3Modal();
   const { isConnected } = useAccount();
   const { t, errors } = useTranslation("common");
   const { remaining, isFinished } = useCountdown("2023-04-06T13:44:00");
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
+  const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
 
   const handleOpen = state => {
     setIsBuyNowModalOpen(state);
   };
 
-  async function onOpen() {
-    setLoading(true);
-    await open();
-    console.log(isConnected);
-    setLoading(false);
-  }
+  useEffect(() => {
+    if (openAfterSuccessConnection) {
+      setIsBuyNowModalOpen(true);
+    }
+  }, [openAfterSuccessConnection]);
+
+  const onOpen = async () => {
+    await open({
+      route: "SelectNetwork",
+    });
+    setOpenAfterSuccessConnection(true);
+  };
 
   async function onClick() {
     if (isConnected) {
