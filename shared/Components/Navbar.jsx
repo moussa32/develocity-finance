@@ -1,5 +1,5 @@
-import navLogo from "../../public/assets/images/nav-logo.svg";
-import langIcon from "../../public/assets/images/lang-icon.svg";
+import navLogo from "@/images/nav-logo.svg";
+import langIcon from "@/images/lang-icon.svg";
 import LangDropdown from "./LangDropdown";
 import ProjectsDropdown from "./ProjectsDropdown";
 import Image from "next/image";

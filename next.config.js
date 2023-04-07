@@ -1,6 +1,5 @@
 /** @type {import('next').NextConfig} */
 const withVideos = require("next-videos");
-const withImages = require("next-images");
 const withPlugins = require("next-compose-plugins");
 
 const nextConfig = {
@@ -15,4 +14,4 @@ const nextConfig = {
   },
 };
 
-module.exports = withPlugins([withImages, withVideos], nextConfig);
+module.exports = withPlugins([withVideos], nextConfig);
