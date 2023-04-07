@@ -5,7 +5,7 @@ import contractAbi from "../../../../public/assets/contractApi.json";
 import { ethers } from "ethers";
 import { testNetContract } from "../../../../shared/Constants/contractAddress";
 import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
-import { ReactComponent as SuccessIcon } from "../../../../public/assets/images/SuccessIcon.svg";
+import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useSigner } from "wagmi";
 import Image from "next/image";

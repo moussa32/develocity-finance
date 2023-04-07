@@ -1,7 +1,7 @@
 import ButtonItem from "../CommonStage/ButtonItem";
-import EtherumIcon from "../../../../public/assets/images/Ethereum-icon.png";
-import PolygonIcon from "../../../../public/assets/images/polygon-icon.png";
-import BinanceIcon from "../../../../public/assets/images/binanceCoin.png";
+import EtherumIcon from "@/images/Ethereum-icon.png";
+import PolygonIcon from "@/images/polygon-icon.png";
+import BinanceIcon from "@/images/binanceCoin.png";
 import { useCallback } from "react";
 import toast from "react-hot-toast";
 import useTranslation from "@/shared/Hooks/useTranslation";

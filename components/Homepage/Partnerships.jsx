@@ -1,15 +1,15 @@
-import binance from "../../public/assets/images/binance.svg";
-import binanceColored from "../../public/assets/images/binance-colored.svg";
+import binance from "@/images/binance.svg";
+import binanceColored from "@/images/binance-colored.svg";
 import Slider from "./Slider";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 import Image from "next/image";
 import Link from "next/link";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import alchamyPay from "../../public/assets/images/alchamy-pay.png";
-import bscscanLogo from "../../public/assets/images/bscscan-logo.svg";
-import metamaskLogo from "../../public/assets/images/metamask-logo.png";
-import moralisLogo from "../../public/assets/images/moralis-logo.svg";
-import trustWallet from "../../public/assets/images/trust-wallet.png";
+import alchamyPay from "@/images/alchamy-pay.png";
+import bscscanLogo from "@/images/bscscan-logo.svg";
+import metamaskLogo from "@/images/metamask-logo.png";
+import moralisLogo from "@/images/moralis-logo.svg";
+import trustWallet from "@/images/trust-wallet.png";
 
 const partnerships = [
   {

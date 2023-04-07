@@ -1,6 +1,6 @@
 import Image from "next/image";
-import AcadmyTitle from "../../public/assets/images/AcadmyTitle.png";
-import Phone from "../../public/assets/images/Phone.png";
+import AcadmyTitle from "@/images/AcadmyTitle.png";
+import Phone from "@/images/Phone.png";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
 const Academy = () => {

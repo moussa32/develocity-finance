@@ -1,13 +1,13 @@
 import Image from "next/image";
-import phaseOne from "../../public/assets/images/phase1.svg";
-import phaseTwo from "../../public/assets/images/phase2.svg";
-import phaseThree from "../../public/assets/images/phase3.svg";
-import phaseFour from "../../public/assets/images/phase4.svg";
-import quote from "../../public/assets/images/roadmap-quote.svg";
+import phaseOne from "@/images/phase1.svg";
+import phaseTwo from "@/images/phase2.svg";
+import phaseThree from "@/images/phase3.svg";
+import phaseFour from "@/images/phase4.svg";
+import quote from "@/images/roadmap-quote.svg";
 import RoadMapSlider from "./RoadMapSlider";
 import StatsSection from "./StatsSection";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import SheikhMarwanBinMohammed from "../../public/assets/images/SheikhMarwanBinMohammed.png";
+import SheikhMarwanBinMohammed from "@/images/SheikhMarwanBinMohammed.png";
 
 const RoadMap = () => {
   const { t } = useTranslation("common");

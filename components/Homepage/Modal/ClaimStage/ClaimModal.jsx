@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../../public/assets/images/develocityicon.png";
+import image from "@/images/develocityicon.png";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import TextItem from "../CommonStage/TextItem";
 import NextButton from "../CommonStage/NextButton";

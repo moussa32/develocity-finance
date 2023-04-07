@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const withVideos = require("next-videos");
+const withImages = require("next-images");
+const withPlugins = require("next-compose-plugins");
+
 const nextConfig = {
   reactStrictMode: true,
   i18n: {
@@ -7,9 +10,9 @@ const nextConfig = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["blog.develocity.app", "explorer-api.walletconnect.com"],
+    domains: ["blog.develocity.app"],
     formats: ["image/avif", "image/webp"],
   },
 };
 
-module.exports = withVideos(nextConfig);
+module.exports = withPlugins([withImages, withVideos], nextConfig);

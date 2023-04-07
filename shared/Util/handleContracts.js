@@ -20,8 +20,6 @@ export const getWalletBalance = async (provider, walletAddress) => {
     ethers.utils.formatEther((await walletContract._contributions(walletAddress)).toString())
   ).toFixed(2);
 
-  console.log(DEVEBalance);
-
   const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
 
   //Fetch Tokens to claim

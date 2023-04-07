@@ -1,8 +1,8 @@
-import EtherumImage from "../../public/assets/images/Ethereum-icon.png";
-import TetherImage from "../../public/assets/images/Tether-icon.png";
-import binanceUSD from "../../public/assets/images/binance_USD.png";
-import binanceCoin from "../../public/assets/images/binance-coin.png";
-import MaticCoinImage from "../../public/assets/images/matic-icon.png";
+import EtherumImage from "@/images/Ethereum-icon.png";
+import TetherImage from "@/images/Tether-icon.png";
+import binanceUSD from "@/images/binance_USD.png";
+import binanceCoin from "@/images/binance-coin.png";
+import MaticCoinImage from "@/images/matic-icon.png";
 
 export const convertNewNetworkName = oldNetwork => {
   switch (oldNetwork) {

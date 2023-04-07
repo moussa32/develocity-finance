@@ -19,9 +19,9 @@ const ButtonItem = ({
 
   return (
     <div
-      className={`flex border-1 border-[#ddd] py-[15px] px-[23px] rounded-md cursor-pointer shadow-[0px_0px_14px_3px_#ddd] ${
+      className={`flex border-1 border-[#ddd] py-[15px] px-[23px] rounded-md shadow-[0px_0px_14px_3px_#ddd] ${
         selected === mainText && "active"
-      } ${disabled ? "disabledbtn" : ""}`}
+      } ${disabled ? "bg-[#888] text-[#ccc] cursor-not-allowed" : "cursor-pointer"}`}
       onClick={handleClick}
     >
       <Image
