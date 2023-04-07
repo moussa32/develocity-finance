@@ -19,7 +19,7 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
   return (
     <div>
       <ModalHeaderText header={t?.optionsModal.mainText} caption={t?.optionsModal.subText} />
-      <div className="d-flex flex-column gap-4 w-100">
+      <div className="flex flex-col gap-4 w-full">
         <div onClick={() => updateStep("buywith")}>
           <ButtonItem
             mainText={t?.optionsModal.btns.buyDEVE}
