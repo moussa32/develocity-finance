@@ -7,7 +7,7 @@ const nextConfig = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["blog.develocity.app"],
+    domains: ["blog.develocity.app", "explorer-api.walletconnect.com"],
     formats: ["image/avif", "image/webp"],
   },
 };
