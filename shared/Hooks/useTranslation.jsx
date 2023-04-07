@@ -1,30 +1,37 @@
 import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
 
-const useTranslation = translationFile => {
+const useTranslation = fileName => {
   const { locale } = useRouter();
   const [translation, setTranslation] = useState(null);
   const [errors, setErrors] = useState(null);
+  let oldTranslation;
 
   useEffect(() => {
-    let mounted = true;
+    const cachedTranslations = localStorage.getItem(`translations-${fileName}`);
+
     if (!locale) {
       setErrors("Couldn't find translation directory");
       return;
     }
 
+    if (cachedTranslations) {
+      setTranslation(JSON.parse(cachedTranslations));
+      oldTranslation = cachedTranslations;
+    }
+
     const dynamicImportTranslationFile = async () => {
       try {
-        const translationFilePath = await import(`../../public/locales/${locale}/${translationFile}.json`);
-        if (mounted) setTranslation(translationFilePath.default);
+        const translationFilePath = await import(`../../public/locales/${locale}/${fileName}.json`);
+        localStorage.setItem(fileName, JSON.stringify(translationFilePath.default));
+        setTranslation(translationFilePath.default);
       } catch (error) {
-        if (mounted) setErrors(`Couldn't find translation file with name ${translationFile}`);
+        setErrors(`Couldn't find translation file with name ${fileName}`);
       }
     };
 
-    dynamicImportTranslationFile(translationFile);
-    return () => (mounted = false);
-  }, [locale, translationFile]);
+    dynamicImportTranslationFile(fileName);
+  }, [locale, fileName]);
 
   return { t: translation, errors };
 };

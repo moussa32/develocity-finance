@@ -1,0 +1,81 @@
+{
+  "starterModal": {
+    "mainText": "Connect To",
+    "subText": "Select Blockchain To Connect To It"
+  },
+  "walletInfoModal": {
+    "mainText": "Your Wallet",
+    "subText": "DEVE Balance In Your Wallet",
+    "inputLable": "Wallet",
+    "deveBalance": "DEVE Balance",
+    "tokensToClaim": "DEVE Price",
+    "referralsToClaim": "Referrals To Claim",
+    "nextBtn": "Next →"
+  },
+  "optionsModal": {
+    "mainText": "Select You Option",
+    "subText": "What You Wanna Do",
+    "btns": {
+      "buyDEVE": "Buy DEVE",
+      "claimYourTokens": "Claim Your Tokens",
+      "referrals": "Referrals"
+    }
+  },
+  "buyWithModal": {
+    "mainText": "Buying With",
+    "subText": "Select The Cryptocurrency You Want To Use",
+    "btns": {
+      "binanceCoin": {
+        "balance": "Balance:",
+        "btnMainText": "Binance Coin",
+        "btnSubText": "BNB"
+      },
+      "binanceUSD": {
+        "balance": "Balance: 2,914.0594",
+        "btnMainText": "Binance USD",
+        "btnSubText": "BUSD"
+      }
+    }
+  },
+  "buyAmountModal": {
+    "balance": "Balance:",
+    "lables": {
+      "from": "From",
+      "to": "To"
+    },
+    "price": "Price",
+    "estimatedBalance": "Estimated Balance",
+    "btns": {
+      "buy": "Buy →",
+      "approve": "Approve",
+      "Loading": "Loading"
+    }
+  },
+  "claimModal": {
+    "mainText": "Claim Your Tokens",
+    "subText": "Claim Your Referrals Tokens",
+    "DEVEBalance": "DEVE Balance:",
+    "tokensToClaim": "Tokens To Claim:",
+    "claimBtn": "Claim →"
+  },
+  "referralModal": {
+    "mainText": "Referrals",
+    "subText": "Use Your Code Or Claim Referrals",
+    "referralLinkLabel": "Referral Link",
+    "yourReferrals": "Your Referrals:",
+    "referralsToClaim": "Referrals To Claim:",
+    "referralPercentage": "Referral Percentage:",
+    "claimBtn": "Claim →"
+  },
+  "finalModal": {
+    "mainText": "Done!",
+    "subText": "Your Transaction Is Complete.",
+    "referralText": "Get DEVE Per Invitation With",
+    "referralBtn": "Referral Code.",
+    "DEVEBalance": "DEVE Balance:",
+    "contribution": "Contribution:",
+    "PurchasedTokens": "Purchased Tokens",
+    "fromReferrals": "From Referrals:",
+    "backToHomepageBtn": "Back To Homepage →"
+  }
+}

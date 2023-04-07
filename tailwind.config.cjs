@@ -13,6 +13,12 @@ module.exports = {
       sans: ['"Inter"', ...fontFamily.sans],
     },
     extend: {
+      colors: {
+        primary: "#9c3fe5",
+      },
+      borderWidth: {
+        1: "1px",
+      },
       screens: {
         xs: "360px",
       },

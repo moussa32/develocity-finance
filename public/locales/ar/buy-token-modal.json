@@ -1,0 +1,81 @@
+{
+  "starterModal": {
+    "mainText": "اربط",
+    "subText": "حدد شبكة البلوكتشين التي تريد الاتصال بها"
+  },
+  "walletInfoModal": {
+    "mainText": "محفظتك",
+    "subText": "رصيد ديڤي في محفظتك",
+    "inputLable": "المحفظة",
+    "deveBalance": "رصيد الديڤي",
+    "tokensToClaim": "مطالبة العملات",
+    "referralsToClaim": " مطالبة الإحالات",
+    "nextBtn": "التالي →"
+  },
+  "optionsModal": {
+    "mainText": "حدد اختيارك",
+    "subText": "ماذا تريد أن تفعل",
+    "btns": {
+      "buyDEVE": "شراء ديڤي",
+      "claimYourTokens": "مطالبة عملاتك",
+      "referrals": "الإحالات"
+    }
+  },
+  "buyWithModal": {
+    "mainText": "شراء باستخدام",
+    "subText": "حدد العملة التي تريد استخدامها",
+    "btns": {
+      "binanceCoin": {
+        "balance": "الرصيد:",
+        "btnMainText": "عملة بينانس",
+        "btnSubText": "BNB"
+      },
+      "binanceUSD": {
+        "balance": "الرصيد:",
+        "btnMainText": "بينانس USD",
+        "btnSubText": "BUSD"
+      }
+    }
+  },
+  "buyAmountModal": {
+    "balance": "الرصيد:",
+    "lables": {
+      "from": "من",
+      "to": "إلى"
+    },
+    "price": "السعر",
+    "estimatedBalance": "الرصيد المتوقع",
+    "btns": {
+      "buy": "شراء →",
+      "approve": "موافقة",
+      "Loading": "جار التحميل"
+    }
+  },
+  "claimModal": {
+    "mainText": "مطالبة عملاتك",
+    "subText": "مطالبة عملات الإحالات الخاصة بك",
+    "DEVEBalance": "رصيد الديڤي:",
+    "tokensToClaim": "مطالبة العملات:",
+    "claimBtn": "مطالبة →"
+  },
+  "referralModal": {
+    "mainText": "الإحالات",
+    "subText": "استخدم الرمز الخاص بك او مطالبة الإحالات",
+    "referralLinkLabel": "رابط الإحالة",
+    "yourReferrals": "إحالاتك:",
+    "referralsToClaim": "مطالبة الإحالات:",
+    "referralPercentage": "نسبة الإحالة:",
+    "claimBtn": "مطالبة →"
+  },
+  "finalModal": {
+    "mainText": "تمت العملية!",
+    "subText": "اكتملت عمليتك",
+    "referralText": "احصل على ٥٠ ديڤي مقابل كل دعوة",
+    "referralBtn": "رمز الإحالة",
+    "DEVEBalance": "رصيد الديڤي:",
+    "contribution": "التوزيع:",
+    "PurchasedTokens": "الرموز المشتراة",
+    "fromReferrals": "من الإحالات:",
+    "backToHomepageBtn": "العودة إلى الصفحة الرئيسية →"
+  }
+}

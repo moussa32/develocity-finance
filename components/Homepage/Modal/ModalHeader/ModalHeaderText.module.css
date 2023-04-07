@@ -1,0 +1,16 @@
+.headerTitle{
+    font-size: 24px;
+    font-weight: 500;
+    color: #23282C;
+    margin: 0;
+    text-align: center;
+  }
+
+.captionText{
+    font-size: 14px;
+    margin-top: 7px;
+    display: block;
+    text-align: center;
+    color: #A5A5A5;
+    margin-bottom: 28px;
+  }
