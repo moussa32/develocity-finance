@@ -12,7 +12,7 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
-import { useAccount, useConnect, useDisconnect, useSigner } from "wagmi";
+import { useAccount, useConnect, useDisconnect, useProvider, useSigner } from "wagmi";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -22,7 +22,7 @@ import { useAccount, useConnect, useDisconnect, useSigner } from "wagmi";
 // };
 
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
-  const [currentStep, setCurrentStep] = useState("starter");
+  const [currentStep, setCurrentStep] = useState("walletInfo");
   const [selectedNetwork, setSelectedNetwork] = useState(null);
   const [userNetwork, setUserNetwork] = useState(null);
   const [firstCoin, setFirstCoin] = useState(0);
@@ -31,15 +31,14 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
-  const [provider, setProvider] = useState(null);
-  const [connection, setConnection] = useState(null);
   const [transAmount, setTransAmount] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentAnimationStep, setCurrentAnimationStep] = useState(1);
 
-  const { data: signer, isError, isLoading } = useSigner();
+  const { data: signer } = useSigner();
   const { disconnect } = useDisconnect();
-  const { address, isConnecting, isDisconnected } = useAccount();
+  const { address, status } = useAccount();
+  const provider = useProvider();
 
   const handleStep = useCallback(step => {
     setCurrentStep(step);
@@ -48,7 +47,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const handleDisconnectWeb3Modal = async () => {
     disconnect();
     handleOpen(false);
-    handleStep("starter");
+    handleStep("walletInfo");
     /*Toast notification*/
     toast.success("Disconnected!", {
       style: {
@@ -57,7 +56,6 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
         backgroundColor: "#ffcdd2",
         color: "white",
         width: "300px",
-        borderRadius: "8px",
       },
       iconTheme: {
         primary: "#e30e27",
@@ -73,7 +71,6 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           referralsToClaim: newReferralsToClaim,
           tokensToClaim: newTokensToClaim,
         } = await getWalletBalance(signer, address);
-        console.log(newDeveBalance, newReferralsToClaim, newTokensToClaim);
         setIsLoaded(true);
         setDeveBalance(newDeveBalance);
         setTokensToClaim(newTokensToClaim);
@@ -85,24 +82,11 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       }
     };
 
-    //When wallet address is chanched, it will fetch the new address's balance
-    if (address && open) {
+    //When wallet address is changed, it will fetch the new address's balance
+    if (address && open && signer) {
       resetBalance();
     }
-  }, [address, open]);
-
-  useEffect(() => {
-    //When User is changed his wallet address it will get the new wallet address and refresh component
-    if (connection) {
-      const listenToAccountChanges = async () => {
-        connection.on("chainChanged", async () => {
-          setIsLoaded(false);
-          setCurrentStep("starter");
-        });
-      };
-      listenToAccountChanges();
-    }
-  }, [connection]);
+  }, [address, open, signer]);
 
   const handleRenderComponentStep = () => {
     switch (currentStep) {
@@ -190,6 +174,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   };
 
   if (!open) return null;
+
   return ReactDOM.createPortal(
     <>
       <div
@@ -212,7 +197,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             transition={{ type: "spring" }}
             key={currentAnimationStep}
           >
-            <div>{handleRenderComponentStep()}</div>
+            <div>{open && handleRenderComponentStep()}</div>
           </motion.div>
         </AnimatePresence>
         {/* <div>{handleRenderComponentStep()}</div> */}

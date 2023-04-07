@@ -71,6 +71,10 @@ const Header = () => {
     setOpenAfterSuccessConnection(true);
   };
 
+  const closeModal = () => {
+    setIsBuyNowModalOpen(false);
+  };
+
   async function onClick() {
     if (isConnected) {
       setIsBuyNowModalOpen(true);
@@ -108,13 +112,7 @@ const Header = () => {
                 <RiExchangeFundsLine size={26} /> Buy Now
               </button>
             )}
-            {isConnected && (
-              <ModalBuyNow
-                open={isBuyNowModalOpen}
-                onClose={() => setIsBuyNowModalOpen(false)}
-                handleOpen={handleOpen}
-              />
-            )}
+            {isConnected && <ModalBuyNow open={isBuyNowModalOpen} onClose={closeModal} handleOpen={handleOpen} />}
           </div>
           {/* <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
             <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">
