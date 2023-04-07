@@ -1,9 +1,9 @@
 import StaticPageHeader from "../../shared/Components/StaticPageHeader";
 import Tag from "../../components/Blog/Tag";
-import CopyIcon from "../../public/assets/images/CopyIcon.png";
-import TwitterIcon from "../../public/assets/images/TwitterIcon.svg";
-import FacebookIcon from "../../public/assets/images/FacebookIcon.svg";
-import LinkedInIcon from "../../public/assets/images/LinkedInIcon.svg";
+import CopyIcon from "@/images/CopyIcon.png";
+import TwitterIcon from "@/images/TwitterIcon.svg";
+import FacebookIcon from "@/images/FacebookIcon.svg";
+import LinkedInIcon from "@/images/LinkedInIcon.svg";
 import Image from "next/image";
 import { globalInstance } from "../../api/constant";
 import parse, { attributesToProps } from "html-react-parser";
