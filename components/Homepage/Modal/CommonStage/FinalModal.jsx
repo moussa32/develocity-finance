@@ -6,13 +6,13 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
   const returnToHome = () => {
     onClose();
-    handleStep("starter");
+    handleStep("walletInfo");
   };
 
   const { t } = useTranslation("buy-token-modal");
 
   return (
-    <section className="d-flex flex-column justify-content-center align-items-center">
+    <section className="flex flex-col justify-center items-center">
       <svg className="mb-3" xmlns="http://www.w3.org/2000/svg" width="68" height="68" viewBox="0 0 68 68">
         <g
           id="Ellipse_196"
@@ -35,14 +35,14 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
 
       <ModalHeaderText header={t?.finalModal.mainText} caption={t?.finalModal.subText} />
       {boughtAmount >= 50 && (
-        <p className="p-final text-center">
+        <p className="text-sm -mt-5 text-center">
           {t?.finalModal.referralText}{" "}
-          <span style={{ cursor: "pointer" }} onClick={() => handleStep("referral")}>
+          <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => handleStep("referral")}>
             {t?.finalModal.referralBtn}
           </span>
         </p>
       )}
-      <div className="mt-5 w-100">
+      <div className="mt-5 w-full">
         <TextItem
           title={t?.finalModal.PurchasedTokens}
           value={boughtAmount}
@@ -51,7 +51,7 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
         />
         <TextItem title={t?.finalModal.fromReferrals} value={referral} percentage={(referral * deveCost).toFixed(4)} />
       </div>
-      <button className="back-to-home mt-5" onClick={returnToHome}>
+      <button className="border-0 text-sm bg-transparent text-[#888] mt-12" onClick={returnToHome}>
         {t?.finalModal.backToHomepageBtn}
       </button>
     </section>

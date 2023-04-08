@@ -1,6 +1,6 @@
 import TextItem from "../CommonStage/TextItem";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
 const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToClaim }) => {
@@ -24,7 +24,7 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
   const { t } = useTranslation("buy-token-modal");
 
   return (
-    <section className="d-flex flex-column justify-content-center align-items-center">
+    <section className="flex flex-col justify-center items-center">
       <svg
         className="mb-3"
         xmlns="http://www.w3.org/2000/svg"
@@ -49,16 +49,16 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
         />
       </svg>
 
-      <ModalHeaderText
-        header={t?.homeSection.modal.referralModal.mainText}
-        caption={t?.homeSection.modal.referralModal.subText}
-      />
-      <div className="ref-container">
-        <label className="referral-lable">{t?.homeSection.modal.referralModal.referralLinkLabel}</label>
-        <div className="copy-link d-flex ">
-          <p className="m-3">{`${window.location.origin}?ref=${walletAddress.slice(0, 5)}...`}</p>
+      <ModalHeaderText header={t?.referralModal.mainText} caption={t?.referralModal.subText} />
+      <div>
+        <label className="text-[#A5A5A5] text-sm">{t?.referralModal.referralLinkLabel}</label>
+        <div className="copy-link bg-white w-[283px] sm:w-[360px] flex rounded-md border-1 border-[#D6D6D6]">
+          <p className="m-3 text-xs sm:text-sm text-primary">{`${window.location.origin}?ref=${walletAddress.slice(
+            0,
+            5
+          )}...`}</p>
           <svg
-            className="m-3 copy-svg"
+            className="m-3 ml-auto cursor-pointer"
             onClick={() => copyToClipboard()}
             xmlns="http://www.w3.org/2000/svg"
             width="21.5"
@@ -90,17 +90,15 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
           </svg>
         </div>
       </div>
-      <div className="mt-4 w-100">
-        <TextItem
-          title={t?.homeSection.modal.referralModal.referralPercentage}
-          value={tokensToClaim}
-          secondaryText="%"
-          hr="true"
-        />
-        <TextItem title={t?.homeSection.modal.referralModal.referralsToClaim} value={referralsToClaim} />
+      <div className="mt-4 w-full">
+        <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim} secondaryText="%" hr="true" />
+        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim} />
       </div>
-      <button className="referrals-btn mt-5" onClick={() => handleStep("final")}>
-        {t?.homeSection.modal.referralModal.claimBtn}
+      <button
+        className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
+        onClick={() => handleStep("final")}
+      >
+        {t?.referralModal.claimBtn}
       </button>
     </section>
   );

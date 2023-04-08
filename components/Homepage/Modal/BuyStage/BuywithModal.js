@@ -4,7 +4,7 @@ import TextFloatRight from "../CommonStage/TextFloatRight";
 import ButtonItem from "..//CommonStage/ButtonItem";
 import { ethers } from "ethers";
 import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
-import { convertNewNetworkName, networkSupportedCoins } from "../../../../shared/Util/handleNetworkProvider";
+import { networkSupportedCoins } from "../../../../shared/Util/handleNetworkProvider";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useBalance, useNetwork } from "wagmi";
 
@@ -17,6 +17,7 @@ const BuywithModal = ({
   handleSecondCoin,
   handleSelectCurrency,
   provider,
+  handleCurrent,
   selectedNetwork,
 }) => {
   const { t } = useTranslation("buy-token-modal");
@@ -26,17 +27,16 @@ const BuywithModal = ({
   });
   const { chain } = useNetwork();
 
-  console.log(isLoading);
-
   useEffect(() => {
     const getBalance = async () => {
+      console.log(data);
       const convertedBalance = Number(ethers.utils.formatEther(data.value)).toFixed(3);
       handleFirstCoin(convertedBalance);
 
       let busdAbiContract, contractBalance;
 
       try {
-        busdAbiContract = getSecondCoinContract(provider, convertNewNetworkName(selectedNetwork));
+        busdAbiContract = getSecondCoinContract(provider, selectedNetwork);
       } catch (error) {
         console.error("Couldn't get busdAbiContract");
       }
@@ -58,10 +58,11 @@ const BuywithModal = ({
     };
 
     getBalance();
-  }, [walletAddress, isLoading]);
+  }, [walletAddress, isLoading, chain]);
 
   const handleSelectNetworkName = useCallback(() => {
     handleStep("buyamount");
+    handleCurrent(4);
   }, [handleStep]);
   return (
     <>

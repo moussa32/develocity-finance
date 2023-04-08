@@ -4,13 +4,6 @@ import binanceUSD from "@/images/binance_USD.png";
 import binanceCoin from "@/images/binance-coin.png";
 import MaticCoinImage from "@/images/matic-icon.png";
 
-export const convertNewNetworkName = oldNetwork => {
-  switch (oldNetwork) {
-    case "homestead":
-      return "mainnet";
-  }
-};
-
 export const networkSupportedCoins = network => {
   switch (network) {
     case "homestead":
@@ -37,18 +30,13 @@ export const networkSupportedCoins = network => {
   }
 };
 
-// const convertOldNetworkNameToNew = oldNetwork = {
-//   switch(network){
-//     case "house":
-//       return ""
-//   }
-// }
-
-export const getSecondCoinContractAddress = networkName => {
-  switch (networkName) {
-    case "mainnet":
+export const getSecondCoinContractAddress = network => {
+  switch (network) {
+    case "homestead":
       return "0xdac17f958d2ee523a2206206994597c13d831ec7";
-    case "binance":
+    case "bsc":
+      return "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7";
+    case "bsc-testnet":
       return "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7";
     case "matic":
       return "0xc2132d05d31c914a87c6611c10748aeb04b58e8f";

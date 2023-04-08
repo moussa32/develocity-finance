@@ -4,9 +4,9 @@ import contractAbi from "../../public/assets/contractApi.json";
 import { deveCost } from "../Constants/deveCost";
 import { getSecondCoinContractAddress } from "./handleNetworkProvider";
 
-export const getSecondCoinContract = (provider, networkName) => {
+export const getSecondCoinContract = (provider, network) => {
   return new ethers.Contract(
-    getSecondCoinContractAddress(networkName),
+    getSecondCoinContractAddress(network),
     ["function balanceOf(address) view returns (uint)", "function approve(address, uint256) external returns (bool)"],
     provider
   );

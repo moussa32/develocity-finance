@@ -33,7 +33,7 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoade
         <h6 className="text-sm text-[#8b8b8b] m-0">{title}:</h6>
         {renderValues()}
       </div>
-      {hr && <hr />}
+      {hr && <hr style={{ border: 0, borderTop: "1px solid", color: "inherit", margin: "1rem 0", opacity: ".25" }} />}
     </>
   );
 };

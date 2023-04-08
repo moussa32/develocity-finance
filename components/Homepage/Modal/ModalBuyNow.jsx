@@ -12,7 +12,7 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
-import { useAccount, useConnect, useDisconnect, useProvider, useSigner } from "wagmi";
+import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -23,8 +23,6 @@ import { useAccount, useConnect, useDisconnect, useProvider, useSigner } from "w
 
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("walletInfo");
-  const [selectedNetwork, setSelectedNetwork] = useState(null);
-  const [userNetwork, setUserNetwork] = useState(null);
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
   const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
@@ -38,11 +36,16 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const { data: signer } = useSigner();
   const { disconnect } = useDisconnect();
   const { address, status } = useAccount();
+  const { chain } = useNetwork();
   const provider = useProvider();
 
   const handleStep = useCallback(step => {
     setCurrentStep(step);
   }, []);
+
+  const handleCurrentAnimationStep = useCallback(() => {
+    setCurrentAnimationStep(prev => prev + 1);
+  }, [currentAnimationStep]);
 
   const handleDisconnectWeb3Modal = async () => {
     disconnect();
@@ -91,16 +94,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const handleRenderComponentStep = () => {
     switch (currentStep) {
       case "starter":
-        return (
-          <SelectNetwork
-            handleStep={handleStep}
-            handleOpen={handleOpen}
-            selectedNetwork={selectedNetwork}
-            userNetwork={userNetwork}
-            handleSelectedNetwork={setSelectedNetwork}
-            handleUserNetwork={setUserNetwork}
-          />
-        );
+        return <SelectNetwork handleStep={handleStep} handleOpen={handleOpen} />;
       case "walletInfo":
         return (
           <WalletInfoModal
@@ -110,13 +104,13 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleStep={handleStep}
             walletAddress={address}
             disconnect={handleDisconnectWeb3Modal}
-            handleCurrent={setCurrentAnimationStep}
+            handleCurrent={handleCurrentAnimationStep}
             isDataLoaded={isLoaded}
           />
         );
       case "options":
         return (
-          <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={setCurrentAnimationStep} />
+          <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />
         );
       case "buywith":
         return (
@@ -129,8 +123,8 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             secondCoin={secondCoin}
             handleSelectCurrency={setSelectedCurreny}
             provider={provider}
-            handleCurrent={setCurrentAnimationStep}
-            selectedNetwork={selectedNetwork}
+            handleCurrent={handleCurrentAnimationStep}
+            selectedNetwork={chain.network}
           />
         );
       case "buyamount":
@@ -142,12 +136,12 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             currentCurrency={selectedCurrency}
             provider={provider}
             handleFinalAmount={setTransAmount}
-            handleCurrent={setCurrentAnimationStep}
-            selectedNetwork={selectedNetwork}
+            handleCurrent={handleCurrentAnimationStep}
+            selectedNetwork={chain.network}
           />
         );
       case "claim":
-        return <ClaimModal handleStep={handleStep} handleCurrent={setCurrentAnimationStep} />;
+        return <ClaimModal handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />;
       case "referral":
         return (
           <ReferralsModal
@@ -155,7 +149,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             walletAddress={address}
             tokensToClaim={tokensToClaim.amount}
             referralsToClaim={referralsToClaim}
-            handleCurrent={setCurrentAnimationStep}
+            handleCurrent={handleCurrentAnimationStep}
           />
         );
       case "final":
@@ -165,11 +159,22 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             handleStep={handleStep}
             boughtAmount={transAmount}
             referral={referralsToClaim}
-            handleCurrent={setCurrentAnimationStep}
+            handleCurrent={handleCurrentAnimationStep}
           />
         );
       default:
-        return <SelectNetwork handleStep={handleStep} handleCurrent={setCurrentAnimationStep} />;
+        return (
+          <WalletInfoModal
+            deveBalance={deveBalance}
+            tokensToClaim={tokensToClaim}
+            referralsToClaim={referralsToClaim}
+            handleStep={handleStep}
+            walletAddress={address}
+            disconnect={handleDisconnectWeb3Modal}
+            handleCurrent={handleCurrentAnimationStep}
+            isDataLoaded={isLoaded}
+          />
+        );
     }
   };
 

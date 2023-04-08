@@ -35,7 +35,7 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             image={ClaimTokenIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
-            disabled={true}
+            disabled={deveBalance.amount <= 50 ? true : false}
           />
         </div>
         <div onClick={() => deveBalance.amount >= 50 && updateStep("referral")}>

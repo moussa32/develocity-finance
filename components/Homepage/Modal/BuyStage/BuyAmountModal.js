@@ -9,6 +9,7 @@ import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useSigner } from "wagmi";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const BuyAmountModal = ({
   handleStep,
@@ -16,17 +17,18 @@ const BuyAmountModal = ({
   disconnect,
   currentCurrency,
   provider,
-  handleFinalAmount,
   handleCurrent,
+  handleFinalAmount,
   selectedNetwork,
 }) => {
   const { t } = useTranslation("buy-token-modal");
   const { data: signer, isError, isLoading } = useSigner();
+  const { query } = useRouter();
 
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
   const [isBuyButtonLoading, setIsBuyButtonLoading] = useState(true);
-  const [buyButtonText, setBuyButtonText] = useState(t?.buyAmountModal.btns.buy);
+  const [buyButtonText, setBuyButtonText] = useState("Buy now");
   const [isApprovedButtonLoading, setIsApprovedButtonDisabled] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
 
@@ -103,19 +105,22 @@ const BuyAmountModal = ({
   const handleBuy = async () => {
     setIsBuyButtonLoading(true);
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
-    const urlParams = new URLSearchParams(window.location.search);
-    const ref = urlParams.get("ref");
+    let ref;
+    if (query.ref) {
+      ref = query.ref;
+    } else {
+      ref = "0x0000000000000000000000000000000000000000";
+    }
 
     const gasPrice = await signerContract.estimateGas
       .buyTokens(ref, { value: memoizedCoinBalanceConverted })
       .catch(error => {
-        console.log(error);
+        console.log(JSON.stringify(error, 0, 2));
       });
 
     signerContract
       .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: gasPrice })
       .then(res => {
-        console.log(res);
         res.wait().then(receipt => {
           setIsBuyButtonLoading(false);
           setBuyButtonText(t?.buyAmountModal.btns.buy);
@@ -125,7 +130,7 @@ const BuyAmountModal = ({
         });
       })
       .catch(error => {
-        const { code: errorCode } = error.data;
+        const { code: errorCode } = error;
         if (errorCode === -32000) {
           toast("You don't have enough native tokens or ensure the network has been added correctly", {
             duration: 6000,
@@ -150,10 +155,9 @@ const BuyAmountModal = ({
 
   const handleApprove = async () => {
     setIsApprovedButtonDisabled(true);
-    const BUSDContract = getSecondCoinContract(provider.getSigner(), selectedNetwork);
+    const BUSDContract = getSecondCoinContract(signer, selectedNetwork);
     await BUSDContract.approve(testNetContract, ethers.utils.parseEther("1000000"))
       .then(res => {
-        console.log(res);
         setIsApprovedButtonDisabled(false);
         setIsBuyButtonLoading(false);
         toast(
@@ -186,8 +190,12 @@ const BuyAmountModal = ({
   };
 
   const handleBuyBUSD = async () => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const ref = urlParams.get("ref");
+    let ref;
+    if (query.ref) {
+      ref = query.ref;
+    } else {
+      ref = "0x0000000000000000000000000000000000000000";
+    }
 
     const gasPrice = await signerContract.estimateGas
       .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
@@ -235,8 +243,15 @@ const BuyAmountModal = ({
 
   return (
     <section className="flex flex-col justify-center items-center">
-      <div className="flex address-float w-full">
-        <svg onClick={() => disconnect()} xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+      <div className="flex gap-1 flex-row-reverse w-full">
+        <svg
+          className="cursor-pointer"
+          onClick={() => disconnect()}
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+        >
           <path
             id="Vector"
             d="M0,5.66,5.66,0"
@@ -276,7 +291,7 @@ const BuyAmountModal = ({
         </h5>
       </div>
 
-      <div className="mt-4">
+      <div className="mt-6">
         <div className="flex justify-between text-sm">
           <label className="text-[#a5a5a5]">{t?.buyAmountModal.lables.from}</label>
           <h5 className="text-[#23282c]">
@@ -384,7 +399,7 @@ const BuyAmountModal = ({
           </div>
         </div>
       </div>
-      <div className="mt-4 w-100">
+      <div className="mt-4 w-full">
         <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.22" hr="true" />
         <TextItem
           title={t?.buyAmountModal.estimatedBalance}
@@ -395,14 +410,20 @@ const BuyAmountModal = ({
         />
       </div>
 
-      <div className="d-flex justify-content-between w-100">
+      <div className="flex justify-between w-full">
         {currentCurrency.ticker === "BUSD" && (
-          <button className="m-btns approve" disabled={isApprovedButtonLoading} onClick={handleApprove}>
+          <button
+            className="w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] text-[#23282c] bg-transparent"
+            disabled={isApprovedButtonLoading}
+            onClick={handleApprove}
+          >
             {t?.buyAmountModal.btns.approve}
           </button>
         )}
         <button
-          className={`m-btns buy ${currentCurrency.ticker === "BUSD" ? "btn-buy-left " : "btn-buy-center"}`}
+          className={`w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white ${
+            currentCurrency.ticker === "BUSD" ? "ml-2" : "mx-auto"
+          }`}
           disabled={isBuyButtonLoading}
           onClick={() => {
             currentCurrency.ticker === "BUSD" ? handleBuyBUSD() : handleBuy();
