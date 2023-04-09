@@ -1,9 +1,3 @@
-import Slider from "./Slider";
-import Image from "next/image";
-import Link from "next/link";
-import useTranslation from "@/shared/Hooks/useTranslation";
-import PartnershipsMobileSlider from "./PartnershipsMobileSlider";
-
 import alchamyPay from "@/images/alchamy-pay.png";
 import bscscanLogo from "@/images/bscscan-logo.svg";
 import metamaskLogo from "@/images/metamask-logo.png";
@@ -11,6 +5,7 @@ import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
 import binance from "@/images/binance.svg";
 import binanceColored from "@/images/binance-colored.svg";
+import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 
 const partnerships = [
   {
@@ -62,38 +57,16 @@ const partnerships = [
   },
 ];
 
-const Partnerships = () => {
-  const { t } = useTranslation("common");
+const PartnershipsMobileSlider = () => {
   return (
-    <div className="bg-[#F9FAFB]">
-      <div className="container mx-auto text-center md:py-24 lg:px-0">
-        <h2 className="text-[#29233B] font-PolySans text-[28px] px-4 md:px-8 md:text-6xl font-medium md:font-normal">
-          {t?.homeSection?.partnershipSection?.mainText}
-        </h2>
-        <h6 className="text-[#525C7A] text-[15px] px-4 md:px-8 md:text-lg mt-4">
-          {t?.homeSection?.partnershipSection?.subText}
-        </h6>
-        <div className="hidden md:grid grid-cols-6 h-[80px] mt-8 px-4 md:px-2 mx-auto gap-1 lg:gap-14">
-          {partnerships.map(({ title, link, defaultVersion, coloredVersion }) => (
-            <Link key={title} className="group relative w-[65px] md:w-[170px] lg:w-[180px]" href={`${link}`}>
-              <Image
-                className="absolute group-hover:opacity-0 h-[80px] object-contain hover:cursor-pointer"
-                src={defaultVersion}
-                alt={title}
-              />
-              <Image
-                className="absolute opacity-0 group-hover:opacity-100 h-[80px] object-contain hover:cursor-pointer"
-                src={coloredVersion}
-                alt={title}
-              />
-            </Link>
-          ))}
-        </div>
-        <PartnershipsMobileSlider />
-        <Slider />
-      </div>
-    </div>
+    <MobileImageSlider
+      images={partnerships}
+      slidesPerView={1.6}
+      initialSlide={2}
+      containerClassNames="mt-8"
+      slideImageClassName="h-11 w-[200px]"
+    />
   );
 };
 
-export default Partnerships;
+export default PartnershipsMobileSlider;

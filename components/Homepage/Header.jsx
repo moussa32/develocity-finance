@@ -1,50 +1,19 @@
-import BloombergIcon from "../../public/assets/images/Bloomberg.svg";
-import WiredIcon from "../../public/assets/images/WIRED.svg";
-import CoindeskIcons from "../../public/assets/images/Coindesk.svg";
-import YahooFinanceIcons from "../../public/assets/images/YahooFinance.svg";
+// import BloombergIcon from "../../public/assets/images/Bloomberg.svg";
+// import WiredIcon from "../../public/assets/images/WIRED.svg";
+// import CoindeskIcons from "../../public/assets/images/Coindesk.svg";
+// import YahooFinanceIcons from "../../public/assets/images/YahooFinance.svg";
 import SideMenu from "../../shared/Components/SideMenu";
-import MobileImageSlider from "../../shared/Components/MobileImageSlider";
+// import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 // import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 // import headerVideo from "../../public/assets/video/header-video-bg.mp4";
-import Image from "next/image";
+// import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
 import { RiExchangeFundsLine } from "react-icons/ri";
 import { useWeb3Modal } from "@web3modal/react";
 import { useEffect, useState } from "react";
-import { useAccount, useNetwork } from "wagmi";
+import { useAccount } from "wagmi";
 import ModalBuyNow from "./Modal/ModalBuyNow";
-
-const featuredImages = [
-  {
-    title: "Bloomberg",
-    defaultVersion: BloombergIcon,
-    coloredVersion: BloombergIcon,
-    imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30 feature-slider-image-active",
-  },
-  {
-    title: "WiredIcon",
-    defaultVersion: WiredIcon,
-    coloredVersion: WiredIcon,
-    imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30 feature-slider-image-active",
-  },
-  {
-    title: "CoindeskIcons",
-    defaultVersion: CoindeskIcons,
-    coloredVersion: CoindeskIcons,
-    imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30 feature-slider-image-active",
-  },
-  {
-    title: "YahooFinanceIcons",
-    defaultVersion: YahooFinanceIcons,
-    coloredVersion: YahooFinanceIcons,
-    imageClassName: "opacity-10",
-    imageActiveClassName: "opacity-30 feature-slider-image-active",
-  },
-];
 
 const Header = () => {
   const { open } = useWeb3Modal();
@@ -130,16 +99,7 @@ const Header = () => {
           </div> */}
         </div>
 
-        <MobileImageSlider
-          containerClassNames="mt-0 w-full"
-          slideContainerClassName="w-auto max-w-[173px] h-8"
-          slidesPerView={1.9}
-          spaceBetween={42}
-          slideImageClassName="flex-col h-full"
-          images={featuredImages}
-          initialSlide={1}
-        />
-        <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
+        {/* <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
           <Image
             className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
             src={BloombergIcon}
@@ -156,7 +116,7 @@ const Header = () => {
             src={YahooFinanceIcons}
             alt="yahooFinance"
           />
-        </div>
+        </div> */}
       </div>
     </div>
   );
