@@ -21,7 +21,11 @@ const BuywithModal = ({
   selectedNetwork,
 }) => {
   const { t } = useTranslation("buy-token-modal");
-  const { data, isError, isLoading } = useBalance({
+  const {
+    data,
+    isError: balanceError,
+    isLoading,
+  } = useBalance({
     address: walletAddress,
     formatUnits: "wei",
   });
@@ -29,7 +33,10 @@ const BuywithModal = ({
 
   useEffect(() => {
     const getBalance = async () => {
-      console.log(data);
+      if (balanceError) {
+        console.log(balanceError);
+        return;
+      }
       const convertedBalance = Number(ethers.utils.formatEther(data.value)).toFixed(3);
       handleFirstCoin(convertedBalance);
 

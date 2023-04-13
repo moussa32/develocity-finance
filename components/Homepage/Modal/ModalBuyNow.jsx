@@ -185,7 +185,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
       <div
         className={styles.backDrop}
         onClick={() => {
-          handleStep("starter");
+          handleStep("walletInfo");
           onClose();
         }}
       />
