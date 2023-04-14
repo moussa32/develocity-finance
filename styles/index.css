@@ -4,19 +4,7 @@
 
 @font-face {
   font-family: PolySans;
-  src: url("../public/assets/fonts/PolySans-Neutral.woff2");
-}
-@font-face {
-  font-family: PolySans;
   src: url("../public/assets/fonts/PolySans-Median.woff2");
-}
-@font-face {
-  font-family: PolySans;
-  src: url("../public/assets/fonts/PolySans-Bulky.woff2");
-}
-@font-face {
-  font-family: PolySans;
-  src: url("../public/assets/fonts/PolySans-Neutral.woff2");
 }
 
 .header-bg {
@@ -30,6 +18,19 @@
 }
 .blog-bg {
   background-image: url("../public/assets/images/Blog-bg.svg");
+}
+
+.animate-progress {
+  animation: progress 1s cubic-bezier(0.25, 0.1, 0.25, 1) forwards;
+}
+
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
 }
 
 .stats-bg {

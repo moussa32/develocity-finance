@@ -5,15 +5,15 @@
 import SideMenu from "../../shared/Components/SideMenu";
 // import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 // import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
-// import headerVideo from "../../public/assets/video/header-video-bg.mp4";
+import headerVideo from "../../public/assets/video/header-video-bg.mp4";
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
-import { RiExchangeFundsLine } from "react-icons/ri";
 import { useWeb3Modal } from "@web3modal/react";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 import ModalBuyNow from "./Modal/ModalBuyNow";
+import BuyToken from "./BuyToken";
 
 const Header = () => {
   const { open } = useWeb3Modal();
@@ -44,42 +44,39 @@ const Header = () => {
     setIsBuyNowModalOpen(false);
   };
 
-  async function onClick() {
+  const onClick = useCallback(async () => {
     if (isConnected) {
       setIsBuyNowModalOpen(true);
     } else {
       onOpen();
     }
-  }
+  }, []);
 
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
-      {/* <video
+      <video
         src={headerVideo}
         className="absolute object-cover w-full h-full hidden md:block"
         autoPlay
         playsInline
         loop
         muted
-      ></video> */}
+      ></video>
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 md:flex md:flex-col">
-        <div className="w-50 mx-auto flex flex-col justify-center z-20 md:h-[400px] lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
+        <div className="w-50 mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
-            <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">
-              {t?.homeSection?.preSaleCountdown}
-            </h2>
-            {!isFinished ? (
-              <time className="font-semibold text-7xl text-center md:mt-[29px]">
-                {`${remaining.days}:${remaining.hours}:${remaining.minutes}`}
-              </time>
+            {isFinished ? (
+              <BuyToken handleBuyNowButton={onClick} />
             ) : (
-              <button
-                onClick={onClick}
-                className="flex items-center gap-4 mx-auto justify-center py-3 px-[34px] w-full border-2 border-indigo-500 rounded-xl duration-300 bg-indigo-500/30 text-white text-md font-medium mt-10 hover:border-transparent hover:bg-indigo-500 md:w-64 md:rounded-sm md:px-[45px]"
-              >
-                <RiExchangeFundsLine size={26} /> Buy Now
-              </button>
+              <>
+                <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">
+                  {t?.homeSection?.preSaleCountdown}
+                </h2>
+                <time className="font-semibold text-7xl text-center md:mt-[29px]">
+                  {`${remaining.days}:${remaining.hours}:${remaining.minutes}`}
+                </time>
+              </>
             )}
             {isConnected && <ModalBuyNow open={isBuyNowModalOpen} onClose={closeModal} handleOpen={handleOpen} />}
           </div>

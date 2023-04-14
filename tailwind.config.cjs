@@ -13,14 +13,24 @@ module.exports = {
       sans: ['"Inter"', ...fontFamily.sans],
     },
     extend: {
+      fontSize: {
+        "6.5xl": "4rem",
+      },
       colors: {
         primary: "#9c3fe5",
+        secondary: "#3C3C3C",
       },
       borderWidth: {
         1: "1px",
       },
       screens: {
         xs: "360px",
+      },
+      margin: {
+        4.5: "18px",
+      },
+      padding: {
+        4.5: "18px",
       },
       container: {
         center: true,
