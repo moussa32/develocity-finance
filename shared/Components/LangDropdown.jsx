@@ -2,11 +2,12 @@ import React from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
 import { ChevronDownIcon } from "@heroicons/react/20/solid";
-import dropdownArrow from "@/images/dropdown-arrow.svg";
 import englishIcon from "@/images/english-icon.svg";
 import arabicIcon from "@/images/arabic-icon.svg";
 import turkishIcon from "@/images/turkish-icon.svg";
 import russianIcon from "@/images/russian-icon.svg";
+import langIcon from "@/images/lang-icon.svg";
+
 import georgianIcon from "@/images/georgian-icon.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
@@ -42,13 +43,10 @@ const LangDropdown = () => {
   };
 
   return (
-    <Menu as="div" className="relative inline-block ltr:text-left rtl:text-right">
-      <div>
-        <Menu.Button className="inline-flex w-full justify-center px-4 py-2 text-sm font-medium shadow-sm ">
-          {t?.headSection?.languages[getLanguageNameByLocale(locale)]}
-          <ChevronDownIcon className="rtl:-ml-1 ltr:-mr-1 ltr:ml-2 rtl:mr-2 h-5 w-5" aria-hidden="true" />
-        </Menu.Button>
-      </div>
+    <Menu as="div" className="bg-white bg-opacity-20 rounded-[30px] relative inline-block ltr:text-left rtl:text-right">
+      <Menu.Button className="inline-flex w-full justify-center p-2 text-sm font-medium shadow-sm">
+        <Image className="inline-block" src={langIcon} alt="language icon" />
+      </Menu.Button>
 
       <Transition
         as={Fragment}
@@ -60,7 +58,6 @@ const LangDropdown = () => {
         leaveTo="transform opacity-0 scale-95"
       >
         <Menu.Items className="absolute ltr:-right-5 rtl:-left-5 z-10 mt-5 w-44 ltr:origin-top-right rtl:origin-top-left rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
-          <Image className="absolute right-20 -top-[7px] origin-top-right" src={dropdownArrow} alt="dropdown arrow" />
           <div className="py-1 text-center">
             <Menu.Item>
               {({ active }) => (
