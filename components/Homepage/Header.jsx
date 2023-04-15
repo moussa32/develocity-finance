@@ -50,7 +50,7 @@ const Header = () => {
     } else {
       onOpen();
     }
-  }, []);
+  }, [isConnected, onOpen]);
 
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">

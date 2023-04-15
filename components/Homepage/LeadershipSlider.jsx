@@ -58,9 +58,9 @@ const LeadershipSlider = () => {
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[0].role}</label>
                   <div className="flex gap-2">
-                    <Image className="w-5" src={facebook} />
-                    <Image className="w-5" src={twitter} />
-                    <Image className="w-5" src={instagram} />
+                    <Image className="w-5" src={facebook} alt="Profile on Facebook" />
+                    <Image className="w-5" src={twitter} alt="Profile on Twitter" />
+                    <Image className="w-5" src={instagram} alt="Profile on Instagram" />
                   </div>
                 </div>
               </div>
@@ -108,9 +108,9 @@ const LeadershipSlider = () => {
                 <div className="flex justify-between mt-1">
                   <label className="text-[22px]">{t?.homeSection?.leadershipSection?.members[2].role}</label>
                   <div className="flex gap-2">
-                    <Image className="w-5" src={facebook} />
-                    <Image className="w-5" src={twitter} />
-                    <Image className="w-5" src={instagram} />
+                    <Image className="w-5" src={facebook} alt="Profile on Facebook" />
+                    <Image className="w-5" src={twitter} alt="Profile on Twitter" />
+                    <Image className="w-5" src={instagram} alt="Profile on Instagram" />
                   </div>
                 </div>
               </div>
