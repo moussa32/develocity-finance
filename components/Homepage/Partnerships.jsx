@@ -1,4 +1,4 @@
-import Slider from "./Slider";
+// import Slider from "./Slider";
 import Image from "next/image";
 import Link from "next/link";
 import useTranslation from "@/shared/Hooks/useTranslation";
@@ -90,7 +90,7 @@ const Partnerships = () => {
           ))}
         </div>
         <PartnershipsMobileSlider />
-        <Slider />
+        {/* <Slider /> */}
       </div>
     </div>
   );
