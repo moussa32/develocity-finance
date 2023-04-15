@@ -1,15 +1,11 @@
 {
   "homeSection": {
     "preSaleCountdown": "Pre-Sale Countdown",
-    "subText": [
-      "Sheikh",
-      "Marwan Bin Mohammed",
-      "taking develocity in his incubator."
-    ],
+    "subText": ["Sheikh", "Marwan Bin Mohammed", "taking develocity in his incubator."],
     "ecoSystemSection": {
-      "lableI": "Eco-System",
+      "lableI": "Empowering Defi Success",
       "lableII": "Safe Eenviroment For Your Assets",
-      "mainText": "Safe And Trustworthy Crypto Environment",
+      "mainText": "Towards A Secure And Reliable Financial Future",
       "subText": "Develocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
       "subTextSecondParagraph": "The main goal of DeVelocity is to provide useful decentralized tools that would be trusted entirely and transparent, where the traders will always be able to trade freely without any risk of being locked out or exposed.",
       "tools": {

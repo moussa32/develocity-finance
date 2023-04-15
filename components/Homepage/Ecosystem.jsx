@@ -6,7 +6,7 @@ import MultiFunctionalIcon from "@/images/multi-functional.svg";
 import WalletIcon from "@/images/wallet.svg";
 import EcosystemTitle from "@/images/EcosystemTitle.png";
 import EcosystemVideo from "../../public/assets/video/Eco-system.mp4";
-import Coins from "@/images/coins.png";
+// import Coins from "@/images/coins.png";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
@@ -21,11 +21,8 @@ const Ecosystem = () => {
       />
       <div className="flex flex-col md:grid grid-cols-1 md:grid-cols-2 md:gap-8">
         <div className="flex flex-col order-2 md:order-1">
-          <span className="bg-[#F3F4F8] w-full rounded-2xl text-sm font-medium p-1 md:p-1.5 ltr:md:pr-[18px] rtl:md:pl-[18px] flex items-center gap-2 md:max-w-[360px] lg:flex-row">
-            <span className="bg-white py-0.5 px-2 md:py-1 md:px-2.5 rounded-2xl">
-              {t?.homeSection?.ecoSystemSection?.lableI}
-            </span>
-            <span className="text-[#344054]">{t?.homeSection?.ecoSystemSection?.lableII}</span>
+          <span className="text-sm w-[206px] py-2 px-4 text-[#101828] font-medium rounded-2xl tags-box-shadow">
+            {t?.homeSection?.ecoSystemSection?.lableI}
           </span>
           <h3 className="text-[#101828] text-center font-PolySans text-[28px] font-bold mt-3 mb-4 md:mb-6 ltr:md:text-left rtl:md:text-right md:font-sans md:text-2xl lg:text-4xl">
             {t?.homeSection?.ecoSystemSection?.mainText}

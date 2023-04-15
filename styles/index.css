@@ -44,6 +44,10 @@
   padding-bottom: 6rem !important;
 }
 
+.tags-box-shadow {
+  box-shadow: 0 0 24px 0 rgba(16, 16, 16, 0.1);
+}
+
 .feature-slider-image-active {
   -webkit-filter: grayscale(100%);
   filter: grayscale(100%);
