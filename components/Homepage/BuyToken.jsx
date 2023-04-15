@@ -18,7 +18,7 @@ const BuyToken = ({ handleBuyNowButton }) => {
       <h2 className="uppercase text-center basis-[46px] mx-auto font-PolySans text-3xl mb-5 flex gap-2 md:gap-6 md:text-6.5xl">
         Pre-sale<span className="block text-indigo-500 tracking-[4px]">Is LIVE!</span>
       </h2>
-      <div className="relative rounded-xl bg-secondary/50 backdrop-blur-[25px] backdrop-brightness-90 max-w-[592px] py-4 px-3 md:p-6 pb-4.5 overflow-hidden">
+      <div className="relative rounded-xl bg-secondary/50 backdrop-blur-[25px] backdrop-brightness-90 sm:mx-auto md:mx-0 max-w-[592px] py-4 px-3 md:p-6 pb-4.5 overflow-hidden">
         <div className="flex justify-between mb-3">
           <h3 className="font-medium text-sm md:text-lg">
             {progress}% <span className="text-indigo-500">SOLD</span>
@@ -26,16 +26,16 @@ const BuyToken = ({ handleBuyNowButton }) => {
           <h3 className="font-medium text-sm md:text-lg">12,490 Tokens Remaining</h3>
         </div>
         <ProgressBar value={SOLD_PERCENTAGE} />
-        <div className="flex items-center justify-between bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 md:px-6 py-[15px] max-h-[72px]">
-          <div className="border-r-[#3F3C7F] border-r-1">
+        <div className="flex items-center flex-col gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] sm:gap-0 sm:flex-row justify-center md:justify-between md:px-6">
+          <div className="sm:border-r-[#3F3C7F] sm:border-r-1 sm:pr-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase md:mb-1">stage</h3>
             <span className="text-sm md:text-lg font-medium capitalize">Early Bird</span>
           </div>
-          <div className="border-r-[#3F3C7F] border-r-1">
+          <div className="sm:border-r-[#3F3C7F] sm:border-r-1 sm:px-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase md:mb-1">Price</h3>
             <span className="text-sm md:text-lg font-medium capitalize">$0.020 = 1 $DEVE</span>
           </div>
-          <div className="border-r-[#3F3C7F] border-r-1">
+          <div className="sm:pl-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase md:mb-1">Tokens</h3>
             <span className="text-sm md:text-lg font-medium capitalize">4,000,000</span>
           </div>
