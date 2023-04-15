@@ -32,6 +32,9 @@ module.exports = {
       padding: {
         4.5: "18px",
       },
+      textUnderlineOffset: {
+        3: "3px",
+      },
       container: {
         center: true,
         padding: {

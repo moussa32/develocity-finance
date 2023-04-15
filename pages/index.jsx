@@ -7,6 +7,7 @@ import RoadMap from "../components/Homepage/RoadMap";
 import Scanner from "../components/Homepage/Scanner";
 import Header from "../components/Homepage/Header";
 import Head from "next/head";
+import FrequentlyQuestions from "@/components/Homepage/FrequentlyQuestions";
 
 const Home = () => {
   return (
@@ -22,6 +23,7 @@ const Home = () => {
       <Leadership />
       <Partnerships />
       <Blog />
+      <FrequentlyQuestions />
     </>
   );
 };
