@@ -14,6 +14,7 @@ import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";
 import ModalBuyNow from "./Modal/ModalBuyNow";
 import BuyToken from "./BuyToken";
+import Stages from "./AllStagesModal/Stages";
 
 const Header = () => {
   const { open } = useWeb3Modal();
@@ -22,6 +23,7 @@ const Header = () => {
   const { remaining, isFinished } = useCountdown("2023-04-16T06:00:20");
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
   const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
+  const [isAllStagesOpen, setIsAllStagesOpen] = useState(false);
 
   const handleOpen = state => {
     setIsBuyNowModalOpen(state);
@@ -52,6 +54,14 @@ const Header = () => {
     }
   }, [isConnected, onOpen]);
 
+  const handleOpenAllStages = useCallback(() => {
+    setIsAllStagesOpen(true);
+  }, [isAllStagesOpen]);
+
+  const handleCloseAllStages = useCallback(() => {
+    setIsAllStagesOpen(false);
+  }, [isAllStagesOpen]);
+
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
       {isFinished && (
@@ -69,7 +79,7 @@ const Header = () => {
         <div className="w-50 mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
             {isFinished ? (
-              <BuyToken handleBuyNowButton={onClick} />
+              <BuyToken handleBuyNowButton={onClick} openAllStagesModal={handleOpenAllStages} />
             ) : (
               <>
                 <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">
@@ -81,6 +91,7 @@ const Header = () => {
               </>
             )}
             {isConnected && <ModalBuyNow open={isBuyNowModalOpen} onClose={closeModal} handleOpen={handleOpen} />}
+            <Stages show={isAllStagesOpen} onClose={handleCloseAllStages} />
           </div>
           {/* <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
             <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">

@@ -1,7 +1,7 @@
 import ScannerWallet from "@/images/scannerWallet.svg";
 import AppleStoreIcon from "@/images/AppleStoreIcon.svg";
 import GooglePlayIcon from "@/images/GooglePlayIcon.svg";
-import ScanTitle from "@/images/ScanTitle.png";
+// import ScanTitle from "@/images/ScanTitle.png";
 // import ScannerMobileCoins from "@/images/ScannerMobileCoins.png";
 import scannerTitle from "@/images/ScannerTitle.png";
 import scannerVideo from "../../public/assets/video/Scanner.mp4";

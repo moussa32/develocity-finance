@@ -10,7 +10,7 @@ import Visa from "@/images/visa-pay.png";
 
 const SOLD_PERCENTAGE = 85.25;
 
-const BuyToken = ({ handleBuyNowButton }) => {
+const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { progress } = useProgress({ max: SOLD_PERCENTAGE });
 
   return (
@@ -40,7 +40,10 @@ const BuyToken = ({ handleBuyNowButton }) => {
             <span className="text-sm md:text-lg font-medium capitalize">4,000,000</span>
           </div>
         </div>
-        <button className="uppercase text-xs text-neutral-400 underline text-center mx-auto block mt-4.5">
+        <button
+          onClick={openAllStagesModal}
+          className="uppercase text-xs text-neutral-400 underline text-center mx-auto block mt-4.5"
+        >
           All Stages
         </button>
       </div>
