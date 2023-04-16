@@ -8,7 +8,7 @@ import GooglePay from "@/images/google-pay.png";
 import Mastercard from "@/images/mastercard-pay.png";
 import Visa from "@/images/visa-pay.png";
 
-const SOLD_PERCENTAGE = 73.25;
+const SOLD_PERCENTAGE = 85.25;
 
 const BuyToken = ({ handleBuyNowButton }) => {
   const { progress } = useProgress({ max: SOLD_PERCENTAGE });

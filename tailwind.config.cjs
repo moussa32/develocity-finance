@@ -28,6 +28,7 @@ module.exports = {
       },
       margin: {
         4.5: "18px",
+        10.5: "42px",
       },
       padding: {
         4.5: "18px",

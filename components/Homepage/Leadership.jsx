@@ -1,8 +1,8 @@
-import twitter from "../../public/assets/images/LD_twitter.svg";
-import facebook from "../../public/assets/images/LD_facebook.svg";
-import instagram from "../../public/assets/images/LD_instagram.svg";
+// import twitter from "../../public/assets/images/LD_twitter.svg";
+// import facebook from "../../public/assets/images/LD_facebook.svg";
+// import instagram from "../../public/assets/images/LD_instagram.svg";
 import LeadershipSlider from "./LeadershipSlider";
-import Image from "next/image";
+// import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
 function Leadership() {
@@ -10,8 +10,8 @@ function Leadership() {
   return (
     <div className="text-center my-24">
       <div className="font-PolySans container lg:px-0 mx-auto">
-        <p className="text-[28px] md:text-5xl text-[#171717]">{t?.homeSection?.leadershipSection?.mainText}</p>
-        <p className="text-base md:text-lg mt-3 md:mt-2 text-[#525252] md:text-[#404040]">
+        <h2 className="text-[28px] text-neutral-900 md:text-[52px]">{t?.homeSection?.leadershipSection?.mainText}</h2>
+        <p className="text-base mt-3 text-[#525252] md:text-[#404040] md:mt-2 md:text-lg">
           {t?.homeSection?.leadershipSection?.subText}
         </p>
         <div className="hidden gap-x-8 mt-12 md:mt-14 gap-7 md:flex md:justify-center md:flex-row ">

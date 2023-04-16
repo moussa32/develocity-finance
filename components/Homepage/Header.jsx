@@ -19,7 +19,7 @@ const Header = () => {
   const { open } = useWeb3Modal();
   const { isConnected } = useAccount();
   const { t, errors } = useTranslation("common");
-  const { remaining, isFinished } = useCountdown("2023-04-06T13:44:00");
+  const { remaining, isFinished } = useCountdown("2023-04-16T06:00:20");
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
   const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
 
@@ -54,14 +54,16 @@ const Header = () => {
 
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
-      <video
-        src={headerVideo}
-        className="absolute object-cover w-full h-full hidden md:block"
-        autoPlay
-        playsInline
-        loop
-        muted
-      ></video>
+      {isFinished && (
+        <video
+          src={headerVideo}
+          className="absolute object-cover w-full h-full hidden md:block"
+          autoPlay
+          playsInline
+          loop
+          muted
+        ></video>
+      )}
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 md:flex md:flex-col">
         <div className="w-50 mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">

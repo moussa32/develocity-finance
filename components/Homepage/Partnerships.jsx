@@ -65,33 +65,34 @@ const partnerships = [
 const Partnerships = () => {
   const { t } = useTranslation("common");
   return (
-    <div className="bg-[#F9FAFB]">
-      <div className="container mx-auto text-center md:py-24 lg:px-0">
-        <h2 className="text-[#29233B] font-PolySans text-[28px] px-4 md:px-8 md:text-6xl font-medium md:font-normal">
+    <div className="container mx-auto text-center lg:px-0 md:my-32">
+      <div className="max-w-[800px] mx-auto">
+        <h2 className="text-neutral-900 font-PolySans text-[28px] font-medium px-4 md:px-8 md:text-[52px] md:font-normal">
           {t?.homeSection?.partnershipSection?.mainText}
         </h2>
-        <h6 className="text-[#525C7A] text-[15px] px-4 md:px-8 md:text-lg mt-4">
+        <p className="text-neutral-700 text-[15px] px-4 md:px-8 md:text-lg mt-3">
           {t?.homeSection?.partnershipSection?.subText}
-        </h6>
-        <div className="hidden md:grid grid-cols-6 h-[80px] mt-8 px-4 md:px-2 mx-auto gap-1 lg:gap-14">
-          {partnerships.map(({ title, link, defaultVersion, coloredVersion }) => (
-            <Link key={title} className="group relative w-[65px] md:w-[170px] lg:w-[180px]" href={`${link}`}>
-              <Image
-                className="absolute group-hover:opacity-0 h-[80px] object-contain hover:cursor-pointer"
-                src={defaultVersion}
-                alt={title}
-              />
-              <Image
-                className="absolute opacity-0 group-hover:opacity-100 h-[80px] object-contain hover:cursor-pointer"
-                src={coloredVersion}
-                alt={title}
-              />
-            </Link>
-          ))}
-        </div>
-        <PartnershipsMobileSlider />
-        {/* <Slider /> */}
+        </p>
       </div>
+
+      <div className="hidden md:grid grid-cols-6 h-[80px] mt-8 px-4 md:px-2 mx-auto gap-1 lg:gap-14">
+        {partnerships.map(({ title, link, defaultVersion, coloredVersion }) => (
+          <Link key={title} className="group relative w-[65px] md:w-[170px] lg:w-[180px]" href={`${link}`}>
+            <Image
+              className="absolute group-hover:opacity-0 h-[80px] object-contain hover:cursor-pointer"
+              src={defaultVersion}
+              alt={title}
+            />
+            <Image
+              className="absolute opacity-0 group-hover:opacity-100 h-[80px] object-contain hover:cursor-pointer"
+              src={coloredVersion}
+              alt={title}
+            />
+          </Link>
+        ))}
+      </div>
+      <PartnershipsMobileSlider />
+      {/* <Slider /> */}
     </div>
   );
 };

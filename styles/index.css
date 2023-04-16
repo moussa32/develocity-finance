@@ -53,6 +53,10 @@
   filter: grayscale(100%);
 }
 
+.home-blog-card-shadow {
+  box-shadow: 0 25px 50px 0 rgba(16, 24, 40, 0.25);
+}
+
 @media screen(md) {
   .header-bg {
     background-image: url("../public/assets/images/ladingHeaderBG.png");
