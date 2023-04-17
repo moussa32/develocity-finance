@@ -20,7 +20,7 @@ const Header = () => {
   const { open } = useWeb3Modal();
   const { isConnected } = useAccount();
   const { t, errors } = useTranslation("common");
-  const { remaining, isFinished } = useCountdown("2023-04-16T06:00:20");
+  const { remaining, isFinished } = useCountdown("2023-04-17T12:45:10");
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
   const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
   const [isAllStagesOpen, setIsAllStagesOpen] = useState(false);

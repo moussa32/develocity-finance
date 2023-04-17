@@ -292,15 +292,15 @@ const BuyAmountModal = ({
       </div>
 
       <div className="mt-6">
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between text-sm font-medium mb-2">
           <label className="text-[#a5a5a5]">{t?.buyAmountModal.lables.from}</label>
-          <h5 className="text-[#23282c]">
+          <h5 className="text-[#23282C]">
             {t?.buyAmountModal.balance} {currentCurrency.balance}
           </h5>
         </div>
-        <div className="flex h-12 w-[80vw] sm:w-[360px] sm:h-[58px]">
+        <div className="flex group bg-white h-[72px] w-[80vw] border-[#D6D6D6] border-1 transition-all focus-within:border-2 focus-within:border-[#6466E9] rounded-md overflow-hidden duration-300 sm:w-[360px]">
           <input
-            className="w-3/4 border-1 transition-all duration-300 rounded-sm border-[#d6d6d6] p-[10px] text-2xl text-[#23282c] hover:border-primary focus-visible:outline-none focus:outline-none"
+            className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 focus:border-r-[#6466E9] outline-none"
             value={coinBalance}
             type="number"
             onChange={e => {
@@ -317,7 +317,7 @@ const BuyAmountModal = ({
             placeholder="0"
             maxLength={3}
           />
-          <div className="border-1 rounded-sm border-[#d6d6d6] w-1/4 flex bg-white justify-center items-center">
+          <div className="w-1/4 flex justify-center items-center">
             <Image src={currentCurrency.image} width={23} />
             <span className="text-base ml-1">{currentCurrency.ticker}</span>
           </div>

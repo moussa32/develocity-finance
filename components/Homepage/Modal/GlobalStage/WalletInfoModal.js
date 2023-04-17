@@ -6,6 +6,8 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import { Fragment } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { useNetwork, useSwitchNetwork } from "wagmi";
+import CloseBuyModalButton from "@/images/closeBuyModalButton.png";
+import Image from "next/image";
 
 const WalletInfoModal = ({
   handleStep,
@@ -20,9 +22,6 @@ const WalletInfoModal = ({
   const { chain } = useNetwork();
   const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
 
-  console.log(chains);
-  console.log(error ?? JSON.stringify(error, 2, 0));
-
   return (
     <>
       <div>
@@ -35,7 +34,7 @@ const WalletInfoModal = ({
               <div>
                 <Menu.Button className="flex items-center w-full justify-center rounded-md px-4 text-sm font-medium text-black hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                   {chain.name}
-                  <IoIosArrowDown className="ml-2 -mr-1 h-5 w-5 text-black" aria-hidden="true" />
+                  <IoIosArrowDown className="ml-2 -mr-1 h-3 w-3 text-black" aria-hidden="true" />
                 </Menu.Button>
               </div>
               <Transition
@@ -69,15 +68,10 @@ const WalletInfoModal = ({
               </Transition>
             </Menu>
           </div>
-          <div className="h-14 border-[1px] border-[#35c486] flex items-center justify-between rounded relative mt-2 mb-5 bg-[#35c48626]">
-            <p className="h-14 leading-[58px] absolute left-5 text-sm">
-              {walletAddress && walletAddress.slice(0, 10) + "..." + walletAddress.slice(32, 42)}
-            </p>
-            <button
-              className="w-6 h-6 leading-5 right-5 p-0 border-[1.5px] border-[#8b8b8b] absolute"
-              onClick={() => disconnect()}
-            >
-              &#9747;
+          <div className="border-[1px] h-14 px-5 gap-5 border-[#4CA154] flex items-center justify-between rounded relative mt-2 mb-8 bg-[#35C486] bg-opacity-[15%]">
+            <p className="truncate text-sm">{walletAddress && walletAddress}</p>
+            <button className="w-6 h-6 basis-6 flex-shrink-0 flex-grow" onClick={() => disconnect()}>
+              <Image src={CloseBuyModalButton} alt="Close" />
             </button>
           </div>
         </div>

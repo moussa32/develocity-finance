@@ -13,10 +13,11 @@ import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
+import BuyMethod from "./BuyStage/BuyMethod";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
-//   buy: ["buywith", "buyamount", "final"],
+//   buy: ["buyMethod","buywith", "buyamount", "final"],
 //   claim: ["claim", "final"],
 //   referral: ["referral", "final"],
 // };
@@ -112,6 +113,8 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
         return (
           <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />
         );
+      case "paymentMethod":
+        return <BuyMethod />;
       case "buywith":
         return (
           <BuywithModal
