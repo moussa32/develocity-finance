@@ -147,6 +147,7 @@ const Stages = ({ show, onClose }) => {
                       </div>
                       {data.map(({ price, status }) => (
                         <p
+                          key={`${status}${price}`}
                           className={`my-[14px] w-[80px] mx-auto ${
                             status === "sold" ? "line-through text-neutral-400" : "text-indigo-500"
                           }`}
@@ -163,6 +164,7 @@ const Stages = ({ show, onClose }) => {
                       </div>
                       {data.map(({ status, tokens }) => (
                         <p
+                          key={`${status}${tokens}`}
                           className={`my-[14px] w-[140px] mx-auto ${
                             status === "sold" && "line-through text-neutral-400"
                           }`}
@@ -179,6 +181,7 @@ const Stages = ({ show, onClose }) => {
                       </div>
                       {data.map(({ status, total }) => (
                         <p
+                          key={`${status}${total}`}
                           className={`my-[14px] w-[140px] mx-auto ${
                             status === "sold" && "line-through text-neutral-400"
                           }`}
