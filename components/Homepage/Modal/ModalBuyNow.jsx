@@ -114,7 +114,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />
         );
       case "paymentMethod":
-        return <BuyMethod />;
+        return <BuyMethod handleStep={setCurrentStep} />;
       case "buywith":
         return (
           <BuywithModal

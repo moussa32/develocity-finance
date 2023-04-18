@@ -32,9 +32,9 @@ const ButtonItem = ({
         alt={mainText}
         title={mainText}
       />
-      <div className="flex justify-center flex-col">
+      <div className="flex justify-start text-left gap-1 flex-col">
         <p className="capitalize text-lg text-[#23282C]">{mainText}</p>
-        {secondaryText && <p className="text-left uppercase text-[#A5A5A5] text-sm font-medium">{secondaryText}</p>}
+        {secondaryText && <p className="uppercase text-[#A5A5A5] text-sm font-medium">{secondaryText}</p>}
       </div>
     </button>
   );
