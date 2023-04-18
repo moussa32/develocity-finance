@@ -5,8 +5,61 @@ import { Fragment, memo } from "react";
 import CloseButtonIcon from "@/images/close-all-stages-modal.png";
 import Image from "next/image";
 
+const data = [
+  {
+    status: "sold",
+    stages: 1,
+    price: "0.20",
+    tokens: 5000000,
+    total: 1000000,
+  },
+  {
+    status: "live",
+    stages: 2,
+    price: "0.25",
+    tokens: 7000000,
+    total: 1750000,
+  },
+  {
+    status: "soon",
+    stages: 3,
+    price: "0.28",
+    tokens: 7500000,
+    total: 2100000,
+  },
+  {
+    status: "soon",
+    stages: 4,
+    price: "0.31",
+    tokens: 8500000,
+    total: 2635000,
+  },
+  {
+    status: "soon",
+    stages: 5,
+    price: "0.35",
+    tokens: 9000000,
+    total: 3150000,
+  },
+  {
+    status: "soon",
+    stages: 6,
+    price: "0.38",
+    tokens: 9000000,
+    total: 3420000,
+  },
+  {
+    status: "soon",
+    stages: 7,
+    price: "0.40",
+    tokens: 9000000,
+    total: 3600000,
+  },
+];
+
 const Stages = ({ show, onClose }) => {
   const { local } = useRouter();
+
   return (
     <>
       <Transition appear show={show} as={Fragment}>
@@ -49,31 +102,42 @@ const Stages = ({ show, onClose }) => {
                   </Dialog.Title>
                   <div className="flex w-full flex-row overflow-auto">
                     <div className="w-[136.5px]">
-                      <div className="bg-[#EAECF0] w-full">
-                        <h3 className="text-xs font-medium text-neutral-500 w-[80px] mx-auto pt-[11px] pb-[10px] uppercase">
+                      <div className=" bg-[#EAECF0] w-full">
+                        <h3 className="ml-4 xl:mx-auto text-xs font-medium text-neutral-500 w-[80px] pt-[11px] pb-[10px] uppercase">
                           Status
                         </h3>
                       </div>
-                      <p className="w-[80px] mx-auto text-sm font-medium bg-red-200 text-red-600 border-1 border-red-600 capitalize my-[14px]">
-                        Sold
-                      </p>
-                      <p className="w-[80px] mx-auto bg-green-200 text-green-600 border-1 border-green-600 capitalize my-[14px]">
-                        live
-                      </p>
-                      <p className="w-[80px] mx-auto text-sm font-medium text-neutral-400 uppercase my-[14px]">soon</p>
-                      <p className="w-[80px] mx-auto text-sm font-medium text-neutral-400 uppercase my-[14px]">soon</p>
+                      {data.map(({ status }) => (
+                        <p
+                          key={status}
+                          className={`w-[80px] ml-4 xl:mx-auto h-6 flex items-center justify-center font-medium ${
+                            status === "sold" && "bg-red-200 text-xs text-red-600 border-1 border-red-600"
+                          } ${status === "live" && "bg-green-200 text-xs text-green-600 border-1 border-green-600"} ${
+                            status === "soon" && "text-neutral-400 text-sm"
+                          } capitalize my-[14px]`}
+                        >
+                          {status === "sold" && "SOLD OUT"}
+                          {status === "soon" && "SOON"}
+                          {status === "live" && "LIVE"}
+                        </p>
+                      ))}
                     </div>
-                    <div className="w-[110px]">
+                    <div className="w-[80px]">
                       <div className="bg-[#EAECF0] w-full">
                         <h3 className="text-xs font-medium text-neutral-500 w-[80px] mx-auto pt-[11px] pb-[10px] uppercase">
                           Stages
                         </h3>
                       </div>
-
-                      <p className="my-[14px] w-[80px] mx-auto text-neutral-400 line-through">1</p>
-                      <p className="my-[14px] w-[80px] mx-auto text-neutral-400">2</p>
-                      <p className="my-[14px] w-[80px] mx-auto text-neutral-400">3</p>
-                      <p className="my-[14px] w-[80px] mx-auto text-neutral-400">4</p>
+                      {data.map(({ status, stages }) => (
+                        <p
+                          key={`${status}${stages}`}
+                          className={`my-[14px] w-[80px] mx-auto ${
+                            status === "sold" && "line-through"
+                          } text-neutral-400`}
+                        >
+                          {stages}
+                        </p>
+                      ))}
                     </div>
                     <div className="w-[110px]">
                       <div className="bg-[#EAECF0] w-full">
@@ -81,39 +145,47 @@ const Stages = ({ show, onClose }) => {
                           Price
                         </h3>
                       </div>
-
-                      <p className="my-[14px] w-[80px] mx-auto line-through text-neutral-400">$0.20</p>
-                      <p className="my-[14px] w-[80px] mx-auto text-indigo-500">$0.25</p>
-                      <p className="my-[14px] w-[80px] mx-auto text-indigo-500">$0.28</p>
-                      <p className="my-[14px] w-[80px] mx-auto text-indigo-500">$0.31</p>
+                      {data.map(({ price, status }) => (
+                        <p
+                          className={`my-[14px] w-[80px] mx-auto ${
+                            status === "sold" ? "line-through text-neutral-400" : "text-indigo-500"
+                          }`}
+                        >
+                          ${price}
+                        </p>
+                      ))}
                     </div>
-                    <div className="w-[160px]">
+                    <div className="w-[170px]">
                       <div className="bg-[#EAECF0] w-full">
                         <h3 className="text-xs font-medium text-neutral-500 w-[80px] mx-auto pt-[11px] pb-[10px] uppercase">
                           Tokens
                         </h3>
                       </div>
-
-                      <p className="my-[14px] w-[140px] mx-auto line-through text-neutral-400">
-                        {numberFormatter(local, 5000000)}
-                      </p>
-                      <p className="my-[14px] w-[140px] mx-auto">{numberFormatter(local, 7000000)}</p>
-                      <p className="my-[14px] w-[140px] mx-auto">{numberFormatter(local, 7500000)}</p>
-                      <p className="my-[14px] w-[140px] mx-auto">{numberFormatter(local, 8500000)}</p>
+                      {data.map(({ status, tokens }) => (
+                        <p
+                          className={`my-[14px] w-[140px] mx-auto ${
+                            status === "sold" && "line-through text-neutral-400"
+                          }`}
+                        >
+                          {numberFormatter(local, tokens)}
+                        </p>
+                      ))}
                     </div>
-                    <div className="w-[160px]">
+                    <div className="w-[170px]">
                       <div className="bg-[#EAECF0] w-full">
                         <h3 className="text-xs font-medium text-neutral-500 w-[80px] mx-auto pt-[11px] pb-[10px] uppercase">
                           Total
                         </h3>
                       </div>
-
-                      <p className="my-[14px] w-[140px] mx-auto line-through text-neutral-400">
-                        {numberFormatter(local, 1000000)}
-                      </p>
-                      <p className="my-[14px] w-[140px] mx-auto">${numberFormatter(local, 1750000)}</p>
-                      <p className="my-[14px] w-[140px] mx-auto">${numberFormatter(local, 2100000)}</p>
-                      <p className="my-[14px] w-[140px] mx-auto">${numberFormatter(local, 2635000)}</p>
+                      {data.map(({ status, total }) => (
+                        <p
+                          className={`my-[14px] w-[140px] mx-auto ${
+                            status === "sold" && "line-through text-neutral-400"
+                          }`}
+                        >
+                          {numberFormatter(local, total)}
+                        </p>
+                      ))}
                     </div>
                   </div>
                 </Dialog.Panel>
