@@ -2,40 +2,33 @@ import { Disclosure } from "@headlessui/react";
 import Link from "next/link";
 import { useMemo } from "react";
 import { BiPlusCircle, BiMinusCircle } from "react-icons/bi";
+import useTranslation from "@/shared/Hooks/useTranslation";
+
 
 const FrequentlyQuestions = () => {
+  const { t } = useTranslation("FQs");
   const data = useMemo(
     () => [
       {
         id: 1,
-        title: "When will the $DEVE token be launched?",
-        description:
-          "The $DEVE token will be launched once the Pre-sale reaches 100% sales and all the tokens have been sold. During the presale, 50% of the total supply (250,000,000 tokens) will be sold. You can monitor the number of tokens remaining and the pre-sale progress on the develocity.finance homepage.",
-      },
-      {
+        title: `${t?.FQ1?.q}`,
+        description:`${t?.FQ1?.a}`},
+      {  
         id: 2,
-        title: "How can I buy the $DEVE token?",
-        description:
-          "The $DEVE token will be launched once the Pre-sale reaches 100% sales and all the tokens have been sold. During the presale, 50% of the total supply (250,000,000 tokens) will be sold. You can monitor the number of tokens remaining and the pre-sale progress on the develocity.finance homepage.",
-      },
+        title: `${t?.FQ2?.q}`,
+        description:`${t?.FQ2?.a}`},
       {
         id: 3,
-        title: "How can I obtain a referral link and how does it work?",
-        description:
-          "The $DEVE token will be launched once the Pre-sale reaches 100% sales and all the tokens have been sold. During the presale, 50% of the total supply (250,000,000 tokens) will be sold. You can monitor the number of tokens remaining and the pre-sale progress on the develocity.finance homepage.",
-      },
+        title: `${t?.FQ3?.q}`,
+        description:`${t?.FQ3?.a}`},
       {
         id: 4,
-        title: "When will I receive my $DEVE tokens after purchasing?",
-        description:
-          "The $DEVE token will be launched once the Pre-sale reaches 100% sales and all the tokens have been sold. During the presale, 50% of the total supply (250,000,000 tokens) will be sold. You can monitor the number of tokens remaining and the pre-sale progress on the develocity.finance homepage.",
-      },
+        title: `${t?.FQ4?.q}`,
+        description:`${t?.FQ4?.a}`},
       {
         id: 5,
-        title: "What is the difference between packages and regular payments?",
-        description:
-          "The $DEVE token will be launched once the Pre-sale reaches 100% sales and all the tokens have been sold. During the presale, 50% of the total supply (250,000,000 tokens) will be sold. You can monitor the number of tokens remaining and the pre-sale progress on the develocity.finance homepage.",
-      },
+        title: `${t?.FQ5?.q}`,
+        description:`${t?.FQ5?.a}`},
     ],
     []
   );
@@ -43,11 +36,13 @@ const FrequentlyQuestions = () => {
   return (
     <section className="max-w-[800px] mx-auto mb-32">
       <div className="text-center">
-        <h2 className="mb-3 text-[52px] font-semibold text-neutral-900">Frequently asked questions</h2>
+        <h2 className="mb-3 text-[52px] font-semibold text-neutral-900">
+        {t?.title?.mainText}
+        </h2>
         <p className="text-lg text-neutral-700">
-          If you have any further questions, please do not hesitate to{" "}
+        {t?.title?.subText}
           <Link href="/contact-us" className="underline text-indigo-500 font-normal underline-offset-3">
-            Contact us
+          {t?.title?.contact}
           </Link>
         </p>
       </div>

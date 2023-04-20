@@ -7,7 +7,7 @@
       "lableII": "Safe Eenviroment For Your Assets",
       "mainText": "Towards A Secure And Reliable Financial Future",
       "subText": "Develocity strives to create a safe and trustworthy crypto environment where investors and developers can interact securely, considering the transparent credibility and technical measures and standards.",
-      "subTextSecondParagraph": "The main goal of DeVelocity is to provide useful decentralized tools that would be trusted entirely and transparent, where the traders will always be able to trade freely without any risk of being locked out or exposed.",
+      "subTextSecondParagraph": "The main goal of Develocity is to provide useful decentralized tools that would be trusted entirely and transparent, where the traders will always be able to trade freely without any risk of being locked out or scammed.",
       "tools": {
         "multiFunctionalTool": "Multi-functional tool",
         "swapTool": "Swap tool",
@@ -21,7 +21,7 @@
       "lableI": "Crypto Education Hub",
       "lableII": "We launched Phase 1",
       "mainText": "Your Gateway to Understand Crypto and Blockchain",
-      "subText": "We just launched the first vision of crypto academy, which is focused on rising awareness about the cryptocurrency, blockchain technology and it's benefits in general.",
+      "subText": "We are going to launch the first vision of crypto academy, which is focused on rising awareness about the cryptocurrency, blockchain technology and it's benefits in general.",
       "subTextSecondParagraph": "On the second phase crypto academy will focus on bringing well known people from different kinds of companies based on blockchain industry and you'll abeable to learn directly from them.",
       "visitNowBtn": "Visit now ➜"
     },
@@ -30,7 +30,7 @@
       "lableII": "Multi-Functional Tool",
       "mainText": ["The All-in-One Solution for", " Informed Crypto Investment"],
       "subText": "DeFi users are always trying to find the ideal investment, and they are willing to take the risk; even if they try as much as they can to reduce the risk, they won’t be able to determine the size of the risk. This is the part where we can benefit the user the most, where all he needs to do is avoid participating in any investment without understanding what kind of risk he is getting into.",
-      "subTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token to get a quick and deep detailed report about the token.",
+      "subTextSecondParagraph": "The multi-functional tool comes to help the users with their challenges by scanning the contract or searching for the token's name to get a quick and deep detailed report about the token.",
       "getStartedBtn": "Get started"
     },
     "roadmapSection": {
@@ -76,7 +76,7 @@
           ]
         },
         "opportunities": {
-          "mainText": "Opportunities",
+          "mainText": "Growth",
           "lable": "Upcoming",
           "subText": [
             "Publishing Bridge",

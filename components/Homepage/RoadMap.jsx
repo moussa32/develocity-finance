@@ -29,7 +29,7 @@ const RoadMap = () => {
             <div className="mx-auto text-center">
               <Image className="mb-3" src={phaseOne} alt="phase 1 icon" />
               <h3 className="text-2xl font-semibold">{t?.homeSection?.roadmapSection?.phases[0]}</h3>
-              <span className="text-base text-[#020101] mt-2">
+              <span className="text-base text-[#B8B8B8] mt-2">
                 {t?.homeSection?.roadmapSection?.cards?.startup?.lable}
               </span>
             </div>

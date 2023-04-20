@@ -24,15 +24,15 @@ const Navbar = ({ containerClassName }) => {
           <NextNavLink className="mb-3 md:mb-0" href="/blog">
             {t?.headSection?.navbar?.blog}
           </NextNavLink>
-          <NextNavLink className="mb-3 md:mb-0" href="/blog">
+          {/* <NextNavLink className="mb-3 md:mb-0" href="/blog">
             {t?.headSection?.navbar?.documentation}
-          </NextNavLink>
+          </NextNavLink> */}
           <NextNavLink className="mb-3 md:mb-0" href="/contact-us">
             {t?.headSection?.navbar?.contact}
           </NextNavLink>
           <div className="flex items-center gap-3">
             <LangDropdown />
-            <button className="bg-white bg-opacity-20 rounded-[30px] px-4 py-2">Connect Your Wallet</button>
+            {/* <button className="bg-white bg-opacity-20 rounded-[30px] px-4 py-2">Connect Your Wallet</button> */}
             <button className="bg-indigo-500 rounded-[30px] px-4 py-2">Whitepaper</button>
           </div>
         </div>

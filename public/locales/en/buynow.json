@@ -1,0 +1,17 @@
+{
+  "title": {
+    "mainText": "Pre-sale",
+    "subText": "Is LIVE!",
+    "tokensRe": "Tokens Remaining",
+    "SOLD": "SOLD"
+  },
+  "sub": {
+    "stage": "Stage",
+    "price": "Price",
+    "tokens": "Tokens",
+    "HowtoBuy": "How to Buy?",
+    "BuyNow": "Buy Now",
+    "AllStages": "All Stages",
+    "PaymentSupported": "And Cryptocurrency Payment Supported"
+  }
+}

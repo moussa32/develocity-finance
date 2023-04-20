@@ -1,0 +1,27 @@
+{
+  "title": {
+    "mainText": "Frequently asked questions",
+    "subText": "If you have any further questions, please do not hesitate to ",
+    "contact": "Contact us"
+  },
+  "FQ1": {
+    "q": "When is the $DEVE token expected to launch?",
+    "a": "The exact launch date for the $DEVE token is not predetermined. It will be set immediately after the Pre-Sake process is completed."
+  },
+  "FQ2": {
+    "q": "What are the ways to purchase $DEVE tokens?",
+    "a": "$DEVE tokens can be acquired via blockchain networks (BSC, ETH, POLYGON) or through authorised payment methods like Visa, Apple Pay, and Google Pay."
+  },
+  "FQ3": {
+    "q": "How can I obtain a referral link, and what is its function?",
+    "a": "After making an initial purchase of at least $5, you will be eligible to receive a referral link. This link enables you to earn 5% of the purchase value, which will be added to your wallet."
+  },
+  "FQ4": {
+    "q": "When can I access my tokens following a purchase?",
+    "a": "You will gain access to your tokens upon completing the Pre-Sake phases. They can be collected through the designated website."
+  },
+  "FQ5": {
+    "q": "What is the method for tracking my referrals?",
+    "a": "To track your referrals, simply connect your wallet and review the comprehensive information provided."
+  }
+}

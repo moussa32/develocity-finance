@@ -11,7 +11,7 @@
       "email": "Email",
       "phoneNumber": "Phone number",
       "message": "Message",
-      "checkbox": ["You agree to Develocity's", "privacy policy."],
+      "checkbox": ["I agree to Develocity's", " Privacy Policy."],
       "sendBtn": "Send"
     }
   }

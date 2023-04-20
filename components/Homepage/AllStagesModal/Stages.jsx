@@ -7,14 +7,14 @@ import Image from "next/image";
 
 const data = [
   {
-    status: "sold",
+    status: "live",
     stages: 1,
     price: "0.20",
     tokens: 5000000,
     total: 1000000,
   },
   {
-    status: "live",
+    status: "soon",
     stages: 2,
     price: "0.25",
     tokens: 7000000,

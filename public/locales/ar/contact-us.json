@@ -11,7 +11,7 @@
       "email": "الايميل",
       "phoneNumber": "رقم الهاتف",
       "message": "الرسالة",
-      "checkbox": ["انت توافق على ", "سياسة الخصوصية من Develocity"],
+      "checkbox": ["انا توافق على ", "سياسة الخصوصية من Develocity"],
       "sendBtn": "ارسال"
     }
   }

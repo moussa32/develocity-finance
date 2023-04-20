@@ -31,37 +31,37 @@ const Ecosystem = () => {
           <p className="text-neutral-600 text-base mt-4">{t?.homeSection?.ecoSystemSection?.subTextSecondParagraph}</p>
           <div className="flex flex-wrap lg:grid lg:grid-cols-2 mt-8 gap-y-4">
             <div className="flex items-center w-3/5 ltr:mr-5 rtl:ml-5 ltr:lg:mr-0 rtl:lg:ml-0 lg:w-full">
-              <Image src={MultiFunctionalIcon} className="w-8 h-8" alt="MultiFunctionalIcon" />
+              <Image src={MultiFunctionalIcon} className="w-8 h-8" alt="MultiFunctional" />
               <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.multiFunctionalTool}
               </h4>
             </div>
             <div className="flex items-center">
-              <Image src={SwapToolIcon} className="w-8 h-8" alt="SwapToolIcon" />
+              <Image src={SwapToolIcon} className="w-8 h-8" alt="SwapTool" />
               <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.swapTool}
               </h4>
             </div>
             <div className="flex items-center w-3/5 ltr:mr-5 rtl:ml-5 ltr:lg:mr-0 rtl:lg:ml-0 lg:w-full">
-              <Image src={CryptoAcademyIcon} className="w-8 h-8" alt="CryptoAcademyIcon" />
+              <Image src={WalletIcon} className="w-8 h-8" alt="Wallet" />
               <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.wallet}
               </h4>
             </div>
             <div className="flex items-center">
-              <Image src={BridgeIcon} className="w-8 h-8" alt="BridgeIcon" />
+              <Image src={BridgeIcon} className="w-8 h-8" alt="Bridge" />
               <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.bridge}
               </h4>
             </div>
             <div className="flex items-center w-3/5 ltr:mr-5 rtl:ml-5 ltr:lg:mr-0 rtl:lg:ml-0 lg:w-full">
-              <Image src={DexIcon} className="w-8 h-8" alt="DexIcon" />
+              <Image src={CryptoAcademyIcon} className="w-8 h-8" alt="CryptoAcademy" />
               <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.cryptoAcademy}
               </h4>
             </div>
             <div className="flex items-center">
-              <Image src={WalletIcon} className="w-8 h-8" alt="WalletIcon" />
+              <Image src={DexIcon} className="w-8 h-8" alt="DEX" />
               <h4 className="ltr:ml-2 rtl:mr-2 text-[#171717] font-medium text-base">
                 {t?.homeSection?.ecoSystemSection?.tools?.dex}
               </h4>
