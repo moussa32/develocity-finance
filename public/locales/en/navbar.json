@@ -21,27 +21,27 @@
       "launched": "Launched",
       "multiFunctionalTool": {
         "mainText": "Multi-functional tool",
-        "subText": "A new way to discover tokens that are safe and trustworthy."
+        "subText": "Software program that scans the blockchain network to gather information about the token."
       },
       "swapTool": {
         "mainText": "Swap tool",
-        "subText": "A new way to discover tokens that are safe and trustworthy."
+        "subText": "An exchange that allows users to trade one token for another."
       },
       "wallet": {
         "mainText": "Wallet",
-        "subText": "A new way to discover tokens that are safe and trustworthy."
+        "subText": "A software program that allows users to securely store, send, and receive."
       },
       "bridge": {
         "mainText": "Bridge",
-        "subText": "A new way to discover tokens that are safe and trustworthy."
+        "subText": "A platform that enables the exchange of tokens between different blockchain networks."
       },
       "cryptoAcademy": {
         "mainText": "Crypto academy",
-        "subText": "A new way to discover tokens that are safe and trustworthy."
+        "subText": "An educational platform that provides courses, training."
       },
       "dex": {
         "mainText": "Dex",
-        "subText": "A new way to discover tokens that are safe and trustworthy."
+        "subText": "An exchange that operates on a decentralized blockchain network."
       }
     }
   }

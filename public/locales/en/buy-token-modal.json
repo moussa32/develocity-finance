@@ -26,12 +26,12 @@
     "subText": "Select The Cryptocurrency You Want To Use",
     "btns": {
       "binanceCoin": {
-        "balance": "Balance:",
+        "balance": "Balance: ",
         "btnMainText": "Binance Coin",
         "btnSubText": "BNB"
       },
       "binanceUSD": {
-        "balance": "Balance: 2,914.0594",
+        "balance": "Balance: ",
         "btnMainText": "Binance USD",
         "btnSubText": "BUSD"
       }

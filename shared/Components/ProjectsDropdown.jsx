@@ -65,7 +65,7 @@ const ProjectsDropdown = () => {
                         <h3 className="group-hover:text-slate-800 md:text-base text-[#101828] font-semibold mb-1">
                           {t?.headSection?.projects?.multiFunctionalTool?.mainText}
                         </h3>
-                        <p className="group-hover:text-zinc-900 text-xs text-[#475467] md:text-sm font-normal">
+                        <p className="group-hover:text-zinc-900 text-xs text-[#475467] md:text-xs font-normal">
                           {t?.headSection?.projects?.multiFunctionalTool?.subText}
                         </p>
                       </div>
@@ -79,7 +79,7 @@ const ProjectsDropdown = () => {
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
                         {t?.headSection?.projects?.swapTool?.mainText}
                       </h3>
-                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                      <p className="text-xs text-[#475467] md:text-xs font-normal">
                         {t?.headSection?.projects?.swapTool?.subText}
                       </p>
                     </div>
@@ -92,7 +92,7 @@ const ProjectsDropdown = () => {
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
                         {t?.headSection?.projects?.wallet?.mainText}
                       </h3>
-                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                      <p className="text-xs text-[#475467] md:text-xs font-normal">
                         {t?.headSection?.projects?.wallet?.subText}
                       </p>
                     </div>
@@ -117,7 +117,7 @@ const ProjectsDropdown = () => {
                         <h3 className="md:text-base text-[#101828] font-semibold mb-1">
                           {t?.headSection?.projects?.cryptoAcademy?.mainText}
                         </h3>
-                        <p className="text-xs text-[#475467] md:text-sm font-normal">
+                        <p className="text-xs text-[#475467] md:text-xs font-normal">
                           {t?.headSection?.projects?.cryptoAcademy?.subText}
                         </p>
                       </div>
@@ -131,7 +131,7 @@ const ProjectsDropdown = () => {
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
                         {t?.headSection?.projects?.bridge?.mainText}
                       </h3>
-                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                      <p className="text-xs text-[#475467] md:text-xs font-normal">
                         {t?.headSection?.projects?.bridge?.subText}
                       </p>
                     </div>
@@ -144,7 +144,7 @@ const ProjectsDropdown = () => {
                       <h3 className="md:text-base text-[#101828] font-semibold mb-1">
                         {t?.headSection?.projects?.dex?.mainText}
                       </h3>
-                      <p className="text-xs text-[#475467] md:text-sm font-normal">
+                      <p className="text-xs text-[#475467] md:text-xs font-normal">
                         {t?.headSection?.projects?.dex?.subText}
                       </p>
                     </div>

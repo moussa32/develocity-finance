@@ -6,29 +6,13 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 
 
 const FrequentlyQuestions = () => {
-  const { t } = useTranslation("FQs");
+  const { t } = useTranslation("fqs");
   const data = useMemo(
     () => [
       {
         id: 1,
         title: `${t?.FQ1?.q}`,
         description:`${t?.FQ1?.a}`},
-      {  
-        id: 2,
-        title: `${t?.FQ2?.q}`,
-        description:`${t?.FQ2?.a}`},
-      {
-        id: 3,
-        title: `${t?.FQ3?.q}`,
-        description:`${t?.FQ3?.a}`},
-      {
-        id: 4,
-        title: `${t?.FQ4?.q}`,
-        description:`${t?.FQ4?.a}`},
-      {
-        id: 5,
-        title: `${t?.FQ5?.q}`,
-        description:`${t?.FQ5?.a}`},
     ],
     []
   );
@@ -51,19 +35,68 @@ const FrequentlyQuestions = () => {
         <div className="mx-auto w-full bg-white p-2">
           {data.map(({ id, title, description }) => (
             <Disclosure key={id}>
-              {({ open }) => (
-                <div className="py-8 first:pt-0 border-neutral-400 border-b-1">
+  
+  <div className="py-8 first:pt-0 border-neutral-400 border-b-1">
                   <Disclosure.Button className="flex w-full justify-between bg-white text-left text-sm font-medium focus:outline-none">
-                    <span className="text-lg font-medium text-neutral-900">{title}</span>
+                    <span className="text-lg font-medium text-neutral-900">{t?.FQ1?.q}</span>
                     {open ? (
                       <BiMinusCircle className="h-5 w-5 text-neutral-400" />
                     ) : (
                       <BiPlusCircle className="h-5 w-5 text-neutral-400" />
                     )}
                   </Disclosure.Button>
-                  <Disclosure.Panel className="text-neutral-700 text-base pt-3">{description}</Disclosure.Panel>
+                  <Disclosure.Panel className="text-neutral-700 text-base pt-3">{t?.FQ1?.a}</Disclosure.Panel>
                 </div>
-              )}
+
+                <div className="py-8 first:pt-0 border-neutral-400 border-b-1">
+                  <Disclosure.Button className="flex w-full justify-between bg-white text-left text-sm font-medium focus:outline-none">
+                    <span className="text-lg font-medium text-neutral-900">{t?.FQ2?.q}</span>
+                    {open ? (
+                      <BiMinusCircle className="h-5 w-5 text-neutral-400" />
+                    ) : (
+                      <BiPlusCircle className="h-5 w-5 text-neutral-400" />
+                    )}
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="text-neutral-700 text-base pt-3">{t?.FQ2?.a}</Disclosure.Panel>
+                </div>
+
+                <div className="py-8 first:pt-0 border-neutral-400 border-b-1">
+                  <Disclosure.Button className="flex w-full justify-between bg-white text-left text-sm font-medium focus:outline-none">
+                    <span className="text-lg font-medium text-neutral-900">{t?.FQ3?.q}</span>
+                    {open ? (
+                      <BiMinusCircle className="h-5 w-5 text-neutral-400" />
+                    ) : (
+                      <BiPlusCircle className="h-5 w-5 text-neutral-400" />
+                    )}
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="text-neutral-700 text-base pt-3">{t?.FQ3?.a}</Disclosure.Panel>
+                </div>
+
+                <div className="py-8 first:pt-0 border-neutral-400 border-b-1">
+                  <Disclosure.Button className="flex w-full justify-between bg-white text-left text-sm font-medium focus:outline-none">
+                    <span className="text-lg font-medium text-neutral-900">{t?.FQ4?.q}</span>
+                    {open ? (
+                      <BiMinusCircle className="h-5 w-5 text-neutral-400" />
+                    ) : (
+                      <BiPlusCircle className="h-5 w-5 text-neutral-400" />
+                    )}
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="text-neutral-700 text-base pt-3">{t?.FQ4?.a}</Disclosure.Panel>
+                </div>
+
+                <div className="py-8 first:pt-0 border-neutral-400 border-b-1">
+                  <Disclosure.Button className="flex w-full justify-between bg-white text-left text-sm font-medium focus:outline-none">
+                    <span className="text-lg font-medium text-neutral-900">{t?.FQ5?.q}</span>
+                    {open ? (
+                      <BiMinusCircle className="h-5 w-5 text-neutral-400" />
+                    ) : (
+                      <BiPlusCircle className="h-5 w-5 text-neutral-400" />
+                    )}
+                  </Disclosure.Button>
+                  <Disclosure.Panel className="text-neutral-700 text-base pt-3">{t?.FQ5?.a}</Disclosure.Panel>
+                </div>
+
+
             </Disclosure>
           ))}
         </div>
