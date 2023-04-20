@@ -185,7 +185,8 @@ export async function getStaticPaths() {
   const { articles } = [];
 
   //Loop through articles slugs which it two dimencation array to return array of article's pathname with locale
-  // const paths = articles
+  const paths = [];
+  // articles
   //   .map(article =>
   //     article.slugs.map(slugObject => ({
   //       params: { slug: slugObject.slug },
@@ -195,6 +196,7 @@ export async function getStaticPaths() {
   //   .flat();
 
   return {
+    paths,
     fallback: true,
   };
 }
