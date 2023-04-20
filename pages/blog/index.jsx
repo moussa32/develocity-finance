@@ -39,7 +39,7 @@ const Blog = () => {
       }*/
     };
 
-    fetchData();
+    // fetchData();
   }, [locale]);
 
   return (
