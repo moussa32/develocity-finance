@@ -3,10 +3,12 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { BiPlusCircle, BiMinusCircle } from "react-icons/bi";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { useRouter } from "next/router";
 
 const FrequentlyQuestions = () => {
   const { t } = useTranslation("fqs");
-  console.log(t);
+  const { locale } = useRouter();
+
   const data = useMemo(
     () => [
       {
@@ -35,7 +37,7 @@ const FrequentlyQuestions = () => {
         description: `${t?.FQ5?.a}`,
       },
     ],
-    [t]
+    [t, locale]
   );
 
   return (
