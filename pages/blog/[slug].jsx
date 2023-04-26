@@ -155,7 +155,7 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
                 <Image src={CopyIcon.src} width={20} height={20} alt="copy" title="copy" />
                 Copy link
               </button>
-              <a
+              {/* <a
                 href="https://www.twitter.com"
                 className="flex items-center justify-center rounded-sm xs:w-[39px] h-[39px] border-[#D0D5DD] border-[1px]"
               >
@@ -172,7 +172,7 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
                 className="flex items-center justify-center rounded-sm xs:w-[39px] h-[39px] border-[#D0D5DD] border-[1px]"
               >
                 <Image src={LinkedInIcon} alt="linkedin" title="linkedin" />
-              </a>
+              </a> */}
             </div>
           </div>
         </article>
