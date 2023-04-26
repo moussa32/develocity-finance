@@ -6,7 +6,7 @@ import FacebookIcon from "@/images/FacebookIcon.svg";
 import LinkedInIcon from "@/images/LinkedInIcon.svg";
 import Image from "next/image";
 import { globalInstance } from "../../api/constant";
-import parse, { attributesToProps } from "html-react-parser";
+import parse, { attributesToProps, domToReact } from "html-react-parser";
 import usePostURL from "@/store/dynamicBlogPost";
 import { useEffect } from "react";
 
@@ -16,7 +16,7 @@ const stylingBlogDetails = {
       const props = attributesToProps(domNode.attribs);
       return (
         <h2 className="text-[#101828] text-xl md:text-2xl lg:text-3xl font-semibold" {...props}>
-          {domNode?.nodeValue}
+          {domToReact(domNode.children, { replace: stylingBlogDetails })}
         </h2>
       );
     }
@@ -24,7 +24,7 @@ const stylingBlogDetails = {
       const props = attributesToProps(domNode.attribs);
       return (
         <p className="mt-6 mb-8" {...props}>
-          {domNode?.children[0].data}
+          {domToReact(domNode.children, { replace: stylingBlogDetails })}
         </p>
       );
     }
