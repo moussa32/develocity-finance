@@ -5,7 +5,8 @@
 import SideMenu from "../../shared/Components/SideMenu";
 // import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 // import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
-import headerVideo from "../../public/assets/video/header-video-bg.mp4";
+import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
+import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
@@ -24,6 +25,7 @@ const Header = () => {
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
   const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
   const [isAllStagesOpen, setIsAllStagesOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   const handleOpen = state => {
     setIsBuyNowModalOpen(state);
@@ -34,6 +36,24 @@ const Header = () => {
       setIsBuyNowModalOpen(true);
     }
   }, [openAfterSuccessConnection]);
+
+  useEffect(() => {
+    function detectMobile() {
+      return window.innerWidth < 520; // 520 is the breakpoint for mobile devices
+    }
+
+    setIsMobile(detectMobile());
+
+    function handleResize() {
+      setIsMobile(detectMobile());
+    }
+
+    window.addEventListener("resize", handleResize);
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   const onOpen = async () => {
     await open({
@@ -66,8 +86,8 @@ const Header = () => {
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
       {isFinished && (
         <video
-          src={headerVideo}
-          className="absolute object-cover w-full h-full hidden md:block"
+          src={isMobile ? headerMobileVideo : headerVideo}
+          className="absolute z-0 object-cover w-full h-full block"
           autoPlay
           playsInline
           loop
@@ -76,7 +96,7 @@ const Header = () => {
       )}
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 md:flex md:flex-col">
-        <div className="w-50 mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
+        <div className="w-50 relative mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
           <div className="flex flex-col justify-center">
             {isFinished ? (
               <BuyToken handleBuyNowButton={onClick} openAllStagesModal={handleOpenAllStages} />

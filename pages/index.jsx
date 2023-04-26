@@ -5,9 +5,11 @@ import Ecosystem from "../components/Homepage/Ecosystem";
 import Partnerships from "../components/Homepage/Partnerships";
 import RoadMap from "../components/Homepage/RoadMap";
 import Scanner from "../components/Homepage/Scanner";
-import Header from "../components/Homepage/Header";
 import Head from "next/head";
 import FrequentlyQuestions from "@/components/Homepage/FrequentlyQuestions";
+import dynamic from "next/dynamic";
+
+const Header = dynamic(() => import("../components/Homepage/Header"), { ssr: false });
 
 const Home = () => {
   return (
