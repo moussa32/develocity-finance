@@ -8,7 +8,7 @@ import Image from "next/image";
 import { globalInstance } from "../../api/constant";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 import usePostURL from "@/store/dynamicBlogPost";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const stylingBlogDetails = {
   replace: domNode => {
@@ -42,6 +42,23 @@ const stylingBlogDetails = {
 
 const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
   const { setPostSlugs } = usePostURL(state => state);
+  const [isCopying, setIsCopying] = useState(false);
+
+  const copyBlogUrl = () => {
+    setIsCopying(true);
+    const url = window.location.href;
+    navigator.clipboard
+      .writeText(url)
+      .then(() => {
+        console.log(`Copied URL to clipboard: ${url}`);
+      })
+      .catch(err => {
+        console.error("Failed to copy URL: ", err);
+      })
+      .finally(() => {
+        setIsCopying(false);
+      });
+  };
 
   useEffect(() => {
     setPostSlugs(slugs);
@@ -151,7 +168,11 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
             </p> */}
             <hr className="mt-12 bg-[#EAECF0]" />
             <div className="flex flex-wrap flex-col xs:flex-row xs:justify-end gap-3 mt-6">
-              <button className="relative flex gap-2 items-center h-[39px] text-sm font-medium rounded-sm border-[#D0D5DD] border-[1px] px-4 py-2.5 text-[#344054]">
+              <button
+                onClick={copyBlogUrl}
+                disabled={isCopying}
+                className="relative flex gap-2 items-center h-[39px] text-sm font-medium disabled:opacity-40 disabled:cursor-not-allowed rounded-sm border-[#D0D5DD] border-[1px] px-4 py-2.5 text-[#344054]"
+              >
                 <Image src={CopyIcon.src} width={20} height={20} alt="copy" title="copy" />
                 Copy link
               </button>
