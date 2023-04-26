@@ -49,6 +49,7 @@ const Blog = () => {
         <div className="grid grid-cols-1 my-24 gap-10 px-6 md:grid-cols-2 lg:grid-cols-3 xl:gap-y-16 xl:gap-x-8 xl:px-0">
           {data.length > 0 &&
             data.map(item => {
+              console.log(data);
               return (
                 <BlogCard
                   key={item.id}

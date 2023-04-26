@@ -204,7 +204,7 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { params, locale } = context;
   const { slug } = params;
-  const requestArticleDetails = await globalInstance.get(`/articles/${slug}`, {
+  const requestArticleDetails = await globalInstance.get(`/articles/${encodeURIComponent(slug)}`, {
     headers: {
       lang: locale,
     },

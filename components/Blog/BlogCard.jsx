@@ -8,7 +8,7 @@ const BlogCard = ({ slug, thumbnail, publish_date, title, summary, tags }) => {
   };
   return (
     <Link
-      href={`/blog/${slug}`}
+      href={`/blog/${encodeURIComponent(slug)}`}
       className="mx-auto w-full xl:w-[384px] transition-all ease-in-out duration-300 hover:shadow-md p-4"
     >
       <Image
