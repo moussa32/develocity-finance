@@ -29,6 +29,7 @@ const stylingBlogDetails = {
       );
     }
     if (domNode.attribs && domNode.name === "blockquote") {
+      console.log(domNode);
       return (
         <section className="border-l-2 border-indigo-500 my-8 px-6 font-medium">
           <blockquote className="text-lg md:text-2xl">“{domNode.nodeValue}”</blockquote>
@@ -212,6 +213,7 @@ export async function getStaticProps(context) {
 
   return {
     props: { ...article },
+    revalidate: 45,
   };
 }
 
