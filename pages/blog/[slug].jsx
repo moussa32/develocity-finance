@@ -182,18 +182,17 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
 
 export async function getStaticPaths() {
   const requestArticles = await globalInstance.get("/articles");
-  const { articles } = [];
+  const { articles } = requestArticles.data.data;
 
   //Loop through articles slugs which it two dimencation array to return array of article's pathname with locale
-  const paths = []; 
-  // articles
-  //   .map(article =>
-  //     article.slugs.map(slugObject => ({
-  //       params: { slug: slugObject.slug },
-  //       locale: slugObject.locale,
-  //     }))
-  //   )
-  //   .flat();
+  const paths = articles
+    .map(article =>
+      article.slugs.map(slugObject => ({
+        params: { slug: slugObject.slug },
+        locale: slugObject.locale,
+      }))
+    )
+    .flat();
 
   return {
     paths,
