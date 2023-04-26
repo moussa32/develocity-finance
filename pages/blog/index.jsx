@@ -57,7 +57,7 @@ const Blog = () => {
                   thumbnail={item.image}
                   publish_date={item.date}
                   title={item.title}
-                  summary={item.desc}
+                  summary={item.summary}
                   tags={item.tags}
                 />
               );
