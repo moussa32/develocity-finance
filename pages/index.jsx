@@ -14,9 +14,6 @@ const Header = dynamic(() => import("../components/Homepage/Header"), { ssr: fal
 const Home = () => {
   return (
     <>
-      <Head>
-        <title>Pre sale - Develocity</title>
-      </Head>
       <Header />
       <Ecosystem />
       <Academy />
