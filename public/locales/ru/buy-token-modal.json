@@ -1,0 +1,81 @@
+{
+  "starterModal": {
+    "mainText": "Подключиться к",
+    "subText": "Выберите блокчейн, чтобы подключиться к нему"
+  },
+  "walletInfoModal": {
+    "mainText": "Ваш кошелек",
+    "subText": "Баланс DEVE в вашем кошельке",
+    "inputLable": "Кошелек",
+    "deveBalance": "DEVE Баланс",
+    "tokensToClaim": "DEVE Цена",
+    "referralsToClaim": "Ссылки на претензии",
+    "nextBtn": "Далее →"
+  },
+  "optionsModal": {
+    "mainText": "Выберите свой вариант",
+    "subText": "То, что вы хотите сделать",
+    "btns": {
+      "buyDEVE": "Купить DEVE",
+      "claimYourTokens": "Получите свои токены",
+      "referrals": "Рефералы"
+    }
+  },
+  "buyWithModal": {
+    "mainText": "Покупка с",
+    "subText": "Выберите криптовалюту, которую хотите использовать",
+    "btns": {
+      "binanceCoin": {
+        "balance": "Баланс: ",
+        "btnMainText": "Binance Coin",
+        "btnSubText": "BNB"
+      },
+      "binanceUSD": {
+        "balance": "Баланс: ",
+        "btnMainText": "Binance USD",
+        "btnSubText": "BUSD"
+      }
+    }
+  },
+  "buyAmountModal": {
+    "balance": "Баланс:",
+    "lables": {
+      "from": "От",
+      "to": "К"
+    },
+    "price": "Цена",
+    "estimatedBalance": "Расчетный баланс",
+    "btns": {
+      "buy": "Купить →",
+      "approve": "Утвердить",
+      "Loading": "Загрузка"
+    }
+  },
+  "claimModal": {
+    "mainText": "Получите свои токены",
+    "subText": "Получите свои реферальные токены",
+    "DEVEBalance": "DEVE Баланс:",
+    "tokensToClaim": "Жетоны для получения:",
+    "claimBtn": "Требовать →"
+  },
+  "referralModal": {
+    "mainText": "Рефералы",
+    "subText": "Используйте свой код или запросите рекомендации",
+    "referralLinkLabel": "Реферальная ссылка",
+    "yourReferrals": "Ваши рефералы:",
+    "referralsToClaim": "Ссылки на претензии:",
+    "referralPercentage": "Реферальный процент:",
+    "claimBtn": "Претензия →"
+  },
+  "finalModal": {
+    "mainText": "Сделанный!",
+    "subText": "Ваша транзакция завершена.",
+    "referralText": "Получите DEVE за приглашение с помощью",
+    "referralBtn": "Промо-код.",
+    "DEVEBalance": "DEVE Баланс:",
+    "contribution": "Вклад:",
+    "PurchasedTokens": "Купленные токены",
+    "fromReferrals": "От рефералов:",
+    "backToHomepageBtn": "Вернуться на главную →"
+  }
+}

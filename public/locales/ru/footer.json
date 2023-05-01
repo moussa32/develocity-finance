@@ -1,0 +1,15 @@
+{
+  "links": {
+    "returnsFAQ": "Возврат и часто задаваемые вопросы",
+    "privacyPolicy": "политика конфиденциальности",
+    "contact": "Контакт",
+    "backToDevelocity": "Вернуться к Develocity"
+  },
+  "input": {
+    "mainText1": "Получайте последние обновления о новых проектах Develocity,",
+    "mainText2": "обновления дорожной карты и новости компании.",
+    "placeholder": "Введите адрес электронной почты...",
+    "subscribeBtn": "Подписаться"
+  },
+  "copyright": "© 2022 Develocity, LLC. Все права защищены"
+}
