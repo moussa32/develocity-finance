@@ -1,0 +1,81 @@
+{
+  "starterModal": {
+    "mainText": "Bağlamak",
+    "subText": "Bağlanmak istediğiniz blok zincirini seçin."
+  },
+  "walletInfoModal": {
+    "mainText": "cüzdanın",
+    "subText": "Cüzdanınızdaki Davey bakiyesi",
+    "inputLable": "portföy",
+    "deveBalance": "divi kredi",
+    "tokensToClaim": "madeni para talebi",
+    "referralsToClaim": "talep yönlendirmeleri",
+    "nextBtn": "sonraki →"
+  },
+  "optionsModal": {
+    "mainText": "seçimini yap",
+    "subText": "ne yapmak istiyorsun",
+    "btns": {
+      "buyDEVE": "divi satın al",
+      "claimYourTokens": "madeni paralarınızı talep edin",
+      "referrals": "tavsiyeler"
+    }
+  },
+  "buyWithModal": {
+    "mainText": "ile satın al",
+    "subText": "Kullanmak istediğiniz para birimini seçin",
+    "btns": {
+      "binanceCoin": {
+        "balance": "Denge:",
+        "btnMainText": "binance madeni para",
+        "btnSubText": "BNB"
+      },
+      "binanceUSD": {
+        "balance": "Denge:",
+        "btnMainText": "binance USD",
+        "btnSubText": "BUSD"
+      }
+    }
+  },
+  "buyAmountModal": {
+    "balance": "Denge:",
+    "lables": {
+      "from": "itibaren",
+      "to": "ile"
+    },
+    "price": "fiyat",
+    "estimatedBalance": "beklenen denge",
+    "btns": {
+      "buy": "→ satın al",
+      "approve": "onay",
+      "Loading": "Yükleniyor"
+    }
+  },
+  "claimModal": {
+    "mainText": "madeni paralarınızı talep edin",
+    "subText": "Yönlendirme madeni paralarınızı talep edin",
+    "DEVEBalance": "Davey kredisi:",
+    "tokensToClaim": "Para Talep Et:",
+    "claimBtn": "iddia →"
+  },
+  "referralModal": {
+    "mainText": "yönlendirmeler",
+    "subText": "Kodunuzu kullanın veya yönlendirmeleri talep edin",
+    "referralLinkLabel": "yönlendirme bağlantısı",
+    "yourReferrals": "Yönlendirmeleriniz:",
+    "referralsToClaim": "Yönlendirme Talebi:",
+    "referralPercentage": "Yönlendirme Oranı:",
+    "claimBtn": "iddia →"
+  },
+  "finalModal": {
+    "mainText": "Tamamlandı!",
+    "subText": "İşleminiz tamamlandı",
+    "referralText": "Her yönlendirme için 50 DIV kazanın",
+    "referralBtn": "Yönlendirme Kodu",
+    "DEVEBalance": "Divi Kredisi:",
+    "contribution": "dağıtım:",
+    "PurchasedTokens": "satın alınan jetonlar",
+    "fromReferrals": "Yönlendirmelerden:",
+    "backToHomepageBtn": "Ana sayfaya dön →"
+  }
+}

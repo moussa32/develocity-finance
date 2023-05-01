@@ -1,0 +1,18 @@
+{
+  "contactUs": {
+    "header": "Bize Ulaşın ",
+    "mainText": "Sizden haber almak isteriz",
+    "subText": "Ofisimiz BAE, Dubai'de bulunuyor",
+    "form": {
+      "header": " İletişim Formu ",
+      "reachUs": ["Reach us via ", " or use contact form"],
+      "firstName": " Adı ",
+      "lastName": " soyadı ",
+      "email": " E-posta ",
+      "phoneNumber": " telefon numarası ",
+      "message": " Mesaj Gönder ",
+      "checkbox": ["Develocity'nin şu şartlarını kabul ediyorsunuz ", "Gizlilik Politikası"],
+      "sendBtn": " Gönder "
+    }
+  }
+}

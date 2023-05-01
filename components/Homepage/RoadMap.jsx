@@ -117,10 +117,9 @@ const RoadMap = () => {
         <RoadMapSlider />
         <section className="mt-24 lg:mt-32">
           <div className="max-w-[864px] mx-auto text-center">
-            <h2 className="font-PolySans text-[52px] text-white">Sheikh Marwan Backs Develocity</h2>
+            <h2 className="font-PolySans text-[52px] text-white"> {t?.homeSection?.roadmapSection?.quote?.title} </h2>
             <p className="text-lg text-[#B8B8B8] mt-1">
-              Develocity is backed by His Highness Sheikh Marwan Bin Mohammed Bin Rashed Al Maktoum, providing the
-              necessary support to empower our team to push boundaries
+            {t?.homeSection?.roadmapSection?.quote?.subtitle}
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 mt-12 gap-8 px-4 md:px-6">

@@ -1,0 +1,48 @@
+{
+  "headSection": {
+    "navbar": {
+      "home": "Ana Sayfa",
+      "projects": "Projeler",
+      "blog": "Blog",
+      "documentation": "Belgeler",
+      "contact": " İletişim "
+    },
+    " Diller ": {
+      "title": "Change Language",
+      "english": "İngilizce ",
+      "arabic": "Arapça",
+      "turkish": "Türkçe",
+      "russian": "Rusça",
+      "georgian": "Gürcü",
+      "chinese": "Çince"
+    },
+    "projects": {
+      "beta": "Beta",
+      "launched": " Başlatıldı ",
+      "multiFunctionalTool": {
+        "mainText": " Çok işlevli alet ",
+        "subText": "Dijital para birimleri hakkında bilgi toplamak için blockchain ağını tarayan bir program."
+      },
+      "swapTool": {
+        "mainText": " Değiştirme aracı ",
+        "subText": "Takas, kullanıcıların bir para birimini diğeriyle takas etmesine olanak tanır."
+      },
+      "wallet": {
+        "mainText": " Cüzdan ",
+        "subText": "Kullanıcıların güvenli bir şekilde saklamasına, göndermesine ve almasına olanak tanıyan yazılım."
+      },
+      "bridge": {
+        "mainText": "Bridge",
+        "subText": "Farklı blockchain ağları arasında jeton alışverişini sağlayan bir platform."
+      },
+      "cryptoAcademy": {
+        "mainText": " kripto Akademisi ",
+        "subText": "Eğitim kursları sunan bir eğitim platformu."
+      },
+      "dex": {
+        "mainText": "Dex",
+        "subText": "Birkaç merkezi olmayan blockchain ağında çalışan bir ticaret platformu."
+      }
+    }
+  }
+}

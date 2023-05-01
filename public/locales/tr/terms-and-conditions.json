@@ -1,0 +1,50 @@
+{
+  "termsAndCondition": {
+    "lable": " 8 Kasım 2022 itibariyle geçerli",
+    "header": " Şartlar ve koşullar ",
+    "mainText": " Develocity'de gizliliğiniz bizim için önemlidir. Platformlarımızdaki deneyiminizden toplayabileceğimiz herhangi bir bilgiyle ilgili gizliliğinize saygı duyuyoruz.",
+    "privacyPolicy": {
+      "mainText": " Gizlilik Politikası ",
+      "paragraphs": [
+        "At develocity.finance, accessible from https://develocity.finance/, ana önceliklerimizden biri ziyaretçilerimizin gizliliğidir. Bu Gizlilik Politikası belgesi, develocity.finance tarafından toplanan ve kaydedilen bilgi türlerini ve bunları nasıl kullandığımızı içerir..",
+        " Ek sorularınız varsa veya Gizlilik Politikamız hakkında daha fazla bilgiye ihtiyacınız varsa, bizimle iletişime geçmekten çekinmeyin..",
+        "Bu Gizlilik Politikası yalnızca çevrimiçi etkinliklerimiz için geçerlidir ve web sitemizi ziyaret edenler için develocity.finance'ta paylaştıkları ve/veya topladıkları bilgiler açısından geçerlidir. Bu politika, çevrimdışı olarak veya bu web sitesi dışındaki kanallar aracılığıyla toplanan hiçbir bilgi için geçerli değildir.."
+      ]
+    },
+    "informationWeCollect": {
+      "mainText": " Topladığımız bilgiler ",
+      "paragraphs": [
+        "Vermeniz istenen kişisel bilgiler ve sizden bu bilgileri vermenizin istenme nedenleri, kişisel bilgilerinizi vermenizi istediğimiz noktada size açıklanacaktır..",
+        "Bizimle doğrudan iletişime geçerseniz, adınız, e-posta adresiniz, telefon numaranız, bize göndereceğiniz mesajın ve/veya eklerin içeriği ve vermeyi seçebileceğiniz diğer bilgiler gibi sizinle ilgili ek bilgiler alabiliriz..",
+        "Bir Hesaba kaydolduğunuzda, ad, şirket adı, adres, e-posta adresi ve telefon numarası gibi öğeler dahil olmak üzere iletişim bilgilerinizi isteyebiliriz.."
+      ]
+    },
+    "howWeUse": {
+      "mainText": " Bilgilerinizi nasıl kullanıyoruz ",
+      "paragraph": " Topladığımız bilgileri, aşağıdakiler de dahil olmak üzere çeşitli şekillerde kullanırız::",
+      "listItems": [
+        " Web sitemizi sağlayın, işletin ve bakımını yapın ",
+        " Web sitemizi iyileştirin, kişiselleştirin ve genişletin ",
+        " Web sitemizi nasıl kullandığınızı anlayın ve analiz edin ",
+        " Yeni ürünler, hizmetler, özellikler ve işlevler geliştirin ",
+        " Müşteri hizmetleri de dahil olmak üzere doğrudan veya ortaklarımızdan biri aracılığıyla sizinle iletişim kurmak, ",
+        " size web sitesiyle ilgili güncellemeler ve diğer bilgileri sağlamak ve pazarlama ve promosyon için ",
+        "purposes",
+        "Send you emails",
+        " Dolandırıcılığı bulun ve önleyin "
+      ]
+    },
+    "logFiles": {
+      "mainText": "Log Files",
+      "paragraph": "develocity.finance, günlük dosyalarını kullanma konusunda standart bir prosedür izler. Bu dosyalar, web sitelerini ziyaret ettiklerinde ziyaretçileri günlüğe kaydeder. Tüm barındırma şirketleri bunu ve barındırma hizmetlerinin analitiğinin bir bölümünü yapar. Günlük dosyaları tarafından toplanan bilgiler arasında internet protokolü (IP) adresleri, tarayıcı türü, İnternet Servis Sağlayıcısı (ISP), tarih ve zaman damgası, yönlendiren/çıkış sayfaları ve muhtemelen tıklama sayısı yer alır. Bunlar kişisel olarak tanımlanabilir herhangi bir bilgi ile bağlantılı değildir. Bilgilerin amacı, eğilimleri analiz etmek, siteyi yönetmek, kullanıcıların web sitesindeki hareketlerini izlemek ve demografik bilgileri toplamaktır.."
+    },
+    "advertisingPolicies": {
+      "mainText": " Reklam Ortakları Gizlilik Politikaları ",
+      "paragraphs": [
+        " develocity.finance'ın reklamcılık ortaklarının her birinin Gizlilik Politikasını bulmak için bu listeye başvurabilirsiniz.",
+        "Üçüncü taraf reklam sunucuları veya reklam ağları, develocity.finance üzerinde görünen ve doğrudan kullanıcıların tarayıcısına gönderilen ilgili reklamlarında ve bağlantılarında kullanılan tanımlama bilgileri, JavaScript veya Web İşaretçileri gibi teknolojileri kullanır. Bu gerçekleştiğinde IP adresinizi otomatik olarak alırlar. Bu teknolojiler, reklam kampanyalarının etkinliğini ölçmek ve/veya ziyaret ettiğiniz web sitelerinde gördüğünüz reklam içeriğini kişiselleştirmek için kullanılır..",
+        " develocity.finance'ın üçüncü taraf reklamcılar tarafından kullanılan bu çerezlere erişimi veya kontrolü üzerinde olmadığını unutmayın."
+      ]
+    }
+  }
+}
