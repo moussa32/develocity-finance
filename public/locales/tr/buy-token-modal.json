@@ -7,7 +7,7 @@
     "mainText": "cüzdanın",
     "subText": "Cüzdanınızdaki Davey bakiyesi",
     "inputLable": "portföy",
-    "deveBalance": "divi kredi",
+    "deveBalance": "Deve kredi",
     "tokensToClaim": "madeni para talebi",
     "referralsToClaim": "talep yönlendirmeleri",
     "nextBtn": "sonraki →"
@@ -16,7 +16,7 @@
     "mainText": "seçimini yap",
     "subText": "ne yapmak istiyorsun",
     "btns": {
-      "buyDEVE": "divi satın al",
+      "buyDEVE": "Deve satın al",
       "claimYourTokens": "madeni paralarınızı talep edin",
       "referrals": "tavsiyeler"
     }
@@ -46,7 +46,7 @@
     "price": "fiyat",
     "estimatedBalance": "beklenen denge",
     "btns": {
-      "buy": "→ satın al",
+      "buy": "satın al →",
       "approve": "onay",
       "Loading": "Yükleniyor"
     }
@@ -54,7 +54,7 @@
   "claimModal": {
     "mainText": "madeni paralarınızı talep edin",
     "subText": "Yönlendirme madeni paralarınızı talep edin",
-    "DEVEBalance": "Davey kredisi:",
+    "DEVEBalance": "Deve kredisi:",
     "tokensToClaim": "Para Talep Et:",
     "claimBtn": "iddia →"
   },
@@ -72,7 +72,7 @@
     "subText": "İşleminiz tamamlandı",
     "referralText": "Her yönlendirme için 50 DIV kazanın",
     "referralBtn": "Yönlendirme Kodu",
-    "DEVEBalance": "Divi Kredisi:",
+    "DEVEBalance": "Deve Kredisi:",
     "contribution": "dağıtım:",
     "PurchasedTokens": "satın alınan jetonlar",
     "fromReferrals": "Yönlendirmelerden:",

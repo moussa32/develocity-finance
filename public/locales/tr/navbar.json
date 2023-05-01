@@ -5,7 +5,7 @@
       "projects": "Projeler",
       "blog": "Blog",
       "documentation": "Belgeler",
-      "contact": " İletişim "
+      "contact": "İletişim "
     },
     " Diller ": {
       "title": "Change Language",
@@ -18,13 +18,13 @@
     },
     "projects": {
       "beta": "Beta",
-      "launched": " Başlatıldı ",
+      "launched": "Başlatıldı",
       "multiFunctionalTool": {
-        "mainText": " Çok işlevli alet ",
+        "mainText": "Çok işlevli alet",
         "subText": "Dijital para birimleri hakkında bilgi toplamak için blockchain ağını tarayan bir program."
       },
       "swapTool": {
-        "mainText": " Değiştirme aracı ",
+        "mainText": "Değiştirme aracı ",
         "subText": "Takas, kullanıcıların bir para birimini diğeriyle takas etmesine olanak tanır."
       },
       "wallet": {
@@ -36,7 +36,7 @@
         "subText": "Farklı blockchain ağları arasında jeton alışverişini sağlayan bir platform."
       },
       "cryptoAcademy": {
-        "mainText": " kripto Akademisi ",
+        "mainText": "kripto Akademisi",
         "subText": "Eğitim kursları sunan bir eğitim platformu."
       },
       "dex": {

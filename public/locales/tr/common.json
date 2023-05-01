@@ -1,6 +1,6 @@
 {
-  " Ana bölüm ": {
-    " Ön Satış Geri Sayımı ": " Ön Satış Geri Sayımı ",
+  "homeSection": {
+    "preSaleCountdown": " Ön Satış Geri Sayımı ",
     "subText": [
       "Sheikh",
       "Marwan Bin Mohammed",
