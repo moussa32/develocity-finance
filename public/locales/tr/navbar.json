@@ -7,7 +7,7 @@
       "documentation": "Belgeler",
       "contact": "İletişim "
     },
-    " Diller ": {
+    "languages": {
       "title": "Change Language",
       "english": "İngilizce ",
       "arabic": "Arapça",
