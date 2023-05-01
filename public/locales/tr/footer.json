@@ -1,0 +1,15 @@
+{
+  " bağlantılar ": {
+    "returnsFAQ": " İade ve yaygın sorular ",
+    "privacyPolicy": " Gizlilik Politikası ",
+    "contact": "Contact",
+    "backToDevelocity": " Develocity'e geri dön "
+  },
+  "input": {
+    "mainText1": " Develocity'nin yeni projeleri hakkında en son güncellemeleri alın,",
+    "mainText2": " yol haritası güncellemeleri ve şirket haberleri.",
+    "placeholder": " E-postanızı giriniz...",
+    "subscribeBtn": "Abone ol"
+  },
+  " telif hakkı ": "آ© 2022 Develocity, LLC. Her hakkı saklıdır "
+}

@@ -23,7 +23,8 @@
       "mainText": "Your Gateway to Understand Crypto and Blockchain",
       "subText": "We are going to launch the first vision of crypto academy, which is focused on rising awareness about the cryptocurrency, blockchain technology and it's benefits in general.",
       "subTextSecondParagraph": "On the second phase crypto academy will focus on bringing well known people from different kinds of companies based on blockchain industry and you'll abeable to learn directly from them.",
-      "visitNowBtn": "Visit now ➜"
+      "visitNowBtn": "Visit now ➜",
+      "comingsoon": "Coming soon"
     },
     "scannerSection": {
       "lableI": "Informed Decision-Making",
@@ -94,6 +95,8 @@
       }
     },
     "leadershipSection": {
+      "title" : "Sheikh Marwan Backs Develocity",
+      "subtitle": "Develocity is backed by His Highness Sheikh Marwan Bin Mohammed Bin Rashed Al Maktoum, providing the necessary support to empower our team to push boundaries",
       "mainText": "Develocity Leadership",
       "subText": "With the mindset to create secure future in the digital money.",
       "members": [

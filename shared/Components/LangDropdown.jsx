@@ -105,7 +105,7 @@ const LangDropdown = () => {
                 </button>
               )}
             </Menu.Item>
-            {/* <Menu.Item>
+            <Menu.Item>
               {({ active }) => (
                 <button
                   name="tr"
@@ -139,7 +139,7 @@ const LangDropdown = () => {
                 </button>
               )}
             </Menu.Item>
-            <Menu.Item>
+            {/* <Menu.Item>
               {({ active }) => (
                 <button
                   name="ka"

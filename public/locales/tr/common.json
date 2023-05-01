@@ -1,0 +1,150 @@
+{
+  "homeSection": {
+    "preSaleCountdown": " Ön Satış Geri Sayımı ",
+    "subText": [
+      "Sheikh",
+      "Marwan Bin Mohammed",
+      "kuvözde develocity almak."
+    ],
+    "ecoSystemSection": {
+      "lableI": "Eco-System",
+      "lableII": "Varlıklarınız İçin Güvenli Ortam ",
+      "mainText": " Güvenli ve Güvenilir Kripto Ortamı ",
+      "subText": "Develocity, şeffaf güvenilirlik ve teknik önlemler ve standartları göz önünde bulundurarak, yatırımcıların ve geliştiricilerin güvenli bir şekilde etkileşime girebileceği güvenli ve güvenilir bir kripto ortamı yaratmaya çalışır.",
+      "subTextSecondParagraph": "DeVelocity’nin temel amacı, tacirlerin herhangi bir kilitlenme veya ifşa olma riski olmaksızın her zaman özgürce ticaret yapabilecekleri, tamamen güvenilir ve şeffaf olacak kullanışlı merkezi olmayan araçlar sağlamaktır.",
+      "tools": {
+        "multiFunctionalTool": "Multi-functional tool",
+        "swapTool": "Swap tool",
+        "wallet": "Wallet",
+        "bridge": "Bridge",
+        "cryptoAcademy": "Crypto academy",
+        "dex": "Dex"
+      }
+    },
+    "academySection": {
+      "lableI": "Crypto Academy",
+      "lableII": "We launched Phase 1",
+      "mainText": "Crypto, Camera, Action!",
+      "subText": "Kripto para birimi, blockchain teknolojisi ve genel olarak faydaları hakkında farkındalığı artırmaya odaklanan kripto akademisinin ilk vizyonunu yeni başlattık..",
+      "subTextSecondParagraph": "İkinci aşamada kripto akademisi, blockchain endüstrisine dayalı farklı türden şirketlerden iyi bilinen kişileri getirmeye odaklanacak ve doğrudan onlardan öğrenebileceksiniz.",
+      "visitNowBtn": "Visit now ←",
+      "comingsoon": "neredeyse"
+    },
+    "scannerSection": {
+      "lableI": "Beta",
+      "lableII": "Multi-Functional Tool",
+      "mainText": ["Easy to Become a PRO in", " Crypto Investments"],
+      "subText": "DeFi kullanıcıları her zaman ideal yatırımı bulmaya çalışırlar ve risk almaya isteklidirler; riski azaltmak için ellerinden geleni yapsalar bile riskin büyüklüğünü belirleyemezler. Bu, kullanıcıya en çok fayda sağlayabileceğimiz kısımdır, yapması gereken tek şey, ne tür bir riske girdiğini anlamadan herhangi bir yatırıma katılmaktan kaçınmaktır.",
+      "subTextSecondParagraph": "Çok işlevli araç, sözleşmeyi tarayarak veya belirteç hakkında hızlı ve ayrıntılı bir rapor almak için belirteci arayarak kullanıcılara zorlukları aşmada yardımcı olur.",
+
+      "getStartedBtn": "Get started"
+    },
+    "roadmapSection": {
+      "lables": {
+        "accuracy": "Accuracy",
+        "tokensInDatabase": "Tokens in database",
+        "dailyVisitors": "Daily visitors"
+      },
+      "mainText": "Roadmap",
+      "mainTextSubstring": " Develocity, nihai projesini dört ana aşamada sunmayı hedefliyor. Her aşama ayrı ayrı sunulur ve Web 3.0'a dayalı teknoloji ve geliştirme açısından belirgin bir şekilde olacak merkezi olmayan bir platform oluşturmak için son aşamada birleştirilir.",
+      "cards": {
+        "startup": {
+          "mainText": "Startup",
+          "lable": "Live",
+          "subText": [
+            "Website Launching",
+            "Project #1 Introduction",
+            "Company Registration",
+            "License & Legal Opinion",
+            "Opening Office In Dubai"
+          ]
+        },
+        "fairlaunch": {
+          "mainText": "Launch",
+          "lable": "We are here",
+          "subText": [
+            "Publishing Develocity Tool",
+            "Start Pre-Sale",
+            "Marketing Campaign",
+            "Project #2 Introduction",
+            "Promoting & Marketing"
+          ]
+        },
+        "expansion": {
+          "mainText": "Expansion",
+          "lable": "Upcoming",
+          "subText": [
+            "Publishing SWAP Tool",
+            "Marketing Campaign",
+            "Project #3 Introduction",
+            "NFT First Edition",
+            "Centralized Exchanges"
+          ]
+        },
+        "opportunities": {
+          "mainText": "Opportunities",
+          "lable": "Upcoming",
+          "subText": [
+            "Publishing Bridge",
+            "Project #4 Introduction",
+            "Marketing Campaign",
+            "Promoting & Marketing",
+            "Looking For Opportunities"
+          ]
+        }
+      },
+      "phases": ["Phase 1", "Phase 2", "Phase 3", "Phase 4"],
+      "quote": {
+        "title" : "Şeyh Marwan, Develocity'yi destekliyor",
+        "subtitle": "Develocity, Ekselansları Şeyh Marwan bin Muhammed bin Rashid Al Maktoum'u destekleyerek ekibimizin sınırları zorlaması için gerekli desteği sağlıyor.",
+        "mainText": " Kripto para birimleri dünyasındaki ilke ve arzularımız doğrultusunda ve inovasyonun sınır tanımadığı, yenilikçinin zihninin zengin bir fikir madeni olduğu ve bizi daha yukarılara taşımaya iten merkeziyetçilikten uzaklaşma odaklı, yaratıcılığımız fikirler, özelleştirilmiş hizmetler ve finansal yerinden yönetimde benzersiz çözümler sağlamak için 'Develocity'de yarışıyor. Develocity entegre, güvenli, güvenilir ve güvenilir bir deneyim sunar. Finansal teknoloji dünyasındaki deneyiminizi geliştirmek için hizmetlerimizi, potansiyelimizi ve deneyimimizi uyarlama sözü veriyoruz.",
+        "subText": "Marwan bin Mohammed bin Rashid Al Maktoum"
+      }
+    },
+    "leadershipSection": {
+      "mainText": "Develocity Leadership",
+      "subText": "With the mindset to create secure future in the digital money.",
+      "members": [
+        {
+          "name": "Mahdi Ajaj",
+          "role": "CEO"
+        },
+        {
+          "name": "Abdulaziz Bin Fahad",
+          "role": "CTO"
+        },
+        {
+          "name": "Mamuka Kavtelishvili",
+          "role": "CMO"
+        }
+      ]
+    },
+    "partnershipSection": {
+      "mainText": " Süren Ortaklıklar ",
+      "subText": " Son 2 yıldır harika insanlar, işletmeler ve kuruluşlarla bağlantı kurduk.",
+      "quote": {
+        "mainText": " Biz girişimciler yalnızlarız, serserileriz, baş belasıyız. Başarı basitçe, deliliğimizi alıp iyi bir şekilde kullanabilecek açık fikirli ve zeki ruhları bulma ve etrafımızı sarma meselesidir.",
+        "name": "Brian Armstrong",
+        "title": "CEO of Coinbase"
+      }
+    },
+    "blogSection": {
+      "mainText": "Develocity Blog",
+      "subText": "Develocity Ekosisteminden Haberler, Güncellemeler ve Yararlı İçerikler.",
+      "cards": [
+        {
+          "mainText": "Çok İşlevli Alet İçin Uygulamayı Başlatıyoruz",
+          "subText": " Kripto belirteçlerini taramak için Çok İşlevli Araç, kullanıcılara kripto para piyasasında birden çok belirteç hakkında ayrıntılı bilgilere erişmenin güvenli ve güvenilir bir yolunu sunar. Bu özellikler, kullanıcılara jetonların mevcut durumuna erişirken, bunları analiz ederken ve izlerken gönül rahatlığı sağlar ve varlıklarının her zaman güvenli ve emniyetli olmasını sağlar."
+        },
+        {
+          "mainText": " Sizin İçin Sahip Olduğumuz İş Çözümlerini Keşfedin ",
+          "subText": " Develocity iş çözümleri size en uzak sınırlara ulaşma yeteneği verir ",
+          "span": " 1500'ler, bilinmeyen bir matbaacı bir yazı tipi kadırgasını alıp bir tip numune kitabı yapmak için karıştırdığında."
+        }
+      ],
+      "learnMoreBtn": " Daha fazla bilgi edin ",
+      "checkMoreNewsBtn": " Daha fazla haber ve güncelleme kontrol edin "
+    }
+  }
+}
+

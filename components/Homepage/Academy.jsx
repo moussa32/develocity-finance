@@ -42,7 +42,7 @@ const Academy = () => {
             </button>
           ) : (
             <button className="flex justify-center py-3.5 cursor-not-allowed rounded w-full bg-neutral-300 text-neutral-500 text-md font-medium mt-8 max-w-[170px] md:rounded-sm">
-              Coming Soon
+              {t?.homeSection?.academySection?.comingsoon}
             </button>
           )}
         </div>

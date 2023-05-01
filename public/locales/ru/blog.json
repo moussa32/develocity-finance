@@ -1,0 +1,15 @@
+{
+  "blogPage": {
+    "header": "Develocity Блог",
+    "mainText": "Новости и обновления компании",
+    "subText": ""
+  },
+  "blogDetails": {
+    "header": "Опубликован в",
+    "mainText": "Самые важные новости с конференции Develocity Crypto Conference 2022 Dubai",
+    "blockchain": "Блокчейн",
+    "updates": "Обновления",
+    "crypto": "Crypto",
+    "copyBtn": "Копировать ссылку"
+  }
+}

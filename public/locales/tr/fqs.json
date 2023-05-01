@@ -1,0 +1,27 @@
+{
+  "title": {
+    "mainText": "Bu son seçenektir",
+    "subText": "Sorularınız yoksa test etmeyin",
+    "contact": "Benim adımla değiştir"
+  },
+  "FQ1": {
+    "q": "$DEVE için bir şifreniz var mı?",
+    "a": "Bu, $DEVE'in henüz başlamadığı son sefer. Sizin için Pre-Sake satın alma zamanınız geldi."
+  },
+  "FQ2": {
+    "q": "Bu $DEVE anlamına mı geliyor?",
+    "a": "Token $DEVE birçok ülkeye blue chip (BSC, ETH, POLYGON) veya Visa, Apple Pay ve Google Pay gibi uygun fiyatlarla sunabilir."
+  },
+  "FQ3": {
+    "q": "Omurganızı nasıl değiştiriyorsunuz ve ne kadar parası var?",
+    "a": "Banka hesabınızı 5 doların altında bırakırsanız paranızı kolayca bozdurabilirsiniz. Bu, fiyatlarınızdan %5 satın alma şansınız. упки, каторые будут добавлены в ваш кошелек."
+  },
+  "FQ4": {
+    "q": "Tokenam'ınızı aldıktan sonra neden yemek istiyorsunuz?",
+    "a": "Bu Pre-Sake'i aldıktan sonra jetonunuzu bırakacağım. Bu ucuz şarabı satın alamazsınız."
+  },
+  "FQ5": {
+    "q": "Yönlendirmeler ne kadar para var?",
+    "a": "Yönlendirmelerinizi bulabilir, sonuçları görürsünüz ve sonuçlar daha bilgilendirici olur."
+  }
+}

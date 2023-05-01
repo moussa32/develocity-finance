@@ -22,7 +22,7 @@
     }
   },
   "buyWithModal": {
-    "mainText": "شراء باستخدام",
+    "mainText": "شراء بإستخدام",
     "subText": "حدد العملة التي تريد استخدامها",
     "btns": {
       "binanceCoin": {
@@ -53,8 +53,8 @@
   },
   "claimModal": {
     "mainText": "مطالبة عملاتك",
-    "subText": "مطالبة عملات الإحالات الخاصة بك",
-    "DEVEBalance": "رصيد الديڤي:",
+    "subText": "مطالبة عملات الإحالة الخاصة بك",
+    "DEVEBalance": "رصيد ديڤي:",
     "tokensToClaim": "مطالبة العملات:",
     "claimBtn": "مطالبة →"
   },
