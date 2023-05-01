@@ -10,7 +10,7 @@ const BuyMethod = ({ handleStep }) => {
   const [signature, setSignature] = useState(null);
   const { chain } = useNetwork();
   const { address } = useAccount();
-  console.log(chain);
+  console.log(signature);
 
   useEffect(() => {
     const fetchSign = async () => {
@@ -27,7 +27,7 @@ const BuyMethod = ({ handleStep }) => {
 
   const openAlchemyPay = useCallback(() => {
     window.open(
-      `https://ramptest.alchemypay.org/?crypto=BTC&appId=${process.env.NEXT_PUBLIC_ALCHEMYPAY_APP_ID}&sign=${signature}&address=${address}&redirectUrl=http://localhost:3000/?payment_proccess="test"`
+      `https://ramptest.alchemypay.org/?crypto=BTC&fiat=USD&fiatAmount=15&appId=${process.env.NEXT_PUBLIC_ALCHEMYPAY_APP_ID}&sign=${signature}&address=${address}&callbackUrl=https://api.xite.solutions/api/v1/alchemy/callback&redirectUrl=https://develocity-finance.vercel.app`
     );
   }, [chain, signature, address]);
 
