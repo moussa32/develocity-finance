@@ -302,7 +302,8 @@ const BuyAmountModal = ({
           <input
             className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 focus:border-r-[#6466E9] outline-none"
             value={coinBalance}
-            type="number"
+            pattern="[0-9]+([\.,][0-9]+)?"
+            step="0.01"
             onChange={e => {
               if (currentCurrency.ticker === "BUSD") {
                 if (e.target.value <= 100000) {
@@ -315,7 +316,7 @@ const BuyAmountModal = ({
               }
             }}
             placeholder="0"
-            inputmode="decimal"
+            inputMode="decimal"
             maxLength={3}
           />
           <div className="w-1/4 flex justify-center items-center">
