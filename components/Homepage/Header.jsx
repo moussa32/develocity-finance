@@ -59,7 +59,7 @@ const Header = () => {
     await open({
       route: "SelectNetwork",
     });
-    setIsBuyNowModalOpen(true);
+    setOpenAfterSuccessConnection(true);
   };
 
   const closeModal = () => {
