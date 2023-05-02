@@ -121,6 +121,7 @@ const BuyAmountModal = ({
   const handleBuy = async () => {
     setIsBuyButtonLoading(true);
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
+
     let ref;
     if (query.ref) {
       ref = query.ref;
@@ -147,6 +148,8 @@ const BuyAmountModal = ({
             "aria-live": "polite",
           },
         });
+
+        setBuyButtonText(t?.buyAmountModal.btns.buy);
         console.log(JSON.stringify(error, 0, 2));
       });
 
@@ -154,8 +157,6 @@ const BuyAmountModal = ({
       .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: gasPrice })
       .then(res => {
         res.wait().then(receipt => {
-          setIsBuyButtonLoading(false);
-          setBuyButtonText(t?.buyAmountModal.btns.buy);
           handleFinalAmount(convertedDeve);
           handleStep("final");
           handleCurrent();
@@ -181,6 +182,9 @@ const BuyAmountModal = ({
             },
           });
         }
+      })
+      .finally(() => {
+        setBuyButtonText(t?.buyAmountModal.btns.buy);
         setIsBuyButtonLoading(false);
       });
   };
@@ -222,6 +226,9 @@ const BuyAmountModal = ({
   };
 
   const handleBuyBUSD = async () => {
+    setIsBuyButtonLoading(true);
+    setBuyButtonText(t?.buyAmountModal.btns.Loading);
+
     let ref;
     if (query.ref) {
       ref = query.ref;
@@ -252,15 +259,11 @@ const BuyAmountModal = ({
           });
         }
       });
-    setIsBuyButtonLoading(true);
-    setBuyButtonText(t?.buyAmountModal.btns.Loading);
 
     await signerContract
       .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref, { gasLimit: gasPrice })
       .then(res => {
         res.wait().then(receipt => {
-          setIsBuyButtonLoading(false);
-          setBuyButtonText(t?.buyAmountModal.btns.buy);
           handleFinalAmount(convertedDeve);
           handleStep("final");
           handleCurrent();
@@ -284,6 +287,8 @@ const BuyAmountModal = ({
           },
         });
         console.log(error);
+      })
+      .finally(() => {
         setBuyButtonText(t?.buyAmountModal.btns.buy);
         setIsBuyButtonLoading(false);
       });
