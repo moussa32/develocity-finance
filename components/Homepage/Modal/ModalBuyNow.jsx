@@ -23,7 +23,7 @@ import BuyMethod from "./BuyStage/BuyMethod";
 // };
 
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
-  const [currentStep, setCurrentStep] = useState("buyamount");
+  const [currentStep, setCurrentStep] = useState("walletInfo");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
   const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
