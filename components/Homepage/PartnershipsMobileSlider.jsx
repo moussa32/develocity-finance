@@ -73,6 +73,22 @@ const partnerships = [
     imageActiveClassName: "h-[100px] w-[100px] object-cover",
     imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
   },
+  {
+    title: "XT com",
+    link: "https://www.xt.com/en",
+    defaultVersion: xtcom,
+    coloredVersion: xtcom,
+    imageActiveClassName: "h-[100px] w-[100px] object-cover",
+    imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
+  },
+  {
+    title: "BitMart",
+    link: "https://www.bitmart.com/",
+    defaultVersion: bitmart,
+    coloredVersion: bitmart,
+    imageActiveClassName: "h-[100px] w-[100px] object-cover",
+    imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
+  },
 ];
 
 const PartnershipsMobileSlider = () => {

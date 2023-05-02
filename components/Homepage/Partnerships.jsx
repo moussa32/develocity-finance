@@ -89,7 +89,7 @@ const partnerships = [
   },
   {
     title: "BitMart",
-    link: "https://trustwallet.com",
+    link: "https://www.bitmart.com/",
     defaultVersion: bitmart,
     coloredVersion: bitmart,
     imageActiveClassName: "h-[80px] object-contain",
