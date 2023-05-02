@@ -4,6 +4,8 @@ import metamaskLogo from "@/images/metamask-logo.png";
 import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
 import panckeswap from "@/images/panckeswap-logo.png";
+import xtcom from "@/images/xtcom-logo.png";
+import bitmart from "@/images/bitmart-logo.png";
 import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
