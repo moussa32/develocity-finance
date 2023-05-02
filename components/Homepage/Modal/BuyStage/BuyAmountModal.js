@@ -3,7 +3,7 @@ import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import contractAbi from "../../../../public/assets/contractApi.json";
 import { ethers } from "ethers";
-import { mainNetContract , testNetContract } from "../../../../shared/Constants/contractAddress";
+import { mainNetContract, testNetContract } from "../../../../shared/Constants/contractAddress";
 import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
 import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
@@ -315,6 +315,7 @@ const BuyAmountModal = ({
               }
             }}
             placeholder="0"
+            inputmode="decimal"
             maxLength={3}
           />
           <div className="w-1/4 flex justify-center items-center">

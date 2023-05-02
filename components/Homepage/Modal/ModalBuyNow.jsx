@@ -23,7 +23,7 @@ import BuyMethod from "./BuyStage/BuyMethod";
 // };
 
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
-  const [currentStep, setCurrentStep] = useState("walletInfo");
+  const [currentStep, setCurrentStep] = useState("buyamount");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
   const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
@@ -114,23 +114,20 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />
         );
       case "paymentMethod":
-        (
-          <BuywithModal
-            handleStep={handleStep}
-            walletAddress={address}
-            handleFirstCoin={setFirstCoin}
-            firstCoin={firstCoin}
-            handleSecondCoin={setSecondCoin}
-            secondCoin={secondCoin}
-            handleSelectCurrency={setSelectedCurreny}
-            provider={provider}
-            handleCurrent={handleCurrentAnimationStep}
-            selectedNetwork={chain.network}
-          />
-        );
-          
+        <BuywithModal
+          handleStep={handleStep}
+          walletAddress={address}
+          handleFirstCoin={setFirstCoin}
+          firstCoin={firstCoin}
+          handleSecondCoin={setSecondCoin}
+          secondCoin={secondCoin}
+          handleSelectCurrency={setSelectedCurreny}
+          provider={provider}
+          handleCurrent={handleCurrentAnimationStep}
+          selectedNetwork={chain.network}
+        />;
 
-        // return <BuyMethod handleStep={setCurrentStep} />;
+      // return <BuyMethod handleStep={setCurrentStep} />;
       case "buywith":
         return (
           <BuywithModal
