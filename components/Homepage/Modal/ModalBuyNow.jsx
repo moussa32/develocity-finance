@@ -114,7 +114,23 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />
         );
       case "paymentMethod":
-        return <BuyMethod handleStep={setCurrentStep} />;
+        (
+          <BuywithModal
+            handleStep={handleStep}
+            walletAddress={address}
+            handleFirstCoin={setFirstCoin}
+            firstCoin={firstCoin}
+            handleSecondCoin={setSecondCoin}
+            secondCoin={secondCoin}
+            handleSelectCurrency={setSelectedCurreny}
+            provider={provider}
+            handleCurrent={handleCurrentAnimationStep}
+            selectedNetwork={chain.network}
+          />
+        );
+          
+
+        // return <BuyMethod handleStep={setCurrentStep} />;
       case "buywith":
         return (
           <BuywithModal
