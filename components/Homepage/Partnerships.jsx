@@ -9,6 +9,8 @@ import bscscanLogo from "@/images/bscscan-logo.png";
 import metamaskLogo from "@/images/metamask-logo.png";
 import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
+import panckeswap from "@/images/panckeswap-logo.png";
+import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 
 const partnerships = [
@@ -52,6 +54,22 @@ const partnerships = [
     imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
   {
+    title: "panckeswap-log Logo",
+    link: "https://pancakeswap.finance/",
+    defaultVersion: panckeswap,
+    coloredVersion: panckeswap,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "nxgen Logo",
+    link: "https://play.google.com/store/apps/details?id=com.eblock6.nextgen&hl=en&gl=US",
+    defaultVersion: nxgen,
+    coloredVersion: nxgen,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
     title: "trust Wallet",
     link: "https://trustwallet.com",
     defaultVersion: trustWallet,
@@ -74,7 +92,7 @@ const Partnerships = () => {
         </p>
       </div>
 
-      <div className="hidden lg:grid grid-cols-6 h-[80px] mt-8 px-4 mx-auto gap-1 lg:px-2 lg:gap-14">
+      <div className="hidden lg:flex h-[80px] mt-8 px-4 mx-auto gap-1 lg:px-2 lg:gap-14">
         {partnerships.map(({ title, link, defaultVersion, coloredVersion }) => (
           <Link key={title} className="group relative w-[65px] md:w-[170px] lg:w-[180px]" href={`${link}`}>
             <Image

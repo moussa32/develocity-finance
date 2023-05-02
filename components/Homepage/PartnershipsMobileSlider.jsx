@@ -3,6 +3,8 @@ import bscscanLogo from "@/images/bscscan-logo.png";
 import metamaskLogo from "@/images/metamask-logo.png";
 import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
+import panckeswap from "@/images/panckeswap-logo.png";
+import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 
@@ -44,6 +46,22 @@ const partnerships = [
     link: "https://moralis.io/",
     defaultVersion: moralisLogo,
     coloredVersion: moralisLogo,
+    imageActiveClassName: "h-[100px] w-[100px] object-cover",
+    imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
+  },
+  {
+    title: "panckeswap-log Logo",
+    link: "https://pancakeswap.finance/",
+    defaultVersion: panckeswap,
+    coloredVersion: panckeswap,
+    imageActiveClassName: "h-[100px] w-[100px] object-cover",
+    imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
+  },
+  {
+    title: "nxgen Logo",
+    link: "https://play.google.com/store/apps/details?id=com.eblock6.nextgen&hl=en&gl=US",
+    defaultVersion: nxgen,
+    coloredVersion: nxgen,
     imageActiveClassName: "h-[100px] w-[100px] object-cover",
     imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
   },
