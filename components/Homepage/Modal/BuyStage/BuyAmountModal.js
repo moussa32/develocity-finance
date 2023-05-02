@@ -84,7 +84,7 @@ const BuyAmountModal = ({
         }
         setConvertedDeve(returnedCalculateDeveCoins.toLocaleString("en-US"));
       } else {
-        if (coinBalance > 0) {
+        if (Number(coinBalance) > 0) {
           setIsBuyButtonLoading(false);
           const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
           setConvertedDeve(
@@ -241,6 +241,23 @@ const BuyAmountModal = ({
       });
   };
 
+  const handleUserInput = e => {
+    const { value } = e.target;
+
+    setCoinBalance(value);
+    if (value == "") return setCoinBalance(0);
+
+    if (currentCurrency.ticker === "BUSD") {
+      if (Number(value) <= 100000) {
+        setCoinBalance(value);
+      }
+    } else {
+      if (Number(value) < 1000) {
+        setCoinBalance(value);
+      }
+    }
+  };
+
   return (
     <section className="flex flex-col justify-center items-center">
       <div className="flex gap-1 flex-row-reverse w-full">
@@ -302,22 +319,10 @@ const BuyAmountModal = ({
           <input
             className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 focus:border-r-[#6466E9] outline-none"
             value={coinBalance}
-            pattern="[0-9]+([\.,][0-9]+)?"
-            step="0.01"
-            onChange={e => {
-              if (currentCurrency.ticker === "BUSD") {
-                if (e.target.value <= 100000) {
-                  setCoinBalance(Number(e.target.value));
-                }
-              } else {
-                if (e.target.value < 1000) {
-                  setCoinBalance(Number(e.target.value));
-                }
-              }
-            }}
+            type="number"
+            pattern="[0-9]+(\.[0-9]+)"
+            onChange={handleUserInput}
             placeholder="0"
-            inputMode="decimal"
-            maxLength={3}
           />
           <div className="w-1/4 flex justify-center items-center">
             <Image src={currentCurrency.image} width={23} />
