@@ -10,6 +10,8 @@ import metamaskLogo from "@/images/metamask-logo.png";
 import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
 import panckeswap from "@/images/panckeswap-logo.png";
+import xtcom from "@/images/xtcom-logo.png";
+import bitmart from "@/images/bitmart-logo.png";
 import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 
@@ -74,6 +76,22 @@ const partnerships = [
     link: "https://trustwallet.com",
     defaultVersion: trustWallet,
     coloredVersion: trustWallet,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "XT com",
+    link: "https://www.xt.com/en",
+    defaultVersion: xtcom,
+    coloredVersion: xtcom,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "BitMart",
+    link: "https://trustwallet.com",
+    defaultVersion: bitmart,
+    coloredVersion: bitmart,
     imageActiveClassName: "h-[80px] object-contain",
     imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
