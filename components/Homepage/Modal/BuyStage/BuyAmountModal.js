@@ -79,6 +79,22 @@ const BuyAmountModal = ({
               }
             })
             .catch(error => {
+              toast("Error that happened please type the right amount", {
+                duration: 6000,
+                position: "top-center",
+                // Styling
+                style: {
+                  color: "#fff",
+                  fontSize: "16px",
+                  background: "#F03D3D",
+                },
+
+                // Aria
+                ariaProps: {
+                  role: "status",
+                  "aria-live": "polite",
+                },
+              });
               console.log(error);
             });
         }
@@ -115,6 +131,22 @@ const BuyAmountModal = ({
     const gasPrice = await signerContract.estimateGas
       .buyTokens(ref, { value: memoizedCoinBalanceConverted })
       .catch(error => {
+        toast("Error that happened please type the right amount", {
+          duration: 6000,
+          position: "top-center",
+          // Styling
+          style: {
+            color: "#fff",
+            fontSize: "16px",
+            background: "#F03D3D",
+          },
+
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
         console.log(JSON.stringify(error, 0, 2));
       });
 
@@ -235,6 +267,22 @@ const BuyAmountModal = ({
         });
       })
       .catch(error => {
+        toast("Error that happened please type the right amount", {
+          duration: 6000,
+          position: "top-center",
+          // Styling
+          style: {
+            color: "#fff",
+            fontSize: "16px",
+            background: "#F03D3D",
+          },
+
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
         console.log(error);
         setBuyButtonText(t?.buyAmountModal.btns.buy);
         setIsBuyButtonLoading(false);
@@ -243,17 +291,20 @@ const BuyAmountModal = ({
 
   const handleUserInput = e => {
     const { value } = e.target;
+    const numberRegex = /^[+-]?(\d+(\.\d*)?|\.\d+)$/;
+    const isNumber = numberRegex.test(value);
 
-    setCoinBalance(value);
-    if (value == "") return setCoinBalance(0);
+    if (value.length <= 0) return setCoinBalance(0);
 
-    if (currentCurrency.ticker === "BUSD") {
-      if (Number(value) <= 100000) {
-        setCoinBalance(value);
-      }
-    } else {
-      if (Number(value) < 1000) {
-        setCoinBalance(value);
+    if (isNumber) {
+      if (currentCurrency.ticker === "BUSD") {
+        if (Number(value) <= 100000) {
+          setCoinBalance(value);
+        }
+      } else {
+        if (Number(value) < 1000) {
+          setCoinBalance(value);
+        }
       }
     }
   };
@@ -319,8 +370,7 @@ const BuyAmountModal = ({
           <input
             className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 focus:border-r-[#6466E9] outline-none"
             value={coinBalance}
-            type="number"
-            pattern="[0-9]+(\.[0-9]+)"
+            type="text"
             onChange={handleUserInput}
             placeholder="0"
           />
