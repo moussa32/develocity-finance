@@ -35,7 +35,7 @@ export const getSecondCoinContractAddress = network => {
     case "homestead":
       return "0xdac17f958d2ee523a2206206994597c13d831ec7";
     case "bsc":
-      return "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7";
+      return "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
     case "bsc-testnet":
       return "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7";
     case "matic":
