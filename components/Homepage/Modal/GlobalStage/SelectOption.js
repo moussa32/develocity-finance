@@ -29,22 +29,22 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             disabled={false}
           />
         </div>
-        <div onClick={() => deveBalance.amount >= 50 && updateStep("claim")}>
+        <div onClick={() => deveBalance.amount >= 50000 && updateStep("claim")}>
           <ButtonItem
             mainText={t?.optionsModal.btns.claimYourTokens}
             image={ClaimTokenIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
-            disabled={deveBalance.amount <= 50 ? true : false}
+            disabled={deveBalance.amount <= 50000 ? true : false}
           />
         </div>
-        <div onClick={() => deveBalance.amount >= 50 && updateStep("referral")}>
+        <div onClick={() => deveBalance.amount >= 0 && updateStep("referral")}>
           <ButtonItem
             mainText={t?.optionsModal.btns.referrals}
             image={ReferralsIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
-            disabled={deveBalance.amount <= 50 ? true : false}
+            disabled={deveBalance.amount <= 0 ? true : false}
           />
         </div>
       </div>
