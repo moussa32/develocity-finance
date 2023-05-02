@@ -75,7 +75,7 @@ const Partnerships = () => {
         </p>
       </div>
 
-      <div className="hidden md:grid grid-cols-6 h-[80px] mt-8 px-4 md:px-2 mx-auto gap-1 lg:gap-14">
+      <div className="hidden lg:grid grid-cols-6 h-[80px] mt-8 px-4 mx-auto gap-1 lg:px-2 lg:gap-14">
         {partnerships.map(({ title, link, defaultVersion, coloredVersion }) => (
           <Link key={title} className="group relative w-[65px] md:w-[170px] lg:w-[180px]" href={`${link}`}>
             <Image

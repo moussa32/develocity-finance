@@ -4,14 +4,30 @@ import "swiper/css";
 import "swiper/css/navigation";
 import Image from "next/image";
 import Link from "next/link";
+import useDirection from "@/store/direaction";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 const MobileImageSlider = ({ images, containerClassNames, slideImageClassName, slideContainerClassName, ...props }) => {
+  const { direction } = useDirection(state => state);
+  const [swiper, setSwiper] = useState(null);
+  const { locale } = useRouter();
+
+  useEffect(() => {
+    if (swiper && !swiper.destroyed) {
+      swiper.changeLanguageDirection(direction);
+      swiper.rtlTranslate = direction === "rtl";
+    }
+  }, [swiper, direction]);
+
   return (
     <Swiper
-      className={`md:!hidden h-full ${containerClassNames}`}
+      className={`${containerClassNames}`}
       modules={[Navigation]}
       speed={800}
       centeredSlides={true}
+      dir={locale === "ar" ? "rtl" : "ltr"}
+      onSwiper={swiper => setSwiper(swiper)}
       centeredSlidesBounds={true}
       {...props}
     >

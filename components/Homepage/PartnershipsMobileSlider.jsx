@@ -13,47 +13,48 @@ const partnerships = [
     link: "https://alchemypay.org/",
     defaultVersion: alchamyPay,
     coloredVersion: alchamyPay,
-    imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+    imageActiveClassName: "h-24 w-full object-cover",
+    imageClassName: "h-24 w-full feature-slider-image-active object-cover",
   },
   {
     title: "bscscan logo",
     link: "https://bscscan.com",
     defaultVersion: bscscanLogo,
     coloredVersion: bscscanLogo,
-    imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+    imageActiveClassName: "h-24 w-full object-cover",
+    imageClassName: "h-24 w-full feature-slider-image-active object-cover",
   },
   {
     title: "metamask Logo",
     link: "https://metamask.io/",
-    imageActiveClassName: "feature-slider-image",
     defaultVersion: metamaskLogo,
     coloredVersion: metamaskLogo,
+    imageActiveClassName: "h-24 w-full object-cover",
+    imageClassName: "h-24 w-full feature-slider-image-active object-cover",
   },
   {
     title: "binance",
     link: "https://binance.com",
     defaultVersion: binance,
     coloredVersion: binanceColored,
-    imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+    imageActiveClassName: "h-24 w-full object-cover",
+    imageClassName: "h-24 w-full feature-slider-image-active object-cover",
   },
   {
     title: "moralis Logo",
     link: "https://moralis.io/",
     defaultVersion: moralisLogo,
     coloredVersion: moralisLogo,
-    imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+    imageActiveClassName: "h-24 w-full object-cover",
+    imageClassName: "h-24 w-full feature-slider-image-active object-cover",
   },
   {
     title: "trust Wallet",
     link: "https://trustwallet.com",
     defaultVersion: trustWallet,
     coloredVersion: trustWallet,
-    imageActiveClassName: "h-[80px] object-contain",
-    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+    imageActiveClassName: "h-24 w-full object-cover",
+    imageClassName: "h-24 w-full feature-slider-image-active object-cover",
   },
 ];
 
@@ -64,7 +65,7 @@ const PartnershipsMobileSlider = () => {
       slidesPerView={1.6}
       initialSlide={2}
       containerClassNames="mt-8"
-      slideImageClassName="h-11 w-[200px]"
+      slideImageClassName="h-24"
     />
   );
 };
