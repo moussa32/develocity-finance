@@ -4,13 +4,12 @@ import Link from "next/link";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import PartnershipsMobileSlider from "./PartnershipsMobileSlider";
 
-import alchamyPay from "@/images/alchamy-pay.png";
-import bscscanLogo from "@/images/bscscan-logo.svg";
+import alchamyPay from "@/images/alchemypay-logo.png";
+import bscscanLogo from "@/images/bscscan-logo.png";
 import metamaskLogo from "@/images/metamask-logo.png";
 import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
-import binance from "@/images/binance.svg";
-import binanceColored from "@/images/binance-colored.svg";
+import binance from "@/images/binance-logo.png";
 
 const partnerships = [
   {
@@ -40,7 +39,7 @@ const partnerships = [
     title: "binance",
     link: "https://binance.com",
     defaultVersion: binance,
-    coloredVersion: binanceColored,
+    coloredVersion: binance,
     imageActiveClassName: "h-[80px] object-contain",
     imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },
