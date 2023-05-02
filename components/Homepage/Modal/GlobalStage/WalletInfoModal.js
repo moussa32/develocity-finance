@@ -87,7 +87,7 @@ const WalletInfoModal = ({
           value="1 DEVE"
           showSymbol={false}
           isLoaded={isDataLoaded}
-          secondaryText="= $0.22"
+          secondaryText="= $0.20"
           hr="true"
         />
         <TextItem title={t?.walletInfoModal.referralsToClaim} value={referralsToClaim} hr="" isLoaded={isDataLoaded} />

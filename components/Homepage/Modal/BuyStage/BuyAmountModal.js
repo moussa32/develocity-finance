@@ -400,7 +400,7 @@ const BuyAmountModal = ({
         </div>
       </div>
       <div className="mt-4 w-full">
-        <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.22" hr="true" />
+        <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.20" hr="true" />
         <TextItem
           title={t?.buyAmountModal.estimatedBalance}
           value={convertedDeve}
