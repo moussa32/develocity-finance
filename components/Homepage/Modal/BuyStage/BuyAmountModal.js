@@ -3,7 +3,7 @@ import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import contractAbi from "../../../../public/assets/contractApi.json";
 import { ethers } from "ethers";
-import { testNetContract } from "../../../../shared/Constants/contractAddress";
+import { mainNetContract , testNetContract } from "../../../../shared/Constants/contractAddress";
 import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
 import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
@@ -34,8 +34,8 @@ const BuyAmountModal = ({
 
   const memoizedCoinBalanceConverted = useMemo(() => ethers.utils.parseEther(coinBalance.toString()), [coinBalance]);
 
-  const walletContract = new ethers.Contract(testNetContract, contractAbi, provider);
-  const signerContract = new ethers.Contract(testNetContract, contractAbi, signer);
+  const walletContract = new ethers.Contract(mainNetContract, contractAbi, provider);
+  const signerContract = new ethers.Contract(mainNetContract, contractAbi, signer);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
