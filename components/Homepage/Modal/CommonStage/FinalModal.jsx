@@ -8,7 +8,7 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
     onClose();
     handleStep("walletInfo");
   };
-
+ 
   const { t } = useTranslation("buy-token-modal");
 
   return (
