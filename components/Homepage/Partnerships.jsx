@@ -10,6 +10,10 @@ import metamaskLogo from "@/images/metamask-logo.png";
 import moralisLogo from "@/images/moralis-logo.svg";
 import trustWallet from "@/images/trust-wallet.png";
 import panckeswap from "@/images/panckeswap-logo.png";
+import xtcom from "@/images/xtcom-logo.png";
+import bitmart from "@/images/bitmart-logo.png";
+import cmc from "@/images/CMC-logo.png";
+import coingecko from "@/images/coingecko-logo.png";
 import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 
@@ -74,6 +78,38 @@ const partnerships = [
     link: "https://trustwallet.com",
     defaultVersion: trustWallet,
     coloredVersion: trustWallet,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "XT com",
+    link: "https://www.xt.com/en",
+    defaultVersion: xtcom,
+    coloredVersion: xtcom,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "BitMart",
+    link: "https://www.bitmart.com/",
+    defaultVersion: bitmart,
+    coloredVersion: bitmart,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "Coin Market Cap",
+    link: "https://coinmarketcap.com/",
+    defaultVersion: cmc,
+    coloredVersion: cmc,
+    imageActiveClassName: "h-[80px] object-contain",
+    imageClassName: "h-[80px] feature-slider-image-active object-contain",
+  },
+  {
+    title: "CoinGecko",
+    link: "https://www.coingecko.com/",
+    defaultVersion: coingecko,
+    coloredVersion: coingecko,
     imageActiveClassName: "h-[80px] object-contain",
     imageClassName: "h-[80px] feature-slider-image-active object-contain",
   },

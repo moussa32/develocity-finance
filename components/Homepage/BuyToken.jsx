@@ -9,7 +9,7 @@ import Mastercard from "@/images/mastercard-pay.png";
 import Visa from "@/images/visa-pay.png";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
-const SOLD_PERCENTAGE = 5.6;
+const SOLD_PERCENTAGE = 16.2;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -26,7 +26,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
           <h3 className="font-medium text-sm md:text-lg">
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
-          <h3 className="font-medium text-sm md:text-lg">4,720,000 {t?.title?.tokensRe}</h3>
+          <h3 className="font-medium text-sm md:text-lg">4,190,000 {t?.title?.tokensRe}</h3>
         </div>
         <ProgressBar value={SOLD_PERCENTAGE} />
         <div className="flex items-center flex-col gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] sm:gap-0 sm:flex-row justify-center md:justify-between md:px-6">
