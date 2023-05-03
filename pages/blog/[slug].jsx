@@ -1,14 +1,16 @@
 import StaticPageHeader from "../../shared/Components/StaticPageHeader";
 import Tag from "../../components/Blog/Tag";
 import CopyIcon from "@/images/CopyIcon.png";
-import TwitterIcon from "@/images/TwitterIcon.svg";
-import FacebookIcon from "@/images/FacebookIcon.svg";
-import LinkedInIcon from "@/images/LinkedInIcon.svg";
+// import TwitterIcon from "@/images/TwitterIcon.svg";
+// import FacebookIcon from "@/images/FacebookIcon.svg";
+// import LinkedInIcon from "@/images/LinkedInIcon.svg";
 import Image from "next/image";
 import { globalInstance } from "../../api/constant";
 import parse, { attributesToProps, domToReact } from "html-react-parser";
 import usePostURL from "@/store/dynamicBlogPost";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
+import Loader from "@/shared/Components/Loader";
 
 const stylingBlogDetails = {
   replace: domNode => {
@@ -43,6 +45,11 @@ const stylingBlogDetails = {
 const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
   const { setPostSlugs } = usePostURL(state => state);
   const [isCopying, setIsCopying] = useState(false);
+  const { isFallback } = useRouter();
+
+  if (isFallback) {
+    return <Loader />;
+  }
 
   const copyBlogUrl = () => {
     setIsCopying(true);
@@ -218,7 +225,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: true,
   };
 }
 
@@ -234,7 +241,7 @@ export async function getStaticProps(context) {
 
   return {
     props: { ...article },
-    revalidate: 45,
+    revalidate: 10,
   };
 }
 
