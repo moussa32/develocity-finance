@@ -85,7 +85,7 @@ const partnerships = [
     imageActiveClassName: "h-[100px] w-[100px] object-cover",
     imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
   },
-  {
+  { 
     title: "BitMart",
     link: "https://www.bitmart.com/",
     defaultVersion: bitmart,
