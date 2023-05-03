@@ -4,7 +4,7 @@ const withPlugins = require("next-compose-plugins");
 
 const nextConfig = {
   reactStrictMode: true,
-  pageExtensions: ["jsx"],
+  pageExtensions: ["jsx", "js"],
   i18n: {
     locales: ["en", "ar", "tr", "ru", "ka", "zh"],
     defaultLocale: "en",
