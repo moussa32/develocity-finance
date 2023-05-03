@@ -47,10 +47,6 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
   const [isCopying, setIsCopying] = useState(false);
   const { isFallback } = useRouter();
 
-  if (isFallback) {
-    return <Loader />;
-  }
-
   const copyBlogUrl = () => {
     setIsCopying(true);
     const url = window.location.href;
@@ -70,6 +66,10 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
   useEffect(() => {
     setPostSlugs(slugs);
   }, [setPostSlugs, slugs]);
+
+  if (isFallback) {
+    return <Loader />;
+  }
 
   return (
     <>
@@ -225,7 +225,7 @@ export async function getStaticPaths() {
 
   return {
     paths,
-    fallback: "blocking",
+    fallback: true,
   };
 }
 
