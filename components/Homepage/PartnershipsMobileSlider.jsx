@@ -6,6 +6,8 @@ import trustWallet from "@/images/trust-wallet.png";
 import panckeswap from "@/images/panckeswap-logo.png";
 import xtcom from "@/images/xtcom-logo.png";
 import bitmart from "@/images/bitmart-logo.png";
+import cmc from "@/images/CMC-logo.png";
+import coingecko from "@/images/coingecko-logo.png";
 import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
@@ -88,6 +90,22 @@ const partnerships = [
     link: "https://www.bitmart.com/",
     defaultVersion: bitmart,
     coloredVersion: bitmart,
+    imageActiveClassName: "h-[100px] w-[100px] object-cover",
+    imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
+  },
+  {
+    title: "Coin Market Cap",
+    link: "https://coinmarketcap.com/",
+    defaultVersion: cmc,
+    coloredVersion: cmc,
+    imageActiveClassName: "h-[100px] w-[100px] object-cover",
+    imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
+  },
+  {
+    title: "CoinGecko",
+    link: "https://www.coingecko.com/",
+    defaultVersion: coingecko,
+    coloredVersion: coingecko,
     imageActiveClassName: "h-[100px] w-[100px] object-cover",
     imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
   },
