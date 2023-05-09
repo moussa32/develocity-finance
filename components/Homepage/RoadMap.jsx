@@ -116,12 +116,12 @@ const RoadMap = () => {
         </div>
         <RoadMapSlider />
         <section className="mt-24 lg:mt-32">
-          <div className="max-w-[864px] mx-auto text-center">
+          {/* <div className="max-w-[864px] mx-auto text-center">
             <h2 className="font-PolySans text-[52px] text-white"> {t?.homeSection?.roadmapSection?.quote?.title} </h2>
             <p className="text-lg text-[#B8B8B8] mt-1">
             {t?.homeSection?.roadmapSection?.quote?.subtitle}
             </p>
-          </div>
+          </div> */}
           <div className="grid grid-cols-1 md:grid-cols-2 mt-12 gap-8 px-4 md:px-6">
             <div className="w-[92vw] h-[78.5vw] md:w-[46vw] md:h-[42vw] my-auto lg:w-[488px] lg:h-[568px] mx-auto relative">
               <Image className="rounded-lg" src={SheikhMarwanBinMohammed} fill alt="Sheikh Marwan Bin Mohammed" />
@@ -136,7 +136,7 @@ const RoadMap = () => {
                 {t?.homeSection?.roadmapSection?.quote?.mainText}
               </p>
               <div className="mx-auto mt-10.5">
-                <span className="text-base italic px-16 text-white font-semibold mt-6 md:px-0 md:not-italic md:text-lg md:mt-7">
+                <span className="text-base italic text-white font-semibold mt-6 md:px-0 md:not-italic md:text-lg md:mt-7">
                   {t?.homeSection?.roadmapSection?.quote?.subText}
                 </span>
                 <a

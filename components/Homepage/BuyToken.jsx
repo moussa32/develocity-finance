@@ -7,6 +7,7 @@ import ApplePay from "@/images/apple-pay.png";
 import GooglePay from "@/images/google-pay.png";
 import Mastercard from "@/images/mastercard-pay.png";
 import Visa from "@/images/visa-pay.png";
+// import Binance from "@/images/binance-pay.png";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
 const SOLD_PERCENTAGE = 33.8;
@@ -69,6 +70,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         <Image src={Mastercard} className="Pay with Mastercard" />
         <Image src={ApplePay} className="Pay with ApplePay" />
         <Image src={GooglePay} className="Pay with GooglePay" />
+        {/* <Image src={Binance} className="Pay with BinancePay" /> */}
 
         <div className="underline text-sm text-neutral-400 flex-initial">{t?.sub?.PaymentSupported}</div>
       </section>
