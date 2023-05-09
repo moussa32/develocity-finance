@@ -5,10 +5,11 @@
       "projects": "Projeler",
       "blog": "Blog",
       "documentation": "Belgeler",
-      "contact": "İletişim "
+      "contact": "İletişim ",
+      "whitepaper": "Beyaz kağıt"
     },
     "languages": {
-      "title": "Change Language",
+      "title": "Dili değiştir",
       "english": "İngilizce ",
       "arabic": "Arapça",
       "turkish": "Türkçe",

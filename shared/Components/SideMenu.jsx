@@ -87,6 +87,12 @@ const SideMenu = () => {
               </div>
 
               <LangDropdown />
+
+              <div className="bg-indigo-500 rounded-[30px] text-base font-medium px-4 py-2 hover:bg-slate-900/75" >              
+                  <NextNavLink className="mb-3 md:mb-0" href="https://develocity.pro/whitepape.pdf" >
+                      {t?.headSection?.navbar?.whitepaper}
+                </NextNavLink>
+              </div>
             </div>
           </Disclosure.Panel>
         </>
