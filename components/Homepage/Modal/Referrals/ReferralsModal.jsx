@@ -94,12 +94,12 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
         <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim} secondaryText="%" hr="true" />
         <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim} />
       </div>
-      <button
+      {/* <button
         className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
         onClick={() => handleStep("final")}
       >
         {t?.referralModal.claimBtn}
-      </button>
+      </button> */}
     </section>
   );
 };
