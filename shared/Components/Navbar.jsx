@@ -33,7 +33,10 @@ const Navbar = ({ containerClassName }) => {
           <div className="flex items-center gap-3">
             <LangDropdown />
             {/* <button className="bg-white bg-opacity-20 rounded-[30px] px-4 py-2">Connect Your Wallet</button> */}
-            <button className="bg-indigo-500 rounded-[30px] px-4 py-2">Whitepaper</button>
+            <button  onClick={(e) => {
+                  e.preventDefault();
+                  window.location.href='/whitepaper.pdf';
+            }} className="bg-indigo-500 rounded-[30px] px-4 py-2">Whitepaper</button>
           </div>
         </div>
       </div>
