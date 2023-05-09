@@ -5,5 +5,5 @@ const app_api_key = "CwIX5kPsfTrlDHQZxK3yW6SlNPqjA8StUhZ0xeEV6dDw0kgOmwxS2pnxLN1
 
 export const globalInstance = axios.create({
   baseURL: baseURL,
-  headers: { app_api_key },
+  headers: { "app-api-key": app_api_key },
 });
