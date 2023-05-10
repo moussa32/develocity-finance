@@ -105,7 +105,7 @@ const Header = () => {
                 <h2 className="font-PolySans text-[28px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl uppercase">
                   {t?.homeSection?.preSaleCountdown}
                 </h2>
-                <time className="font-semibold text-7xl text-center md:mt-[29px]">
+                <time className="font-semibold text-6xl text-[42px] lg:text-[70px] text-center md:mt-[29px]">
                   {`${remaining.days}:${remaining.hours}:${remaining.minutes}:${remaining.seconds}`}
                 </time>
               </>
