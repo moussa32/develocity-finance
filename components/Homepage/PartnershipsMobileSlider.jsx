@@ -116,7 +116,7 @@ const PartnershipsMobileSlider = () => {
     <MobileImageSlider
       images={partnerships}
       slidesPerView={3}
-      initialSlide={2}
+      initialSlide={1}
       containerClassNames="mt-8 lg:!hidden"
       slideImageClassName="h-[100px]"
     />
