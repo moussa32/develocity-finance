@@ -43,8 +43,8 @@ const FrequentlyQuestions = () => {
   return (
     <section className="max-w-[800px] mx-auto mb-32">
       <div className="text-center">
-        <h2 className="mb-3 text-[52px] font-semibold text-neutral-900">{t?.title?.mainText}</h2>
-        <p className="text-lg text-neutral-700">
+        <h2 className="mb-3 text-[35px] font-semibold text-neutral-900">{t?.title?.mainText}</h2>
+        <p className="text-neutral-700">
           {t?.title?.subText}
           <Link href="/contact-us" className="underline text-indigo-500 font-normal underline-offset-3">
             {t?.title?.contact}

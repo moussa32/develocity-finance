@@ -28,7 +28,7 @@ function Blog() {
                   {t?.homeSection?.blogSection?.cards[0]?.subText}
                 </p>
                 <Link
-                  href={"https://tool.develocity.finance/"}
+                  href={"/blog"}
                   className="mt-10 md:mt-7 ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 font-medium flex gap-2 text-indigo-500"
                 >
                   {t?.homeSection?.blogSection?.learnMoreBtn}
@@ -53,7 +53,7 @@ function Blog() {
                   {t?.homeSection?.blogSection?.cards[1]?.subText}
                 </p>
                 <Link
-                  href={"https://develocity.solutions/"}
+                  href={"/blog"}
                   className="mt-4 md:mt-7 font-medium ltr:pl-2 ltr:md:pl-0 rtl:pr-2 rtl:md:pr-0 flex gap-2 text-indigo-500"
                 >
                   {t?.homeSection?.blogSection?.learnMoreBtn}
