@@ -1,6 +1,10 @@
 import { useEffect, useState } from "react";
 
-const calculateDifference = date => +new Date(date) - +new Date();
+const calculateDifference = date => {
+  const convertDateToUTC = Date.parse(new Date(date).toUTCString());
+  const currentDateToUTC = Date.parse(new Date().toUTCString());
+  return +convertDateToUTC - +currentDateToUTC;
+};
 
 const convertToDoubleNumber = number => {
   if (number < 10) {
