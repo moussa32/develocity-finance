@@ -11,6 +11,7 @@ import coingecko from "@/images/coingecko-logo.png";
 import nxgen from "@/images/nxgen-logo.png";
 import binance from "@/images/binance-logo.png";
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
+import { Autoplay } from "swiper";
 
 const partnerships = [
   {
@@ -85,7 +86,7 @@ const partnerships = [
     imageActiveClassName: "h-[100px] w-[100px] object-cover",
     imageClassName: "h-[100px] w-[100px] feature-slider-image-active object-cover",
   },
-  { 
+  {
     title: "BitMart",
     link: "https://www.bitmart.com/",
     defaultVersion: bitmart,
@@ -115,8 +116,13 @@ const PartnershipsMobileSlider = () => {
   return (
     <MobileImageSlider
       images={partnerships}
-      slidesPerView={3}
+      slidesPerView={1.8}
+      autoplay={{
+        delay: 1000,
+        disableOnInteraction: false,
+      }}
       initialSlide={1}
+      modules={[Autoplay]}
       containerClassNames="mt-8 lg:!hidden"
       slideImageClassName="h-[100px]"
     />
