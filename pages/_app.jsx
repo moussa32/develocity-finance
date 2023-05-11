@@ -2,9 +2,11 @@ import "../styles/index.css";
 import Layout from "../shared/Components/Layout";
 import { EthereumClient, w3mConnectors, w3mProvider } from "@web3modal/ethereum";
 import { Web3Modal } from "@web3modal/react";
-import { configureChains, createClient, goerli, WagmiConfig } from "wagmi";
-import { arbitrum, avalanche, bsc, bscTestnet, fantom, gnosis, mainnet, optimism, polygon } from "wagmi/chains";
+import { configureChains, createClient, WagmiConfig } from "wagmi";
+import { bsc, mainnet, polygon } from "wagmi/chains";
 import { Toaster } from "react-hot-toast";
+import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { useState } from "react";
 
 // 1. Get projectID at https://cloud.walletconnect.com
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
@@ -26,13 +28,19 @@ const wagmiClient = createClient({
 const ethereumClient = new EthereumClient(wagmiClient, chains);
 
 export default function MyApp({ Component, pageProps }) {
+  const [queryClient] = useState(() => new QueryClient());
+
   return (
     <>
-      <Layout>
-        <WagmiConfig client={wagmiClient}>
-          <Component {...pageProps} />
-        </WagmiConfig>
-      </Layout>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Layout>
+            <WagmiConfig client={wagmiClient}>
+              <Component {...pageProps} />
+            </WagmiConfig>
+          </Layout>
+        </Hydrate>
+      </QueryClientProvider>
       <Toaster />
       <Web3Modal projectId={projectId} ethereumClient={ethereumClient} />
     </>
