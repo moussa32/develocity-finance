@@ -3,17 +3,17 @@ import { memo } from "react";
 import ProgressBar from "./ProgressBar";
 import Play from "@/images/play-icon.svg";
 import Image from "next/image";
-import ApplePay from "@/images/apple-pay.png";
-import GooglePay from "@/images/g-pay.png";
-import Mastercard from "@/images/mc-pay.png";
-import Visa from "@/images/visa-pay.png";
-import Binance from "@/images/binance-pay.png";
+import ApplePay from "@/images/apay-logo.png";
+import GooglePay from "@/images/gpay-logo.png";
+import Mastercard from "@/images/mc-logo.png";
+import Visa from "@/images/visa-logo.png";
+import Binance from "@/images/bpay-logo.png";
 // import Binance from "@/images/binance-pay.png";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 
-const SOLD_PERCENTAGE = 33.8;
+const SOLD_PERCENTAGE = 52;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -78,11 +78,11 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         </a> */}
       </section>
       <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
-        <Image src={Visa} className="Pay with Visa" />
-        <Image src={Mastercard} className="Pay with Mastercard" />
-        <Image src={ApplePay} className="Pay with ApplePay" />
-        <Image src={GooglePay} className="Pay with GooglePay" />
-        <Image src={Binance} className="Pay with BinancePay" />
+        <Image width={60} src={Visa} className="Pay with Visa" />
+        <Image width={60} src={Mastercard} className="Pay with Mastercard" />
+        <Image width={60} src={ApplePay} className="Pay with ApplePay" />
+        <Image width={60} src={GooglePay} className="Pay with GooglePay" />
+        <Image width={60} src={Binance} className="Pay with BinancePay" />
 
         <div className="underline text-sm text-neutral-400 flex-initial">{t?.sub?.PaymentSupported}</div>
       </section>
