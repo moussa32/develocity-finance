@@ -59,7 +59,7 @@ const Footer = () => {
             <a href="#">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={facebook} alt="facebook icon" />
             </a>
-            <a href="#">
+            <a href="https://twitter.com/develocitygroup">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={twitter} alt="twitter icon" />
             </a>
             <a href="#">
