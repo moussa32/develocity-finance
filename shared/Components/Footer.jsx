@@ -65,7 +65,7 @@ const Footer = () => {
             <a href="#">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={instagram} alt="instagram icon" />
             </a>
-            <a href="#">
+            <a href="https://t.me/develocity">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={telegram} alt="telegram icon" />
             </a>
           </div>
