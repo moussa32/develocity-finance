@@ -11,7 +11,7 @@ import Binance from "@/images/bpay-logo.png";
 // import Binance from "@/images/binance-pay.png";
 import useTranslation from "@/shared/Hooks/useTranslation";
 
-const SOLD_PERCENTAGE = 52;
+const SOLD_PERCENTAGE = 53.7;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
