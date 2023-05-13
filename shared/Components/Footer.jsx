@@ -100,7 +100,7 @@ const Footer = () => {
             <a href="https://twitter.com/develocitygroup">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={twitter} alt="twitter icon" />
             </a>
-            <a href="#">
+            <a href="https://instagram.com/develocitygroup">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={instagram} alt="instagram icon" />
             </a>
             <a href="https://t.me/develocity">
