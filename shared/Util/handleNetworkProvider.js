@@ -9,12 +9,12 @@ export const networkSupportedCoins = network => {
     case "homestead":
       return [
         { id: 1, name: "Etherum Coin", ticker: "ETH", image: EtherumImage },
-        { id: 2, name: "Tether USD", ticker: "USDT", image: TetherImage },
+        { id: 2, name: "USDT", ticker: "USDT", image: TetherImage },
       ];
     case "bsc":
       return [
-        { id: 1, name: "Binance Coin", ticker: "BNB", image: binanceCoin },
-        { id: 2, name: "Binance USD", ticker: "BUSD", image: binanceUSD },
+        { id: 1, name: "BNB Smart Chain", ticker: "BNB", image: binanceCoin },
+        { id: 2, name: "BUSD", ticker: "BUSD", image: binanceUSD },
       ];
 
     case "bsc-testnet":

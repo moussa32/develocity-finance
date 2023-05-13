@@ -13,7 +13,7 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 
-const SOLD_PERCENTAGE = 52;
+const SOLD_PERCENTAGE = 55.1;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
