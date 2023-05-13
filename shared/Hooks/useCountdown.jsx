@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
 const calculateDifference = date => {
-  const convertDateToUTC = Date.parse(new Date(date).toUTCString());
-  const currentDateToUTC = Date.parse(new Date().toUTCString());
+  const convertDateToUTC = new Date(date);
+  const currentDateToUTC = new Date();
   return +convertDateToUTC - +currentDateToUTC;
 };
 

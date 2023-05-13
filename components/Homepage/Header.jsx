@@ -21,7 +21,7 @@ const Header = () => {
   const { open } = useWeb3Modal();
   const { isConnected } = useAccount();
   const { t, errors } = useTranslation("common");
-  const { remaining, isFinished } = useCountdown("2023-05-13T12:45:10");
+  const { remaining, isFinished } = useCountdown(1684119600000);
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
   const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
   const [isAllStagesOpen, setIsAllStagesOpen] = useState(false);
