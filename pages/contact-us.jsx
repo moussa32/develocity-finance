@@ -54,14 +54,14 @@ const Contact = () => {
                     placeholder="you@company.com"
                   />
                 </div>
-                <div className="font-medium col-span-2">
+                {/* <div className="font-medium col-span-2">
                   <label className="block text-sm mb-1.5 text-[#344054]">{t?.contactUs?.form?.phoneNumber}</label>
                   <input
                     className="py-3.5 px-4 rounded text-base outline-none border border-[#D0D5DD] w-full"
                     type="email"
                     placeholder="email"
                   />
-                </div>
+                </div> */}
                 <div className="font-medium col-span-2">
                   <label className="block text-sm mb-1.5 text-[#344054]">{t?.contactUs?.form?.message}</label>
                   <textarea

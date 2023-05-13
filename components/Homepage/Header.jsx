@@ -96,16 +96,16 @@ const Header = () => {
       )}
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 md:flex md:flex-col">
-        <div className="w-50 relative mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[615px] xl:px-0">
+        <div className="w-50 relative mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[700px] xl:px-0">
           <div className="flex flex-col justify-center">
             {isFinished ? (
               <BuyToken handleBuyNowButton={onClick} openAllStagesModal={handleOpenAllStages} />
             ) : (
               <>
-                <h2 className="font-PolySans text-[32px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl">
+                <h2 className="font-PolySans text-[28px] mb-1 md:mb-0 sm:text-5xl rtl:md:text-5xl ltr:md:text-6xl uppercase">
                   {t?.homeSection?.preSaleCountdown}
                 </h2>
-                <time className="font-semibold text-7xl text-center md:mt-[29px]">
+                <time className="font-semibold text-6xl text-[42px] lg:text-[70px] text-center md:mt-[29px]">
                   {`${remaining.days}:${remaining.hours}:${remaining.minutes}:${remaining.seconds}`}
                 </time>
               </>
