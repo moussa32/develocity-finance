@@ -6,9 +6,39 @@ import telegram from "../../public/assets/images/telegram.svg";
 import Image from "next/image";
 import NextNavLink from "./NextNavLink";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { useState } from "react";
+import { subscribeToNewsletter } from "@/api/fetchSubscribeToNewsletter";
+import axios from "axios";
 
 const Footer = () => {
   const { t, errors } = useTranslation("footer");
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState(null);
+  const [success, setSuccess] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const subscribe = async event => {
+    event.preventDefault();
+    setError("");
+    setSuccess("");
+    setIsLoading(true);
+    if (email.length > 0) {
+      axios
+        .post("https://develocity-blockchain-stagging-production.up.railway.app/api/v1/static/newSubscriber", { email })
+        .then(response => {
+          setSuccess("You have successfully registered");
+        })
+        .catch(error => {
+          if (error.response.data.responseMessage) {
+            setError(error.response.data.responseMessage);
+          } else {
+            setError("Something went wrong");
+          }
+        })
+        .finally(() => setIsLoading(false));
+    }
+  };
+
   return (
     <div className="bg-[#F9FAFB]">
       <div className="container mx-auto md:px-10 lg:px-0 pt-16 md:pt-24 pb-16 ltr:text-left rtl:text-right text-[#525C7A] text-base font-medium">
@@ -42,15 +72,23 @@ const Footer = () => {
           <div className="hidden md:block ltr:ml-auto rtl:mr-auto">
             <p className="px-5 md:px-0">{t?.input?.mainText1}</p>
             <p className="px-5 md:px-0">{t?.input?.mainText2}</p>
-            <div className="mt-6 flex flex-col md:flex-row items-center flex-wrap md:mt-4">
+            <form onSubmit={subscribe} className="mt-6 flex flex-col md:flex-row items-center flex-wrap md:mt-4">
               <input
                 className="placeholder:text-[#667085] font-normal placeholder:text-base h-11 w-72 md:w-80 border-1 border py-5 ltr:md:mr-2 rtl:md:ml-2 ltr:pl-3 rtl:pr-3 border-[#D0D5DD]"
                 placeholder={t?.input?.placeholder}
+                value={email}
+                onChange={e => setEmail(e.target.value)}
               />
-              <button className="flex items-center justify-center bg-indigo-500 h-[44px] rounded-sm text-white font-normal py-3 px-6 ltr:ml-2 rtl:mr-2 mt-5 md:mx-auto lg:mt-0 hover:bg-indigo-600">
-                {t?.input?.subscribeBtn}
+              <button
+                type="submit"
+                disabled={isLoading}
+                className="flex items-center justify-center disabled:bg-gray-500 bg-indigo-500 h-[44px] rounded-sm text-white font-normal py-3 px-6 ltr:ml-2 rtl:mr-2 mt-5 md:mx-auto lg:mt-0 hover:bg-indigo-600"
+              >
+                {isLoading ? "Loading..." : t?.input?.subscribeBtn}
               </button>
-            </div>
+            </form>
+            {error && <p className="text-red-500">{error}</p>}
+            {success && <p className="text-green-500">{success}</p>}
           </div>
         </div>
         <hr className="mt-8 md:mt-16 w-[92vw] md:w-auto mx-auto text-neutral-200 mb-8"></hr>
