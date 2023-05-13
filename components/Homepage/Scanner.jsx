@@ -40,7 +40,11 @@ const Scanner = () => {
             {t?.homeSection?.scannerSection?.subTextSecondParagraph}
           </p>
           <div className="flex gap-y-4 gap-x-6 sm:flex-row mt-8">
-            <button className="py-[15px] px-[45px] bg-indigo-500 text-white text-[18px] md:text-md font-medium w-full rounded-sm sm:w-48">
+            <button onClick={(e) => {
+                      e.preventDefault();
+                      window.location.href='https://tool.develocity.finance';
+                    }}
+            className="py-[15px] px-[45px] bg-indigo-500 text-white text-[18px] md:text-md font-medium w-full rounded-sm sm:w-48">
               {t?.homeSection?.scannerSection?.getStartedBtn}
             </button>
             <div className="flex justify-center sm:justify-start">
