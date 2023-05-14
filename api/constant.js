@@ -9,9 +9,6 @@ export const globalInstance = axios.create({
   headers: { "app-api-key": app_api_key },
 });
 
-export const presaleInstance = axios.create({
-  baseURL: emailURL,
-});
 
 export const emailInstance = axios.create({
   baseURL: emailURL,
