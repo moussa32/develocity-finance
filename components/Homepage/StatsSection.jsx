@@ -98,7 +98,7 @@ const StatsSection = () => {
           <div className="rounded-full bg-white w-12 h-12 flex justify-center items-center p-2">
             <Image className="w-5 h-5" src={icon} alt="cion" />
           </div>
-          <CountUp scrollSpyOnce={true} start={focus ? 0 : null} end={25} duration={3} decimal="," suffix="K">
+          <CountUp scrollSpyOnce={true} start={focus ? 0 : null} end={2} duration={3} decimal="," suffix="K">
             {({ countUpRef }) => (
               <VisibilitySensor
                 onChange={isVisible => {
