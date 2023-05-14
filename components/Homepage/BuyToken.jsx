@@ -22,7 +22,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
     queryFn: fetchPreSaleStatus,
   });
   const { progress } = useProgress({
-    max: data && data.progress_percentage ? data.progress_percentage : SOLD_PERCENTAGE,
+    max: data && data.soldPercentage ? Number(data.soldPercentage).toFixed(1) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -31,18 +31,19 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         {t?.title?.mainText}
         <span className="block text-indigo-500 tracking-[4px]">{t?.title?.subText}</span>
       </h2>
-      <center>
-      <div className="relative rounded-xl bg-secondary/50 backdrop-blur-[25px] backdrop-brightness-90 sm:mx-auto md:mx-0 max-w-[592px] py-4 px-3 md:p-6 pb-4.5 overflow-hidden">
+      
+      <div className="relative rounded-xl bg-secondary/50 backdrop-blur-[25px] backdrop-brightness-90 sm:mx-auto md:mx-12 max-w-[592px] py-4 px-3 md:p-6 pb-4.5 overflow-hidden">
         <div className="flex justify-between mb-3">
           <h3 className="font-medium text-sm md:text-lg">
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            {new Intl.NumberFormat().format(data && data.tokens_remaining ? data.tokens_remaining : 0)}{" "}
+            {new Intl.NumberFormat().format(data && data.remaining ?  Number(data.remaining) + 21 : 0)}{" "}
             {t?.title?.tokensRe}
           </h3>
         </div>
-        <ProgressBar value={data ? data.progress_percentage : SOLD_PERCENTAGE} />
+        <ProgressBar value={data ? Number(data.soldPercentage) + 0 : SOLD_PERCENTAGE} />
+        
         <div className="flex items-center flex-col gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] sm:gap-0 sm:flex-row justify-center md:justify-between md:px-6">
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 ltr:sm:pr-10 rtl:sm:pl-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase md:mb-1">{t?.sub?.stage}</h3>
@@ -64,7 +65,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
           {t?.sub?.AllStages}
         </button>
       </div>
-      </center>
+      
       <section className="flex mt-8 mx-auto gap-5">
         <button
           onClick={handleBuyNowButton}
