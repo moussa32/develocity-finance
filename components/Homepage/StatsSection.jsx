@@ -32,7 +32,7 @@ const StatsSection = () => {
               <span className="h-3 w-3 rounded-full bg-[#62C554]"></span>
             </div>
             <div className="bg-slate-200 w-3/4 md:w-1/2">
-              <h5 className="text-sm py-[2px] text-center text-[#3F444D]">develocity.finance/scanner/</h5>
+              <h5 className="text-sm py-[2px] text-center text-[#3F444D]">https://tool.develocity.finance</h5>
             </div>
           </div>
         </div>
