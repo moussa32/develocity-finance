@@ -94,9 +94,9 @@ const Footer = () => {
         <hr className="mt-8 md:mt-16 w-[92vw] md:w-auto mx-auto text-neutral-200 mb-8"></hr>
         <div className="grid grid-cols-1 md:grid-cols-2">
           <div>
-            <a href="#">
+            {/* <a href="#">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={facebook} alt="facebook icon" />
-            </a>
+            </a> */}
             <a href="https://twitter.com/develocitygroup">
               <Image className="inline-block ltr:ml-4 rtl:mr-4" src={twitter} alt="twitter icon" />
             </a>
