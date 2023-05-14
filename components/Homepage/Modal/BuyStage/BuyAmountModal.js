@@ -5,6 +5,7 @@ import contractAbi from "../../../../public/assets/contractApi.json";
 import { ethers } from "ethers";
 import { mainNetContract, testNetContract } from "../../../../shared/Constants/contractAddress";
 import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
+import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
 import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useSigner } from "wagmi";
@@ -33,9 +34,9 @@ const BuyAmountModal = ({
   const [isApproved, setIsApproved] = useState(false);
 
   const memoizedCoinBalanceConverted = useMemo(() => ethers.utils.parseEther(coinBalance.toString()), [coinBalance]);
-
-  const walletContract = new ethers.Contract(mainNetContract, contractAbi, provider);
-  const signerContract = new ethers.Contract(mainNetContract, contractAbi, signer);
+  const mainContract = getMainCoinContractAddress(selectedNetwork);
+  const walletContract = new ethers.Contract(mainContract, contractAbi, provider);
+  const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -132,6 +133,7 @@ const BuyAmountModal = ({
     const gasPrice = await signerContract.estimateGas
       .buyTokens(ref, { value: memoizedCoinBalanceConverted })
       .catch(error => {
+        console.log("gasPrice",error);
         toast("Error that happened please type the right amount", {
           duration: 6000,
           position: "top-center",
@@ -148,13 +150,13 @@ const BuyAmountModal = ({
             "aria-live": "polite",
           },
         });
-
+        
         setBuyButtonText(t?.buyAmountModal.btns.buy);
         console.log(JSON.stringify(error, 0, 2));
       });
 
     signerContract
-      .buyTokens(ref, { value: memoizedCoinBalanceConverted, gasLimit: gasPrice })
+      .buyTokens(ref, { value: memoizedCoinBalanceConverted })
       .then(res => {
         res.wait().then(receipt => {
           handleFinalAmount(convertedDeve);
@@ -192,7 +194,7 @@ const BuyAmountModal = ({
   const handleApprove = async () => {
     setIsApprovedButtonDisabled(true);
     const BUSDContract = getSecondCoinContract(signer, selectedNetwork);
-    await BUSDContract.approve(testNetContract, ethers.utils.parseEther("1000000"))
+    await BUSDContract.approve(mainContract, ethers.utils.parseEther("100000"))
       .then(res => {
         setIsApprovedButtonDisabled(false);
         setIsBuyButtonLoading(false);

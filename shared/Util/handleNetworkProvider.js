@@ -25,7 +25,7 @@ export const networkSupportedCoins = network => {
     case "matic":
       return [
         { id: 1, name: "Matic Coin", ticker: "MATIC", image: MaticCoinImage },
-        { id: 2, name: "Tether USD", ticker: "USDT", image: TetherImage },
+        { id: 2, name: "USDT", ticker: "USDT", image: TetherImage },
       ];
   }
 };
@@ -33,12 +33,23 @@ export const networkSupportedCoins = network => {
 export const getSecondCoinContractAddress = network => {
   switch (network) {
     case "homestead":
-      return "0xdac17f958d2ee523a2206206994597c13d831ec7";
+      return "0xdAC17F958D2ee523a2206206994597C13D831ec7";
     case "bsc":
       return "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
     case "bsc-testnet":
-      return "0x78867BbEeF44f2326bF8DDd1941a4439382EF2A7";
+      return "0xe9e7CEA3DedcA5984780Bafc599bD69ADd087D56";
     case "matic":
-      return "0xc2132d05d31c914a87c6611c10748aeb04b58e8f";
+      return "0xc2132D05D31c914a87C6611C10748AEb04B58e8F";
+  }
+};
+
+export const getMainCoinContractAddress = network => {
+  switch (network) {
+    case "homestead":
+      return "0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0";
+    case "bsc":
+      return "0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0";
+    case "matic":
+      return "0x8c23F7CC7c720dFF6aBf7E83271762a985092Ab5";
   }
 };

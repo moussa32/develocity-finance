@@ -74,7 +74,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           deveBalance: newDeveBalance,
           referralsToClaim: newReferralsToClaim,
           tokensToClaim: newTokensToClaim,
-        } = await getWalletBalance(signer, address);
+        } = await getWalletBalance(chain.network , signer, address);
         setIsLoaded(true);
         setDeveBalance(newDeveBalance);
         setTokensToClaim(newTokensToClaim);

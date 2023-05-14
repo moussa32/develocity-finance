@@ -13,7 +13,7 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 
-const SOLD_PERCENTAGE = 55.1;
+const SOLD_PERCENTAGE = 0;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -31,13 +31,14 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         {t?.title?.mainText}
         <span className="block text-indigo-500 tracking-[4px]">{t?.title?.subText}</span>
       </h2>
+      <center>
       <div className="relative rounded-xl bg-secondary/50 backdrop-blur-[25px] backdrop-brightness-90 sm:mx-auto md:mx-0 max-w-[592px] py-4 px-3 md:p-6 pb-4.5 overflow-hidden">
         <div className="flex justify-between mb-3">
           <h3 className="font-medium text-sm md:text-lg">
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            {new Intl.NumberFormat().format(data && data.tokens_remaining ? data.tokens_remaining : 3310000)}{" "}
+            {new Intl.NumberFormat().format(data && data.tokens_remaining ? data.tokens_remaining : 0)}{" "}
             {t?.title?.tokensRe}
           </h3>
         </div>
@@ -63,6 +64,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
           {t?.sub?.AllStages}
         </button>
       </div>
+      </center>
       <section className="flex mt-8 mx-auto gap-5">
         <button
           onClick={handleBuyNowButton}
@@ -78,12 +80,13 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         </a> */}
       </section>
       <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
-        <Image width={60} src={Visa} className="Pay with Visa" />
-        <Image width={60} src={Mastercard} className="Pay with Mastercard" />
-        <Image width={60} src={ApplePay} className="Pay with ApplePay" />
-        <Image width={60} src={GooglePay} className="Pay with GooglePay" />
-        <Image width={60} src={Binance} className="Pay with BinancePay" />
-
+        
+        <Image width={55} src={Visa} className="Pay with Visa" />
+        <Image width={55} src={Mastercard} className="Pay with Mastercard" />
+        <Image width={55} src={ApplePay} className="Pay with ApplePay" />
+        <Image width={55} src={GooglePay} className="Pay with GooglePay" />
+        <Image width={55} src={Binance} className="Pay with BinancePay" />
+        
         <div className="underline text-sm text-neutral-400 flex-initial">{t?.sub?.PaymentSupported}</div>
       </section>
     </>

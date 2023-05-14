@@ -60,17 +60,17 @@
   },
   "referralModal": {
     "mainText": "الإحالات",
-    "subText": "استخدم الرمز الخاص بك او مطالبة الإحالات",
+    "subText": "إستخدم الرمز الخاص بك",
     "referralLinkLabel": "رابط الإحالة",
     "yourReferrals": "إحالاتك:",
-    "referralsToClaim": "مطالبة الإحالات:",
-    "referralPercentage": "نسبة الإحالة:",
+    "referralsToClaim": " مكافأة الإحالات " ,
+    "referralPercentage": " نسبة الإحالة ",
     "claimBtn": "مطالبة →"
   },
   "finalModal": {
     "mainText": "تمت العملية!",
     "subText": "اكتملت عمليتك",
-    "referralText": "احصل على ٥٠ ديڤي مقابل كل دعوة",
+    "referralText": "احصل على 50 ديڤي مقابل كل دعوة",
     "referralBtn": "رمز الإحالة",
     "DEVEBalance": "رصيد الديڤي:",
     "contribution": "التوزيع:",

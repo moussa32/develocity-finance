@@ -2,7 +2,7 @@ import { ethers } from "ethers";
 import { mainNetContract, testNetContract } from "../Constants/contractAddress";
 import contractAbi from "../../public/assets/contractApi.json";
 import { deveCost } from "../Constants/deveCost";
-import { getSecondCoinContractAddress } from "./handleNetworkProvider";
+import { getSecondCoinContractAddress, getMainCoinContractAddress } from "./handleNetworkProvider";
 
 export const getSecondCoinContract = (provider, network) => {
   return new ethers.Contract(
@@ -12,8 +12,9 @@ export const getSecondCoinContract = (provider, network) => {
   );
 };
 
-export const getWalletBalance = async (provider, walletAddress) => {
-  const walletContract = new ethers.Contract(mainNetContract, contractAbi, provider);
+export const getWalletBalance = async (network, provider, walletAddress) => {
+  console.log(getSecondCoinContractAddress(network))
+  const walletContract = new ethers.Contract(getMainCoinContractAddress(network) , contractAbi, provider);
 
   //Fetch deve balance
   const DEVEBalance = Number(
