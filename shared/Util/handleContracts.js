@@ -29,7 +29,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
   //Fetch Referrals to claim
   const referralsToClaim = Number(
     ethers.utils.formatEther((await walletContract._RefAmount(walletAddress)).toString())
-  ).toFixed(5);
+  ).toFixed(2);
 
   // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
 
