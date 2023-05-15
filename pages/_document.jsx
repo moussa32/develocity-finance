@@ -20,10 +20,14 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
           rel="stylesheet"
         />
-        <link rel="icon" type="image/x-icon" href="/favicon.ico"></link>
-        <link rel="apple-touch-icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" sizes="72×72" href="/apple-icon-72x72.PNG" />
-        <link rel="apple-touch-icon" sizes="114X114" href="/apple-icon-114x114.PNG" />
+        <meta property="og:image" content="/apple-icon-114x114.png" />
+        <meta property="og:image:width" content="114" />
+        <meta property="og:image:height" content="114" />
+        <link rel="icon" type="image/x-icon" href="favicon.jpg"></link>
+        <link rel="apple-touch-icon" href="favicon.jpg" />
+        <link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+        <link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+
       </Head>
       <body>
         <Main />
