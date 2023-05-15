@@ -1,6 +1,9 @@
+import { useRouter } from "next/router";
 import ContentLoader from "react-content-loader";
 
 const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoaded = true }) => {
+  const { locale } = useRouter();
+
   const renderValues = () => {
     if (!isLoaded) {
       return (
@@ -18,7 +21,7 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoade
         <p className="text-sm flex items-center m-0 text-[#333]">
           {value ? value : null} {secondaryText ? secondaryText : "DEVE"}
           {percentage && (
-            <span className="ml-1 text-[#8b8b8b]">
+            <span className={`${locale === "ar" ? "mr-1" : "ml-1"} text-[#8b8b8b]`}>
               ({symbol ? symbol : "~$"} {percentage})
             </span>
           )}

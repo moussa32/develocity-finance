@@ -3,10 +3,10 @@ import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import contractAbi from "../../../../public/assets/contractApi.json";
 import { ethers } from "ethers";
-import { mainNetContract, testNetContract } from "../../../../shared/Constants/contractAddress";
+// import { mainNetContract, testNetContract } from "../../../../shared/Constants/contractAddress";
 import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
-import SuccessIcon from "@/images/SuccessIcon.svg";
+// import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useSigner } from "wagmi";
 import Image from "next/image";
@@ -37,6 +37,7 @@ const BuyAmountModal = ({
   const mainContract = getMainCoinContractAddress(selectedNetwork);
   const walletContract = new ethers.Contract(mainContract, contractAbi, provider);
   const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
+  const { locale } = useRouter();
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
@@ -48,9 +49,9 @@ const BuyAmountModal = ({
             .getBusdAll(calculateDeveCoins, walletAddress)
             .then(res => {
               setIsApproved(res);
-              console.log(res)
+              console.log(res);
               if (res) {
-                console.log(res)
+                console.log(res);
 
                 toast("Approved!", {
                   duration: 4000,
@@ -60,7 +61,7 @@ const BuyAmountModal = ({
                     fontSize: "16px",
                     background: "#DCFFEF",
                   },
-  
+
                   // Aria
                   ariaProps: {
                     role: "status",
@@ -126,7 +127,7 @@ const BuyAmountModal = ({
     const gasPrice = await signerContract.estimateGas
       .buyTokens(ref, { value: memoizedCoinBalanceConverted })
       .catch(error => {
-        console.log("gasPrice",error);
+        console.log("gasPrice", error);
         toast("Error that happened please type the right amount", {
           duration: 6000,
           position: "top-center",
@@ -143,7 +144,7 @@ const BuyAmountModal = ({
             "aria-live": "polite",
           },
         });
-        
+
         setBuyButtonText(t?.buyAmountModal.btns.buy);
         console.log(JSON.stringify(error, 0, 2));
       });
@@ -366,7 +367,7 @@ const BuyAmountModal = ({
           />
           <div className="w-1/4 flex justify-center items-center">
             <Image src={currentCurrency.image} width={23} />
-            <span className="text-base ml-1">{currentCurrency.ticker}</span>
+            <span className={`${locale === "ar" ? "mr-1" : "ml-1"} text-base`}>{currentCurrency.ticker}</span>
           </div>
         </div>
       </div>
@@ -403,17 +404,17 @@ const BuyAmountModal = ({
       </svg>
 
       <div className="mt-1">
-        <div className="flex justify-between text-sm">
+        <div className="flex justify-between text-sm font-medium mb-2">
           <label className="text-[#a5a5a5]">{t?.buyAmountModal.lables.to}</label>
         </div>
-        <div className="flex h-12 w-[80vw] sm:w-[360px] sm:h-[58px]">
+        <div className="flex group bg-white h-[72px] w-[80vw] border-[#D6D6D6] border-1 transition-all focus-within:border-2 focus-within:border-[#6466E9] rounded-md overflow-hidden duration-300 sm:w-[360px]">
           <input
-            className="w-3/4 border-1 rounded-sm border-[#d6d6d6] p-[10px] text-2xl text-[#23282c]"
+            className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 outline-none"
             value={convertedDeve}
             placeholder="0"
             disabled
           />
-          <div className="flex bg-white justify-center items-center w-1/4 border-1 rounded-sm border-[#d6d6d6]">
+          <div className="w-1/4 flex justify-center items-center">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -441,11 +442,11 @@ const BuyAmountModal = ({
                 fill="#ecedf2"
               />
             </svg>
-
-            <span className="text-base ml-1">DEVE</span>
+            <span className={`${locale === "ar" ? "mr-1" : "ml-1"} text-base`}>DEVE</span>
           </div>
         </div>
       </div>
+
       <div className="mt-4 w-full">
         <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.20" hr="true" />
         <TextItem

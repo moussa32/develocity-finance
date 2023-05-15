@@ -14,6 +14,7 @@ import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
 import BuyMethod from "./BuyStage/BuyMethod";
+import { useRouter } from "next/router";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -33,6 +34,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [transAmount, setTransAmount] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
   const [currentAnimationStep, setCurrentAnimationStep] = useState(1);
+  const { locale } = useRouter();
 
   const { data: signer } = useSigner();
   const { disconnect } = useDisconnect();
@@ -74,7 +76,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           deveBalance: newDeveBalance,
           referralsToClaim: newReferralsToClaim,
           tokensToClaim: newTokensToClaim,
-        } = await getWalletBalance(chain.network , signer, address);
+        } = await getWalletBalance(chain.network, signer, address);
         setIsLoaded(true);
         setDeveBalance(newDeveBalance);
         setTokensToClaim(newTokensToClaim);
@@ -205,7 +207,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           onClose();
         }}
       />
-      <div className={`${styles.overlay}`}>
+      <div className={`${styles.overlay}`} style={{ direction: locale === "ar" ? "rtl" : "ltr" }}>
         {/* <button className={styles.closeBtn_ltr} onClick={onClose}>
           close
         </button> */}

@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const ButtonItem = ({
   selected,
@@ -16,6 +17,7 @@ const ButtonItem = ({
       getAllValues(selected, image, mainText, secondaryText, itemToSelect);
     }
   };
+  const { locale } = useRouter();
 
   return (
     <button
@@ -34,7 +36,11 @@ const ButtonItem = ({
       />
       <div className="flex justify-start text-left gap-1 flex-col">
         <p className="capitalize text-lg text-[#23282C]">{mainText}</p>
-        {secondaryText && <p className="uppercase text-[#A5A5A5] text-sm font-medium">{secondaryText}</p>}
+        {secondaryText && (
+          <p className={`uppercase text-[#A5A5A5] text-sm font-medium ${locale === "ar" ? "text-right" : "text-left"}`}>
+            {secondaryText}
+          </p>
+        )}
       </div>
     </button>
   );

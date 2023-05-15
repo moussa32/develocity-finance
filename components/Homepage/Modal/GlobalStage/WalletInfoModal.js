@@ -8,6 +8,7 @@ import { IoIosArrowDown } from "react-icons/io";
 import { useNetwork, useSwitchNetwork } from "wagmi";
 import CloseBuyModalButton from "@/images/closeBuyModalButton.png";
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 const WalletInfoModal = ({
   handleStep,
@@ -21,6 +22,7 @@ const WalletInfoModal = ({
   const { t } = useTranslation("buy-token-modal");
   const { chain } = useNetwork();
   const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
+  const { locale } = useRouter();
 
   return (
     <>
@@ -34,7 +36,10 @@ const WalletInfoModal = ({
               <div>
                 <Menu.Button className="flex items-center w-full justify-center rounded-md px-4 text-sm font-medium text-black hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
                   {chain.name}
-                  <IoIosArrowDown className="ml-2 -mr-1 h-3 w-3 text-black" aria-hidden="true" />
+                  <IoIosArrowDown
+                    className={`${locale === "ar" ? "mr-2" : "ml-2"} -mr-1 h-3 w-3 text-black`}
+                    aria-hidden="true"
+                  />
                 </Menu.Button>
               </div>
               <Transition
@@ -90,12 +95,13 @@ const WalletInfoModal = ({
           secondaryText="= $0.20"
           hr="true"
         />
-        <TextItem 
-          title={t?.walletInfoModal.referralsToClaim} 
+        <TextItem
+          title={t?.walletInfoModal.referralsToClaim}
           value={referralsToClaim.amount}
           percentage={referralsToClaim.value}
-           hr="" 
-          isLoaded={isDataLoaded} />
+          hr=""
+          isLoaded={isDataLoaded}
+        />
         <div>
           <NextButton
             handleStep={() => {

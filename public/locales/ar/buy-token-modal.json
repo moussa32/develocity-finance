@@ -10,7 +10,7 @@
     "deveBalance": "رصيد الديڤي",
     "tokensToClaim": "مطالبة العملات",
     "referralsToClaim": " مطالبة الإحالات",
-    "nextBtn": "التالي →"
+    "nextBtn": "التالي"
   },
   "optionsModal": {
     "mainText": "حدد اختيارك",
@@ -63,7 +63,7 @@
     "subText": "إستخدم الرمز الخاص بك",
     "referralLinkLabel": "رابط الإحالة",
     "yourReferrals": "إحالاتك:",
-    "referralsToClaim": " مكافأة الإحالات " ,
+    "referralsToClaim": " مكافأة الإحالات ",
     "referralPercentage": " نسبة الإحالة ",
     "claimBtn": "مطالبة →"
   },

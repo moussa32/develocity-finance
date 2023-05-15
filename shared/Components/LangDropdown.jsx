@@ -1,18 +1,18 @@
 import React from "react";
 import { Fragment } from "react";
 import { Menu, Transition } from "@headlessui/react";
-import { ChevronDownIcon } from "@heroicons/react/20/solid";
+// import { ChevronDownIcon } from "@heroicons/react/20/solid";
 import englishIcon from "@/images/english-icon.svg";
 import arabicIcon from "@/images/arabic-icon.svg";
 import turkishIcon from "@/images/turkish-icon.svg";
 import russianIcon from "@/images/russian-icon.svg";
 import langIcon from "@/images/lang-icon.svg";
 
-import georgianIcon from "@/images/georgian-icon.svg";
+// import georgianIcon from "@/images/georgian-icon.svg";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import { getLanguageNameByLocale, getSlugByLanguage } from "../Util/languagesUtils";
+import { getSlugByLanguage } from "../Util/languagesUtils";
 import usePostURL from "@/store/dynamicBlogPost";
 
 function classNames(...classes) {
