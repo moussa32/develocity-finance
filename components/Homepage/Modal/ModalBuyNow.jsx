@@ -100,7 +100,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
         return (
           <WalletInfoModal
             deveBalance={deveBalance}
-            tokensToClaim={tokensToClaim}
+            tokensToClaim={tokensToClaim.amount}
             referralsToClaim={referralsToClaim}
             handleStep={handleStep}
             walletAddress={address}
@@ -174,7 +174,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             onClose={onClose}
             handleStep={handleStep}
             boughtAmount={transAmount}
-            referral={referralsToClaim}
+            referral={referralsToClaim.amount}
             handleCurrent={handleCurrentAnimationStep}
           />
         );

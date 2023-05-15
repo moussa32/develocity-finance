@@ -43,38 +43,31 @@ const BuyAmountModal = ({
       if (currentCurrency.ticker === "BUSD") {
         const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
         const returnedCalculateDeveCoins = Number(ethers.utils.formatEther(calculateDeveCoins.toString())).toFixed(2);
-
         if (!isApproved) {
           await walletContract
             .getBusdAll(calculateDeveCoins, walletAddress)
             .then(res => {
               setIsApproved(res);
+              console.log(res)
               if (res) {
-                toast(
-                  <div>
-                    <span className="text-success" style={{ color: "#00ac5d", marginRight: "0.5rem" }}>
-                      Approved!
-                    </span>
-                    You can swap your coins.
-                  </div>,
-                  {
-                    duration: 4000,
-                    position: "top-center",
-                    // Styling
-                    style: {
-                      fontSize: "16px",
-                      background: "#DCFFEF",
-                    },
-                    // Custom Icon
-                    icon: <SuccessIcon />,
+                console.log(res)
 
-                    // Aria
-                    ariaProps: {
-                      role: "status",
-                      "aria-live": "polite",
-                    },
-                  }
-                );
+                toast("Approved!", {
+                  duration: 4000,
+                  position: "top-center",
+                  // Styling
+                  style: {
+                    fontSize: "16px",
+                    background: "#DCFFEF",
+                  },
+  
+                  // Aria
+                  ariaProps: {
+                    role: "status",
+                    "aria-live": "polite",
+                  },
+                });
+
                 setIsBuyButtonLoading(false);
                 setIsApprovedButtonDisabled(true);
               }
@@ -198,31 +191,21 @@ const BuyAmountModal = ({
       .then(res => {
         setIsApprovedButtonDisabled(false);
         setIsBuyButtonLoading(false);
-        toast(
-          <div>
-            <span className="text-success" style={{ color: "#00ac5d", marginRight: "0.5rem" }}>
-              Approved!
-            </span>
-            You can swap your coins.
-          </div>,
-          {
-            duration: 4000,
-            position: "top-center",
-            // Styling
-            style: {
-              fontSize: "16px",
-              background: "#DCFFEF",
-            },
-            // Custom Icon
-            icon: <SuccessIcon />,
+        toast("Approved!", {
+          duration: 4000,
+          position: "top-center",
+          // Styling
+          style: {
+            fontSize: "16px",
+            background: "#DCFFEF",
+          },
 
-            // Aria
-            ariaProps: {
-              role: "status",
-              "aria-live": "polite",
-            },
-          }
-        );
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
       })
       .catch(error => console.log(error));
   };

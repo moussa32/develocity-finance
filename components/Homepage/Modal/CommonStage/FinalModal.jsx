@@ -46,10 +46,10 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
         <TextItem
           title={t?.finalModal.PurchasedTokens}
           value={boughtAmount}
-          percentage={(boughtAmount * deveCost).toFixed(4)}
+          percentage={(boughtAmount * deveCost).toFixed(2)}
           hr="true"
         />
-        <TextItem title={t?.finalModal.fromReferrals} value={referral} percentage={(referral * deveCost).toFixed(4)} />
+        <TextItem title={t?.finalModal.fromReferrals} value={referral} percentage={(referral * deveCost).toFixed(2)} hr=""/>
       </div>
       <button className="border-0 text-sm bg-transparent text-[#888] mt-12" onClick={returnToHome}>
         {t?.finalModal.backToHomepageBtn}
