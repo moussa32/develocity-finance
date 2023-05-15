@@ -73,7 +73,7 @@ const Contact = () => {
               <div className="flex gap-3 items-center mt-4">
                 <label className="order-2 text-xs lg:text-base">
                   {t?.contactUs?.form?.checkbox[0]}
-                  <Link className="text-indigo-400" href="/privacy-policy">
+                  <Link className="text-indigo-400" href="/terms-and-conditions">
                     {t?.contactUs?.form?.checkbox[1]}
                   </Link>
                 </label>
