@@ -31,13 +31,11 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     ethers.utils.formatEther((await walletContract._RefAmount(walletAddress)).toString())
   ).toFixed(2);
 
-  const referralsBalanceValue = (referralsToClaim * deveCost).toFixed(2);
-
   // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
 
   return {
     deveBalance: { amount: DEVEBalance, value: DEVEBalanceValue },
     tokensToClaim: { amount: tokensToClaim, value: tokensToClaim },
-    referralsToClaim: { amount: referralsToClaim, value: referralsBalanceValue },
+    referralsToClaim,
   };
 };

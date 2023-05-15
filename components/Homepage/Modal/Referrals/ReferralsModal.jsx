@@ -61,9 +61,9 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
             className="m-3 ml-auto cursor-pointer"
             onClick={() => copyToClipboard()}
             xmlns="http://www.w3.org/2000/svg"
-            width="22"
-            height="22"
-            viewBox="0 0 22 22"
+            width="21.5"
+            height="21.5"
+            viewBox="0 0 21.5 21.5"
           >
             <path
               id="Vector"
@@ -92,7 +92,7 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
       </div>
       <div className="mt-4 w-full">
         <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim} secondaryText="%" hr="true" />
-        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim.amount} percentage={referralsToClaim.value} />
+        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim} />
       </div>
       {/* <button
         className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
