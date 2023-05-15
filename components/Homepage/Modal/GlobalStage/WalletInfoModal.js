@@ -90,7 +90,12 @@ const WalletInfoModal = ({
           secondaryText="= $0.20"
           hr="true"
         />
-        <TextItem title={t?.walletInfoModal.referralsToClaim} value={referralsToClaim} hr="" isLoaded={isDataLoaded} />
+        <TextItem 
+          title={t?.walletInfoModal.referralsToClaim} 
+          value={referralsToClaim.amount}
+          percentage={referralsToClaim.value}
+           hr="" 
+          isLoaded={isDataLoaded} />
         <div>
           <NextButton
             handleStep={() => {
