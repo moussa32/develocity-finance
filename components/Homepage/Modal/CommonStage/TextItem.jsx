@@ -18,14 +18,14 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoade
       );
     } else {
       return (
-        <p className="text-sm flex items-center m-0 text-[#333]">
+        <div className={`text-sm flex items-center m-0 text-[#333]`} dir="ltr">
           {value ? value : null} {secondaryText ? secondaryText : "DEVE"}
           {percentage && (
             <span className={`${locale === "ar" ? "mr-1" : "ml-1"} text-[#8b8b8b]`}>
               ({symbol ? symbol : "~$"} {percentage})
             </span>
           )}
-        </p>
+        </div>
       );
     }
   };
