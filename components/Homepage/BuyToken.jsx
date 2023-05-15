@@ -13,7 +13,7 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 
-const SOLD_PERCENTAGE = 0;
+const SOLD_PERCENTAGE = 1.29;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -38,7 +38,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            {new Intl.NumberFormat().format(data && data.remaining ?  Number(data.remaining) - 43567 : 0)}{" "}
+            {new Intl.NumberFormat().format(data && data.remaining ?  Number(data.remaining) - 43567 : 4935585)}{" "}
             {t?.title?.tokensRe}
           </h3>
         </div>
