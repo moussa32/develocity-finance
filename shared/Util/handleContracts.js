@@ -28,7 +28,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
   const referralsToClaim = Number(
     ethers.utils.formatEther((await walletContract._RefAmount(walletAddress)).toString())
   ).toFixed(2);
-  
+
   let referralsBalanceAmount,DEVEBalanceAmount = 0;
 
   if(network === "bsc"){
@@ -41,9 +41,9 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
       ethers.utils.formatEther((await walletContract2._contributions(walletAddress)).toString())
     ).toFixed(2);
   
-    DEVEBalanceAmount = Number(DEVEBalance2) + Number(DEVEBalance);
-    referralsBalanceAmount = Number(referralsToClaim2) + Number(referralsToClaim);
-
+    DEVEBalanceAmount = (Number(DEVEBalance2) + Number(DEVEBalance)).toFixed(2);
+    referralsBalanceAmount = (Number(referralsToClaim2) + Number(referralsToClaim)).toFixed(2);
+ 
   }else{
     referralsBalanceAmount = referralsToClaim;
 
