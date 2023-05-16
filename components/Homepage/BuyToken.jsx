@@ -13,7 +13,7 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import { useQuery } from "@tanstack/react-query";
 import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 
-const SOLD_PERCENTAGE = 1.9528;
+const SOLD_PERCENTAGE = 1.95;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -22,7 +22,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
     queryFn: fetchPreSaleStatus,
   });
   const { progress } = useProgress({
-    max: data && data.soldPercentage ? Number(Number(data.soldPercentage) + 1.4828 ).toFixed(2) : SOLD_PERCENTAGE,
+    max: data && data.soldPercentage ? Number(Number(data.soldPercentage) + 1.48 ).toFixed(2) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -42,7 +42,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {t?.title?.tokensRe}
           </h3>
         </div>
-        <ProgressBar value={data ? Number(Number(data.soldPercentage) + 1.4828 ) : SOLD_PERCENTAGE} />
+        <ProgressBar value={data ? Number(Number(data.soldPercentage) + 1.48 ) : SOLD_PERCENTAGE} />
         
         <div className="flex items-center flex-col gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] sm:gap-0 sm:flex-row justify-center md:justify-between md:px-6">
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 ltr:sm:pr-10 rtl:sm:pl-10">
