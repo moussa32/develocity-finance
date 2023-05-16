@@ -91,8 +91,8 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
         </div>
       </div>
       <div className="mt-4 w-full">
-        <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim} secondaryText="%" hr="true" />
-        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim.amount} percentage={referralsToClaim.value} />
+        <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim === "8" ? 7.5 :  tokensToClaim} secondaryText="%" hr="true" />
+        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim.amount} percentage={referralsToClaim.value === 8 ? 7.5 :  referralsToClaim.value} />
       </div>
       {/* <button
         className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
