@@ -2,24 +2,36 @@ import TextItem from "../CommonStage/TextItem";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import toast from "react-hot-toast";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { useEffect } from "react";
+import { useClipboard } from "@mantine/hooks";
 
-const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToClaim }) => {
-  const copyToClipboard = async () => {
-    await navigator.clipboard.writeText(`${window.location.origin}?ref=${walletAddress}`);
-    //alert('Text copied');
-    toast.success("Copied To Clipboard", {
-      style: {
-        border: "1px solid #35C486",
-        padding: "16px",
-        backgroundColor: "white",
-        width: "300px",
-        borderRadius: "8px",
-      },
-      iconTheme: {
-        primary: "#35C486",
-      },
-    });
-  };
+const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim }) => {
+  const { copy, reset, error, copied } = useClipboard({ timeout: 500 });
+
+  useEffect(() => {
+    if (copied) {
+      toast.success("Copied To Clipboard", {
+        style: {
+          border: "1px solid #35C486",
+          padding: "16px",
+          backgroundColor: "white",
+          width: "300px",
+          borderRadius: "8px",
+        },
+        iconTheme: {
+          primary: "#35C486",
+        },
+      });
+    }
+
+    if (error) {
+      toast.error(error, {
+        iconTheme: {
+          primary: "#35C486",
+        },
+      });
+    }
+  }, [copied, error]);
 
   const { t } = useTranslation("buy-token-modal");
 
@@ -52,14 +64,16 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
       <ModalHeaderText header={t?.referralModal.mainText} caption={t?.referralModal.subText} />
       <div>
         <label className="text-[#A5A5A5] text-sm">{t?.referralModal.referralLinkLabel}</label>
-        <div className="copy-link bg-white w-[283px] sm:w-[360px] flex rounded-md border-1 border-[#D6D6D6]">
+        <div
+          className="copy-link bg-white w-[283px] sm:w-[360px] flex rounded-md border-1 border-[#D6D6D6]"
+          onClick={() => copy(`${window.location.origin}?ref=${walletAddress}`)}
+        >
           <p className="m-3 text-xs sm:text-sm text-primary">{`${window.location.origin}?ref=${walletAddress.slice(
             0,
             5
           )}...`}</p>
           <svg
             className="m-3 ml-auto cursor-pointer"
-            onClick={() => copyToClipboard()}
             xmlns="http://www.w3.org/2000/svg"
             width="22"
             height="22"
@@ -92,7 +106,11 @@ const ReferralsModal = ({ handleStep, walletAddress, tokensToClaim, referralsToC
       </div>
       <div className="mt-4 w-full">
         <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim} secondaryText="%" hr="true" />
-        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim.amount} percentage={referralsToClaim.value} />
+        <TextItem
+          title={t?.referralModal.referralsToClaim}
+          value={referralsToClaim.amount}
+          percentage={referralsToClaim.value}
+        />
       </div>
       {/* <button
         className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
