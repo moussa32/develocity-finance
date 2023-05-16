@@ -21,8 +21,6 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     ethers.utils.formatEther((await walletContract._contributions(walletAddress)).toString())
   ).toFixed(2);
 
-  const DEVEBalanceValue = (DEVEBalance * deveCost).toFixed(2);
-
   //Fetch Tokens to claim
   const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
 
@@ -30,14 +28,36 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
   const referralsToClaim = Number(
     ethers.utils.formatEther((await walletContract._RefAmount(walletAddress)).toString())
   ).toFixed(2);
+  
+  let referralsBalanceAmount,DEVEBalanceAmount = 0;
 
-  const referralsBalanceValue = (referralsToClaim * deveCost).toFixed(2);
+  if(network === "bsc"){
+    const walletContract2 = new ethers.Contract("0x124Ab16d98d71dd95C5F57Ed6123bD06f00EA803" , contractAbi, provider);
+    const referralsToClaim2 = Number(
+      ethers.utils.formatEther((await walletContract2._RefAmount(walletAddress)).toString())
+    ).toFixed(2);
+
+    const DEVEBalance2 = Number(
+      ethers.utils.formatEther((await walletContract2._contributions(walletAddress)).toString())
+    ).toFixed(2);
+  
+    DEVEBalanceAmount = Number(DEVEBalance2) + Number(DEVEBalance);
+    referralsBalanceAmount = Number(referralsToClaim2) + Number(referralsToClaim);
+
+  }else{
+    referralsBalanceAmount = referralsToClaim;
+
+  }
+
+  const referralsBalanceValue = (referralsBalanceAmount * deveCost).toFixed(2);
+
+  const DEVEBalanceValue = (DEVEBalanceAmount * deveCost).toFixed(2);
 
   // Methods =>  _contributions(address) - getRefPer(address) _RefAmount [0.3]
 
   return {
-    deveBalance: { amount: DEVEBalance, value: DEVEBalanceValue },
+    deveBalance: { amount: DEVEBalanceAmount, value: DEVEBalanceValue },
     tokensToClaim: { amount: tokensToClaim, value: tokensToClaim },
-    referralsToClaim: { amount: referralsToClaim, value: referralsBalanceValue },
+    referralsToClaim: { amount: referralsBalanceAmount, value: referralsBalanceValue },
   };
 };
