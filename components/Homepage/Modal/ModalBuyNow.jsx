@@ -24,7 +24,7 @@ import { useRouter } from "next/router";
 // };
 
 const ModalBuyNow = ({ open, onClose, handleOpen }) => {
-  const [currentStep, setCurrentStep] = useState("walletInfo");
+  const [currentStep, setCurrentStep] = useState("referral");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
   const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
