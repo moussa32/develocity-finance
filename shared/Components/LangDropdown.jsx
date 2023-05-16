@@ -21,7 +21,7 @@ function classNames(...classes) {
 
 const LangDropdown = () => {
   const { t, errors } = useTranslation("navbar");
-  const { locale, push, replace, pathname } = useRouter();
+  const { locale, push, replace, pathname, query, asPath } = useRouter();
   const { postSlugs } = usePostURL(state => state);
   const changeLanguage = event => {
     const selectedLocale = event.currentTarget.name;
@@ -38,7 +38,14 @@ const LangDropdown = () => {
         }
       );
     } else {
-      push(pathname, pathname, { locale: selectedLocale });
+      push(
+        {
+          route: pathname,
+          query: query,
+        },
+        asPath,
+        { locale: selectedLocale }
+      );
     }
   };
 
