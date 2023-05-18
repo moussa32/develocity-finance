@@ -6,7 +6,8 @@ import { configureChains, createClient, WagmiConfig } from "wagmi";
 import { bsc, mainnet, polygon } from "wagmi/chains";
 import { Toaster } from "react-hot-toast";
 import { Hydrate, QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 
 // 1. Get projectID at https://cloud.walletconnect.com
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
@@ -29,6 +30,19 @@ const ethereumClient = new EthereumClient(wagmiClient, chains);
 
 export default function MyApp({ Component, pageProps }) {
   const [queryClient] = useState(() => new QueryClient());
+  const router = useRouter();
+
+  useEffect(() => {
+    const handleRouteChange = url => {
+      window.gtag("config", process.env.NEXT_PUBLIC_GOOGLE_ANALYTICS, {
+        page_path: url,
+      });
+    };
+    router.events.on("routeChangeComplete", handleRouteChange);
+    return () => {
+      router.events.off("routeChangeComplete", handleRouteChange);
+    };
+  }, [router.events]);
 
   return (
     <>

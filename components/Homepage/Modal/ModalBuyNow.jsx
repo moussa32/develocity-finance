@@ -13,7 +13,7 @@ import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
-import BuyMethod from "./BuyStage/BuyMethod";
+// import BuyMethod from "./BuyStage/BuyMethod";
 import { useRouter } from "next/router";
 
 // const steps = {
