@@ -73,12 +73,12 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         >
           {t?.sub?.BuyNow}
         </button>
-        {/* <a target="_blank" rel="noreferrer" href="https://www.youtube.com" className="flex items-center gap-1 md:gap-3">
+        <a target="_blank" rel="noreferrer" href="https://www.youtube.com/watch?v=y-MEnm_Aa9s" className="flex items-center gap-1 md:gap-3">
           <div className="w-[52px] h-12 rounded bg-neutral-50 flex items-center justify-center">
             <Image src={Play} alt="Play how to buy" size={25} className="text-neutral-700" />
           </div>
           <span className="underline underline-offset-4">{t?.sub?.HowtoBuy}</span>
-        </a> */}
+        </a>
       </section>
       {/* <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
         
