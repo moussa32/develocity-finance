@@ -222,12 +222,12 @@ const Header = () => {
               images={partnerships}
               slidesPerView={1.8}
               autoplay={{
-                delay: 5000,
+                delay: 2500,
                 disableOnInteraction: false,
               }}
               initialSlide={1}
               modules={[Autoplay]}
-              containerClassNames="mt-1 lg:!hidden"
+              containerClassNames="mt-1 max-h-[150px] lg:!hidden"
               slideImageClassName="h-[100px]"
           />
         
