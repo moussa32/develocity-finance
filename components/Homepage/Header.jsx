@@ -10,7 +10,7 @@ import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Backgro
 import nationalTimes from "../../public/assets/images/national-times.svg";
 import blockchianNews from "../../public/assets/images/blockchian_news.svg";
 import emiratesFreePress from "../../public/assets/images/emirates-free-press.svg";
-import abuDhabiReporter from "../../public/assets/images/abu-dhabi-reporter.jpg"
+import abuDhabiReporter from "../../public/assets/images/abu-dhabi-reporter.svg"
 import APNews from "../../public/assets/images/AP_logo.jpg"
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
