@@ -10,6 +10,7 @@ import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Backgro
 import nationalTimes from "../../public/assets/images/national-times.svg";
 import blockchianNews from "../../public/assets/images/blockchian_news.svg";
 import emiratesFreePress from "../../public/assets/images/emirates-free-press.svg";
+import abuDhabiReporter from "../../public/assets/images/abu-dhabi-reporter.jpg"
 import APNews from "../../public/assets/images/AP_logo.jpg"
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
@@ -122,6 +123,15 @@ const Header = () => {
       imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
       imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
     }
+    ,
+    {
+      title: "Abu Dhabi Reporter",
+      link: "https://www.abudhabireporter.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
+      defaultVersion: abuDhabiReporter,
+      coloredVersion: abuDhabiReporter,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
+    }
   ];
 
 
@@ -198,6 +208,13 @@ const Header = () => {
             className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
             src={APNews}
             alt="AP NEWs"
+          />
+          </a>
+          <a href="https://www.abudhabireporter.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
+          <Image
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
+            src={abuDhabiReporter}
+            alt="Abu Dhabi Reporter"
           />
           </a>
         </div>
