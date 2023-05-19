@@ -7,15 +7,22 @@ import SideMenu from "../../shared/Components/SideMenu";
 // import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
 import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
+import nationalTimes from "../../public/assets/images/national-times.svg";
+import blockchianNews from "../../public/assets/images/blockchian_news.svg";
+import emiratesFreePress from "../../public/assets/images/emirates-free-press.svg";
+import APNews from "../../public/assets/images/AP_logo.jpg"
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
 import { useWeb3Modal } from "@web3modal/react";
 import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";
+import Image from "next/image";
 import ModalBuyNow from "./Modal/ModalBuyNow";
 import BuyToken from "./BuyToken";
 import Stages from "./AllStagesModal/Stages";
+import MobileImageSlider from "../../shared/Components/MobileImageSlider";
+import { Autoplay } from "swiper";
 
 const Header = () => {
   const { open } = useWeb3Modal();
@@ -82,6 +89,42 @@ const Header = () => {
     setIsAllStagesOpen(false);
   }, [isAllStagesOpen]);
 
+  const partnerships = [
+    {
+      title: "US National Times",
+      link: "https://www.usnationaltimes.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
+      defaultVersion: nationalTimes,
+      coloredVersion: nationalTimes,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
+    },
+    {
+      title: "Blockchian News",
+      link: "https://www.blockchainnewsonline.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
+      defaultVersion: blockchianNews,
+      coloredVersion: blockchianNews,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
+    },
+    {
+      title: "Emirates Free Press",
+      link: "https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
+      defaultVersion: emiratesFreePress,
+      coloredVersion: emiratesFreePress,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
+    },
+    {
+      title: "AP News",
+      link: "https://apnews.com/press-release/ein-presswire-newsmatics/technology-blockchain-ein-presswire-newsmatics-2ee78691e9e218b951d069b1d5e07ea4",
+      defaultVersion: APNews,
+      coloredVersion: APNews,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
+    }
+  ];
+
+
   return (
     <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
       {isFinished && (
@@ -128,27 +171,52 @@ const Header = () => {
             </div>
           </div> */}
         </div>
-
-        {/* <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
+        <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
+          <a href="google.com">
           <Image
-            className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={BloombergIcon}
-            alt="bloomberg"
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
+            src={emiratesFreePress}
+            alt="Emirates Free Press"
           />
-          <Image className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80" src={WiredIcon} alt="Wired" />
+          </a>
+          <a href="https://www.usnationaltimes.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
+          <Image 
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80" 
+            src={nationalTimes} 
+            alt="US National Times" 
+          />
+          </a>
+          <a href="https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
           <Image
-            className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={CoindeskIcons}
-            alt="coindesk"
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
+            src={blockchianNews}
+            alt="Blockchian News"
           />
+          </a>
+          <a href="https://apnews.com/press-release/ein-presswire-newsmatics/technology-blockchain-ein-presswire-newsmatics-2ee78691e9e218b951d069b1d5e07ea4">
           <Image
-            className="max-w-[150px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={YahooFinanceIcons}
-            alt="yahooFinance"
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
+            src={APNews}
+            alt="AP NEWs"
           />
-        </div> */}
+          </a>
+        </div>
+          <MobileImageSlider
+              images={partnerships}
+              slidesPerView={1.8}
+              autoplay={{
+                delay: 5000,
+                disableOnInteraction: false,
+              }}
+              initialSlide={1}
+              modules={[Autoplay]}
+              containerClassNames="mt-1 lg:!hidden"
+              slideImageClassName="h-[100px]"
+          />
+        
       </div>
     </div>
+    
   );
 };
 
