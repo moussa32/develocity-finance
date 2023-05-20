@@ -57,7 +57,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
 
   return {
     deveBalance: { amount: DEVEBalanceAmount, value: DEVEBalanceValue },
-    tokensToClaim: { amount: tokensToClaim, value: tokensToClaim },
+    tokensToClaim: { amount: Number(tokensToClaim) === 8 ? 7.5: tokensToClaim, value: Number(tokensToClaim) === 8 ? 7.5: tokensToClaim },
     referralsToClaim: { amount: referralsBalanceAmount, value: referralsBalanceValue },
   };
 };
