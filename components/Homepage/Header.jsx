@@ -182,7 +182,7 @@ const Header = () => {
           </div> */}
         </div>
         <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
-          <a href="google.com">
+          <a href="https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
           <Image
             className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
             src={emiratesFreePress}
