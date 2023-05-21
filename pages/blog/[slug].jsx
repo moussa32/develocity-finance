@@ -89,7 +89,7 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
                 </div>
               )}
             </>
-          }
+          } 
         />
         <article className="container px-6 mx-auto relative min-w-full mb-24 pt-16 md:pt-56 lg:px-0 lg:pt-[372px]">
           <Image  
