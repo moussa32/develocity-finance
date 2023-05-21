@@ -46,7 +46,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
  
   }else{
     referralsBalanceAmount = referralsToClaim;
-
+ 
   }
 
   const referralsBalanceValue = (referralsBalanceAmount * deveCost).toFixed(2);
