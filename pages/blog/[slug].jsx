@@ -92,7 +92,7 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
           }
         />
         <article className="container px-6 mx-auto relative min-w-full mb-24 pt-16 md:pt-56 lg:px-0 lg:pt-[372px]">
-          <Image 
+          <Image  
             className="hidden w-4/5 inset-x-0 absolute top-[-90px] md:block lg:max-w-[1008px] lg:top-[-160px] mx-auto z-10 max-h-[516px] object-contain rounded-xl"
             src={image}
             width={1008}
