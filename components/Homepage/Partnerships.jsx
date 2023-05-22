@@ -67,7 +67,7 @@ const partnerships = [
   },
   {
     title: "nxgen Logo",
-    link: "https://play.google.com/store/apps/details?id=com.eblock6.nextgen&hl=en&gl=US",
+    link: "https://crypto.eblock6.com/nxgen-app",
     defaultVersion: nxgen,
     coloredVersion: nxgen,
     imageActiveClassName: "h-[80px] object-contain",
