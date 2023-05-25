@@ -13,8 +13,9 @@ import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
 import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
-// import BuyMethod from "./BuyStage/BuyMethod";
+import BuyMethod from "./BuyStage/BuyMethod";
 import { useRouter } from "next/router";
+import BuyAmountWithFiat from "./BuyStage/BuyAmountWithFiat";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -116,20 +117,16 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           <SelectOption deveBalance={deveBalance} handleStep={handleStep} handleCurrent={handleCurrentAnimationStep} />
         );
       case "paymentMethod":
-        <BuywithModal
-          handleStep={handleStep}
-          walletAddress={address}
-          handleFirstCoin={setFirstCoin}
-          firstCoin={firstCoin}
-          handleSecondCoin={setSecondCoin}
-          secondCoin={secondCoin}
-          handleSelectCurrency={setSelectedCurreny}
-          provider={provider}
-          handleCurrent={handleCurrentAnimationStep}
-          selectedNetwork={chain.network}
-        />;
-
-      // return <BuyMethod handleStep={setCurrentStep} />;
+        return <BuyMethod handleStep={setCurrentStep} />;
+      case "buyWithFiat":
+        return (
+          <BuyAmountWithFiat
+            disconnect={handleDisconnectWeb3Modal}
+            handleCurrent={handleCurrentAnimationStep}
+            handleFinalAmount={setTransAmount}
+            handleStep={setCurrentStep}
+          />
+        );
       case "buywith":
         return (
           <BuywithModal

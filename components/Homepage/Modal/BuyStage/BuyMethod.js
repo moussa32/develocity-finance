@@ -1,36 +1,9 @@
-import { useCallback, useEffect, useState } from "react";
 import ButtonItem from "../CommonStage/ButtonItem";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import AlchemyPay from "@/images/Alchemy-Pay.png";
+import AlchemyPay from "@/images/fiat_money.png";
 import BuyWithCrypto from "@/images/BuyWithCrypto.png";
-import { useAccount, useNetwork } from "wagmi";
-import axios from "axios";
 
 const BuyMethod = ({ handleStep }) => {
-  const [signature, setSignature] = useState(null);
-  const { chain } = useNetwork();
-  const { address } = useAccount();
-  console.log(signature);
-
-  useEffect(() => {
-    const fetchSign = async () => {
-      const generateSign = await axios
-        .post("/api/signature", {
-          address,
-        })
-        .catch(error => console.log(error));
-      const { data } = generateSign;
-      setSignature(data.sign);
-    };
-    fetchSign();
-  }, [address]);
-
-  const openAlchemyPay = useCallback(() => {
-    window.open(
-      `https://ramptest.alchemypay.org/?crypto=BTC&fiat=USD&fiatAmount=15&appId=${process.env.NEXT_PUBLIC_ALCHEMYPAY_APP_ID}&sign=${signature}&address=${address}&callbackUrl=https://api.xite.solutions/api/v1/alchemy/callback&redirectUrl=https://develocity-finance.vercel.app`
-    );
-  }, [chain, signature, address]);
-
   return (
     <>
       <ModalHeaderText header="Payment Method" caption="Choose how you want to buy" />
@@ -45,10 +18,12 @@ const BuyMethod = ({ handleStep }) => {
           disabled={false}
         />
         <ButtonItem
-          mainText="Alchemy Pay"
+          mainText="Fiat Money"
           secondaryText="Visa, Mastercard, G Pay, Apple Pay"
           image={AlchemyPay}
-          handleSelect={openAlchemyPay}
+          handleSelect={() => {
+            handleStep("buyWithFiat");
+          }}
           disabled={false}
         />
       </div>
