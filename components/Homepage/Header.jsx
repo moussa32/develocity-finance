@@ -106,7 +106,7 @@ const Header = () => {
       coloredVersion: blockchianNews,
       imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
       imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
-    }, 
+    },
     {
       title: "Emirates Free Press",
       link: "https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
