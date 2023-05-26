@@ -118,7 +118,7 @@ const BuyAmountModal = ({
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
 
     let ref;
-    if (query.ref) {
+    if (query.ref && query.ref.length === 42)  {
       ref = query.ref;
     } else {
       ref = "0x0000000000000000000000000000000000000000";
