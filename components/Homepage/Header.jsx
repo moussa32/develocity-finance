@@ -7,11 +7,6 @@ import SideMenu from "../../shared/Components/SideMenu";
 // import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
 import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
-import nationalTimes from "../../public/assets/images/national-times.svg";
-import blockchianNews from "../../public/assets/images/blockchian_news.svg";
-import emiratesFreePress from "../../public/assets/images/emirates-free-press.svg";
-import abuDhabiReporter from "../../public/assets/images/abu-dhabi-reporter.svg"
-import APNews from "../../public/assets/images/AP_logo.jpg"
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
@@ -90,49 +85,6 @@ const Header = () => {
     setIsAllStagesOpen(false);
   }, [isAllStagesOpen]);
 
-  const partnerships = [
-    {
-      title: "US National Times",
-      link: "https://www.usnationaltimes.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
-      defaultVersion: nationalTimes,
-      coloredVersion: nationalTimes,
-      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
-      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
-    },
-    {
-      title: "Blockchian News",
-      link: "https://www.blockchainnewsonline.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
-      defaultVersion: blockchianNews,
-      coloredVersion: blockchianNews,
-      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
-      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
-    },
-    {
-      title: "Emirates Free Press",
-      link: "https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
-      defaultVersion: emiratesFreePress,
-      coloredVersion: emiratesFreePress,
-      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
-      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
-    },
-    {
-      title: "AP News",
-      link: "https://apnews.com/press-release/ein-presswire-newsmatics/technology-blockchain-ein-presswire-newsmatics-2ee78691e9e218b951d069b1d5e07ea4",
-      defaultVersion: APNews,
-      coloredVersion: APNews,
-      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
-      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
-    }
-    ,
-    {
-      title: "Abu Dhabi Reporter",
-      link: "https://www.abudhabireporter.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust",
-      defaultVersion: abuDhabiReporter,
-      coloredVersion: abuDhabiReporter,
-      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-30 opacity-80",
-      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-30 ",
-    }
-  ];
 
 
   return (
@@ -181,56 +133,6 @@ const Header = () => {
             </div>
           </div> */}
         </div>
-        <div className="hidden mt-auto mb-12 justify-center mx-auto px-4 gap-x-11 gap-y-6 md:flex md:gap-10 md:gap-x-10 md:flex-wrap md:justify-evenly lg:gap-x-14 lg:mb-20 lg:gap-y-0">
-          <a href="https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
-          <Image
-            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={emiratesFreePress}
-            alt="Emirates Free Press"
-          />
-          </a>
-          <a href="https://www.usnationaltimes.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
-          <Image 
-            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80" 
-            src={nationalTimes} 
-            alt="US National Times" 
-          />
-          </a>
-          <a href="https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
-          <Image
-            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={blockchianNews}
-            alt="Blockchian News"
-          />
-          </a>
-          <a href="https://apnews.com/press-release/ein-presswire-newsmatics/technology-blockchain-ein-presswire-newsmatics-2ee78691e9e218b951d069b1d5e07ea4">
-          <Image
-            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={APNews}
-            alt="AP NEWs"
-          />
-          </a>
-          <a href="https://www.abudhabireporter.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
-          <Image
-            className="lg:max-w-[100px] md:max-w-[100%] opacity-30 hover:opacity-80"
-            src={abuDhabiReporter}
-            alt="Abu Dhabi Reporter"
-          />
-          </a>
-        </div>
-          <MobileImageSlider
-              images={partnerships}
-              slidesPerView={1.8}
-              autoplay={{
-                delay: 2500,
-                disableOnInteraction: false,
-              }}
-              initialSlide={1}
-              modules={[Autoplay]}
-              containerClassNames="mt-1 max-h-[150px] lg:!hidden"
-              slideImageClassName="h-[100px]"
-          />
-        
       </div>
     </div>
     

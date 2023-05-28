@@ -5,11 +5,11 @@
   },
   "walletInfoModal": {
     "mainText": "محفظتك",
-    "subText": "رصيد ديڤي في محفظتك",
+    "subText": "رصيد DEVE في محفظتك",
     "inputLable": "المحفظة",
-    "deveBalance": "رصيد الديڤي",
-    "tokensToClaim": "مطالبة العملات",
-    "referralsToClaim": " مطالبة الإحالات",
+    "deveBalance": "رصيد DEVE ",
+    "tokensToClaim": "سعر الشراء ",
+    "referralsToClaim": "مطالبة الإحالات ",
     "nextBtn": "التالي"
   },
   "optionsModal": {
