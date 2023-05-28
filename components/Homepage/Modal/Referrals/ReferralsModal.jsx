@@ -117,7 +117,7 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim }) => {
         <TextItem
           title={t?.referralModal.referralsToClaim}
           value={referralsToClaim.amount}
-          percentage={referralsToClaim.value}
+          secondaryText= "USDT"
         />
       </div>
       {/* <button

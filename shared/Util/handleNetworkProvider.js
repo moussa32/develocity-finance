@@ -46,10 +46,10 @@ export const getSecondCoinContractAddress = network => {
 export const getMainCoinContractAddress = network => {
   switch (network) {
     case "homestead":
-      return "0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0";
+      return "0x981342751d7b08e704a4b208F9e4c720b981B4E1";
     case "bsc":
-      return "0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0";
+      return "0x981342751d7b08e704a4b208F9e4c720b981B4E1";
     case "matic":
-      return "0x8c23F7CC7c720dFF6aBf7E83271762a985092Ab5";
+      return "0x981342751d7b08e704a4b208F9e4c720b981B4E1";
   }
 };

@@ -98,7 +98,7 @@ const WalletInfoModal = ({
         <TextItem
           title={t?.walletInfoModal.referralsToClaim}
           value={referralsToClaim.amount}
-          percentage={referralsToClaim.value}
+          secondaryText={"USDT"}
           hr=""
           isLoaded={isDataLoaded}
         />

@@ -1,5 +1,6 @@
 import { useRouter } from "next/router";
 import ContentLoader from "react-content-loader";
+import USDTicon from "../../../../public/assets/images/USDT_icon.png";
 
 const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoaded = true }) => {
   const { locale } = useRouter();
@@ -20,6 +21,7 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoade
       return (
         <div className={`text-sm flex items-center m-0 text-[#333]`} dir="ltr">
           {value ? value : null} {secondaryText ? secondaryText : "DEVE"}
+          {secondaryText == "USDT" ? <img src={"../../../../assets/images/USDT_icon.png"} style={{height:18, width:18}} />: ""}
           {percentage && (
             <span className={`${locale === "ar" ? "mr-1" : "ml-1"} text-[#8b8b8b]`}>
               ({symbol ? symbol : "~$"} {percentage})
