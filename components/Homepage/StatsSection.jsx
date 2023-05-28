@@ -54,7 +54,7 @@ const StatsSection = () => {
           <div className="rounded-full bg-white w-12 h-12 flex justify-center items-center p-2">
             <Image className="w-5 h-5" src={crosshair} alt="crosshair" />
           </div>
-          <CountUp start={focus ? 0 : null} end={99.8} duration={3} decimals={1} decimal="." suffix="%" redraw={true}>
+          <CountUp start={focus ? 0 : null} end={90} duration={3} decimals={1} decimal="." suffix="%" redraw={true}>
             {({ countUpRef }) => (
               <VisibilitySensor
                 onChange={isVisible => {
@@ -76,7 +76,7 @@ const StatsSection = () => {
           <div className="rounded-full bg-white w-12 h-12 flex justify-center items-center p-2">
             <Image className="w-5 h-5" src={coins} alt="coins" />
           </div>
-          <CountUp start={focus ? 0 : null} end={70} duration={3} decimals={3} decimal=",">
+          <CountUp start={focus ? 0 : null} end={12} duration={3} decimals={3} decimal=",">
             {({ countUpRef }) => (
               <VisibilitySensor
                 onChange={isVisible => {
