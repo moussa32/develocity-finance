@@ -20,7 +20,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
   const DEVEBalance = Number(
     ethers.utils.formatEther((await walletContract._contributions(walletAddress)).toString())
   ).toFixed(2);
-
+  console.log(Number(DEVEBalance));
   //Fetch Tokens to claim
   const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
 
@@ -29,7 +29,8 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     ethers.utils.formatEther((await walletContract._RefAmount(walletAddress)).toString())
   ).toFixed(2);
 
-  let referralsBalanceAmount,DEVEBalanceAmount = 0;
+  let referralsBalanceAmount= 0,
+  DEVEBalanceAmount = 0;
 
   if(network === "bsc"){
     const walletContract2 = new ethers.Contract("0x124Ab16d98d71dd95C5F57Ed6123bD06f00EA803" , contractAbi, provider);
@@ -51,7 +52,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
  
   }else{
     referralsBalanceAmount = referralsToClaim;
- 
+    DEVEBalanceAmount = DEVEBalance;
   }
 
   const referralsBalanceValue = (referralsBalanceAmount * deveCost).toFixed(2);
