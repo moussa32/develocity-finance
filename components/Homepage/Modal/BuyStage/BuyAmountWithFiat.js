@@ -59,12 +59,13 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
       : ed.utils.randomPrivateKey();
     const signedData = signSmartContractData(
       {
-        address:'0x2AB8bDc20abb0a0bd4C2ee663Bc4f44DbDb62B89', // user address
-        commodity: 'MATIC', // coin
-        network: 'mumbai', // network
-        commodity_amount: 3, // user MATIC amount 
-        sc_address:"0xba8f0a8a809Ae8E840200a563F3E87058e7c1bBB", // smartcontract address
-        sc_input_data: "0xea4a225c0000000000000000000000002ab8bdc20abb0a0bd4c2ee663bc4f44dbdb62b890000000000000000000000000000000000000000000000000000000000000000",
+        address: address, // user address
+        commodity: "MATIC", // coin
+        network: "mumbai", // network
+        commodity_amount: 3, // user MATIC amount
+        sc_address: "0xba8f0a8a809Ae8E840200a563F3E87058e7c1bBB", // smartcontract address
+        sc_input_data:
+          "0xea4a225c0000000000000000000000002ab8bdc20abb0a0bd4c2ee663bc4f44dbdb62b890000000000000000000000000000000000000000000000000000000000000000",
       },
       privateKey
     );
