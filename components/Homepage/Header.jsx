@@ -8,7 +8,7 @@ import SideMenu from "../../shared/Components/SideMenu";
 import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
 import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import useCountdown from "@/shared/Hooks/useCountdown";
+import  ntdown from "@/shared/Hooks/useCountdown";
 import { useWeb3Modal } from "@web3modal/react";
 import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";

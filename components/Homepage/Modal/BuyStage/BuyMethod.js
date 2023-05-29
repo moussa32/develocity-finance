@@ -1,43 +1,18 @@
-import { useCallback, useEffect, useState } from "react";
 import ButtonItem from "../CommonStage/ButtonItem";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
-import AlchemyPay from "@/images/Alchemy-Pay.png";
-import BuyWithCrypto from "@/images/BuyWithCrypto.png";
-import { useAccount, useNetwork } from "wagmi";
-import axios from "axios";
+import AlchemyPay from "@/images/fiat_money.png";
+import BuyWithCrypto from "@/images/2272825.png";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const BuyMethod = ({ handleStep }) => {
-  const [signature, setSignature] = useState(null);
-  const { chain } = useNetwork();
-  const { address } = useAccount();
-  console.log(signature);
-
-  useEffect(() => {
-    const fetchSign = async () => {
-      const generateSign = await axios
-        .post("/api/signature", {
-          address,
-        })
-        .catch(error => console.log(error));
-      const { data } = generateSign;
-      setSignature(data.sign);
-    };
-    fetchSign();
-  }, [address]);
-
-  const openAlchemyPay = useCallback(() => {
-    window.open(
-      `https://ramptest.alchemypay.org/?crypto=BTC&fiat=USD&fiatAmount=15&appId=${process.env.NEXT_PUBLIC_ALCHEMYPAY_APP_ID}&sign=${signature}&address=${address}&callbackUrl=https://api.xite.solutions/api/v1/alchemy/callback&redirectUrl=https://develocity-finance.vercel.app`
-    );
-  }, [chain, signature, address]);
-
+  const { t } = useTranslation("buy-token-modal");
   return (
     <>
-      <ModalHeaderText header="Payment Method" caption="Choose how you want to buy" />
+      <ModalHeaderText header={t?.PaymentMethod.title} caption={t?.PaymentMethod.subtitle} />
       <div className="flex flex-col gap-[14px]">
         <ButtonItem
-          mainText="Buy with Crypto"
-          secondaryText="MATIC Network"
+          mainText={t?.PaymentMethod.first}
+          secondaryText="BSC, ETH, POLYGON"
           handleSelect={() => {
             handleStep("buywith");
           }}
@@ -45,10 +20,12 @@ const BuyMethod = ({ handleStep }) => {
           disabled={false}
         />
         <ButtonItem
-          mainText="Alchemy Pay"
-          secondaryText="Visa, Mastercard, G Pay, Apple Pay"
+          mainText={t?.PaymentMethod.second}
+          secondaryText="Visa, Mastercard"
           image={AlchemyPay}
-          handleSelect={openAlchemyPay}
+          handleSelect={() => {
+            handleStep("buyWithFiat");
+          }}
           disabled={false}
         />
       </div>
