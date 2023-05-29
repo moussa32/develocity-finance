@@ -14,7 +14,7 @@ import abuDhabiReporter from "../../public/assets/images/abu-dhabi-reporter.svg"
 import APNews from "../../public/assets/images/AP_logo.jpg"
 // import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import useCountdown from "@/shared/Hooks/useCountdown";
+import  ntdown from "@/shared/Hooks/useCountdown";
 import { useWeb3Modal } from "@web3modal/react";
 import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";

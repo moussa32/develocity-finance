@@ -1,16 +1,18 @@
 import ButtonItem from "../CommonStage/ButtonItem";
 import { ModalHeaderText } from "../ModalHeader/ModalHeaderText";
 import AlchemyPay from "@/images/fiat_money.png";
-import BuyWithCrypto from "@/images/BuyWithCrypto.png";
+import BuyWithCrypto from "@/images/2272825.png";
+import useTranslation from "@/shared/Hooks/useTranslation";
 
 const BuyMethod = ({ handleStep }) => {
+  const { t } = useTranslation("buy-token-modal");
   return (
     <>
-      <ModalHeaderText header="Payment Method" caption="Choose how you want to buy" />
+      <ModalHeaderText header={t?.PaymentMethod.title} caption={t?.PaymentMethod.subtitle} />
       <div className="flex flex-col gap-[14px]">
         <ButtonItem
-          mainText="Buy with Crypto"
-          secondaryText="MATIC Network"
+          mainText={t?.PaymentMethod.first}
+          secondaryText="BSC, ETH, POLYGON"
           handleSelect={() => {
             handleStep("buywith");
           }}
@@ -18,8 +20,8 @@ const BuyMethod = ({ handleStep }) => {
           disabled={false}
         />
         <ButtonItem
-          mainText="Fiat Money"
-          secondaryText="Visa, Mastercard, G Pay, Apple Pay"
+          mainText={t?.PaymentMethod.second}
+          secondaryText="Visa, Mastercard"
           image={AlchemyPay}
           handleSelect={() => {
             handleStep("buyWithFiat");

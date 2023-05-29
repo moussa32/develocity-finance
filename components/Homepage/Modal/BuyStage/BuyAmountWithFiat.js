@@ -58,25 +58,29 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     setBuyButtonText("Loading...");
     setIsBuyDisabled(true);
 
-    const privateKey = isTestMode
-      ? "0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3"
-      : ed.utils.randomPrivateKey();
+    const Web3 = require("web3");
+    const web3 = new Web3("https://polygon-testnet.public.blastapi.io");
+
+    const contract = new web3.eth.Contract(PreSaleABI, "0x981342751d7b08e704a4b208F9e4c720b981B4E1");
+    const data = contract.methods.buyTokensweth(address, refAddress).encodeABI();
+
+    const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966"
+      
     const signedData = signSmartContractData(
       {
         address: address, // user address
         commodity: "MATIC", // coin
-        network: "mumbai", // network
-        commodity_amount: 3, // user MATIC amount
-        sc_address: "0xba8f0a8a809Ae8E840200a563F3E87058e7c1bBB", // smartcontract address
-        sc_input_data:
-          "0xea4a225c0000000000000000000000002ab8bdc20abb0a0bd4c2ee663bc4f44dbdb62b890000000000000000000000000000000000000000000000000000000000000000",
+        network: "polygon", // network
+        commodity_amount: Number(coinBalance), // user MATIC amount
+        sc_address: "0x981342751d7b08e704a4b208F9e4c720b981B4E1", // smartcontract address
+        sc_input_data: data,
       },
       privateKey
     );
     const otherWidgetOptions = {
-      partner_id: process.env.NEXT_PUBLIC_WERT_PARTNER_ID,
+      partner_id: "01H1KEM2JR3QTT81EQWANE9X7K",
       click_id: uuidv4(), // unique id of purhase in your system
-      origin: isTestMode ? "https://sandbox.wert.io" : "https://widget.wert.io", // this option needed only for this example to work
+      origin: "https://widget.wert.io", // this option needed only for this example to work
       listeners: {
         close: () => {
           setBuyButtonText("Buy now");
