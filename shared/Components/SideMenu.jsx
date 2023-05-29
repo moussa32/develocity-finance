@@ -10,6 +10,7 @@ import ProjectsDropdown from "./ProjectsDropdown";
 import useNavbarScroll from "../Hooks/useNavbarBackground";
 import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import TextFloatRight from "@/components/Homepage/Modal/CommonStage/TextFloatRight";
 
 const SideMenu = () => {
   const { t, errors } = useTranslation("navbar");
@@ -38,6 +39,7 @@ const SideMenu = () => {
           <div className="mx-auto pt-2 max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
               <div className="absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center lg:hidden">
+              <LangDropdown/>
                 {/* Mobile menu button*/}
                 <Disclosure.Button
                   ref={DisclosureButton}
@@ -85,8 +87,6 @@ const SideMenu = () => {
                   {t?.headSection?.navbar?.contact}
                 </NextNavLink>
               </div>
-
-              <LangDropdown />
               <div className="flex items-center justify-center !mt-3 mb-3 md:mb-0">
                 <a
                   className=" bg-indigo-500 rounded-[30px] text-base font-medium px-4 py-2 hover:bg-slate-900/75"

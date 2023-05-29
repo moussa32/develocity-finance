@@ -11,6 +11,11 @@ import blockchianNews from "../../public/assets/images/blockchian_news.svg";
 import emiratesFreePress from "../../public/assets/images/emirates-free-press.svg";
 import abuDhabiReporter from "../../public/assets/images/abu-dhabi-reporter.svg"
 import APNews from "../../public/assets/images/AP_logo.jpg"
+import News8 from "../../public/assets/images/8News.webp";
+import FOX5 from "../../public/assets/images/FOX5.webp";
+import FOX44news from "../../public/assets/images/FOX44news.webp";
+import KXNEWS from "../../public/assets/images/KX NEWS.png"
+import WJTV from "../../public/assets/images/WJTV.webp"
 import MobileImageSlider from "../../shared/Components/MobileImageSlider";
 import { Autoplay } from "swiper";
 // import Coins from "@/images/coins.png";
@@ -61,6 +66,47 @@ const Ecosystem = () => {
       coloredVersion: abuDhabiReporter,
       imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-50 opacity-80",
       imageClassName: "max-w-[150px] md:max-w-[100%] opacity-50 ",
+    },
+    {
+      title: "FOX 44 NEWs",
+      link: "https://www.fox44news.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/",
+      defaultVersion: FOX44news,
+      coloredVersion: FOX44news,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-50 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-50 ",
+    },
+    {
+      title: "ABC 8 NEWs",
+      link: "https://www.wric.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/",
+      defaultVersion: News8,
+      coloredVersion: News8,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-50 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-50 ",
+    },
+    {
+      title: "FOX 5 NEWS",
+      link: "https://fox5sandiego.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/",
+      defaultVersion: FOX5,
+      coloredVersion: FOX5,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-50 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-50 ",
+    },
+    {
+      title: "KX News",
+      link: "https://www.kxnet.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/",
+      defaultVersion: KXNEWS,
+      coloredVersion: KXNEWS,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-50 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-50 ",
+    }
+    ,
+    {
+      title: "WJTV NEWS",
+      link: "https://www.wjtv.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/",
+      defaultVersion: WJTV,
+      coloredVersion: WJTV,
+      imageActiveClassName: "max-w-[150px] md:max-w-[100%] opacity-50 opacity-80",
+      imageClassName: "max-w-[150px] md:max-w-[100%] opacity-50 ",
     }
   ];
   
@@ -81,6 +127,8 @@ const Ecosystem = () => {
             className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
             src={emiratesFreePress}
             alt="Emirates Free Press"
+            width={150}
+            height={150}
           />
           </a>
           <a href="https://www.usnationaltimes.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
@@ -88,6 +136,8 @@ const Ecosystem = () => {
             className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80" 
             src={nationalTimes} 
             alt="US National Times" 
+            width={150}
+            height={150}
           />
           </a>
           <a href="https://www.emiratesfreepress.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
@@ -95,6 +145,8 @@ const Ecosystem = () => {
             className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
             src={blockchianNews}
             alt="Blockchian News"
+            width={150}
+            height={150}
           />
           </a>
           <a href="https://apnews.com/press-release/ein-presswire-newsmatics/technology-blockchain-ein-presswire-newsmatics-2ee78691e9e218b951d069b1d5e07ea4">
@@ -102,6 +154,8 @@ const Ecosystem = () => {
             className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
             src={APNews}
             alt="AP NEWs"
+            width={150}
+            height={150}
           />
           </a>
           <a href="https://www.abudhabireporter.com/article/634407995-develocity-revolutionizing-decentralized-finance-through-security-and-trust">
@@ -109,6 +163,53 @@ const Ecosystem = () => {
             className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
             src={abuDhabiReporter}
             alt="Abu Dhabi Reporter"
+            width={150}
+            height={150}
+          />
+          </a>
+          <a href="https://www.fox44news.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/">
+          <Image
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
+            src={FOX44news}
+            alt="Fox 44 News"
+            width={150}
+            height={150}
+          />
+          </a>
+          <a href="https://www.wric.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/">
+          <Image 
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80" 
+            src={News8} 
+            alt="ABC 8 NEWs" 
+            width={150}
+            height={150}
+          />
+          </a>
+          <a href="https://fox5sandiego.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/">
+          <Image
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
+            src={FOX5}
+            alt="Fox 5"
+            width={150}
+            height={150}
+          />
+          </a>
+          <a href="https://www.kxnet.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/">
+          <Image
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
+            src={KXNEWS}
+            alt="KX NEWS"
+            width={150}
+            height={150}
+          />
+          </a>
+          <a href="https://www.wjtv.com/business/press-releases/ein-presswire/634407995/develocity-revolutionizing-decentralized-finance-through-security-and-trust/">
+          <Image
+            className="lg:max-w-[100px] md:max-w-[100%] opacity-50 hover:opacity-80"
+            src={WJTV}
+            alt="WJTV 12 NEWS"
+            width={150}
+            height={150}
           />
           </a>
         </div>
