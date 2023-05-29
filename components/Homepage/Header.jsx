@@ -7,18 +7,14 @@ import SideMenu from "../../shared/Components/SideMenu";
 // import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
 import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
 import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
-// import Image from "next/image";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
 import { useWeb3Modal } from "@web3modal/react";
 import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";
-import Image from "next/image";
 import ModalBuyNow from "./Modal/ModalBuyNow";
 import BuyToken from "./BuyToken";
 import Stages from "./AllStagesModal/Stages";
-import MobileImageSlider from "../../shared/Components/MobileImageSlider";
-import { Autoplay } from "swiper";
 
 const Header = () => {
   const { open } = useWeb3Modal();
