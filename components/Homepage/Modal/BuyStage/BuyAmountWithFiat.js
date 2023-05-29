@@ -182,7 +182,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
         <div className="flex group bg-white h-[72px] w-[80vw] border-[#D6D6D6] border-1 transition-all focus-within:border-2 focus-within:border-[#6466E9] rounded-md overflow-hidden duration-300 sm:w-[360px]">
           <input
             className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 focus:border-r-[#6466E9] outline-none"
-            value={Number(coinBalance)}
+            value={coinBalance}
             type="text"
             onChange={handleUserInput}
             placeholder="0"
@@ -223,7 +223,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
           opacity="0.4"
         />
       </svg>
-    
+
       <div className="mt-1">
         <div className="flex justify-between text-sm font-medium mb-2">
           <label className="text-[#a5a5a5]">{t?.buyAmountModal.lables.to}</label>

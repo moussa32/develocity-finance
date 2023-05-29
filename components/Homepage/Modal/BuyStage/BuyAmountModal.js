@@ -360,7 +360,7 @@ const BuyAmountModal = ({
         <div className="flex group bg-white h-[72px] w-[80vw] border-[#D6D6D6] border-1 transition-all focus-within:border-2 focus-within:border-[#6466E9] rounded-md overflow-hidden duration-300 sm:w-[360px]">
           <input
             className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 focus:border-r-[#6466E9] outline-none"
-            value={Number(coinBalance)}
+            value={coinBalance}
             type="text"
             onChange={handleUserInput}
             placeholder="0"
