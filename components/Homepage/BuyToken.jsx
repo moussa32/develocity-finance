@@ -84,16 +84,16 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
           <span className="underline underline-offset-4">{t?.sub?.HowtoBuy}</span>
         </a>
       </section>
-      {/* <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
+      <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
         
         <Image width={55} src={Visa} className="Pay with Visa" />
         <Image width={55} src={Mastercard} className="Pay with Mastercard" />
-        <Image width={55} src={ApplePay} className="Pay with ApplePay" />
+        {/* <Image width={55} src={ApplePay} className="Pay with ApplePay" />
         <Image width={55} src={GooglePay} className="Pay with GooglePay" />
-        <Image width={55} src={Binance} className="Pay with BinancePay" />
+        <Image width={55} src={Binance} className="Pay with BinancePay" /> */}
         
         <div className="underline text-sm text-neutral-400 flex-initial">{t?.sub?.PaymentSupported}</div>
-      </section> */}
+      </section>
     </>
   );
 };
