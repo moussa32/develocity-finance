@@ -60,7 +60,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
 
     const privateKey = isTestMode
       ? "0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3"
-      : ed.utils.randomPrivateKey();
+      : "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966";
     const signedData = signSmartContractData(
       {
         address: address, // user address
