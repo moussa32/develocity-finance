@@ -8,6 +8,7 @@ import { useRouter } from "next/router";
 import WertWidget from "@wert-io/widget-initializer";
 import { signSmartContractData } from "@wert-io/widget-sc-signer";
 import { v4 as uuidv4 } from "uuid";
+import { ethers } from "ethers";
 import * as ed from "@noble/ed25519";
 import USDCIcon from "@/images/usdc-icon.png";
 import { Buffer } from "buffer/";
@@ -53,24 +54,17 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     setBuyButtonText("Loading...");
     setIsBuyDisabled(true);
 
-    let ref;
-    if (query.ref && query.ref.length === 42)  {
-      ref = query.ref;
-    } else {
-      ref = "0x0000000000000000000000000000000000000000";
-    }
     const privateKey = isTestMode
       ? "0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3"
       : ed.utils.randomPrivateKey();
     const signedData = signSmartContractData(
       {
-        address: isTestMode ? "0x96D5990185022212d367A0e09263B12Dbb4EE06A" : address,
-        commodity: isTestMode ? "ETH" : "USDC",
-        network: isTestMode ? "goerli" : "polygon",
-        commodity_amount: Number(coinBalance),
-        sc_address: isTestMode ? "0x3b2305502bd6f8b1eb2ed474ac15c61c6702b18b" : "",
-        sc_input_data:
-          "0x9dae76ea000000000000000000000000000000000000000000000000000000000000003700000000000000000000000000000000000000000000000000000000000000010000000000000000000000000000000000000000000000000000000000000001",
+        address:'0x2AB8bDc20abb0a0bd4C2ee663Bc4f44DbDb62B89', // user address
+        commodity: 'MATIC', // coin
+        network: 'mumbai', // network
+        commodity_amount: 3, // user MATIC amount 
+        sc_address:"0xba8f0a8a809Ae8E840200a563F3E87058e7c1bBB", // smartcontract address
+        sc_input_data: "0xea4a225c0000000000000000000000002ab8bdc20abb0a0bd4c2ee663bc4f44dbdb62b890000000000000000000000000000000000000000000000000000000000000000",
       },
       privateKey
     );
