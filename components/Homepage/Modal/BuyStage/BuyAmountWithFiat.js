@@ -13,6 +13,7 @@ import * as ed from "@noble/ed25519";
 import USDCIcon from "@/images/usdc-icon.png";
 import { Buffer } from "buffer/";
 import PreSaleABI from "../../../../public/presaleabi.json";
+import maticpair from "../../../../public/maticpair.json";
 import Web3 from "web3";
 window.Buffer = Buffer;
 
@@ -36,7 +37,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
 
   const { locale } = useRouter();
 
-  useEffect(() => {
+  useEffect( () => {
     if (isWertModalClosed && isWertModalOpened && paymentStatus?.status === "pending") {
       toast.error("Your order has been placed but it is in pending status please check your balance", {
         duration: 5000,
@@ -54,14 +55,17 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     }
   }, [paymentStatus]);
 
-  const handleBuy = () => {
+  const handleBuy = async () => {
     setBuyButtonText("Loading...");
     setIsBuyDisabled(true);
 
     const web3 = new Web3("https://polygon-rpc.com");
 
     const contract = new web3.eth.Contract(PreSaleABI, "0x981342751d7b08e704a4b208F9e4c720b981B4E1");
-    const data = contract.methods.buyTokensweth(address, refAddress).encodeABI();
+    const pairContract = new web3.eth.Contract(maticpair, "0x604229c960e5cacf2aaeac8be68ac07ba9df81c3");
+    const {_reserve0, _reserve1} = await pairContract.methods.getReserves().call();
+    let maticPrice =  (_reserve1 / 10**6 )/ (_reserve0 / 10**18 );
+    const data = await contract.methods.buyTokensweth(address, refAddress).encodeABI();
 
     const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966"
     console.log(data);
@@ -71,7 +75,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
         address: address, // user address
         commodity: "MATIC", // coin
         network: "polygon", // network
-        commodity_amount: Number(coinBalance), // user MATIC amount
+        commodity_amount: Number(coinBalance)/maticPrice, // user MATIC amount
         sc_address: "0x981342751d7b08e704a4b208F9e4c720b981B4E1", // smartcontract address
         sc_input_data: data,
       },
