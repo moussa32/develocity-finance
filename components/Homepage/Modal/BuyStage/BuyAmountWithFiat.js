@@ -13,7 +13,7 @@ import * as ed from "@noble/ed25519";
 import USDCIcon from "@/images/usdc-icon.png";
 import { Buffer } from "buffer/";
 import PreSaleABI from "../../../../public/presaleabi.json";
-
+import Web3 from "web3";
 window.Buffer = Buffer;
 
 const isTestMode = true;
@@ -58,13 +58,13 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     setBuyButtonText("Loading...");
     setIsBuyDisabled(true);
 
-    const Web3 = require("web3");
-    const web3 = new Web3("https://polygon-testnet.public.blastapi.io");
+    const web3 = new Web3("https://polygon-rpc.com");
 
     const contract = new web3.eth.Contract(PreSaleABI, "0x981342751d7b08e704a4b208F9e4c720b981B4E1");
     const data = contract.methods.buyTokensweth(address, refAddress).encodeABI();
 
     const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966"
+    console.log(data);
       
     const signedData = signSmartContractData(
       {
