@@ -51,6 +51,12 @@
       "Loading": "Yükleniyor"
     }
   },
+  "PaymentMethod": {
+    "title": "Payment Method",
+    "subtitle": " Choose Payment Method",
+    "first": "Crypto",
+    "second":"Fiat Peymants"
+    },
   "claimModal": {
     "mainText": "madeni paralarınızı talep edin",
     "subText": "Yönlendirme madeni paralarınızı talep edin",
