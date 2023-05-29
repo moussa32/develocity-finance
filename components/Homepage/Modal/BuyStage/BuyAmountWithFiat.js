@@ -21,6 +21,9 @@ const DEVE_PRICE = 0.2;
 const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalAmount }) => {
   const { t } = useTranslation("buy-token-modal");
   const { address } = useAccount();
+  const router = useRouter();
+  const { ref } = router.query;
+  const refAddress = ref ? ref : "0x0000000000000000000000000000000000000000";
 
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
