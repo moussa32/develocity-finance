@@ -12,6 +12,7 @@ import { ethers } from "ethers";
 import * as ed from "@noble/ed25519";
 import USDCIcon from "@/images/usdc-icon.png";
 import { Buffer } from "buffer/";
+import PreSaleABI from "../../../../public/presaleabi.json";
 
 window.Buffer = Buffer;
 
