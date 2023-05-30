@@ -38,7 +38,7 @@ const BuyAmountModal = ({
   const [isApproved, setIsApproved] = useState(false);
 
   const coinBalanceConverted = () => (coinBalance ? ethers.utils.parseEther(coinBalance?.toString()) : 0);
-  const memoizedCoinBalanceConverted = useMemo(() => coinBalanceConverted(), [coinBalance]);
+  let memoizedCoinBalanceConverted = useMemo(() => coinBalanceConverted(), [coinBalance]);
   const mainContract = getMainCoinContractAddress(selectedNetwork);
   const walletContract = new ethers.Contract(mainContract, contractAbi, provider);
   const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
@@ -46,13 +46,11 @@ const BuyAmountModal = ({
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
-      if (currentCurrency.ticker === "BUSD") {
+      if (currentCurrency.ticker === "BUSD" || currentCurrency.ticker === "USDT") {
         const gasPrice = await signerContract.estimateGas
           .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
           .catch(error => {
-            const { code: errorCode } = error.data;
-            if (errorCode === -32603) {
-              toast(`You don't have enough balance to buy ${convertedDeve}`, {
+               toast(`You don't have enough balance to buy`, {
                 id: "gasPriceErrorFromGlobalState",
                 duration: 6000,
                 position: "top-center",
@@ -69,7 +67,7 @@ const BuyAmountModal = ({
                   "aria-live": "polite",
                 },
               });
-            }
+
           });
         const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
         const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
@@ -278,7 +276,8 @@ const BuyAmountModal = ({
   const handleBuyBUSD = async () => {
     setIsBuyButtonLoading(true);
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
-
+    if(currentCurrency.ticker == "BUSD" || currentCurrency.ticker == "USDT") 
+    memoizedCoinBalanceConverted = memoizedCoinBalanceConverted / 10**12;
     const gasPrice = await signerContract.estimateGas
       .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
       .catch(error => {
@@ -358,11 +357,14 @@ const BuyAmountModal = ({
   };
 
   const handleMaxUserAmount = async () => {
-    setCoinBalance(Number(balance.formatted).toFixed(3));
-
+    if(currentCurrency.ticker == "BNB"  || currentCurrency.ticker == "ETH"  || currentCurrency.ticker == "MATIC" ){
+      setCoinBalance(Number(balance.formatted - 0.01).toFixed(3) );
+    }else{
+      setCoinBalance(Number(balance.formatted).toFixed(3) );
+    }
     if (currentCurrency.ticker === "BUSD") {
       const gasPrice = await signerContract.estimateGas
-        .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
+        .buyTokensBusd(( 5 * 10**currentCurrency.decimals).toString(), ref)
         .catch(error => {
           const { code: errorCode } = error.data;
           if (errorCode === -32603) {
@@ -394,9 +396,9 @@ const BuyAmountModal = ({
       );
     } else {
       const gasPrice = await signerContract.estimateGas
-        .buyTokens(ref, { value: memoizedCoinBalanceConverted })
+        .buyTokens(ref, { value: (0.02 * 10**18).toString() })
         .catch(error => {
-          toast("Error happened while getting gas price", {
+          toast("You dont have balance to buy", {
             id: "gasPriceErrorFromMaxUserAmount",
             duration: 6000,
             position: "top-center",

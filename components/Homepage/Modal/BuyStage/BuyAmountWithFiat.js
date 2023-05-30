@@ -60,29 +60,28 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
 
     const web3 = new Web3("https://polygon-rpc.com");
 
-    const contract = new web3.eth.Contract(PreSaleABI, "0x981342751d7b08e704a4b208F9e4c720b981B4E1");
-    const pairContract = new web3.eth.Contract(maticpair, "0x604229c960e5cacf2aaeac8be68ac07ba9df81c3");
-    const { _reserve0, _reserve1 } = await pairContract.methods.getReserves().call();
-    let maticPrice = _reserve1 / 10 ** 6 / (_reserve0 / 10 ** 18);
-    const data = await contract.methods.buyTokensweth(address, refAddress).encodeABI();
-
-    const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966";
+    const contract = new web3.eth.Contract(PreSaleABI, "0x315FCE44Fe8FE7a4F81D408DB1b518553D23e90B");
+    const balance = (Number(coinBalance) * 10**18).toString();
+    const data = await contract.methods.buyTokensBusdWert(address, balance, refAddress).encodeABI();
+    console.log(data);
+    const privateKey = "0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3";
 
     const signedData = signSmartContractData(
       {
         address: address, // user address
-        commodity: "MATIC", // coin
-        network: "polygon", // network
-        commodity_amount: Number(coinBalance) / maticPrice, // user MATIC amount
-        sc_address: "0x981342751d7b08e704a4b208F9e4c720b981B4E1", // smartcontract address
+        commodity: "TT", // coin
+        network: "mumbai", // network
+        commodity_amount: Number(coinBalance), // user USDC amount
+        sc_address: "0x315FCE44Fe8FE7a4F81D408DB1b518553D23e90B", // smartcontract address
         sc_input_data: data,
       },
       privateKey
     );
+
     const otherWidgetOptions = {
-      partner_id: "01H1KEM2JR3QTT81EQWANE9X7K",
+      partner_id: "01H1712AZKPZR601SAXXEP8QR0",
       click_id: uuidv4(), // unique id of purhase in your system
-      origin: "https://widget.wert.io", // this option needed only for this example to work
+      origin: "https://sandbox.wert.io", // this option needed only for this example to work
       listeners: {
         close: () => {
           setBuyButtonText("Buy now");
