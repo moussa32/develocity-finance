@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import TextItem from "../CommonStage/TextItem";
 import toast from "react-hot-toast";
 import contractAbi from "../../../../public/assets/contractApi.json";
@@ -8,7 +8,7 @@ import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
 // import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import { useSigner } from "wagmi";
+import { useBalance, useSigner } from "wagmi";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -24,7 +24,11 @@ const BuyAmountModal = ({
 }) => {
   const { t } = useTranslation("buy-token-modal");
   const { data: signer, isError, isLoading } = useSigner();
+  const { data: balance, isLoading: isBalanceLoading } = useBalance({
+    address: walletAddress,
+  });
   const { query } = useRouter();
+  const ref = query.ref && query.ref.length === 42 ? query.ref : "0x0000000000000000000000000000000000000000";
 
   const [coinBalance, setCoinBalance] = useState(0);
   const [convertedDeve, setConvertedDeve] = useState(0);
@@ -42,6 +46,30 @@ const BuyAmountModal = ({
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
       if (currentCurrency.ticker === "BUSD") {
+        const gasPrice = await signerContract.estimateGas
+          .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
+          .catch(error => {
+            const { code: errorCode } = error.data;
+            if (errorCode === -32603) {
+              toast(`You don't have enough balance to buy ${convertedDeve}`, {
+                duration: 6000,
+                position: "top-center",
+                // Styling
+                style: {
+                  color: "#fff",
+                  fontSize: "16px",
+                  background: "#F03D3D",
+                },
+
+                // Aria
+                ariaProps: {
+                  role: "status",
+                  "aria-live": "polite",
+                },
+              });
+            }
+          });
+        const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
         const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
         const returnedCalculateDeveCoins = Number(ethers.utils.formatEther(calculateDeveCoins.toString())).toFixed(2);
         if (!isApproved) {
@@ -49,7 +77,6 @@ const BuyAmountModal = ({
             .getBusdAll(calculateDeveCoins, walletAddress)
             .then(res => {
               setIsApproved(res);
-              console.log(res);
               if (res) {
                 console.log(res);
 
@@ -90,22 +117,65 @@ const BuyAmountModal = ({
                   "aria-live": "polite",
                 },
               });
-              console.log(error);
             });
         }
-        setConvertedDeve(returnedCalculateDeveCoins.toLocaleString("en-US"));
+        setConvertedDeve(
+          Number(returnedCalculateDeveCoins.toLocaleString("en-US")) - (convertedGasPrice * 1.5).toFixed()
+        );
       } else {
         if (Number(coinBalance) > 0) {
+          const gasPrice = await signerContract.estimateGas
+            .buyTokens(ref, { value: memoizedCoinBalanceConverted })
+            .catch(error => {
+              console.log("gasPrice", error);
+              toast("Error happened while getting gas price", {
+                duration: 6000,
+                position: "top-center",
+                // Styling
+                style: {
+                  color: "#fff",
+                  fontSize: "16px",
+                  background: "#F03D3D",
+                },
+
+                // Aria
+                ariaProps: {
+                  role: "status",
+                  "aria-live": "polite",
+                },
+              });
+            });
+          const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
+
           setIsBuyButtonLoading(false);
           const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
-          setConvertedDeve(
-            Number(ethers.utils.formatEther(calculateDeveCoins.toString())).toFixed(2).toLocaleString("en-US")
-          );
+          const formattedDeveCoins = Number(ethers.utils.formatEther(calculateDeveCoins.toString()))
+            .toFixed(2)
+            .toLocaleString("en-US");
+
+          setConvertedDeve(formattedDeveCoins - (convertedGasPrice * 1.5).toFixed());
         } else {
           setIsBuyButtonLoading(true);
           setConvertedDeve(0);
         }
       }
+      //  toast(`Your wallet balance isn't enough to buy Deve`, {
+      //     id: "balance-error",
+      //     duration: 150000,
+      //     position: "top-center",
+      //     // Styling
+      //     style: {
+      //       color: "#fff",
+      //       fontSize: "16px",
+      //       background: "#F03D3D",
+      //     },
+
+      //     // Aria
+      //     ariaProps: {
+      //       role: "status",
+      //       "aria-live": "polite",
+      //     },
+      //   });
     }, 500);
 
     return () => {
@@ -116,13 +186,6 @@ const BuyAmountModal = ({
   const handleBuy = async () => {
     setIsBuyButtonLoading(true);
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
-
-    let ref;
-    if (query.ref && query.ref.length === 42)  {
-      ref = query.ref;
-    } else {
-      ref = "0x0000000000000000000000000000000000000000";
-    }
 
     const gasPrice = await signerContract.estimateGas
       .buyTokens(ref, { value: memoizedCoinBalanceConverted })
@@ -146,7 +209,6 @@ const BuyAmountModal = ({
         });
 
         setBuyButtonText(t?.buyAmountModal.btns.buy);
-        console.log(JSON.stringify(error, 0, 2));
       });
 
     signerContract
@@ -214,13 +276,6 @@ const BuyAmountModal = ({
   const handleBuyBUSD = async () => {
     setIsBuyButtonLoading(true);
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
-
-    let ref;
-    if (query.ref) {
-      ref = query.ref;
-    } else {
-      ref = "0x0000000000000000000000000000000000000000";
-    }
 
     const gasPrice = await signerContract.estimateGas
       .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
@@ -300,6 +355,94 @@ const BuyAmountModal = ({
     }
   };
 
+  const handleMaxUserAmount = async () => {
+    if (currentCurrency.ticker === "BUSD") {
+      const gasPrice = await signerContract.estimateGas
+        .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
+        .catch(error => {
+          const { code: errorCode } = error.data;
+          if (errorCode === -32603) {
+            toast(`You don't have enough balance to buy ${convertedDeve}`, {
+              duration: 6000,
+              position: "top-center",
+              // Styling
+              style: {
+                color: "#fff",
+                fontSize: "16px",
+                background: "#F03D3D",
+              },
+
+              // Aria
+              ariaProps: {
+                role: "status",
+                "aria-live": "polite",
+              },
+            });
+          }
+        });
+      const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
+      const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
+      const returnedCalculateDeveCoins = Number(ethers.utils.formatEther(calculateDeveCoins.toString())).toFixed(2);
+
+      setConvertedDeve(
+        Number(returnedCalculateDeveCoins.toLocaleString("en-US")) - (convertedGasPrice * 1.5).toFixed()
+      );
+    } else {
+      const gasPrice = await signerContract.estimateGas
+        .buyTokens(ref, { value: memoizedCoinBalanceConverted })
+        .catch(error => {
+          console.log("gasPrice", error);
+          toast("Error happened while getting gas price", {
+            duration: 6000,
+            position: "top-center",
+            // Styling
+            style: {
+              color: "#fff",
+              fontSize: "16px",
+              background: "#F03D3D",
+            },
+
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          });
+        });
+      const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
+
+      setIsBuyButtonLoading(false);
+      const calculateDeveCoins = await walletContract.getwethPrice(memoizedCoinBalanceConverted);
+      const formattedDeveCoins = Number(ethers.utils.formatEther(calculateDeveCoins.toString()))
+        .toFixed(2)
+        .toLocaleString("en-US");
+
+      setConvertedDeve(formattedDeveCoins - (convertedGasPrice * 1.5).toFixed());
+    }
+  };
+
+  const handleDisableMaxButton = useCallback(() => {
+    const currentCoin = currentCurrency.ticker.toLowerCase();
+    const coinsDic = {
+      bnb: {
+        min: 0.01,
+      },
+      eth: {
+        min: 0.01,
+      },
+      busd: {
+        min: 5,
+      },
+    };
+
+    if (!coinsDic[currentCoin]) return false;
+
+    if (!isBalanceLoading) {
+      const userBalance = Number(balance.formatted);
+      return userBalance <= coinsDic[currentCoin].min ? true : false;
+    }
+  }, [balance]);
+
   return (
     <section className="flex flex-col justify-center items-center">
       <div className="flex gap-1 flex-row-reverse w-full">
@@ -352,7 +495,16 @@ const BuyAmountModal = ({
 
       <div className="mt-6">
         <div className="flex justify-between text-sm font-medium mb-2">
-          <label className="text-[#a5a5a5]">{t?.buyAmountModal.lables.from}</label>
+          <div className="flex items-center gap-1">
+            <label className="text-[#a5a5a5]">{t?.buyAmountModal.lables.from}</label>
+            <button
+              onClick={handleMaxUserAmount}
+              disabled={handleDisableMaxButton()}
+              className="text-xs disabled:bg-gray-500/10 disabled:border-gray-600/40 disabled:text-gray-600 disabled:cursor-no-drop flex items-center gap-1 ml-2 capitalize bg-primary/10 hover:bg-primary/90 hover:text-white transition-all duration-300 hover:border-primary/60 border-1 border-primary/80 text-neutral-800 font-medium py-0.5 px-2 rounded"
+            >
+              Max
+            </button>
+          </div>
           <h5 className="text-[#23282C]">
             {t?.buyAmountModal.balance} {currentCurrency.balance}
           </h5>
@@ -409,7 +561,7 @@ const BuyAmountModal = ({
         </div>
         <div className="flex group bg-white h-[72px] w-[80vw] border-[#D6D6D6] border-1 transition-all focus-within:border-2 focus-within:border-[#6466E9] rounded-md overflow-hidden duration-300 sm:w-[360px]">
           <input
-            className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 border-r-[#D6D6D6] focus:border-r-2 outline-none"
+            className="w-3/4 px-5 text-2xl text-[#23282C] border-r-1 bg-white border-r-[#D6D6D6] focus:border-r-2 outline-none"
             value={convertedDeve}
             placeholder="0"
             disabled
