@@ -41,7 +41,7 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             />
           </div>
         </Tooltip>
-        <div onClick={() => deveBalance.amount >= 10 && updateStep("referral")}>
+        <div onClick={() => deveBalance.amount >= 0 && updateStep("referral")}>
           <ButtonItem
             mainText={t?.optionsModal.btns.referrals}
             image={ReferralsIcon}
