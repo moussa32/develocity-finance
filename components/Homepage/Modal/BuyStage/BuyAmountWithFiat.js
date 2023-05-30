@@ -60,28 +60,27 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
 
     const web3 = new Web3("https://polygon-rpc.com");
 
-    const contract = new web3.eth.Contract(PreSaleABI, "0x315FCE44Fe8FE7a4F81D408DB1b518553D23e90B");
-    const balance = (Number(coinBalance) * 10**18).toString();
+    const contract = new web3.eth.Contract(PreSaleABI, "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C");
+    const balance = (Number(coinBalance) * 10**6).toString();
     const data = await contract.methods.buyTokensBusdWert(address, balance, refAddress).encodeABI();
     console.log(data);
-    const privateKey = "0x57466afb5491ee372b3b30d82ef7e7a0583c9e36aef0f02435bd164fe172b1d3";
-
+    const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966";
+    console.log(coinBalance)
     const signedData = signSmartContractData(
       {
         address: address, // user address
-        commodity: "TT", // coin
-        network: "mumbai", // network
+        commodity: "USDC", // coin
+        network: "polygon", // network
         commodity_amount: Number(coinBalance), // user USDC amount
-        sc_address: "0x315FCE44Fe8FE7a4F81D408DB1b518553D23e90B", // smartcontract address
+        sc_address: "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C", // smartcontract address
         sc_input_data: data,
       },
       privateKey
     );
-
     const otherWidgetOptions = {
-      partner_id: "01H1712AZKPZR601SAXXEP8QR0",
+      partner_id: "01H1KEM2JR3QTT81EQWANE9X7K",
       click_id: uuidv4(), // unique id of purhase in your system
-      origin: "https://sandbox.wert.io", // this option needed only for this example to work
+      origin: "https://widget.wert.io", // this option needed only for this example to work
       listeners: {
         close: () => {
           setBuyButtonText("Buy now");
