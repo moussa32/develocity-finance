@@ -30,7 +30,7 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             disabled={false}
           />
         </div>
-        <Tooltip title="Claim your tokens after Pre-Sale">
+        <Tooltip title={t?.optionsModal.btns.claimYourTokensTooltip}>
           <div className="relative" onClick={() => deveBalance.amount >= 500000 && updateStep("claim")}>
             <ButtonItem
               mainText={t?.optionsModal.btns.claimYourTokens}

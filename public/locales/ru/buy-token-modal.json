@@ -10,7 +10,9 @@
     "deveBalance": "DEVE Баланс",
     "tokensToClaim": "DEVE Цена",
     "referralsToClaim": "Ссылки на претензии",
-    "nextBtn": "Далее"
+    "nextBtn": "Далее",
+    "ReferralLink":"Реферальная ссылка",
+    "copied":"скопировано"
   },
   "optionsModal": {
     "mainText": "Выберите свой вариант",
@@ -18,6 +20,7 @@
     "btns": {
       "buyDEVE": "Купить DEVE",
       "claimYourTokens": "Получите свои токены",
+      "claimYourTokensTooltip": "Получите свои токены после предварительной продажи",
       "referrals": "Рефералы"
     }
   },

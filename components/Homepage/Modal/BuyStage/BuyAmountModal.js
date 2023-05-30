@@ -357,8 +357,10 @@ const BuyAmountModal = ({
   };
 
   const handleMaxUserAmount = async () => {
-    if(currentCurrency.ticker == "BNB"  || currentCurrency.ticker == "ETH"  || currentCurrency.ticker == "MATIC" ){
+    if(currentCurrency.ticker == "BNB"  || currentCurrency.ticker == "ETH" ){
       setCoinBalance(Number(balance.formatted - 0.01).toFixed(3) );
+    }else if( currentCurrency.ticker == "MATIC" ){
+      setCoinBalance(Number(balance.formatted - 0.1).toFixed(3) );
     }else{
       setCoinBalance(Number(balance.formatted).toFixed(3) );
     }

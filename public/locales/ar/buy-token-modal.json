@@ -10,7 +10,9 @@
     "deveBalance": "رصيد DEVE ",
     "tokensToClaim": "سعر الشراء ",
     "referralsToClaim": "مطالبة الإحالات ",
-    "nextBtn": "التالي"
+    "nextBtn": "التالي",
+    "ReferralLink":"رابط الإحالة",
+    "copied":"تم نسخ الرابط"
   },
   "optionsModal": {
     "mainText": "حدد اختيارك",
@@ -18,6 +20,7 @@
     "btns": {
       "buyDEVE": "شراء ديڤي",
       "claimYourTokens": "مطالبة عملاتك",
+      "claimYourTokensTooltip": "أجمع عملاتك بعد الإنتهاء من الإكتتاب",
       "referrals": "الإحالات"
     }
   },

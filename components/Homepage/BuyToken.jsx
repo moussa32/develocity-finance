@@ -67,7 +67,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         <a 
           className="text-s text-neutral-300 text-center mx-auto block mt-4.5"
         >
-          You can Claim your Deve&apos;s After Pre-Sale
+          {t?.sub?.tokensClaim}
         </a>
       </div>
       <section className="flex mt-8 mx-auto gap-5">
