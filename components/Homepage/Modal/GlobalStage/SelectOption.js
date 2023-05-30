@@ -5,6 +5,7 @@ import ClaimTokenIcon from "../../../../public/assets/images/ClaimTokenIcon.svg"
 import ReferralsIcon from "../../../../public/assets/images/ReferralsIcon.svg";
 import { useState } from "react";
 import useTranslation from "@/shared/Hooks/useTranslation";
+import { Tooltip } from "antd";
 
 const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
   const { t } = useTranslation("buy-token-modal");
@@ -29,15 +30,17 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             disabled={false}
           />
         </div>
-        <div onClick={() => deveBalance.amount >= 50000 && updateStep("claim")}>
-          <ButtonItem
-            mainText={t?.optionsModal.btns.claimYourTokens}
-            image={ClaimTokenIcon}
-            selected={selectedStep}
-            handleSelect={setSelectedStep}
-            disabled={deveBalance.amount <= 50000 ? true : false}
-          />
-        </div>
+        <Tooltip title="Claim your tokens after pre sale">
+          <div className="relative" onClick={() => deveBalance.amount >= 50000 && updateStep("claim")}>
+            <ButtonItem
+              mainText={t?.optionsModal.btns.claimYourTokens}
+              image={ClaimTokenIcon}
+              selected={selectedStep}
+              handleSelect={setSelectedStep}
+              disabled={deveBalance.amount <= 50000 ? true : false}
+            />
+          </div>
+        </Tooltip>
         <div onClick={() => deveBalance.amount >= 10 && updateStep("referral")}>
           <ButtonItem
             mainText={t?.optionsModal.btns.referrals}

@@ -284,6 +284,15 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
       <div className="flex justify-between w-full">
         <button
           className={`w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white mx-auto`}
+          onClick={() => {
+            handleStep("paymentMethod");
+            handleCurrent("");
+          }}
+        >
+          Back
+        </button>
+        <button
+          className={`w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white mx-auto`}
           disabled={isBuyDisabled}
           onClick={handleBuy}
         >
