@@ -52,6 +52,7 @@ const BuyAmountModal = ({
             const { code: errorCode } = error.data;
             if (errorCode === -32603) {
               toast(`You don't have enough balance to buy ${convertedDeve}`, {
+                id: "gasPriceErrorFromGlobalState",
                 duration: 6000,
                 position: "top-center",
                 // Styling
@@ -356,6 +357,8 @@ const BuyAmountModal = ({
   };
 
   const handleMaxUserAmount = async () => {
+    setCoinBalance(Number(balance.formatted).toFixed(3));
+
     if (currentCurrency.ticker === "BUSD") {
       const gasPrice = await signerContract.estimateGas
         .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
@@ -363,6 +366,7 @@ const BuyAmountModal = ({
           const { code: errorCode } = error.data;
           if (errorCode === -32603) {
             toast(`You don't have enough balance to buy ${convertedDeve}`, {
+              id: "gasPriceErrorFromMaxUserAmount",
               duration: 6000,
               position: "top-center",
               // Styling
@@ -391,8 +395,8 @@ const BuyAmountModal = ({
       const gasPrice = await signerContract.estimateGas
         .buyTokens(ref, { value: memoizedCoinBalanceConverted })
         .catch(error => {
-          console.log("gasPrice", error);
           toast("Error happened while getting gas price", {
+            id: "gasPriceErrorFromMaxUserAmount",
             duration: 6000,
             position: "top-center",
             // Styling
