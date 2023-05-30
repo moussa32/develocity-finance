@@ -9,6 +9,9 @@ import { useNetwork, useSwitchNetwork } from "wagmi";
 import CloseBuyModalButton from "@/images/closeBuyModalButton.png";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { CopyToClipboard } from "react-copy-to-clipboard";
+import { toast } from "react-hot-toast";
+import { FiCopy } from "react-icons/fi";
 
 const WalletInfoModal = ({
   handleStep,
@@ -22,7 +25,15 @@ const WalletInfoModal = ({
   const { t } = useTranslation("buy-token-modal");
   const { chain } = useNetwork();
   const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
-  const { locale } = useRouter();
+  const { locale, query } = useRouter();
+  const { ref: refAddress } = query;
+
+  const handleOnCopy = text => {
+    toast.success(`Your ref address ${text} has been copied`, {
+      duration: 5000,
+      className: "flex flex-col items-center text-center",
+    });
+  };
 
   return (
     <>
@@ -96,7 +107,18 @@ const WalletInfoModal = ({
           hr="true"
         />
         <TextItem
-          title={t?.walletInfoModal.referralsToClaim}
+          title={
+            <>
+              {t?.walletInfoModal.referralsToClaim}
+              {refAddress && (
+                <CopyToClipboard text={refAddress} onCopy={handleOnCopy}>
+                  <button className="text-[10px] flex items-center gap-1 ml-2 capitalize bg-primary/10 hover:bg-primary/90 hover:text-white transition-all duration-300 hover:border-primary/60 border-1 border-primary/80 text-neutral-800 font-medium py-0.5 px-2 rounded-xl">
+                    <FiCopy size={12} /> copy referral
+                  </button>
+                </CopyToClipboard>
+              )}
+            </>
+          }
           value={referralsToClaim.amount}
           secondaryText={"USDT"}
           hr=""
@@ -109,7 +131,7 @@ const WalletInfoModal = ({
               handleCurrent();
             }}
             text={t?.walletInfoModal.nextBtn}
-            stylesButton={{ bg: "#0D162A", marginTop: "70px" }}
+            stylesButton={{ bg: "#0D162A" }}
             disabled={false}
           />
         </div>

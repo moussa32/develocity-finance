@@ -21,7 +21,11 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoade
       return (
         <div className={`text-sm flex items-center m-0 text-[#333]`} dir="ltr">
           {value ? value : null} {secondaryText ? secondaryText : "DEVE"}
-          {secondaryText == "USDT" ? <img src={"../../../../assets/images/USDT_icon.png"} style={{height:18, width:18}} />: ""}
+          {secondaryText == "USDT" ? (
+            <img src={"../../../../assets/images/USDT_icon.png"} style={{ height: 18, width: 18 }} />
+          ) : (
+            ""
+          )}
           {percentage && (
             <span className={`${locale === "ar" ? "mr-1" : "ml-1"} text-[#8b8b8b]`}>
               ({symbol ? symbol : "~$"} {percentage})
@@ -35,7 +39,7 @@ const TextItem = ({ title, secondaryText, value, percentage, hr, symbol, isLoade
   return (
     <>
       <div className="flex justify-between items-center">
-        <h6 className="text-sm text-[#8b8b8b] m-0">{title}:</h6>
+        <div className="text-sm flex items-center text-[#8b8b8b] m-0">{title}:</div>
         {renderValues()}
       </div>
       {hr && <hr style={{ border: 0, borderTop: "1px solid", color: "inherit", margin: "1rem 0", opacity: ".25" }} />}
