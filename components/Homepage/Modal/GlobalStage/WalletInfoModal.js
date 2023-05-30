@@ -25,8 +25,7 @@ const WalletInfoModal = ({
   const { t } = useTranslation("buy-token-modal");
   const { chain } = useNetwork();
   const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
-  const { locale, query } = useRouter();
-  const { ref: refAddress } = query;
+  const { locale } = useRouter();
 
   const handleOnCopy = text => {
     toast.success(`Your ref address ${text} has been copied`, {
@@ -110,13 +109,11 @@ const WalletInfoModal = ({
           title={
             <>
               {t?.walletInfoModal.referralsToClaim}
-              {refAddress && (
-                <CopyToClipboard text={refAddress} onCopy={handleOnCopy}>
-                  <button className="text-[10px] flex items-center gap-1 ml-2 capitalize bg-primary/10 hover:bg-primary/90 hover:text-white transition-all duration-300 hover:border-primary/60 border-1 border-primary/80 text-neutral-800 font-medium py-0.5 px-2 rounded-xl">
-                    <FiCopy size={12} /> copy referral
-                  </button>
-                </CopyToClipboard>
-              )}
+              <CopyToClipboard text={walletAddress} onCopy={handleOnCopy}>
+                <button className="text-[10px] flex items-center gap-1 ml-2 capitalize bg-primary/10 hover:bg-primary/90 hover:text-white transition-all duration-300 hover:border-primary/60 border-1 border-primary/80 text-neutral-800 font-medium py-0.5 px-2 rounded-xl">
+                  <FiCopy size={12} /> copy referral
+                </button>
+              </CopyToClipboard>
             </>
           }
           value={referralsToClaim.amount}
