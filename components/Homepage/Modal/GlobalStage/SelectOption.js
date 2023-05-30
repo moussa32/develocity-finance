@@ -30,8 +30,8 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             disabled={false}
           />
         </div>
-        <Tooltip title="Claim your tokens after pre sale">
-          <div className="relative" onClick={() => deveBalance.amount >= 50000 && updateStep("claim")}>
+        <Tooltip title="Claim your tokens after Pre-Sale">
+          <div className="relative" onClick={() => deveBalance.amount >= 500000 && updateStep("claim")}>
             <ButtonItem
               mainText={t?.optionsModal.btns.claimYourTokens}
               image={ClaimTokenIcon}
@@ -47,7 +47,7 @@ const SelectOption = ({ handleStep, deveBalance, handleCurrent }) => {
             image={ReferralsIcon}
             selected={selectedStep}
             handleSelect={setSelectedStep}
-            disabled={deveBalance.amount <= 10 ? true : false}
+            disabled={deveBalance.amount < 0 ? true : false}
           />
         </div>
       </div>
