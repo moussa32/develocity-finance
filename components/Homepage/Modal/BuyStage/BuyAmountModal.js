@@ -37,7 +37,8 @@ const BuyAmountModal = ({
   const [isApprovedButtonLoading, setIsApprovedButtonDisabled] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
 
-  const memoizedCoinBalanceConverted = useMemo(() => ethers.utils.parseEther(coinBalance.toString()), [coinBalance]);
+  const coinBalanceConverted = () => (coinBalance ? ethers.utils.parseEther(coinBalance?.toString()) : 0);
+  const memoizedCoinBalanceConverted = useMemo(() => coinBalanceConverted(), [coinBalance]);
   const mainContract = getMainCoinContractAddress(selectedNetwork);
   const walletContract = new ethers.Contract(mainContract, contractAbi, provider);
   const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
@@ -341,7 +342,7 @@ const BuyAmountModal = ({
     const numberRegex = /^[+-]?(\d+(\.\d*)?|\.\d+)$/;
     const isNumber = numberRegex.test(value);
 
-    if (value.length <= 0) return setCoinBalance(0);
+    if (value.length <= 0) return setCoinBalance(null);
 
     if (isNumber) {
       if (currentCurrency.ticker === "BUSD") {

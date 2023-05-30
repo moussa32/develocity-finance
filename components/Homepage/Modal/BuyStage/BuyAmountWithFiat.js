@@ -26,7 +26,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
   const { ref } = router.query;
   const refAddress = ref ? ref : "0x0000000000000000000000000000000000000000";
 
-  const [coinBalance, setCoinBalance] = useState(0);
+  const [coinBalance, setCoinBalance] = useState("");
   const [convertedDeve, setConvertedDeve] = useState(0);
   const [isBuyDisabled, setIsBuyDisabled] = useState(true);
   const [buyButtonText, setBuyButtonText] = useState("Buy now");
@@ -115,16 +115,13 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     const isNumber = numberRegex.test(value);
 
     if (value.length <= 0) {
-      setCoinBalance(0);
       setConvertedDeve(0);
       setIsBuyDisabled(true);
     }
 
-    if (isNumber) {
-      setCoinBalance(value);
-      setConvertedDeve(Number(value / DEVE_PRICE).toFixed(2));
-      setIsBuyDisabled(false);
-    }
+    setCoinBalance(value);
+    setConvertedDeve(Number(value / DEVE_PRICE).toFixed(2));
+    setIsBuyDisabled(false);
   };
 
   return (
