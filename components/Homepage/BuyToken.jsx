@@ -21,10 +21,10 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
     queryKey: ["preSaleStatus"],
     queryFn: fetchPreSaleStatus,
   });
+  console.log(isLoading)
   const { progress } = useProgress({
-    max: data && data.percentage ? Number(Number(data.percentage) + 2.41 ).toFixed(2) : SOLD_PERCENTAGE,
+    max: data ? Number(Number(data.soldPercentage) + 1.41 ) : SOLD_PERCENTAGE,
   });
-
   return (
     <>
       <h2 className="uppercase text-center basis-[46px] mx-auto font-PolySans text-3xl mb-5 flex gap-2 md:gap-6 md:text-6.5xl">
@@ -38,11 +38,11 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            {new Intl.NumberFormat().format(data && data.totalTokens ?  Number(data.totalTokens) - 80320 : 0)}{" "}
+            {new Intl.NumberFormat().format(data ?  Number(data.remainingTokens) - 70433 : 0)}{" "}
             {t?.title?.tokensRe}
           </h3>
         </div>
-        <ProgressBar value={data ? Number(Number(data.percentage) + 2.41 ) : SOLD_PERCENTAGE} />
+        <ProgressBar value={data ? Number(Number(data.soldPercentage) + 1.41 ) : SOLD_PERCENTAGE} />
         
         <div className="flex items-center flex-col gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] sm:gap-0 sm:flex-row justify-center md:justify-between md:px-6">
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 ltr:sm:pr-10 rtl:sm:pl-10">
