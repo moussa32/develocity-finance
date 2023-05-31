@@ -75,24 +75,29 @@ const BuywithModal = ({
     <>
       <div>
         <ModalHeaderText header={t?.buyWithModal.mainText} caption={t?.buyWithModal.subText} />
-        {networkSupportedCoins(chain.network).map(({ id, name, image, ticker }) => (
+        {networkSupportedCoins(chain.network).map(({ id, name, image, ticker , decimals}) => (
           <div key={id}>
             <TextFloatRight balanceValue={id === 1 ? firstCoin : secondCoin} />
+            
             <ButtonItem
               mainText={name}
               secondaryText={ticker}
               image={image}
+              decimals={decimals}
               handleSelect={handleSelectNetworkName}
               getAllValues={(...elements) =>
                 handleSelectCurrency({
+                  id: elements[0],
                   name: elements[2],
                   ticker: elements[3],
                   image: elements[1],
+                  decimals : elements[4],
                   balance: id === 1 ? firstCoin : secondCoin,
                 })
               }
             />
           </div>
+          
         ))}
         <div className="flex items-center justify-center mt-7">
           <button

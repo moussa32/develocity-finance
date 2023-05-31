@@ -28,7 +28,7 @@ const WalletInfoModal = ({
   const { locale } = useRouter();
 
   const handleOnCopy = text => {
-    toast.success(`Your ref address ${text} has been copied`, {
+    toast.success(`link Copied`, {
       duration: 5000,
       className: "flex flex-col items-center text-center",
     });
@@ -109,9 +109,9 @@ const WalletInfoModal = ({
           title={
             <>
               {t?.walletInfoModal.referralsToClaim}
-              <CopyToClipboard text={walletAddress} onCopy={handleOnCopy}>
+              <CopyToClipboard text={`${window.location.origin}?ref=${walletAddress}`} onCopy={handleOnCopy}>
                 <button className="text-[10px] flex items-center gap-1 ml-2 capitalize bg-primary/10 hover:bg-primary/90 hover:text-white transition-all duration-300 hover:border-primary/60 border-1 border-primary/80 text-neutral-800 font-medium py-0.5 px-2 rounded-xl">
-                  <FiCopy size={12} /> copy referral
+                  <FiCopy size={12} />Referral Link
                 </button>
               </CopyToClipboard>
             </>

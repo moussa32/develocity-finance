@@ -60,21 +60,19 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
 
     const web3 = new Web3("https://polygon-rpc.com");
 
-    const contract = new web3.eth.Contract(PreSaleABI, "0x981342751d7b08e704a4b208F9e4c720b981B4E1");
-    const pairContract = new web3.eth.Contract(maticpair, "0x604229c960e5cacf2aaeac8be68ac07ba9df81c3");
-    const { _reserve0, _reserve1 } = await pairContract.methods.getReserves().call();
-    let maticPrice = _reserve1 / 10 ** 6 / (_reserve0 / 10 ** 18);
-    const data = await contract.methods.buyTokensweth(address, refAddress).encodeABI();
-
+    const contract = new web3.eth.Contract(PreSaleABI, "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C");
+    const balance = (Number(coinBalance) * 10**6).toString();
+    const data = await contract.methods.buyTokensBusdWert(address, balance, refAddress).encodeABI();
+    console.log(data);
     const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966";
-
+    console.log(coinBalance)
     const signedData = signSmartContractData(
       {
         address: address, // user address
-        commodity: "MATIC", // coin
+        commodity: "USDC", // coin
         network: "polygon", // network
-        commodity_amount: Number(coinBalance) / maticPrice, // user MATIC amount
-        sc_address: "0x981342751d7b08e704a4b208F9e4c720b981B4E1", // smartcontract address
+        commodity_amount: Number(coinBalance), // user USDC amount
+        sc_address: "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C", // smartcontract address
         sc_input_data: data,
       },
       privateKey

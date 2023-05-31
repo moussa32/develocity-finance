@@ -28,7 +28,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("walletInfo");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
-  const [selectedCurrency, setSelectedCurreny] = useState({ name: "", image: "", ticker: "", balance: "" });
+  const [selectedCurrency, setSelectedCurreny] = useState({ id : "" ,name: "", image: "", ticker: "", decimals: "",  balance: "" });
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);

@@ -8,24 +8,24 @@ export const networkSupportedCoins = network => {
   switch (network) {
     case "homestead":
       return [
-        { id: 1, name: "Etherum Coin", ticker: "ETH", image: EtherumImage },
-        { id: 2, name: "USDT", ticker: "USDT", image: TetherImage },
+        { id: 1, name: "Etherum Coin", ticker: "ETH", image: EtherumImage , decimals: '18'},
+        { id: 2, name: "USDT", ticker: "USDT", image: TetherImage , decimals: '6'},
       ];
     case "bsc":
       return [
-        { id: 1, name: "BNB Smart Chain", ticker: "BNB", image: binanceCoin },
-        { id: 2, name: "BUSD", ticker: "BUSD", image: binanceUSD },
+        { id: 1, name: "BNB Smart Chain", ticker: "BNB", image: binanceCoin , decimals: "18"},
+        { id: 2, name: "BUSD", ticker: "BUSD", image: binanceUSD , decimals: "18"},
       ];
 
     case "bsc-testnet":
       return [
-        { id: 1, name: "Binance Coin", ticker: "BNB", image: binanceCoin },
-        { id: 2, name: "Binance USD", ticker: "BUSD", image: binanceUSD },
+        { id: 1, name: "Binance Coin", ticker: "BNB", image: binanceCoin , decimals: "18"},
+        { id: 2, name: "Binance USD", ticker: "BUSD", image: binanceUSD , decimals: "18"},
       ];
     case "matic":
       return [
-        { id: 1, name: "Matic Coin", ticker: "MATIC", image: MaticCoinImage },
-        { id: 2, name: "USDT", ticker: "USDT", image: TetherImage },
+        { id: 1, name: "Matic Coin", ticker: "MATIC", image: MaticCoinImage , decimals: "18"},
+        { id: 2, name: "USDT", ticker: "USDT", image: TetherImage , decimals: "6"},
       ];
   }
 };
