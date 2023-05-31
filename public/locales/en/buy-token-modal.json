@@ -9,7 +9,7 @@
     "inputLable": "Wallet",
     "deveBalance": "DEVE Balance",
     "tokensToClaim": "DEVE Price",
-    "referralsToClaim": "Referrals To Claim",
+    "referralsToClaim": "Referrals",
     "nextBtn": "Next",
     "ReferralLink":"Referral Link",
     "copied":"Link Copied"
@@ -72,7 +72,7 @@
     "subText": "Use Your Code Or Claim Referrals",
     "referralLinkLabel": "Referral Link",
     "yourReferrals": "Your Referrals:",
-    "referralsToClaim": "Referrals To Claim",
+    "referralsToClaim": "Referrals ",
     "referralPercentage": "Referral Percentage",
     "claimBtn": "Claim →"
   },
