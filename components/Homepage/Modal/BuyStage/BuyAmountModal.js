@@ -615,9 +615,9 @@ const BuyAmountModal = ({
         />
       </div>
 
-      <div className="flex justify-between w-full">
+      <div className="flex justify-between gap-4 w-full">
         <button
-          className={`w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white mx-auto`}
+          className={`w-full h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white mx-auto`}
           onClick={() => {
             handleStep("buywith");
             handleCurrent("");
@@ -627,7 +627,7 @@ const BuyAmountModal = ({
         </button>
         {currentCurrency.ticker === "BUSD" && (
           <button
-            className="w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] text-[#23282c] bg-transparent"
+            className="w-full h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] text-[#23282c] bg-transparent"
             disabled={isApprovedButtonLoading}
             onClick={handleApprove}
           >
@@ -635,7 +635,7 @@ const BuyAmountModal = ({
           </button>
         )}
         <button
-          className={`w-[40%] h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white ${
+          className={`w-full h-[54px] rounded-md text-base border-1 border-[#23282c] disabled:opacity-50 disabled:border-[#a5a5a5] bg-[#23282c] text-white ${
             currentCurrency.ticker === "BUSD" ? "ml-2" : "mx-auto"
           }`}
           disabled={isBuyButtonLoading}
