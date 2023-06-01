@@ -21,7 +21,6 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
     queryKey: ["preSaleStatus"],
     queryFn: fetchPreSaleStatus,
   });
-  console.log(isLoading)
   const { progress } = useProgress({
     max: data ? Number(Number(data.soldPercentage) + 1.41 ) : SOLD_PERCENTAGE,
   });
