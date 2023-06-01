@@ -18,14 +18,14 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
 
   //Fetch deve balance
   const DEVEBalance = Number(
-    ethers.utils.formatEther((await walletContract._contributions("0x0000000000000000000000000000000000000000")).toString())
+    ethers.utils.formatEther((await walletContract._contributions(walletAddress)).toString())
   ).toFixed(2);
   //Fetch Tokens to claim
-  const tokensToClaim = (await walletContract.getRefPer("0x0000000000000000000000000000000000000000")).toString();
+  const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
 
   //Fetch Referrals to claim
   const referralsToClaim = Number(
-    await walletContract._RefAmount("0x0000000000000000000000000000000000000000")
+    await walletContract._RefAmount(walletAddress)
   ).toFixed(2);
   let referralsBalanceAmount= 0,
   DEVEBalanceAmount = 0;
@@ -34,15 +34,15 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     const walletContract2 = new ethers.Contract("0x124Ab16d98d71dd95C5F57Ed6123bD06f00EA803" , contractAbi, provider);
     const walletContract3 = new ethers.Contract("0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0" , contractAbi, provider);
     const referralsToClaim2 = Number(
-      await walletContract2._RefAmount("0x0000000000000000000000000000000000000000")
+      await walletContract2._RefAmount(walletAddress)
     ).toFixed(2);
 
     const DEVEBalance2 = Number(
-      ethers.utils.formatEther((await walletContract2._contributions("0x0000000000000000000000000000000000000000")).toString())
+      ethers.utils.formatEther((await walletContract2._contributions(walletAddress)).toString())
     ).toFixed(2);
 
     const DEVEBalance3 = Number(
-      ethers.utils.formatEther((await walletContract3._contributions("0x0000000000000000000000000000000000000000")).toString())
+      ethers.utils.formatEther((await walletContract3._contributions(walletAddress)).toString())
     ).toFixed(2);
   
     DEVEBalanceAmount = (Number(DEVEBalance3) + Number(DEVEBalance2) + Number(DEVEBalance)).toFixed(2);
