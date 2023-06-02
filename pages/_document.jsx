@@ -14,7 +14,7 @@ export default function Document() {
         />
         <meta
           name="keywords"
-          content="Develocity Finance, Develocity Token, blockchain projects, BSC blockchain scanner, token analysis, tokenomics, financial growth, Develocity Tool, digital assets, secure platform, investment opportunities"
+          content="Develocity Finance, Develocity Token, blockchain projects, BSC blockchain scanner, token analysis, tokenomics, financial growth, Develocity Tool, digital assets, secure platform, investment opportunities"
         />
         <link
           href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
