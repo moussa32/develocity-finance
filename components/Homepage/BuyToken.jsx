@@ -15,7 +15,7 @@ import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 import useCountdown from "@/shared/Hooks/useCountdown";
 
 const SOLD_PERCENTAGE = 0;
-const NEXT_STAGE_PRICE = 0.3;
+const NEXT_STAGE_PRICE = 0.25;
 const NEXT_STATE_TIMESTAMP = 1686134300000;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
@@ -43,7 +43,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat().format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 19575 : 0)} /
+            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 19575 : 0)} /
             $1,000,000
           </h3>
         </div>
