@@ -37,8 +37,8 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            {new Intl.NumberFormat().format(data ?  Number(data.remainingTokens) - 97879 : 0)}{" "}
-            {t?.title?.tokensRe}
+            ${new Intl.NumberFormat().format(data ?  Number(data.totalSOLDOnUSD) + 19575.8 : 0)}{" "}
+            {t?.title?.tokensRe} / $1,000,000
           </h3>
         </div>
         <ProgressBar value={data ? Number(Number(data.soldPercentage) + 1.96 ).toFixed(2) : SOLD_PERCENTAGE} />
@@ -57,12 +57,12 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             <span className="text-sm md:text-lg font-medium capitalize">5,000,000</span>
           </div>
         </div>
-        <button
+        {/* <button
           onClick={openAllStagesModal}
           className="uppercase text-xs text-neutral-400 underline text-center mx-auto block mt-4.5"
         >
           {t?.sub?.AllStages}
-        </button>
+        </button> */}
         <a 
           className="text-s text-neutral-300 text-center mx-auto block mt-4.5"
         >
