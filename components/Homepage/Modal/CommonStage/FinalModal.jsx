@@ -34,7 +34,7 @@ const FinalModal = ({ onClose, handleStep, boughtAmount, referral }) => {
       </svg>
 
       <ModalHeaderText header={t?.finalModal.mainText} caption={t?.finalModal.subText} />
-      {boughtAmount > 0 && (
+      {boughtAmount >= 0 && (
         <p className="text-sm -mt-5 text-center">
           {t?.finalModal.referralText}{" "}
           <span className="text-primary" style={{ cursor: "pointer" }} onClick={() => handleStep("referral")}>

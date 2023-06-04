@@ -9,8 +9,10 @@
     "inputLable": "Wallet",
     "deveBalance": "DEVE Balance",
     "tokensToClaim": "DEVE Price",
-    "referralsToClaim": "Referrals To Claim",
-    "nextBtn": "Next"
+    "referralsToClaim": "Referrals",
+    "nextBtn": "Next",
+    "ReferralLink":"Referral Link",
+    "copied":"Link Copied"
   },
   "optionsModal": {
     "mainText": "Select You Option",
@@ -18,6 +20,7 @@
     "btns": {
       "buyDEVE": "Buy DEVE",
       "claimYourTokens": "Claim Your Tokens",
+      "claimYourTokensTooltip": "Claim your tokens after Pre-Sale",
       "referrals": "Referrals"
     }
   },
@@ -69,7 +72,7 @@
     "subText": "Use Your Code Or Claim Referrals",
     "referralLinkLabel": "Referral Link",
     "yourReferrals": "Your Referrals:",
-    "referralsToClaim": "Referrals To Claim",
+    "referralsToClaim": "Referrals ",
     "referralPercentage": "Referral Percentage",
     "claimBtn": "Claim →"
   },

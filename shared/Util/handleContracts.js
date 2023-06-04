@@ -20,42 +20,46 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
   const DEVEBalance = Number(
     ethers.utils.formatEther((await walletContract._contributions(walletAddress)).toString())
   ).toFixed(2);
-  console.log(Number(DEVEBalance));
   //Fetch Tokens to claim
+
   const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
 
   //Fetch Referrals to claim
   const referralsToClaim = Number(
-    ethers.utils.formatEther((await walletContract._RefAmount(walletAddress)).toString())
+    await walletContract._RefAmount(walletAddress)
   ).toFixed(2);
-
   let referralsBalanceAmount= 0,
   DEVEBalanceAmount = 0;
 
   if(network === "bsc"){
     const walletContract2 = new ethers.Contract("0x124Ab16d98d71dd95C5F57Ed6123bD06f00EA803" , contractAbi, provider);
     const walletContract3 = new ethers.Contract("0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0" , contractAbi, provider);
+    const walletContract4 = new ethers.Contract("0x981342751d7b08e704a4b208F9e4c720b981B4E1" , contractAbi, provider);
     const referralsToClaim2 = Number(
-      ethers.utils.formatEther((await walletContract2._RefAmount(walletAddress)).toString())
+      await walletContract2._RefAmount(walletAddress)
     ).toFixed(2);
 
     const DEVEBalance2 = Number(
       ethers.utils.formatEther((await walletContract2._contributions(walletAddress)).toString())
     ).toFixed(2);
-
-    const DEVEBalance3 = Number(
+    let DEVEBalance3 = 0;
+    if(walletAddress != "0xf19b273961C3087033F69de79C20f87c37e7713A"){
+     DEVEBalance3 = Number(
       ethers.utils.formatEther((await walletContract3._contributions(walletAddress)).toString())
     ).toFixed(2);
-  
-    DEVEBalanceAmount = (Number(DEVEBalance3) + Number(DEVEBalance2) + Number(DEVEBalance)).toFixed(2);
+    }
+    let DEVEBalance4 = Number(
+      ethers.utils.formatEther((await walletContract4._contributions(walletAddress)).toString())
+    ).toFixed(2);
+    DEVEBalanceAmount = (Number(DEVEBalance3) + Number(DEVEBalance2) + Number(DEVEBalance) + Number(DEVEBalance4)).toFixed(2);
     referralsBalanceAmount = (Number(referralsToClaim)).toFixed(2);
  
   }else{
     referralsBalanceAmount = referralsToClaim;
     DEVEBalanceAmount = DEVEBalance;
   }
-
-  const referralsBalanceValue = (referralsBalanceAmount * deveCost).toFixed(2);
+  let finalRefbalance = referralsBalanceAmount/10**6;
+  const referralsBalanceValue = (finalRefbalance * deveCost).toFixed(2);
 
   const DEVEBalanceValue = (DEVEBalanceAmount * deveCost).toFixed(2);
 
@@ -64,6 +68,6 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
   return {
     deveBalance: { amount: DEVEBalanceAmount, value: DEVEBalanceValue },
     tokensToClaim: { amount: Number(tokensToClaim) === 8 ? 7.5: tokensToClaim, value: Number(tokensToClaim) === 8 ? 7.5: tokensToClaim },
-    referralsToClaim: { amount: referralsBalanceAmount, value: referralsBalanceValue },
+    referralsToClaim: { amount: Number(finalRefbalance).toFixed(2).toString(), value: referralsBalanceValue },
   };
 };

@@ -10,7 +10,9 @@
     "deveBalance": "Deve kredi",
     "tokensToClaim": "madeni para talebi",
     "referralsToClaim": "talep yönlendirmeleri",
-    "nextBtn": "sonraki"
+    "nextBtn": "sonraki",
+    "ReferralLink":"Yönlendirme Bağlantısı",
+    "copied":"kopyalanmış"
   },
   "optionsModal": {
     "mainText": "seçimini yap",
@@ -18,6 +20,7 @@
     "btns": {
       "buyDEVE": "Deve satın al",
       "claimYourTokens": "madeni paralarınızı talep edin",
+      "claimYourTokensTooltip": "Ön Satıştan sonra jetonlarınızı talep edin",
       "referrals": "tavsiyeler"
     }
   },

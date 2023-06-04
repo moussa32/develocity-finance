@@ -11,7 +11,6 @@ import { v4 as uuidv4 } from "uuid";
 import USDCIcon from "@/images/usdc-icon.png";
 import { Buffer } from "buffer/";
 import PreSaleABI from "../../../../public/presaleabi.json";
-import maticpair from "../../../../public/maticpair.json";
 
 import Web3 from "web3";
 window.Buffer = Buffer;
