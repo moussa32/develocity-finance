@@ -8,7 +8,7 @@ import SideMenu from "../../shared/Components/SideMenu";
 import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
 import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import  ntdown from "@/shared/Hooks/useCountdown";
+import useCountdown from "@/shared/Hooks/useCountdown";
 import { useWeb3Modal } from "@web3modal/react";
 import { useCallback, useEffect, useState } from "react";
 import { useAccount } from "wagmi";
@@ -20,7 +20,7 @@ const Header = () => {
   const { open } = useWeb3Modal();
   const { isConnected } = useAccount();
   const { t, errors } = useTranslation("common");
-  const { remaining, isFinished } = ntdown(1584119600000);
+  const { remaining, isFinished } = useCountdown(1584119600000);
   const [isBuyNowModalOpen, setIsBuyNowModalOpen] = useState(false);
   const [openAfterSuccessConnection, setOpenAfterSuccessConnection] = useState(false);
   const [isAllStagesOpen, setIsAllStagesOpen] = useState(false);
@@ -81,10 +81,8 @@ const Header = () => {
     setIsAllStagesOpen(false);
   }, [isAllStagesOpen]);
 
-
-
   return (
-    <div className="relative h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
+    <div className="relative min-h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
       {isFinished && (
         <video
           src={isMobile ? headerMobileVideo : headerVideo}
@@ -131,7 +129,6 @@ const Header = () => {
         </div>
       </div>
     </div>
-    
   );
 };
 
