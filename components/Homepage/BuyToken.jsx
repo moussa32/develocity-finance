@@ -37,8 +37,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat().format(data ?  Number(data.totalSOLDOnUSD) + 19575.8 : 0)}{" "}
-            {t?.title?.tokensRe} / $1,000,000
+            ${new Intl.NumberFormat().format(data ?  Number(data.totalSOLDOnUSD) + 19575.8 : 0)}{" "} / $1,000,000
           </h3>
         </div>
         <ProgressBar value={data ? Number(Number(data.soldPercentage) + 1.96 ).toFixed(2) : SOLD_PERCENTAGE} />
