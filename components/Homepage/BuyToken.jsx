@@ -37,7 +37,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            {new Intl.NumberFormat().format(data ?  Number(data.remainingTokens) - 144729 : 0)}{" "}
+            {new Intl.NumberFormat().format(data ?  Number(data.remainingTokens) - 144621 : 0)}{" "}
             {t?.title?.tokensRe}
           </h3>
         </div>
