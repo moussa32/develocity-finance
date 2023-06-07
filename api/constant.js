@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const baseURL = "https://phplaravel-992545-3494971.cloudwaysapps.com/api";
-const emailURL = "http://135.125.224.67:26960/";
+const emailURL = "https://develocitydashbaord-production.up.railway.app/";
 const app_api_key = "CwIX5kPsfTrlDHQZxK3yW6SlNPqjA8StUhZ0xeEV6dDw0kgOmwxS2pnxLN1FBPZL";
 
 export const globalInstance = axios.create({
