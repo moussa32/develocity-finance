@@ -32,7 +32,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
 
   return (
     <>
-      <h2 className="uppercase text-center mx-auto font-PolySans text-3xl mb-3 flex gap-2 md:gap-6 md:text-6.5xl sm:text-8xl">
+      <h2 className="uppercase text-center basis-[46px] mx-auto font-PolySans text-3xl mb-5 flex gap-2 md:gap-6 md:text-6.5xl">
         {t?.title?.mainText}
         <span className="block text-indigo-500 tracking-[4px]">{t?.title?.subText}</span>
       </h2>
