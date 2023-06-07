@@ -32,7 +32,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
 
   return (
     <>
-      <h2 className="uppercase text-center basis-[46px] mx-auto font-PolySans text-3xl mb-5 flex gap-2 md:gap-6 md:text-6.5xl">
+      <h2 className="uppercase text-center mx-auto font-PolySans text-3xl mb-3 flex gap-2 md:gap-6 md:text-6.5xl sm:text-8xl">
         {t?.title?.mainText}
         <span className="block text-indigo-500 tracking-[4px]">{t?.title?.subText}</span>
       </h2>
@@ -98,7 +98,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         >
           {t?.sub?.AllStages}
         </button> */}
-        <a className="text-s text-neutral-300 text-center mx-auto block mt-4.5">{t?.sub?.tokensClaim}</a>
+        <a className="text-xs text-neutral-300 text-center mx-auto block mt-4.5">{t?.sub?.tokensClaim}</a>
       </div>
       <section className="flex mt-8 mx-auto gap-5">
         <button
