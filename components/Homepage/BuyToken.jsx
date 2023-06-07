@@ -16,7 +16,7 @@ import useCountdown from "@/shared/Hooks/useCountdown";
 
 const SOLD_PERCENTAGE = 0;
 const NEXT_STAGE_PRICE = 0.25;
-const NEXT_STATE_TIMESTAMP = 1686134300000;
+const NEXT_STATE_TIMESTAMP = 1687046400000;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -27,7 +27,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   });
 
   const { progress } = useProgress({
-    max: data ? Number(Number(data.soldPercentage) + 1.96).toFixed(2) : SOLD_PERCENTAGE,
+    max: data ? Number(Number(data.soldPercentage) + 2.89).toFixed(2) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -43,7 +43,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 19575 : 0)} /
+            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 28924 : 0)} /
             $1,000,000
           </h3>
         </div>
@@ -74,7 +74,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         )}
 
         <ProgressBar
-          value={data ? Number(Number(data.soldPercentage) + 1.96).toFixed(2) : SOLD_PERCENTAGE}
+          value={data ? Number(Number(data.soldPercentage) + 2.89).toFixed(2) : SOLD_PERCENTAGE}
           text={<p className="w-fit">Until Next Price ${NEXT_STAGE_PRICE}</p>}
         />
 
