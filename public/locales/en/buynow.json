@@ -12,7 +12,14 @@
     "HowtoBuy": "How to Buy?",
     "BuyNow": "Connect Wallet",
     "AllStages": "All Stages",
-    "tokensClaim":"You can Claim your Deve's After Pre-Sale",
+    "tokensClaim":"The Pre-Sale period is scheduled to conclude on September 3, 2023. Following this date, you will be able to claim your DEVE tokens.",
     "PaymentSupported": "And Cryptocurrency Payment Supported"
+  },
+  "counter": {
+    "days": "Days",
+    "hours": "Hours",
+    "minutes": "Minutes",
+    "seconds": "Seconds",
+    "nextPrice": "Until Next Price "
   }
 }

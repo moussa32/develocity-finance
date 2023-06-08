@@ -67,7 +67,6 @@ const BuyAmountModal = ({
                   "aria-live": "polite",
                 },
               });
-
           });
         const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
         const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
