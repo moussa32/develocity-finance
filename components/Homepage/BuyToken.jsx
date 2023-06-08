@@ -74,7 +74,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         )}
 
         <ProgressBar
-          value={data ? Number(Number(data.soldPercentage) + 2.89).toFixed(2) : SOLD_PERCENTAGE}
+          value={data ? Number(Number(data.soldPercentage) + 5.96).toFixed(2) : SOLD_PERCENTAGE}
           text={<p className="w-fit">Until Next Price ${NEXT_STAGE_PRICE}</p>}
         />
 
