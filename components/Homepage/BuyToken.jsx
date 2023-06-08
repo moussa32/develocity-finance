@@ -49,25 +49,25 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         </div>
         {!isFinished && (
           <div className="flex justify-center my-4">
-            <time className="font-semibold gap-1 md:gap-4 flex text-center">
+            <time className="font-semibold gap-1 md:gap-4 flex rtl:flex-row-reverse	 text-center">
               <span className="flex flex-col">
                 <span className="text-[42px] lg:text-[60px]">{remaining.days} </span>
-                Days
+                {t?.counter?.days}
               </span>
               <span className="text-[42px] lg:text-[60px]">:</span>
               <span className="flex flex-col">
                 <span className="text-[42px] lg:text-[60px]">{remaining.hours} </span>
-                Hours
+                {t?.counter?.hours}
               </span>
               <span className="text-[42px] lg:text-[60px]">:</span>
               <span className="flex flex-col">
                 <span className="text-[42px] lg:text-[60px]">{remaining.minutes} </span>
-                Minutes
+                {t?.counter?.minutes}
               </span>
               <span className="text-[42px] lg:text-[60px]">:</span>
               <span className="flex flex-col">
                 <span className="text-[42px] lg:text-[60px]">{remaining.seconds} </span>
-                seconds
+                {t?.counter?.seconds}
               </span>
             </time>
           </div>
@@ -75,7 +75,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
 
         <ProgressBar
           value={data ? Number(Number(data.soldPercentage) + 5.96).toFixed(2) : SOLD_PERCENTAGE}
-          text={<p className="w-fit">Until Next Price ${NEXT_STAGE_PRICE}</p>}
+          text={<p className="w-fit">{t?.counter?.nextPrice} ${NEXT_STAGE_PRICE}</p>}
         />
 
         <div className="flex items-center flex-row gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] gap-0 justify-center justify-between px-6">

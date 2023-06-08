@@ -14,5 +14,12 @@
     "AllStages": "tüm aşamalar",
     "tokensClaim":"Abonelik aşamasını tamamladıktan sonra jetonlarınızı toplayabilirsiniz.",
     "PaymentSupported": "Kripto para birimi ile ödeme desteklenir."
+  },
+  "counter": {
+    "days": "günler",
+    "hours": "Saat",
+    "minutes": "dakika",
+    "seconds": "saniye",
+    "nextPrice": "Sonraki Fiyata Kadar "
   }
 }
