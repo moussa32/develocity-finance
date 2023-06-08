@@ -27,7 +27,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   });
 
   const { progress } = useProgress({
-    max: data ? Number(Number(data.soldPercentage) + 2.89).toFixed(2) : SOLD_PERCENTAGE,
+    max: data ? Number(Number(data.soldPercentage) + 5.96).toFixed(2) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -43,7 +43,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 28924 : 0)} /
+            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 59608 : 0)} /
             $1,000,000
           </h3>
         </div>
