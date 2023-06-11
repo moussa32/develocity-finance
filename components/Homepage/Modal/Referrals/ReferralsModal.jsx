@@ -198,11 +198,11 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,select
           secondaryText= "USDT"
         />
       </div>
-      <button
+      {referralsToClaim.amount != 0 && <button
           className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
           disabled={referralsToClaim.amount == 0}
           onClick={handleClaim}
-        >{t?.referralModal.claimBtn}</button>
+        >{t?.referralModal.claimBtn}</button>}
     </section>
   );
 };
