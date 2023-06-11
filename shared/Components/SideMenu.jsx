@@ -38,13 +38,13 @@ const SideMenu = () => {
         <>
           <div className="mx-auto pt-2 max-w-7xl px-2 sm:px-6 lg:px-8">
             <div className="relative flex h-16 items-center justify-between">
-              <div className="absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center lg:hidden">
+              <div className=" absolute inset-y-0 ltr:right-0 rtl:left-0 flex items-center lg:hidden">
               <LangDropdown/>
                 {/* Mobile menu button*/}
                 <Disclosure.Button
                   ref={DisclosureButton}
                   onClick={() => setIsOpen(!isOpen)}
-                  className="inline-flex items-center justify-center rounded-md ltr:mr-4 rtl:ml-4 p-2 text-neutral-300 hover:bg-opacity-5 hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
+                  className="inline-flex items-center justify-center rounded-md ltr:mr-4 rtl:ml-4 ltr:ml-3 rtl:mr-3 p-2 text-neutral-300 hover:bg-opacity-5 hover:bg-white hover:text-white focus:outline-none focus:ring-2 focus:ring-inset focus:ring-white"
                 >
                   <span className="sr-only">Open main menu</span>
                   {open ? (

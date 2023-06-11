@@ -13,7 +13,6 @@ export const getSecondCoinContract = (provider, network) => {
 };
 
 export const getWalletBalance = async (network, provider, walletAddress) => {
-  console.log(getSecondCoinContractAddress(network))
   const walletContract = new ethers.Contract(getMainCoinContractAddress(network) , contractAbi, provider);
 
   //Fetch deve balance
@@ -54,10 +53,20 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
       ethers.utils.formatEther((await walletContract4._contributions(walletAddress)).toString())
     ).toFixed(2);
     DEVEBalanceAmount = (Number(DEVEBalance3) + Number(DEVEBalance2) + Number(DEVEBalance) + Number(DEVEBalance4)).toFixed(2);
-    referralsBalanceAmount = (Number(referralsToClaim)).toFixed(2);
  
+  }else if(network === "matic"){
+
+    const walletContract2 = new ethers.Contract("0x8c23F7CC7c720dFF6aBf7E83271762a985092Ab5" , contractAbi, provider);
+
+    const DEVEBalance2 = Number(
+      ethers.utils.formatEther((await walletContract2._contributions(walletAddress)).toString())
+    ).toFixed(2);
+    
+    DEVEBalanceAmount = (Number(DEVEBalance2) + Number(DEVEBalance)).toFixed(2);
+
+
+
   }else{
-    referralsBalanceAmount = referralsToClaim;
     DEVEBalanceAmount = DEVEBalance;
   }
   let claimedRefAmountB = (Number(claimedRefAmount)).toFixed(2);
