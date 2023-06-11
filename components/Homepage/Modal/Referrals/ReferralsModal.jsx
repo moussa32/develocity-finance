@@ -200,7 +200,7 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,select
       </div>
       <button
           className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
-          disabled={referralsToClaim.amount != 0}
+          disabled={referralsToClaim.amount == 0}
           onClick={handleClaim}
         >{t?.referralModal.claimBtn}</button>
     </section>
