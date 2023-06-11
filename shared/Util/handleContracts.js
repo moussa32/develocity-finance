@@ -24,6 +24,8 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
 
   const tokensToClaim = (await walletContract.getRefPer(walletAddress)).toString();
 
+  const claimedRefAmount = (await walletContract._claimedRefAmount(walletAddress)).toString();
+
   //Fetch Referrals to claim
   const referralsToClaim = Number(
     await walletContract._RefAmount(walletAddress)
@@ -58,7 +60,9 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     referralsBalanceAmount = referralsToClaim;
     DEVEBalanceAmount = DEVEBalance;
   }
-  let finalRefbalance = referralsBalanceAmount/10**6;
+  let claimedRefAmountB = (Number(claimedRefAmount)).toFixed(2);
+  referralsBalanceAmount = (Number(referralsToClaim)).toFixed(2);
+  let finalRefbalance = referralsBalanceAmount/10**6 - claimedRefAmountB/10**6;
   const referralsBalanceValue = (finalRefbalance * deveCost).toFixed(2);
 
   const DEVEBalanceValue = (DEVEBalanceAmount * deveCost).toFixed(2);

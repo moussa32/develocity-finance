@@ -4,12 +4,19 @@ import toast from "react-hot-toast";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-
-const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim }) => {
+import contractAbi from "../../../../public/assets/contractApi.json";
+import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
+import { useSigner } from "wagmi";
+import { ethers } from "ethers";
+const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,selectedNetwork}) => {
   const [copy, setCopy] = useState({
     value: "",
     copied: false,
   });
+  const { data: signer, isError, isLoading } = useSigner();
+  const mainContract = getMainCoinContractAddress(selectedNetwork);
+  console.log(mainContract)
+  const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
 
   useEffect(() => {
     if (copy.value.length > 0) {
@@ -43,6 +50,77 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim }) => {
   };
 
   const { t } = useTranslation("buy-token-modal");
+
+  const handleClaim = async () => {
+
+    const gasPrice = await signerContract.estimateGas
+      .claimRefTokens()
+      .catch(error => {
+
+        toast(`${error.reason}`, {
+          duration: 6000,
+          position: "top-center",
+          // Styling
+          style: {
+            color: "#fff",
+            fontSize: "16px",
+            background: "#F03D3D",
+          },
+
+          // Aria
+          ariaProps: {
+            role: "status",
+            "aria-live": "polite",
+          },
+        });
+      });
+
+    signerContract
+      .claimRefTokens()
+      .then(res => {
+        res.wait().then(receipt => {
+          toast("Tokens has been claimed", {
+            duration: 6000,
+            position: "top-center",
+            // Styling
+            style: {
+              color: "#fff",
+              fontSize: "16px",
+              background: "#33FF71",
+            },
+  
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          });
+        });
+      })
+      .catch(error => {
+        const { code: errorCode } = error;
+        if (errorCode === -32000) {
+          toast("You don't have enough native tokens or ensure the network has been added correctly", {
+            duration: 6000,
+            position: "top-center",
+            // Styling
+            style: {
+              color: "#fff",
+              fontSize: "16px",
+              background: "#F03D3D",
+            },
+
+            // Aria
+            ariaProps: {
+              role: "status",
+              "aria-live": "polite",
+            },
+          });
+        }
+      })
+      .finally(() => {
+      });
+  };
 
   return (
     <section className="flex flex-col justify-center items-center">
@@ -120,12 +198,11 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim }) => {
           secondaryText= "USDT"
         />
       </div>
-      {/* <button
-        className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
-        onClick={() => handleStep("final")}
-      >
-        {t?.referralModal.claimBtn}
-      </button> */}
+      <button
+          className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
+          disabled={referralsToClaim.amount != 0}
+          onClick={handleClaim}
+        >{t?.referralModal.claimBtn}</button>
     </section>
   );
 };

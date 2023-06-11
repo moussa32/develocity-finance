@@ -165,6 +165,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
             tokensToClaim={tokensToClaim.amount}
             referralsToClaim={referralsToClaim}
             handleCurrent={handleCurrentAnimationStep}
+            selectedNetwork={chain.network}
           />
         );
       case "final":
