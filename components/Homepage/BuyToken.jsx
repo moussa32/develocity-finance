@@ -15,8 +15,8 @@ import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 import useCountdown from "@/shared/Hooks/useCountdown";
 
 const SOLD_PERCENTAGE = 0;
-const NEXT_STAGE_PRICE = 0.25;
-const NEXT_STATE_TIMESTAMP = 1687046400000;
+const NEXT_STAGE_PRICE = 0.28;
+const NEXT_STATE_TIMESTAMP = 1688169600000;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -27,7 +27,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   });
 
   const { progress } = useProgress({
-    max: data ? Number(Number(data.soldPercentage) + 14.03 ).toFixed(2) : SOLD_PERCENTAGE,
+    max: data ? Number(Number(data.soldPercentage) + 0 ).toFixed(2) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -43,8 +43,8 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 140343 : 0)} /
-            $1,000,000
+            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 0 : 0)} /
+            $1,750,000
           </h3>
         </div>
         {!isFinished && (
@@ -74,22 +74,22 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         )}
 
         <ProgressBar
-          value={data ? Number(Number(data.soldPercentage) + 14.03).toFixed(2) : SOLD_PERCENTAGE}
+          value={data ? Number(Number(data.soldPercentage) + 0).toFixed(2) : SOLD_PERCENTAGE}
           text={<p className="w-fit">{t?.counter?.nextPrice} ${NEXT_STAGE_PRICE}</p>}
         />
 
         <div className="flex items-center flex-row gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] gap-0 justify-center justify-between px-6">
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 ltr:sm:pr-10 rtl:sm:pl-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.stage}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize ">1</span>
+            <span className="text-sm md:text-lg font-medium capitalize ">2</span>
           </div>
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 sm:px-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.price}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize">$0.2 = 1 $DEVE</span>
+            <span className="text-sm md:text-lg font-medium capitalize">$0.25 = 1 $DEVE</span>
           </div>
           <div className="ltr:sm:pl-10 rtl:sm:pr-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.tokens}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize">5,000,000</span>
+            <span className="text-sm md:text-lg font-medium capitalize">7,000,000</span>
           </div>
         </div>
         {/* <button
@@ -120,8 +120,8 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         </a>
       </section>
       <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
-        <Image width={55} src={Visa} className="Pay with Visa" />
-        <Image width={55} src={Mastercard} className="Pay with Mastercard" />
+        <Image width={50} src={Visa} className="Pay with Visa" />
+        <Image width={50} src={Mastercard} className="Pay with Mastercard" />
         {/* <Image width={55} src={ApplePay} className="Pay with ApplePay" />
         <Image width={55} src={GooglePay} className="Pay with GooglePay" />
         <Image width={55} src={Binance} className="Pay with BinancePay" /> */}
