@@ -27,7 +27,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   });
 
   const { progress } = useProgress({
-    max: data ? Number(Number(data.soldPercentage) + 21.97 ).toFixed(2) : SOLD_PERCENTAGE,
+    max: data ? Number(Number(data.soldPercentage) + 34.32 ).toFixed(2) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -43,7 +43,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 219664 : 0)} /
+            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 343219 : 0)} /
             $1,000,000
           </h3>
         </div>
@@ -74,7 +74,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         )}
 
         <ProgressBar
-          value={data ? Number(Number(data.soldPercentage) + 21.97).toFixed(2) : SOLD_PERCENTAGE}
+          value={data ? Number(Number(data.soldPercentage) + 34.32).toFixed(2) : SOLD_PERCENTAGE}
           text={<p className="w-fit">{t?.counter?.nextPrice} ${NEXT_STAGE_PRICE}</p>}
         />
 
