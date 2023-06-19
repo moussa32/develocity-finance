@@ -16,7 +16,7 @@ import useCountdown from "@/shared/Hooks/useCountdown";
 
 const SOLD_PERCENTAGE = 0;
 const NEXT_STAGE_PRICE = 0.28;
-const NEXT_STATE_TIMESTAMP = 1688256000000;
+const NEXT_STATE_TIMESTAMP = 1688428800000;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
