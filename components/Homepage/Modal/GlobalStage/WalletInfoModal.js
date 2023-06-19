@@ -102,7 +102,7 @@ const WalletInfoModal = ({
           value="1 DEVE"
           showSymbol={false}
           isLoaded={isDataLoaded}
-          secondaryText="= $0.20"
+          secondaryText="= $0.25"
           hr="true"
         />
         <TextItem
