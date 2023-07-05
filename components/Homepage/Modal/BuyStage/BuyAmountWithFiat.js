@@ -62,9 +62,9 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     const contract = new web3.eth.Contract(PreSaleABI, "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C");
     const balance = (Number(coinBalance) * 10**6).toString();
     const data = await contract.methods.buyTokensBusdWert(address, balance, refAddress).encodeABI();
-    console.log(data);
+
     const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966";
-    console.log(coinBalance)
+
     const signedData = signSmartContractData(
       {
         address: address, // user address
