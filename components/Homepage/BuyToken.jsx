@@ -81,7 +81,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         <div className="flex items-center flex-row gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] gap-0 justify-center justify-between px-6">
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 ltr:sm:pr-10 rtl:sm:pl-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.stage}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize ">2</span>
+            <span className="text-sm md:text-lg font-medium capitalize ">3</span>
           </div>
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 sm:px-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.price}</h3>
