@@ -16,12 +16,13 @@ const Blog = () => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const requestArticles = await globalInstance.get("/articles", {
-        headers: {
-          lang: locale,
-        },
-      });
-      const { articles } = requestArticles.data.data;
+      // const requestArticles = await globalInstance.get("/articles", {
+      //   headers: {
+      //     lang: locale,
+      //   },
+      // });
+      // const { articles } = requestArticles.data.data;
+      const articles = [];
       setData(articles);
       /*  try {
         const response = await fetch(url, {
