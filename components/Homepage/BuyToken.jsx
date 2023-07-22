@@ -15,8 +15,8 @@ import { fetchPreSaleStatus } from "@/api/fetchPreSaleStatus";
 import useCountdown from "@/shared/Hooks/useCountdown";
 
 const SOLD_PERCENTAGE = 0;
-const NEXT_STAGE_PRICE = 0.31;
-const NEXT_STATE_TIMESTAMP = 1689811200000;
+const NEXT_STAGE_PRICE = 0.35;
+const NEXT_STATE_TIMESTAMP = 1691269200000;
 
 const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   const { t } = useTranslation("buynow");
@@ -44,7 +44,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
             ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 0 : 0)} /
-            $2,100,000
+            $2,635,000
           </h3>
         </div>
         {!isFinished && (
@@ -81,15 +81,15 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         <div className="flex items-center flex-row gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] gap-0 justify-center justify-between px-6">
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 ltr:sm:pr-10 rtl:sm:pl-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.stage}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize ">3</span>
+            <span className="text-sm md:text-lg font-medium capitalize ">4</span>
           </div>
           <div className="ltr:sm:border-r-[#3F3C7F] rtl:sm:border-l-[#3F3C7F] ltr:sm:border-r-1 rtl:sm:border-l-1 sm:px-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.price}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize">$0.28 = 1 $DEVE</span>
+            <span className="text-sm md:text-lg font-medium capitalize">$0.31 = 1 $DEVE</span>
           </div>
           <div className="ltr:sm:pl-10 rtl:sm:pr-10">
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.tokens}</h3>
-            <span className="text-sm md:text-lg font-medium capitalize">7,500,000</span>
+            <span className="text-sm md:text-lg font-medium capitalize">8,500,000</span>
           </div>
         </div>
         {/* <button

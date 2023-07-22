@@ -16,7 +16,7 @@ import Web3 from "web3";
 window.Buffer = Buffer;
 
 const isTestMode = true;
-const DEVE_PRICE = 0.25;
+const DEVE_PRICE = 0.31;
 
 const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalAmount }) => {
   const { t } = useTranslation("buy-token-modal");
@@ -265,12 +265,12 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
       </div>
 
       <div className="mt-4 w-full">
-        <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.25" hr="true" />
+        <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.31" hr="true" />
         <TextItem
           title={t?.buyAmountModal.estimatedBalance}
           value={convertedDeve}
           symbol="&plusmn;"
-          percentage="0.25%"
+          percentage="0.28%"
           hr="true"
         />
       </div>

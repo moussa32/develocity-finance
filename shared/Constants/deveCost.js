@@ -1,1 +1,1 @@
-export const deveCost = 0.28;
+export const deveCost = 0.31;
