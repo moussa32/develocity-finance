@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const baseURL = "https://phplaravel-1066800-3734034.cloudwaysapps.com/api";
+const baseURL = "https://blog.develocity.app/api";
 const emailURL = "https://powerful-teeth-production.up.railway.app/";
 const app_api_key = "CwIX5kPsfTrlDHQZxK3yW6SlNPqjA8StUhZ0xeEV6dDw0kgOmwxS2pnxLN1FBPZL";
 
