@@ -10,7 +10,11 @@ const nextConfig = {
     defaultLocale: "en",
   },
   images: {
-    domains: ["blog.develocity.app", "phplaravel-992545-3494971.cloudwaysapps.com"],
+    domains: [
+      "blog.develocity.app",
+      "phplaravel-992545-3494971.cloudwaysapps.com",
+      "phplaravel-1066800-3734034.cloudwaysapps.com",
+    ],
     formats: ["image/avif", "image/webp"],
   },
 };
