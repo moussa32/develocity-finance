@@ -48,8 +48,8 @@ export const getMainCoinContractAddress = network => {
     case "homestead":
       return "0x981342751d7b08e704a4b208F9e4c720b981B4E1";
     case "bsc":
-      return "0x9314964Cf5b1054DE50B5a87b832732272aeE00f";
+      return "0x512390F66039AEB56B9Fa99541E4792bB948791C";
     case "matic":
-      return "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C";
+      return "0x512390F66039AEB56B9Fa99541E4792bB948791C";
   }
 };

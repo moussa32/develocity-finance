@@ -36,6 +36,7 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     const walletContract2 = new ethers.Contract("0x124Ab16d98d71dd95C5F57Ed6123bD06f00EA803" , contractAbi, provider);
     const walletContract3 = new ethers.Contract("0x2F3a22b69aB00D3adF383b1f62281337e1f38bF0" , contractAbi, provider);
     const walletContract4 = new ethers.Contract("0x981342751d7b08e704a4b208F9e4c720b981B4E1" , contractAbi, provider);
+    const walletContract5 = new ethers.Contract("0x512390F66039AEB56B9Fa99541E4792bB948791C" , contractAbi, provider);
     const referralsToClaim2 = Number(
       await walletContract2._RefAmount(walletAddress)
     ).toFixed(2);
@@ -52,17 +53,27 @@ export const getWalletBalance = async (network, provider, walletAddress) => {
     let DEVEBalance4 = Number(
       ethers.utils.formatEther((await walletContract4._contributions(walletAddress)).toString())
     ).toFixed(2);
-    DEVEBalanceAmount = (Number(DEVEBalance3) + Number(DEVEBalance2) + Number(DEVEBalance) + Number(DEVEBalance4)).toFixed(2);
+
+    let DEVEBalance5 = Number(
+      ethers.utils.formatEther((await walletContract5._contributions(walletAddress)).toString())
+    ).toFixed(2);
+
+    DEVEBalanceAmount = (Number(DEVEBalance3) + Number(DEVEBalance2) + Number(DEVEBalance) + Number(DEVEBalance4) + Number(DEVEBalance5)).toFixed(2);
  
   }else if(network === "matic"){
 
     const walletContract2 = new ethers.Contract("0x8c23F7CC7c720dFF6aBf7E83271762a985092Ab5" , contractAbi, provider);
+    const walletContract3 = new ethers.Contract("0x512390F66039AEB56B9Fa99541E4792bB948791C" , contractAbi, provider);
 
     const DEVEBalance2 = Number(
       ethers.utils.formatEther((await walletContract2._contributions(walletAddress)).toString())
     ).toFixed(2);
+
+    const DEVEBalance3 = Number(
+      ethers.utils.formatEther((await walletContract3._contributions(walletAddress)).toString())
+    ).toFixed(2);
     
-    DEVEBalanceAmount = (Number(DEVEBalance2) + Number(DEVEBalance)).toFixed(2);
+    DEVEBalanceAmount = (Number(DEVEBalance2) + Number(DEVEBalance) +  Number(DEVEBalance3)).toFixed(2);
 
 
 

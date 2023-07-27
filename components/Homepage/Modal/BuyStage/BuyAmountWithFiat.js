@@ -15,7 +15,6 @@ import PreSaleABI from "../../../../public/presaleabi.json";
 import Web3 from "web3";
 window.Buffer = Buffer;
 
-const isTestMode = true;
 const DEVE_PRICE = 0.31;
 
 const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalAmount }) => {
@@ -71,7 +70,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
         commodity: "USDC", // coin
         network: "polygon", // network
         commodity_amount: Number(coinBalance), // user USDC amount
-        sc_address: "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C", // smartcontract address
+        sc_address: "0x512390F66039AEB56B9Fa99541E4792bB948791C", // smartcontract address
         sc_input_data: data,
       },
       privateKey
