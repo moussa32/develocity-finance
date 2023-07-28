@@ -357,11 +357,11 @@ const BuyAmountModal = ({
 
   const handleMaxUserAmount = async () => {
     if (currentCurrency.ticker == "BNB" || currentCurrency.ticker == "ETH") {
-      setCoinBalance(Number(balance.value - 0.01).toFixed(3));
+      setCoinBalance(Number(balance.formatted - 0.01).toFixed(3));
     } else if (currentCurrency.ticker == "MATIC") {
-      setCoinBalance(Number(balance.value - 0.1).toFixed(3));
+      setCoinBalance(Number(balance.formatted - 0.1).toFixed(3));
     } else {
-      setCoinBalance(Number(balance.value).toFixed(3));
+      setCoinBalance(Number(balance.formatted).toFixed(3));
     }
     if (currentCurrency.ticker === "BUSD") {
       const gasPrice = await signerContract.estimateGas
@@ -446,7 +446,7 @@ const BuyAmountModal = ({
     if (!coinsDic[currentCoin]) return false;
 
     if (!isBalanceLoading) {
-      const userBalance = Number(balance.value);
+      const userBalance = Number(balance.formatted);
       return userBalance <= coinsDic[currentCoin].min ? true : false;
     }
   }, [balance]);

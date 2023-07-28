@@ -85,11 +85,12 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
           referralsToClaim: newReferralsToClaim,
           tokensToClaim: newTokensToClaim,
         } = await getWalletBalance(chain.network, signer, address);
-        setIsLoaded(true);
+
         setDeveBalance(newDeveBalance);
         setTokensToClaim(newTokensToClaim);
         setReferralsToClaim(newReferralsToClaim);
       } catch (error) {
+        console.error("Couldn't get Deve balance or tokens to claim or referrals to claim from contract");
         setDeveBalance({ amount: 0, value: 0 });
         setTokensToClaim(0);
         setReferralsToClaim(0);
