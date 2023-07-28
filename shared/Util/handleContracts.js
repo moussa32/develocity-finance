@@ -12,7 +12,7 @@ export const getSecondCoinContract = (provider, network) => {
 };
 
 export const getWalletBalance = async (network, provider, walletAddress) => {
-
+  walletAddress = walletAddress;
   const walletContract = new ethers.Contract(getMainCoinContractAddress(network) , contractAbi, provider);
 
   //Fetch deve balance
