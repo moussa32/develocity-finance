@@ -46,7 +46,7 @@ export const getSecondCoinContractAddress = network => {
 export const getMainCoinContractAddress = network => {
   switch (network) {
     case "homestead":
-      return "0x981342751d7b08e704a4b208F9e4c720b981B4E1";
+      return "0x512390F66039AEB56B9Fa99541E4792bB948791C";
     case "bsc":
       return "0x512390F66039AEB56B9Fa99541E4792bB948791C";
     case "matic":

@@ -84,7 +84,7 @@ const WalletInfoModal = ({
             </Menu>
           </div>
           <div className="border-[1px] h-14 px-5 gap-5 border-[#4CA154] flex items-center justify-between rounded relative mt-2 mb-8 bg-[#35C486] bg-opacity-[15%]">
-            <p className="truncate text-sm">{walletAddress.slice(0,12)}...{walletAddress.slice(31,41)}</p>
+            <p className="truncate text-sm">{walletAddress.slice(0,12)}...{walletAddress.slice(32,42)}</p>
             <button className="w-6 h-6 basis-6 flex-shrink-0 flex-grow" onClick={() => disconnect()}>
               <Image src={CloseBuyModalButton} alt="Close" />
             </button>

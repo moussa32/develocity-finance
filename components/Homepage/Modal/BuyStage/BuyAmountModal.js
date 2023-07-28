@@ -497,7 +497,7 @@ const BuyAmountModal = ({
           <path id="Vector-4" data-name="Vector" d="M0,0H24V24H0Z" fill="none" opacity="0" />
         </svg>
         <h5 className="text-sm mt-[3px] ltr:mr-[5px] rtl:ml-[5px] text-[#2a2929]">
-          {walletAddress && walletAddress.slice(0, 10) + "..." + walletAddress.slice(31, 41)}
+          {walletAddress && walletAddress.slice(0, 10) + "..." + walletAddress.slice(32, 42)}
         </h5>
       </div>
 
