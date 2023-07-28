@@ -12,7 +12,7 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
-import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
+import { useAccount, useDisconnect, useNetwork, usePublicClient, useWalletClient } from "wagmi";
 import BuyMethod from "./BuyStage/BuyMethod";
 import { useRouter } from "next/router";
 import BuyAmountWithFiat from "./BuyStage/BuyAmountWithFiat";
@@ -28,7 +28,14 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("walletInfo");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
-  const [selectedCurrency, setSelectedCurreny] = useState({ id : "" ,name: "", image: "", ticker: "", decimals: "",  balance: "" });
+  const [selectedCurrency, setSelectedCurreny] = useState({
+    id: "",
+    name: "",
+    image: "",
+    ticker: "",
+    decimals: "",
+    balance: "",
+  });
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
@@ -37,11 +44,11 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentAnimationStep, setCurrentAnimationStep] = useState(1);
   const { locale } = useRouter();
 
-  const { data: signer } = useSigner();
+  const { data: signer } = useWalletClient();
   const { disconnect } = useDisconnect();
   const { address, status } = useAccount();
   const { chain } = useNetwork();
-  const provider = useProvider();
+  const provider = usePublicClient();
 
   const handleStep = useCallback(step => {
     setCurrentStep(step);

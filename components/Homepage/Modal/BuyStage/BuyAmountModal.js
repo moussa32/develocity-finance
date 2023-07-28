@@ -8,7 +8,7 @@ import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
 // import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import { useBalance, useSigner } from "wagmi";
+import { useBalance, useWalletClient } from "wagmi";
 import Image from "next/image";
 import { useRouter } from "next/router";
 
@@ -23,7 +23,7 @@ const BuyAmountModal = ({
   selectedNetwork,
 }) => {
   const { t } = useTranslation("buy-token-modal");
-  const { data: signer, isError, isLoading } = useSigner();
+  const { data: signer, isError, isLoading } = useWalletClient();
   const { data: balance, isLoading: isBalanceLoading } = useBalance({
     address: walletAddress,
   });
@@ -50,23 +50,23 @@ const BuyAmountModal = ({
         const gasPrice = await signerContract.estimateGas
           .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
           .catch(error => {
-               toast(`You don't have enough balance to buy`, {
-                id: "gasPriceErrorFromGlobalState",
-                duration: 6000,
-                position: "top-center",
-                // Styling
-                style: {
-                  color: "#fff",
-                  fontSize: "16px",
-                  background: "#F03D3D",
-                },
+            toast(`You don't have enough balance to buy`, {
+              id: "gasPriceErrorFromGlobalState",
+              duration: 6000,
+              position: "top-center",
+              // Styling
+              style: {
+                color: "#fff",
+                fontSize: "16px",
+                background: "#F03D3D",
+              },
 
-                // Aria
-                ariaProps: {
-                  role: "status",
-                  "aria-live": "polite",
-                },
-              });
+              // Aria
+              ariaProps: {
+                role: "status",
+                "aria-live": "polite",
+              },
+            });
           });
         const convertedGasPrice = gasPrice ? Number(ethers.utils.formatUnits(gasPrice, 18)) : 0;
         const calculateDeveCoins = await walletContract.getbusdPrice(memoizedCoinBalanceConverted);
@@ -275,8 +275,8 @@ const BuyAmountModal = ({
   const handleBuyBUSD = async () => {
     setIsBuyButtonLoading(true);
     setBuyButtonText(t?.buyAmountModal.btns.Loading);
-    if(currentCurrency.ticker == "BUSD" || currentCurrency.ticker == "USDT") 
-    memoizedCoinBalanceConverted = memoizedCoinBalanceConverted / 10**12;
+    if (currentCurrency.ticker == "BUSD" || currentCurrency.ticker == "USDT")
+      memoizedCoinBalanceConverted = memoizedCoinBalanceConverted / 10 ** 12;
     const gasPrice = await signerContract.estimateGas
       .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
       .catch(error => {
@@ -356,16 +356,16 @@ const BuyAmountModal = ({
   };
 
   const handleMaxUserAmount = async () => {
-    if(currentCurrency.ticker == "BNB"  || currentCurrency.ticker == "ETH" ){
-      setCoinBalance(Number(balance.formatted - 0.01).toFixed(3) );
-    }else if( currentCurrency.ticker == "MATIC" ){
-      setCoinBalance(Number(balance.formatted - 0.1).toFixed(3) );
-    }else{
-      setCoinBalance(Number(balance.formatted).toFixed(3) );
+    if (currentCurrency.ticker == "BNB" || currentCurrency.ticker == "ETH") {
+      setCoinBalance(Number(balance.value - 0.01).toFixed(3));
+    } else if (currentCurrency.ticker == "MATIC") {
+      setCoinBalance(Number(balance.value - 0.1).toFixed(3));
+    } else {
+      setCoinBalance(Number(balance.value).toFixed(3));
     }
     if (currentCurrency.ticker === "BUSD") {
       const gasPrice = await signerContract.estimateGas
-        .buyTokensBusd(( 5 * 10**currentCurrency.decimals).toString(), ref)
+        .buyTokensBusd((5 * 10 ** currentCurrency.decimals).toString(), ref)
         .catch(error => {
           const { code: errorCode } = error.data;
           if (errorCode === -32603) {
@@ -397,7 +397,7 @@ const BuyAmountModal = ({
       );
     } else {
       const gasPrice = await signerContract.estimateGas
-        .buyTokens(ref, { value: (0.02 * 10**18).toString() })
+        .buyTokens(ref, { value: (0.02 * 10 ** 18).toString() })
         .catch(error => {
           toast("You dont have balance to buy", {
             id: "gasPriceErrorFromMaxUserAmount",
@@ -446,7 +446,7 @@ const BuyAmountModal = ({
     if (!coinsDic[currentCoin]) return false;
 
     if (!isBalanceLoading) {
-      const userBalance = Number(balance.formatted);
+      const userBalance = Number(balance.value);
       return userBalance <= coinsDic[currentCoin].min ? true : false;
     }
   }, [balance]);

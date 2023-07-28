@@ -6,16 +6,16 @@ import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import contractAbi from "../../../../public/assets/contractApi.json";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
-import { useSigner } from "wagmi";
+import { useWalletClient } from "wagmi";
 import { ethers } from "ethers";
-const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,selectedNetwork}) => {
+const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim, selectedNetwork }) => {
   const [copy, setCopy] = useState({
     value: "",
     copied: false,
   });
-  const { data: signer, isError, isLoading } = useSigner();
+  const { data: signer, isError, isLoading } = useWalletClient();
   const mainContract = getMainCoinContractAddress(selectedNetwork);
-  console.log(mainContract)
+  console.log(mainContract);
   const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
 
   useEffect(() => {
@@ -52,28 +52,24 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,select
   const { t } = useTranslation("buy-token-modal");
 
   const handleClaim = async () => {
+    const gasPrice = await signerContract.estimateGas.claimRefTokens().catch(error => {
+      toast(`${error.reason}`, {
+        duration: 6000,
+        position: "top-center",
+        // Styling
+        style: {
+          color: "#fff",
+          fontSize: "16px",
+          background: "#F03D3D",
+        },
 
-    const gasPrice = await signerContract.estimateGas
-      .claimRefTokens()
-      .catch(error => {
-
-        toast(`${error.reason}`, {
-          duration: 6000,
-          position: "top-center",
-          // Styling
-          style: {
-            color: "#fff",
-            fontSize: "16px",
-            background: "#F03D3D",
-          },
-
-          // Aria
-          ariaProps: {
-            role: "status",
-            "aria-live": "polite",
-          },
-        });
+        // Aria
+        ariaProps: {
+          role: "status",
+          "aria-live": "polite",
+        },
       });
+    });
 
     signerContract
       .claimRefTokens()
@@ -88,7 +84,7 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,select
               fontSize: "16px",
               background: "#33FF71",
             },
-  
+
             // Aria
             ariaProps: {
               role: "status",
@@ -118,8 +114,7 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,select
           });
         }
       })
-      .finally(() => {
-      });
+      .finally(() => {});
   };
 
   return (
@@ -192,17 +187,17 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim ,select
       </div>
       <div className="mt-4 w-full">
         <TextItem title={t?.referralModal.referralPercentage} value={tokensToClaim} secondaryText="%" hr="true" />
-        <TextItem
-          title={t?.referralModal.referralsToClaim}
-          value={referralsToClaim.amount}
-          secondaryText= "USDT"
-        />
+        <TextItem title={t?.referralModal.referralsToClaim} value={referralsToClaim.amount} secondaryText="USDT" />
       </div>
-      {referralsToClaim.amount != 0 && <button
+      {referralsToClaim.amount != 0 && (
+        <button
           className="w-[220px] h-[54px] text-base text-white bg-primary border-0 rounded-md mt-5"
           disabled={referralsToClaim.amount == 0}
           onClick={handleClaim}
-        >{t?.referralModal.claimBtn}</button>}
+        >
+          {t?.referralModal.claimBtn}
+        </button>
+      )}
     </section>
   );
 };
