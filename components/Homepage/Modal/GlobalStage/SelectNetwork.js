@@ -7,21 +7,18 @@ import toast from "react-hot-toast";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { useAccount, useNetwork } from "wagmi";
 
-const SelectNetwork = ({ handleStep, handleOpen, selectedNetwork, handleUserNetwork, handleSelectedNetwork }) => {
-  const handleSelectNetworkName = useCallback(async name => {
-    handleSelectedNetwork(name);
-    sessionStorage.setItem("network", name);
-    connectWeb3Wallet(name);
-  }, []);
-
+const SelectNetwork = ({ handleStep, handleOpen }) => {
   const { isConnected } = useAccount();
   const { chain } = useNetwork();
   const { t } = useTranslation("buy-token-modal");
 
+  const handleSelectNetworkName = useCallback(async name => {
+    sessionStorage.setItem("network", name);
+    connectWeb3Wallet(name);
+  }, []);
+
   const connectWeb3Wallet = async () => {
     if (isConnected) {
-      handleUserNetwork(chain.name);
-
       if (chain.network) {
         handleStep("walletInfo");
       } else {
@@ -61,7 +58,7 @@ const SelectNetwork = ({ handleStep, handleOpen, selectedNetwork, handleUserNetw
           secondaryText="ETH"
           itemToSelect="homestead"
           image={EtherumIcon}
-          selected={selectedNetwork}
+          selected={chain.name}
           handleSelect={handleSelectNetworkName}
         />
         <ButtonItem
@@ -69,7 +66,7 @@ const SelectNetwork = ({ handleStep, handleOpen, selectedNetwork, handleUserNetw
           secondaryText="BNB"
           itemToSelect="bsc"
           image={BinanceIcon}
-          selected={selectedNetwork}
+          selected={chain.name}
           handleSelect={handleSelectNetworkName}
         />
         <ButtonItem
@@ -77,7 +74,7 @@ const SelectNetwork = ({ handleStep, handleOpen, selectedNetwork, handleUserNetw
           itemToSelect="matic"
           secondaryText="MATIC"
           image={PolygonIcon}
-          selected={selectedNetwork}
+          selected={chain.name}
           handleSelect={handleSelectNetworkName}
         />
       </div>
