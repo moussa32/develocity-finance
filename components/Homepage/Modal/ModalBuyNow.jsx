@@ -16,6 +16,7 @@ import { useAccount, useDisconnect, useNetwork, usePublicClient, useWalletClient
 import BuyMethod from "./BuyStage/BuyMethod";
 import { useRouter } from "next/router";
 import BuyAmountWithFiat from "./BuyStage/BuyAmountWithFiat";
+import { ethersProvider } from "@/shared/Util/blockchainMethods";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -44,9 +45,9 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentAnimationStep, setCurrentAnimationStep] = useState(1);
   const { locale } = useRouter();
 
-  const { data: signer } = useWalletClient();
+  const { data: walletClient } = useWalletClient();
   const { disconnect } = useDisconnect();
-  const { address, status } = useAccount();
+  const { address } = useAccount();
   const { chain } = useNetwork();
   const provider = usePublicClient();
 
@@ -79,13 +80,15 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
 
   useEffect(() => {
     const resetBalance = async () => {
+      console.log(await ethersProvider.getSigner());
+      const asdas = await getWalletBalance(chain.network, walletClient, address);
       try {
         const {
           deveBalance: newDeveBalance,
           referralsToClaim: newReferralsToClaim,
           tokensToClaim: newTokensToClaim,
-        } = await getWalletBalance(chain.network, signer, address);
-
+        } = await getWalletBalance(chain.network, walletClient, address);
+        setIsLoaded(true);
         setDeveBalance(newDeveBalance);
         setTokensToClaim(newTokensToClaim);
         setReferralsToClaim(newReferralsToClaim);
@@ -98,10 +101,10 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     };
 
     //When wallet address is changed, it will fetch the new address's balance
-    if (address && open && signer) {
+    if (address && open && walletClient) {
       resetBalance();
     }
-  }, [address, open, signer]);
+  }, [address, open, walletClient]);
 
   const handleRenderComponentStep = () => {
     switch (currentStep) {

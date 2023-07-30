@@ -13,6 +13,7 @@ const nextConfig = {
     domains: ["blog.develocity.app", "phplaravel-992545-3494971.cloudwaysapps.com"],
     formats: ["image/avif", "image/webp"],
   },
+  topLevelAwait: true,
 };
 
 module.exports = withPlugins([withVideos], nextConfig);
