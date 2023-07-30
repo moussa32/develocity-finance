@@ -12,10 +12,11 @@ import ReferralsModal from "./Referrals/ReferralsModal";
 import toast from "react-hot-toast";
 import { getWalletBalance } from "./../../../shared/Util/handleContracts";
 import { AnimatePresence, motion } from "framer-motion";
-import { useAccount, useDisconnect, useNetwork, useProvider, useSigner } from "wagmi";
+import { useAccount, useDisconnect, useNetwork, usePublicClient, useWalletClient } from "wagmi";
 import BuyMethod from "./BuyStage/BuyMethod";
 import { useRouter } from "next/router";
 import BuyAmountWithFiat from "./BuyStage/BuyAmountWithFiat";
+import { ethersProvider } from "@/shared/Util/blockchainMethods";
 
 // const steps = {
 //   global: ["starter", "selectWallet", "walletInfo", "options"],
@@ -28,7 +29,14 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentStep, setCurrentStep] = useState("walletInfo");
   const [firstCoin, setFirstCoin] = useState(0);
   const [secondCoin, setSecondCoin] = useState(0);
-  const [selectedCurrency, setSelectedCurreny] = useState({ id : "" ,name: "", image: "", ticker: "", decimals: "",  balance: "" });
+  const [selectedCurrency, setSelectedCurreny] = useState({
+    id: "",
+    name: "",
+    image: "",
+    ticker: "",
+    decimals: "",
+    balance: "",
+  });
   const [deveBalance, setDeveBalance] = useState({ amount: 0, value: 0 });
   const [tokensToClaim, setTokensToClaim] = useState({ amount: 0, value: 0 });
   const [referralsToClaim, setReferralsToClaim] = useState(0);
@@ -37,11 +45,11 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
   const [currentAnimationStep, setCurrentAnimationStep] = useState(1);
   const { locale } = useRouter();
 
-  const { data: signer } = useSigner();
+  const { data: walletClient } = useWalletClient();
   const { disconnect } = useDisconnect();
-  const { address, status } = useAccount();
+  const { address } = useAccount();
   const { chain } = useNetwork();
-  const provider = useProvider();
+  const provider = usePublicClient();
 
   const handleStep = useCallback(step => {
     setCurrentStep(step);
@@ -72,17 +80,20 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
 
   useEffect(() => {
     const resetBalance = async () => {
+      console.log(await ethersProvider.getSigner());
+      const asdas = await getWalletBalance(chain.network, walletClient, address);
       try {
         const {
           deveBalance: newDeveBalance,
           referralsToClaim: newReferralsToClaim,
           tokensToClaim: newTokensToClaim,
-        } = await getWalletBalance(chain.network, signer, address);
+        } = await getWalletBalance(chain.network, walletClient, address);
         setIsLoaded(true);
         setDeveBalance(newDeveBalance);
         setTokensToClaim(newTokensToClaim);
         setReferralsToClaim(newReferralsToClaim);
       } catch (error) {
+        console.error("Couldn't get Deve balance or tokens to claim or referrals to claim from contract");
         setDeveBalance({ amount: 0, value: 0 });
         setTokensToClaim(0);
         setReferralsToClaim(0);
@@ -90,10 +101,10 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     };
 
     //When wallet address is changed, it will fetch the new address's balance
-    if (address && open && signer) {
+    if (address && open && walletClient) {
       resetBalance();
     }
-  }, [address, open, signer]);
+  }, [address, open, walletClient]);
 
   const handleRenderComponentStep = () => {
     switch (currentStep) {

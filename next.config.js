@@ -18,6 +18,7 @@ const nextConfig = {
     ],
     formats: ["image/avif", "image/webp"],
   },
+  topLevelAwait: true,
 };
 
 module.exports = withPlugins([withVideos], nextConfig);

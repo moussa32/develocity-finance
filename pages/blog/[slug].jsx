@@ -210,8 +210,9 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
 };
 
 export async function getStaticPaths() {
-  const requestArticles = await globalInstance.get("/articles");
-  const { articles } = requestArticles.data.data;
+  // const requestArticles = await globalInstance.get("/articles");
+  // const { articles } = requestArticles.data.data;
+  const  articles  = [];
 
   //Loop through articles slugs which it two dimencation array to return array of article's pathname with locale
   const paths = articles
@@ -232,13 +233,13 @@ export async function getStaticPaths() {
 export async function getStaticProps(context) {
   const { params, locale } = context;
   const { slug } = params;
-  const requestArticleDetails = await globalInstance.get(`/articles/${encodeURIComponent(slug)}`, {
-    headers: {
-      lang: locale,
-    },
-  });
-  const { article } = await requestArticleDetails.data.data;
-
+  // const requestArticleDetails = await globalInstance.get(`/articles/${encodeURIComponent(slug)}`, {
+  //   headers: {
+  //     lang: locale,
+  //   },
+  // });
+  // const { article } = await requestArticleDetails.data.data;
+  const  articles  = [];
   return {
     props: { ...article },
     revalidate: 10,

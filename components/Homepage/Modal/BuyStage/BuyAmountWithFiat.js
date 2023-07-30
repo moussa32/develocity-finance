@@ -15,8 +15,7 @@ import PreSaleABI from "../../../../public/presaleabi.json";
 import Web3 from "web3";
 window.Buffer = Buffer;
 
-const isTestMode = true;
-const DEVE_PRICE = 0.25;
+const DEVE_PRICE = 0.31;
 
 const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalAmount }) => {
   const { t } = useTranslation("buy-token-modal");
@@ -62,16 +61,16 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
     const contract = new web3.eth.Contract(PreSaleABI, "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C");
     const balance = (Number(coinBalance) * 10**6).toString();
     const data = await contract.methods.buyTokensBusdWert(address, balance, refAddress).encodeABI();
-    console.log(data);
+
     const privateKey = "0x88e3d5f1e62631e7f44d6d58fbb5f45cdd5f13253906da770cc96c5a8e5e4966";
-    console.log(coinBalance)
+
     const signedData = signSmartContractData(
       {
         address: address, // user address
         commodity: "USDC", // coin
         network: "polygon", // network
         commodity_amount: Number(coinBalance), // user USDC amount
-        sc_address: "0x2F7f89d52131c3cd24eD1bb59042A16BCf123d5C", // smartcontract address
+        sc_address: "0x512390F66039AEB56B9Fa99541E4792bB948791C", // smartcontract address
         sc_input_data: data,
       },
       privateKey
@@ -167,7 +166,7 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
           <path id="Vector-4" data-name="Vector" d="M0,0H24V24H0Z" fill="none" opacity="0" />
         </svg>
         <h5 className="text-sm mt-[3px] ltr:mr-[5px] rtl:ml-[5px] text-[#2a2929]">
-          {address.slice(0, 10) + "..." + address.slice(31, 41)}
+          {address.slice(0, 10) + "..." + address.slice(32,42)}
         </h5>
       </div>
 
@@ -265,12 +264,12 @@ const BuyAmountWithFiat = ({ handleStep, disconnect, handleCurrent, handleFinalA
       </div>
 
       <div className="mt-4 w-full">
-        <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.25" hr="true" />
+        <TextItem title={t?.buyAmountModal.price} value="1" secondaryText="DEVE = $0.31" hr="true" />
         <TextItem
           title={t?.buyAmountModal.estimatedBalance}
           value={convertedDeve}
           symbol="&plusmn;"
-          percentage="0.25%"
+          percentage="0.28%"
           hr="true"
         />
       </div>
