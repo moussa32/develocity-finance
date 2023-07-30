@@ -8,9 +8,10 @@ import { getSecondCoinContract } from "../../../../shared/Util/handleContracts";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
 // import SuccessIcon from "@/images/SuccessIcon.svg";
 import useTranslation from "@/shared/Hooks/useTranslation";
-import { useBalance, useWalletClient } from "wagmi";
+import { useBalance, useNetwork } from "wagmi";
 import Image from "next/image";
 import { useRouter } from "next/router";
+import { useEthersSigner } from "@/shared/Hooks/useEthersSigner";
 
 const BuyAmountModal = ({
   handleStep,
@@ -23,7 +24,8 @@ const BuyAmountModal = ({
   selectedNetwork,
 }) => {
   const { t } = useTranslation("buy-token-modal");
-  const { data: signer, isError, isLoading } = useWalletClient();
+  const { chain } = useNetwork();
+  const signer = useEthersSigner(chain.id);
   const { data: balance, isLoading: isBalanceLoading } = useBalance({
     address: walletAddress,
   });

@@ -6,14 +6,16 @@ import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import contractAbi from "../../../../public/assets/contractApi.json";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
-import { useWalletClient } from "wagmi";
+import { useNetwork, useWalletClient } from "wagmi";
 import { ethers } from "ethers";
+import { useEthersSigner } from "@/shared/Hooks/useEthersSigner";
 const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim, selectedNetwork }) => {
   const [copy, setCopy] = useState({
     value: "",
     copied: false,
   });
-  const { data: signer, isError, isLoading } = useWalletClient();
+  const { chain } = useNetwork();
+  const signer = useEthersSigner(chain.id);
   const mainContract = getMainCoinContractAddress(selectedNetwork);
   console.log(mainContract);
   const signerContract = new ethers.Contract(mainContract, contractAbi, signer);

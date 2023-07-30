@@ -1,7 +1,6 @@
 import { EthereumClient, w3mConnectors, w3mProvider } from "@web3modal/ethereum";
 import { bsc, mainnet, polygon } from "wagmi/chains";
 import { configureChains, createConfig } from "wagmi";
-import { ethers } from "ethers";
 
 // 1. Get projectID at https://cloud.walletconnect.com
 if (!process.env.NEXT_PUBLIC_PROJECT_ID) {
@@ -22,4 +21,3 @@ export const wagmiConfig = createConfig({
 });
 
 export const blockchainClient = new EthereumClient(wagmiConfig, chains);
-export const ethersProvider = new ethers.BrowserProvider(blockchainClient);
