@@ -24,7 +24,8 @@ const WalletInfoModal = ({
 }) => {
   const { t } = useTranslation("buy-token-modal");
   const { chain } = useNetwork();
-  const { chains, error, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
+  const { chains, isLoading, pendingChainId, switchNetwork } = useSwitchNetwork();
+
   const { locale } = useRouter();
 
   const handleOnCopy = text => {

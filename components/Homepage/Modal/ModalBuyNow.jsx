@@ -65,18 +65,7 @@ const ModalBuyNow = ({ open, onClose, handleOpen }) => {
     handleOpen(false);
     handleStep("walletInfo");
     /*Toast notification*/
-    toast.success("Disconnected!", {
-      style: {
-        border: "1px solid #e30e27",
-        padding: "16px",
-        backgroundColor: "#ffcdd2",
-        color: "white",
-        width: "300px",
-      },
-      iconTheme: {
-        primary: "#e30e27",
-      },
-    });
+    toast.error("Disconnected!");
   };
 
   useEffect(() => {

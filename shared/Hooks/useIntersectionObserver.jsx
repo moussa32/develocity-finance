@@ -9,7 +9,6 @@ const useIntersectionObserver = (threshold = 0) => {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
-        console.log({ entry });
         setIsIntersecting(entry.isIntersecting);
         if (entry.isIntersecting && !hasRendered) {
           if (count > 1) setHasRendered(true);
@@ -30,8 +29,6 @@ const useIntersectionObserver = (threshold = 0) => {
       }
     };
   }, [threshold, hasRendered, count]);
-
-  console.log({ isIntersecting, hasRendered });
 
   return [isIntersecting || hasRendered, ref];
 };

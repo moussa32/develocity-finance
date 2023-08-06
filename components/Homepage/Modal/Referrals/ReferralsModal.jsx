@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import { CopyToClipboard } from "react-copy-to-clipboard";
 import contractAbi from "../../../../public/assets/contractApi.json";
 import { getMainCoinContractAddress } from "../../../../shared/Util/handleNetworkProvider";
-import { useNetwork, useWalletClient } from "wagmi";
+import { useNetwork } from "wagmi";
 import { ethers } from "ethers";
 import { useEthersSigner } from "@/shared/Hooks/useEthersSigner";
 const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim, selectedNetwork }) => {
@@ -17,7 +17,6 @@ const ReferralsModal = ({ walletAddress, tokensToClaim, referralsToClaim, select
   const { chain } = useNetwork();
   const signer = useEthersSigner(chain.id);
   const mainContract = getMainCoinContractAddress(selectedNetwork);
-  console.log(mainContract);
   const signerContract = new ethers.Contract(mainContract, contractAbi, signer);
 
   useEffect(() => {

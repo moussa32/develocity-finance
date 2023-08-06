@@ -39,7 +39,20 @@ const BuyAmountModal = ({
   const [isApprovedButtonLoading, setIsApprovedButtonDisabled] = useState(false);
   const [isApproved, setIsApproved] = useState(false);
 
-  const coinBalanceConverted = () => (coinBalance ? ethers.utils.parseEther(coinBalance?.toString()) : 0);
+  const coinBalanceConverted = () => {
+    if (coinBalance) {
+      if (
+        chain.name.toLocaleLowerCase().startsWith("polygon") ||
+        chain.name.toLocaleLowerCase().startsWith("ethereum")
+      ) {
+        return ethers.utils.parseUnits(coinBalance?.toString(), "ether");
+      } else {
+        return ethers.utils.parseUnits(coinBalance?.toString(), "mwei");
+      }
+    } else {
+      return 0;
+    }
+  };
   let memoizedCoinBalanceConverted = useMemo(() => coinBalanceConverted(), [coinBalance]);
   const mainContract = getMainCoinContractAddress(selectedNetwork);
   const walletContract = new ethers.Contract(mainContract, contractAbi, provider);
@@ -48,7 +61,7 @@ const BuyAmountModal = ({
 
   useEffect(() => {
     const delayDebounceFn = setTimeout(async () => {
-      if (currentCurrency.ticker === "BUSD" || currentCurrency.ticker === "USDT") {
+      if ((currentCurrency.ticker === "BUSD" || currentCurrency.ticker === "USDT") && Number(coinBalance) > 0) {
         const gasPrice = await signerContract.estimateGas
           .buyTokensBusd(memoizedCoinBalanceConverted.toString(), ref)
           .catch(error => {
