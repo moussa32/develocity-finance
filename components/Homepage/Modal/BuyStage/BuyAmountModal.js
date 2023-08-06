@@ -45,9 +45,9 @@ const BuyAmountModal = ({
         chain.name.toLocaleLowerCase().startsWith("polygon") ||
         chain.name.toLocaleLowerCase().startsWith("ethereum")
       ) {
-        return ethers.utils.parseUnits(coinBalance?.toString(), "ether");
-      } else {
         return ethers.utils.parseUnits(coinBalance?.toString(), "mwei");
+      } else {
+        return ethers.utils.parseUnits(coinBalance?.toString(), "ether");
       }
     } else {
       return 0;
