@@ -57,6 +57,12 @@
   box-shadow: 0 25px 50px 0 rgba(16, 24, 40, 0.25);
 }
 
+.links-page-bg {
+  background-image: url("../public/assets/images/links-page-bg.png");
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
+
 @media screen(md) {
   .header-bg {
     background-image: url("../public/assets/images/ladingHeaderBG.png");
