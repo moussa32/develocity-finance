@@ -156,6 +156,7 @@ const LinksPage = () => {
                 <div className="flex flex-wrap items-center gap-[75px] mt-[120.9px] mb-[84px] justify-center">
                   <a
                     href="https://facebook.com"
+                    rel="noreferrer"
                     target="_blank"
                     className="grid grid-cols-1 place-content-center group"
                   >
@@ -167,6 +168,7 @@ const LinksPage = () => {
                   <a
                     href="https://INSTAGRAM.com"
                     target="_blank"
+                    rel="noreferrer"
                     className="grid grid-cols-1 place-content-center group"
                   >
                     <AiOutlineInstagram className="bg-[#6A65E7] text-8xl rounded-full mx-auto p-3 group-hover:bg-white group-hover:text-indigo-500" />
@@ -174,7 +176,12 @@ const LinksPage = () => {
                       {t?.instagram}
                     </span>
                   </a>
-                  <a href="https://x.com" target="_blank" className="grid grid-cols-1 place-content-center group">
+                  <a
+                    href="https://x.com"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="grid grid-cols-1 place-content-center group"
+                  >
                     <AiOutlineTwitter className="bg-[#6A65E7] text-8xl rounded-full mx-auto p-3 group-hover:bg-white group-hover:text-indigo-500" />
                     <span className={`uppercase mt-[51.6px] ${openSans.className} text-[25.91px] font-semibold`}>
                       {t?.twitter}
@@ -183,6 +190,7 @@ const LinksPage = () => {
                   <a
                     href="https://Telegram.com"
                     target="_blank"
+                    rel="noreferrer"
                     className="grid grid-cols-1 place-content-center group"
                   >
                     <BiLogoTelegram className="bg-[#6A65E7] text-8xl rounded-full mx-auto p-3 group-hover:bg-white group-hover:text-indigo-500" />
