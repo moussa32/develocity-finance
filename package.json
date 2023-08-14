@@ -12,7 +12,7 @@
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.15",
     "@next/font": "13.1.6",
-    "@tanstack/react-query": "^4.29.5",
+    "@tanstack/react-query": "^4.32.6",
     "@tanstack/react-query-devtools": "^4.32.6",
     "@wagmi/core": "^1.3.8",
     "@web3modal/ethereum": "^2.7.1",
