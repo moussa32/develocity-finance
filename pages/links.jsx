@@ -120,7 +120,7 @@ const LinksPage = () => {
                   }}
                 >
                   {URLS.map((link, index) => (
-                    <SwiperSlide>
+                    <SwiperSlide key={`${link.linkCopiedIndex}${index}`}>
                       <button
                         onClick={() => selectLink(index)}
                         className={`${
