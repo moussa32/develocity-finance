@@ -34,7 +34,7 @@ const URLS = [
   { url: "https://develocity.solutions", text: "develocity.solutions" },
 ];
 
-const links = () => {
+const LinksPage = () => {
   const [activeLink, setActiveLink] = useState({ linkCopiedIndex: null, copied: false });
   const [swiper, setSwiper] = useState(null);
   const { width } = useWindowSize();
@@ -200,4 +200,4 @@ const links = () => {
   );
 };
 
-export default links;
+export default LinksPage;
