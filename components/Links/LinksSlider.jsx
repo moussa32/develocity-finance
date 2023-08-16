@@ -51,19 +51,19 @@ const LinksSlider = ({ urls, activeLink, changeActiveLink }) => {
             onClick={() => selectLink(index)}
             className={`${
               activeLink.linkCopiedIndex === index ? "border-opacity-100" : "border-opacity-20"
-            } h-[394px] w-full xl:w-[415.3px] border-white border-1 text-2xl xl:text-[34.54px] relative py-[25.3px] pt-0 rounded-2xl flex flex-col items-center justify-start bg-white bg-opacity-5`}
+            } h-[360px] w-full xl:w-[370px] border-white border-1 text-2xl relative py-[25.3px] pt-0 rounded-2xl flex flex-col items-center justify-start bg-white bg-opacity-5`}
           >
             {console.log(link.icon)}
             {link.icon && (
               <div className="flex items-center justify-center flex-col gap-8">
                 <Image className="mt-10" src={link.icon} alt={link.text} />
-                <h2 className="text-3xl mt-auto">{link.text}</h2>
+                <h2 className="text-lg lg:text-2xl mt-auto">{link.text}</h2>
               </div>
             )}
 
-            {!link.icon && <h2 className="text-3xl mt-auto">{link.text}</h2>}
+            {!link.icon && <h2 className="text-lg lg:text-2xl mt-auto">{link.text}</h2>}
 
-            <span className="h-[57.52px] w-[57.52px] bg-[#6A65E7] rounded-full mt-auto">
+            <span className=" h-12 w-12 bg-[#6A65E7] relative rounded-full mt-auto">
               {activeLink.linkCopiedIndex === index && (
                 <span className="absolute bg-white z-20 w-[38.4px] h-[38.4px] rounded-full top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2"></span>
               )}

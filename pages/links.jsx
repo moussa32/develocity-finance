@@ -49,17 +49,17 @@ const LinksPage = () => {
     <section className="min-h-screen links-page-bg bg-cover">
       <SideMenu />
       <section className="container">
-        <Image src={DeveLogo} alt="deve" className="mx-auto block pt-32 xl:pt-60" />
+        <Image src={DeveLogo} width={290} className="mx-auto block pt-32 xl:pt-60" alt="deve" />
         <section className={`mx-auto pb-[115px] w-full ${openSans.className}`}>
           <Tab.Group>
-            <Tab.List className="flex flex-col w-full items-start md:flex-row flex-nowrap space-y-6 md:space-y-0 md:space-x-[108px] xl:w-[968.85px] mx-auto rtl:space-x-reverse mt-24 xl:mt-[134.8px]">
+            <Tab.List className="flex flex-col w-full items-start md:flex-row flex-nowrap space-y-6 md:space-y-0 md:space-x-[108px] xl:w-[880px] mx-auto rtl:space-x-reverse mt-16 xl:mt-24">
               {tabsHeader.map((header, index) => (
                 <Tab key={`${header.title}${index}`} as={Fragment}>
                   {({ selected }) => (
                     <button
                       className={`${
                         selected ? "bg-indigo-500/50 border-opacity-70" : ""
-                      } outline-none flex items-center border-4 border-[#6A65E7] lg:border-x-0 lg:border-t-0 transition-all duration-150 justify-center text-2xl w-full md:text-3xl py-4 rounded text-white`}
+                      } outline-none flex items-center border-[3px] border-[#6A65E7] lg:border-x-0 lg:border-t-0 transition-all duration-150 justify-center text-lg lg:text-2xl w-full py-4 rounded text-white`}
                     >
                       {header.title}
                     </button>
@@ -67,13 +67,12 @@ const LinksPage = () => {
                 </Tab>
               ))}
             </Tab.List>
-            <Tab.Panels className="mt-20 xl:mt-[142.2px] border-1 w-full xl:w-[968.85px] mx-auto border-[#6A65E7] rounded-3xl pt-10 xl:pt-[54px] px-7 xl:px-[46px] pb-[22px] text-white">
+            <Tab.Panels className="mt-20 xl:mt-24 border-1 w-full xl:w-[880px] mx-auto border-[#6A65E7] rounded-3xl pt-10 xl:pt-11 px-7 xl:px-[46px] pb-10 text-white">
               <TabHeader />
               <Tab.Panel>
                 <LinksSlider activeLink={activeLink} changeActiveLink={setActiveLink} urls={URLS} />
-
                 <div
-                  className={`flex justify-between items-center h-[44.41px] text-[29.58px] w-full xl:w-[386.54px] ${
+                  className={`flex justify-between items-center h-[44.41px] text-xl w-full xl:w-[386.54px] ${
                     activeLink.copied ? `border-y-[1.41px] border-[#6A65E7] ltr:mr-auto rtl:ml-auto` : null
                   } px-6`}
                 >
@@ -87,7 +86,7 @@ const LinksPage = () => {
                 </div>
               </Tab.Panel>
               <Tab.Panel>
-                <div className="flex flex-wrap items-center gap-y-10 gap-x-5 lg:gap-[75px] mt-[120.9px] mb-[84px] justify-center">
+                <div className="flex flex-wrap items-center gap-y-10 gap-x-5 lg:gap-[75px] mt-14 lg:mt-[120.9px] mb-18 lg:mb-[84px] justify-center">
                   {SOCIAL_MEDIA.map((item, index) => (
                     <a
                       key={`${item.name}${index}`}
@@ -96,9 +95,9 @@ const LinksPage = () => {
                       target="_blank"
                       className="grid grid-cols-1 place-content-center group"
                     >
-                      <item.icon className="bg-[#6A65E7] text-6xl lg:text-8xl rounded-full mx-auto p-3 group-hover:bg-white group-hover:text-indigo-500" />
+                      <item.icon className="bg-[#6A65E7] text-5xl lg:text-7xl rounded-full mx-auto p-3 group-hover:bg-white group-hover:text-indigo-500" />
                       <span
-                        className={`uppercase mt-6 lg:mt-[51.6px] ${openSans.className} text-base lg:text-[25.91px] font-semibold`}
+                        className={`uppercase mt-4 lg:mt-10 ${openSans.className} text-base lg:text-xl font-semibold`}
                       >
                         {item.name}
                       </span>

@@ -10,7 +10,7 @@ const TabHeader = () => {
 
   return (
     <div className="flex items-center">
-      <h1 className={`text-2xl lg:text-[49.81px] ${openSans.className}`}>{t?.title}</h1>
+      <h1 className={`text-2xl lg:text-4xl ${openSans.className}`}>{t?.title}</h1>
       {navigator.canShare(window.pathname) && <Image src={ShareIcon} className="ltr:ml-auto rtl:mr-auto" />}
     </div>
   );
