@@ -56,7 +56,7 @@ const NewLinks = () => {
           <h1 className="absolute top-10 text-5xl w-full text-center text-white font-bold">Develocity Pre sale</h1>
           <button className="absolute flex items-center gap-2 justify-center bg-indigo-500 bottom-8 transform left-1/2 -translate-x-1/2 text-white rounded py-3 px-7">
             <RxRocket size={20} />
-            Let's go
+            Let&lsquo;s go
           </button>
         </section>
         <section className="w-full">
