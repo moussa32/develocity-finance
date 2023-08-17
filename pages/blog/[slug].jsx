@@ -89,10 +89,10 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
                 </div>
               )}
             </>
-          } 
+          }
         />
         <article className="container px-6 mx-auto relative min-w-full mb-24 pt-16 md:pt-56 lg:px-0 lg:pt-[372px]">
-          <Image  
+          <Image
             className="hidden w-4/5 inset-x-0 absolute top-[-90px] md:block lg:max-w-[1008px] lg:top-[-160px] mx-auto z-10 max-h-[516px] object-contain rounded-xl"
             src={image}
             width={1008}
@@ -212,7 +212,7 @@ const BlogDetails = ({ desc, title, image, tags, date, slugs }) => {
 export async function getStaticPaths() {
   // const requestArticles = await globalInstance.get("/articles");
   // const { articles } = requestArticles.data.data;
-  const  articles  = [];
+  const articles = [];
 
   //Loop through articles slugs which it two dimencation array to return array of article's pathname with locale
   const paths = articles
@@ -239,7 +239,7 @@ export async function getStaticProps(context) {
   //   },
   // });
   // const { article } = await requestArticleDetails.data.data;
-  const  articles  = [];
+  const articles = [];
   return {
     props: { ...article },
     revalidate: 10,
