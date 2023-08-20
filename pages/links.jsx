@@ -13,38 +13,47 @@ import useTranslation from "@/shared/Hooks/useTranslation";
 import { LiaLayerGroupSolid } from "react-icons/lia";
 import { CgBriefcase } from "react-icons/cg";
 import copy from "copy-to-clipboard";
+import DeveFinanceDesktop from "@/images/links/deve-finance-desktop.png";
+import DeveFinanceTablet from "@/images/links/deve-finance-tablet.png";
+import DeveFinanceMobile from "@/images/links/deve-finance-mobile.png";
+import DeveGroupDesktop from "@/images/links/deve-group-desktop.png";
+import DeveGroupTablet from "@/images/links/deve-group-tablet.png";
+import DeveGroupeMobile from "@/images/links/deve-group-mobile.png";
+import DeveScanMobile from "@/images/links/deve-scan-desktop.png";
+import DeveScanTablet from "@/images/links/deve-scan-tablet.png";
+import DeveScanDesktop from "@/images/links/deve-scan-desktop.png";
 
 const links = [
   {
     Icon: LiaLayerGroupSolid,
-    image: FinanceImage,
+    image: { desktop: DeveGroupDesktop, tablet: DeveGroupTablet, mobile: DeveGroupeMobile },
     url: "http://Develocity.group",
     label: "Develocity Group",
   },
   {
     Icon: GiCrownCoin,
-    image: FinanceImage,
+    image: { desktop: DeveFinanceDesktop, tablet: DeveFinanceTablet, mobile: DeveFinanceMobile },
     url: "https://develocity.finance",
-    label: "Develocity PreSale",
+    label: "Develcoity Finance",
     isComing: false,
   },
   {
     Icon: AiOutlineSecurityScan,
-    image: ScanToolImage,
+    image: { desktop: DeveScanDesktop, tablet: DeveScanTablet, mobile: DeveScanMobile },
     url: "https://tool.develocity.finance",
-    label: "Develocity ScanTool",
+    label: "Deve Scan",
     isComing: false,
   },
   {
     Icon: CgBriefcase,
-    image: FinanceImage,
+    image: [FinanceImage],
     url: "http://Develocity.solutions",
     label: "Develocity Solutions",
   },
   {
     Icon: BiStore,
-    image: FinanceImage,
-    url: "https://develocity.finance",
+    image: [FinanceImage],
+    url: "https://develocity.store",
     label: "Develocity Store",
     isComing: true,
   },
@@ -104,23 +113,46 @@ const NewLinks = () => {
       </section>
       <section className="container bg-white py-8 lg:py-20 flex flex-col gap-y-8 lg:flex-row items-start justify-center gap-x-12">
         <section className="relative flex-shrink-0 w-full lg:w-[500px] xl:w-[600px] h-full">
-          <Image
-            src={selectedLink.image}
-            width={600}
-            height={600}
-            className="rounded-xl relative shadow-lg w-full h-[320px] sm:h-[450px] object-cover"
-            alt="Logo"
-            title="Logo"
-          />
-          <h1 className="absolute top-8 lg:top-10 text-3xl xl:text-5xl w-full text-center text-white font-bold">
-            {selectedLink.label}
-          </h1>
+          <div className="sm:hidden h-[230px]">
+            <Image
+              src={selectedLink?.image?.mobile}
+              className="rounded-xl relative shadow-lg w-full h-[200px] object-cover"
+              alt="Logo"
+              title="Logo"
+            />
+          </div>
+          <div className="hidden sm:flex sm:justify-center sm:mx-auto md:hidden">
+            <Image
+              src={selectedLink?.image?.tablet}
+              className="rounded-xl relative shadow-lg w-full h-[450px] mx-auto block object-cover"
+              alt="Logo"
+              title="Logo"
+            />
+          </div>
+          <div className="hidden md:flex lg:hidden">
+            <Image
+              src={selectedLink?.image?.desktop}
+              className="rounded-xl relative shadow-lg h-[450px] mx-auto block object-cover"
+              alt="Logo"
+              title="Logo"
+            />
+          </div>
+          <div className="hidden lg:flex">
+            <Image
+              src={selectedLink?.image?.desktop}
+              className="rounded-xl relative shadow-lg object-cover"
+              width={600}
+              height={450}
+              alt="Logo"
+              title="Logo"
+            />
+          </div>
           {!selectedLink.isComing && (
             <a
               href={selectedLink.url}
-              className="absolute flex items-center gap-2 justify-center bg-indigo-500 bottom-4 lg:bottom-8 transform left-1/2 -translate-x-1/2 text-white rounded py-3 px-7"
+              className="absolute flex items-center gap-2 justify-center bg-indigo-500 bottom-4 lg:bottom-8 transform left-1/2 -translate-x-1/2 text-white text-sm sm:text-lg rounded px-4 py-3 sm:px-7"
             >
-              <RxRocket size={20} />
+              <RxRocket className="w-4.5 sm:w-6 sm:h-4 md:h-6" size={20} />
               {t?.letsGo}
             </a>
           )}
