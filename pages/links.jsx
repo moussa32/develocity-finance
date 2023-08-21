@@ -7,8 +7,8 @@ import { AiOutlineSecurityScan } from "react-icons/ai";
 import { GiCrownCoin } from "react-icons/gi";
 import { useEffect, useState } from "react";
 import SideMenu from "@/shared/Components/SideMenu";
-import FinanceImage from "@/images/financeImage.avif";
-import ScanToolImage from "@/images/scanTool.avif";
+// import FinanceImage from "@/images/financeImage.avif";
+// import ScanToolImage from "@/images/scanTool.avif";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import { LiaLayerGroupSolid } from "react-icons/lia";
 import { CgBriefcase } from "react-icons/cg";
@@ -22,6 +22,14 @@ import DeveGroupeMobile from "@/images/links/deve-group-mobile.png";
 import DeveScanMobile from "@/images/links/deve-scan-desktop.png";
 import DeveScanTablet from "@/images/links/deve-scan-tablet.png";
 import DeveScanDesktop from "@/images/links/deve-scan-desktop.png";
+
+import StoreMobile from "@/images/links/store-desktop.png";
+import StoreTablet from "@/images/links/store-tablet.png";
+import StoreDesktop from "@/images/links/store-desktop.png";
+
+import SolutionsMobile from "@/images/links/solutions-desktop.png";
+import SolutionsTablet from "@/images/links/solutions-tablet.png";
+import SolutionsDesktop from "@/images/links/solutions-desktop.png";
 
 const links = [
   {
@@ -46,13 +54,13 @@ const links = [
   },
   {
     Icon: CgBriefcase,
-    image: [FinanceImage],
+    image: { desktop: SolutionsDesktop, tablet: SolutionsTablet, mobile: SolutionsMobile },
     url: "http://Develocity.solutions",
     label: "Develocity Solutions",
   },
   {
     Icon: BiStore,
-    image: [FinanceImage],
+    image: { desktop: StoreDesktop, tablet: StoreTablet, mobile: StoreMobile },
     url: "https://develocity.store",
     label: "Develocity Store",
     isComing: true,
