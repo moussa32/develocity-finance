@@ -27,7 +27,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
   });
 
   const { progress } = useProgress({
-    max: data ? Number(Number(data.soldPercentage) + 0 ).toFixed(2) : SOLD_PERCENTAGE,
+    max: data ? Number(Number(data.soldPercentage) + 0).toFixed(2) : SOLD_PERCENTAGE,
   });
 
   return (
@@ -43,7 +43,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             {progress}% <span className="text-indigo-500">{t?.title?.SOLD}</span>
           </h3>
           <h3 className="font-medium text-sm md:text-lg">
-            ${new Intl.NumberFormat('en-US').format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 0 : 0)} /
+            ${new Intl.NumberFormat("en-US").format(data ? Number(Number(data.totalSOLDOnUSD).toFixed(0)) + 0 : 0)} /
             $2,635,000
           </h3>
         </div>
@@ -73,9 +73,13 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
           </div>
         )}
 
-        <ProgressBar
+        {/*<ProgressBar
           value={data ? Number(Number(data.soldPercentage) + 0).toFixed(2) : SOLD_PERCENTAGE}
-          text={<p className="w-fit">{t?.counter?.nextPrice} ${NEXT_STAGE_PRICE}</p>}
+          text={
+            <p className="w-fit">
+              {t?.counter?.nextPrice} ${NEXT_STAGE_PRICE}
+            </p>
+          }
         />
 
         <div className="flex items-center flex-row gap-2 bg-indigo-500/10 border-indigo-500/30 border-1 rounded-xl px-4 py-[15px] gap-0 justify-center justify-between px-6">
@@ -91,7 +95,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             <h3 className="text-sm font-medium opacity-30 text-neutral-50 uppercase mb-1">{t?.sub?.tokens}</h3>
             <span className="text-sm md:text-lg font-medium capitalize">8,500,000</span>
           </div>
-        </div>
+        </div>*/}
         {/* <button
           onClick={openAllStagesModal}
           className="uppercase text-xs text-neutral-400 underline text-center mx-auto block mt-4.5"
@@ -107,7 +111,7 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
         >
           {t?.sub?.BuyNow}
         </button>
-        <a
+        {/* <a
           target="_blank"
           rel="noreferrer"
           href="https://www.youtube.com/watch?v=y-MEnm_Aa9s"
@@ -117,17 +121,17 @@ const BuyToken = ({ handleBuyNowButton, openAllStagesModal }) => {
             <Image src={Play} alt="Play how to buy" size={25} className="text-neutral-700" />
           </div>
           <span className="underline underline-offset-4">{t?.sub?.HowtoBuy}</span>
-        </a>
+        </a>*/}
       </section>
-      <section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
+      {/*<section className="flex flex-wrap items-center justify-center gap-2 mt-4.5">
         <Image width={50} src={Visa} className="Pay with Visa" />
         <Image width={50} src={Mastercard} className="Pay with Mastercard" />
-        {/* <Image width={55} src={ApplePay} className="Pay with ApplePay" />
+        <Image width={55} src={ApplePay} className="Pay with ApplePay" />
         <Image width={55} src={GooglePay} className="Pay with GooglePay" />
-        <Image width={55} src={Binance} className="Pay with BinancePay" /> */}
+        <Image width={55} src={Binance} className="Pay with BinancePay" /> 
 
         <div className="underline text-sm text-neutral-400 flex-initial">{t?.sub?.PaymentSupported}</div>
-      </section>
+      </section>*/}
     </>
   );
 };
