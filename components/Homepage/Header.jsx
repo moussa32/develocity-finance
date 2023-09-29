@@ -1,12 +1,4 @@
-// import BloombergIcon from "../../public/assets/images/Bloomberg.svg";
-// import WiredIcon from "../../public/assets/images/WIRED.svg";
-// import CoindeskIcons from "../../public/assets/images/Coindesk.svg";
-// import YahooFinanceIcons from "../../public/assets/images/YahooFinance.svg";
 import SideMenu from "../../shared/Components/SideMenu";
-// import MobileImageSlider from "../../shared/Components/MobileImageSlider";
-// import Loudspeaker from "../../public/assets/images/loudspeaker.svg";
-import headerVideo from "../../public/assets/video/Pre-Sale-Header-Background.mp4";
-import headerMobileVideo from "../../public/assets/video/Pre-Sale-Header-Background-Mobile.mp4";
 import useTranslation from "@/shared/Hooks/useTranslation";
 import useCountdown from "@/shared/Hooks/useCountdown";
 import { useWeb3Modal } from "@web3modal/react";
@@ -82,17 +74,7 @@ const Header = () => {
   }, [isAllStagesOpen]);
 
   return (
-    <div className="relative min-h-screen header-bg bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
-      {isFinished && (
-        <video
-          src={isMobile ? headerMobileVideo : headerVideo}
-          className="absolute z-0 object-cover w-full h-full block"
-          autoPlay
-          playsInline
-          loop
-          muted
-        ></video>
-      )}
+    <div className="relative min-h-screen bg-lunching bg-cover bg-center bg-no-repeat text-center overflow-hidden w-full md:bg-cover md:bg-right md:text-left ">
       <SideMenu />
       <div className="container h-full text-white pt-32 md:pt-60 md:flex md:flex-col">
         <div className="w-50 relative mx-auto flex flex-col justify-center z-20 lg:px-8 lg:ml-0 xl:w-[700px] xl:px-0">
@@ -112,20 +94,6 @@ const Header = () => {
             {isConnected && <ModalBuyNow open={isBuyNowModalOpen} onClose={closeModal} handleOpen={handleOpen} />}
             <Stages show={isAllStagesOpen} onClose={handleCloseAllStages} />
           </div>
-          {/* <div className="w-full flex justify-center md:justify-start mt-14 lg:rtl:pr-16">
-            <div className="px-3.5 md:mt-[125px] h-16 bg-gray-500 bg-opacity-25 rounded-lg flex items-center gap-3 w-[329px] md:w-auto">
-              <div className="flex items-center p-[5px] justify-center rounded-lg w-9 h-9 bg-gray-300 bg-opacity-20 basis-9 shrink-0">
-                <Image className="w-full md:h-auto md:w-auto" src={Loudspeaker} alt="Loud Speaker" />
-              </div>
-              <div className="flex flex-col md:flex-row md:gap-x-1 md:items-center items-start text-xs xs:text-sm text-[#E9E9E9]">
-                <p>
-                  {t?.homeSection?.subText[0]}{" "}
-                  <span className="underline underline-offset-2 text-[#00B9FF]">{t?.homeSection?.subText[1]}</span>
-                </p>
-                <span className="block md:inline">{t?.homeSection?.subText[2]}</span>
-              </div>
-            </div>
-          </div> */}
         </div>
       </div>
     </div>

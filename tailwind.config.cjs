@@ -13,6 +13,9 @@ module.exports = {
       sans: ['"Inter"', ...fontFamily.sans],
     },
     extend: {
+      backgroundImage: {
+        lunching: " url('../public/assets/images/lunching-bg.svg')",
+      },
       fontSize: {
         "6.5xl": "4rem",
       },
